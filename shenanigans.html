@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#131313"/><text x="50" y="58" font-family="sans-serif" font-size="30" font-weight="700" fill="#ffffff" text-anchor="middle">RS</text></svg></template>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Archivo+Black&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#0E0E0E}
+a{color:#F7F5F0}
+a:hover{opacity:.55}
+@media (prefers-reduced-motion:reduce){.scCard{transform:none!important}}
+</style>
+</helmet>
+<div ref="{{ loaderRef }}" style="position:fixed;inset:0;z-index:100;background:#0E0E0E;color:#F7F5F0;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:'Archivo',sans-serif;transition:opacity .6s ease;">
+    <div style="font-family:'Archivo',sans-serif;font-weight:600;font-size:clamp(30px,5vw,64px);line-height:1;letter-spacing:-.02em;">Shenanigans</div>
+    <div style="width:min(46vw,280px);height:3px;background:rgba(255,255,255,.14);border-radius:100px;margin-top:26px;overflow:hidden;">
+      <div ref="{{ barRef }}" style="height:100%;width:0%;background:#9B8CFF;border-radius:100px;transition:width .35s cubic-bezier(.4,0,.6,1);"></div>
+    </div>
+    <div ref="{{ pctRef }}" style="font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.14em;opacity:.55;margin-top:16px;">Loading 0%</div>
+  </div>
+  <div style="--red:#FF4438;--blue:#2E6BFF;--yellow:#FFC700;--green:#17B26A;--purple:#7A3BFF;--orange:#FF7A00;--pink:#FF5CA8;--teal:#00B8C4;background:#0E0E0E;color:#F7F5F0;font-family:'Archivo',sans-serif;min-height:100vh;overflow-x:clip;">
+  <header style="position:fixed;inset:0 0 auto 0;z-index:20;display:flex;align-items:center;padding:18px clamp(16px,3vw,40px);pointer-events:none;">
+    <a href="index.html" style="display:inline-flex;align-items:center;gap:8px;color:#F7F5F0;text-decoration:none;font-weight:700;font-size:14px;text-transform:uppercase;letter-spacing:.06em;pointer-events:auto;" style-hover="opacity:.55"><span aria-hidden="true">←</span> Back</a>
+  </header>
+
+  <div style="height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 20px;position:relative;">
+    <h1 style="font-family:'Archivo',sans-serif;font-weight:600;font-size:clamp(40px,8vw,110px);line-height:1;letter-spacing:-.02em;margin:0;">Shenanigans</h1>
+    <p style="font-weight:600;font-size:clamp(13px,1.6vw,16px);opacity:.6;margin:14px 0 0;max-width:460px;text-wrap:pretty;">Smaller projects, experiments and things made for fun.</p>
+    <div style="position:absolute;bottom:34px;left:50%;transform:translateX(-50%);font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.1em;opacity:.5;">Scroll ↓</div>
+  </div>
+
+  <main ref="{{ mainRef }}">
+
+    <section data-stage-wrap data-screen-label="Project 1" style="height:280vh;position:relative;">
+      <div style="position:sticky;top:0;height:100vh;overflow:clip;">
+        <div class="scCard" data-speed="0.5" data-drift="-6" style="position:absolute;left:7%;top:-8%;width:min(28vw,400px);border-radius:16px;overflow:hidden;transform:rotate(12deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:3/4.2;background:#EDEBE6;"><img loading="eager" decoding="async" src="assets/opt/2-bda72db6.webp" alt="Full Metal — bedside table styled" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
+        <div class="scCard" data-speed="0.25" data-drift="8" style="position:absolute;left:54%;top:0%;width:min(34vw,500px);border-radius:16px;overflow:hidden;transform:rotate(-14deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:16/10;background:#EDEBE6;"><img loading="eager" decoding="async" src="assets/opt/1.webp" alt="Full Metal — exploded construction" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
+        <div class="scCard" data-speed="-0.2" data-drift="-9" style="position:absolute;left:75%;top:40%;width:min(28vw,400px);border-radius:16px;overflow:hidden;transform:rotate(9deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:4/3;background:#EDEBE6;"><img loading="eager" decoding="async" src="assets/opt/1-32fc7d14.webp" alt="Full Metal — sheet metal form" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
+        <div class="scCard" data-speed="0.6" data-drift="12" style="position:absolute;left:-4%;top:56%;width:min(30vw,440px);border-radius:16px;overflow:hidden;transform:rotate(18deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:16/10;background:#EDEBE6;"><img loading="eager" decoding="async" src="assets/opt/2.webp" alt="Full Metal — styled in situ" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
+        <div class="scCard" data-speed="0.35" data-drift="-7" style="position:absolute;left:26%;top:74%;width:min(32vw,470px);border-radius:16px;overflow:hidden;transform:rotate(-9deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:16/10;background:#EDEBE6;"><img loading="eager" decoding="async" src="assets/opt/1-59a62268.webp" alt="Full Metal — colour variant" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
+        <div class="scCard" data-speed="-0.4" data-drift="6" style="position:absolute;left:62%;top:80%;width:min(26vw,370px);border-radius:16px;overflow:hidden;transform:rotate(6deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:4/3;background:#EDEBE6;"><img loading="eager" decoding="async" src="assets/opt/2-d309b8d3.webp" alt="Full Metal — styled in situ" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
+      </div>
+    </section>
+
+    <section data-stage-wrap data-screen-label="Project 2" style="height:280vh;position:relative;">
+      <div style="position:sticky;top:0;height:100vh;overflow:clip;">
+        <div class="scCard" data-speed="0.45" data-drift="8" style="position:absolute;left:70%;top:-8%;width:min(28vw,400px);border-radius:16px;overflow:hidden;transform:rotate(-12deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:3/4.2;background:#EDEBE6;"><img loading="eager" decoding="async" src="assets/opt/ABSTRACT-1.webp" alt="XOOX — hero abstract" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
+        <div class="scCard" data-speed="0.25" data-drift="-8" style="position:absolute;left:10%;top:2%;width:min(34vw,500px);border-radius:16px;overflow:hidden;transform:rotate(11deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:16/10;background:#EDEBE6;"><img loading="eager" decoding="async" src="assets/opt/Drone-flying.webp" alt="XOOX — flying" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
+        <div class="scCard" data-speed="-0.25" data-drift="9" style="position:absolute;left:2%;top:44%;width:min(28vw,400px);border-radius:16px;overflow:hidden;transform:rotate(-8deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:4/3;background:#EDEBE6;"><img loading="eager" decoding="async" src="assets/opt/Hero-shot-2.webp" alt="XOOX — top view" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
+        <div class="scCard" data-speed="0.55" data-drift="-11" style="position:absolute;left:76%;top:52%;width:min(30vw,440px);border-radius:16px;overflow:hidden;transform:rotate(-16deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:16/10;background:#EDEBE6;"><img loading="eager" decoding="async" src="assets/opt/Top-ortho.webp" alt="XOOX — top ortho" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
+        <div class="scCard" data-speed="0.35" data-drift="7" style="position:absolute;left:38%;top:76%;width:min(32vw,470px);border-radius:16px;overflow:hidden;transform:rotate(8deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:16/10;background:#EDEBE6;"><img loading="eager" decoding="async" src="assets/opt/label.webp" alt="XOOX — label detail" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
+        <div class="scCard" data-speed="-0.35" data-drift="7" style="position:absolute;left:42%;top:-12%;width:min(24vw,340px);border-radius:16px;overflow:hidden;transform:rotate(-6deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:1/1;background:#EDEBE6;"><img loading="eager" decoding="async" src="assets/opt/propeller.webp" alt="XOOX — propeller detail" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
+        <div class="scCard" data-speed="0.5" data-drift="-9" style="position:absolute;left:12%;top:74%;width:min(22vw,320px);border-radius:16px;overflow:hidden;transform:rotate(12deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:1/1;background:#EDEBE6;"><img loading="eager" decoding="async" src="assets/opt/Button.webp" alt="XOOX — power button" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
+        <div class="scCard" data-speed="0.3" data-drift="8" style="position:absolute;left:72%;top:82%;width:min(24vw,340px);border-radius:16px;overflow:hidden;transform:rotate(-11deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:1/1;background:#EDEBE6;"><img loading="eager" decoding="async" src="assets/opt/camera-detail.webp" alt="XOOX — camera detail" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
+      </div>
+    </section>
+
+    <section data-stage-wrap data-screen-label="Project 3" style="height:280vh;position:relative;">
+      <div style="position:sticky;top:0;height:100vh;overflow:clip;">
+        <div class="scCard" data-speed="0.5" data-drift="-7" style="position:absolute;left:8%;top:-6%;width:min(34vw,500px);border-radius:16px;overflow:hidden;transform:rotate(-13deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:16/10;background:#EDEBE6;"><img loading="eager" decoding="async" src="assets/opt/pasted-1784650943592-0.webp" alt="Snapin Select technical drawing" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
+        <div class="scCard" data-speed="0.3" data-drift="9" style="position:absolute;left:64%;top:4%;width:min(28vw,400px);border-radius:16px;overflow:hidden;transform:rotate(10deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:3/4.2;background:#EDEBE6;"><img loading="eager" decoding="async" src="assets/opt/3.webp" alt="Snapin Select dome display" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
+        <div class="scCard" data-speed="-0.3" data-drift="-8" style="position:absolute;left:0%;top:52%;width:min(30vw,440px);border-radius:16px;overflow:hidden;transform:rotate(14deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:3/4.2;background:#EDEBE6;"><img loading="eager" decoding="async" src="assets/opt/4.webp" alt="Snapin Select dome display" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
+        <div class="scCard" data-speed="0.55" data-drift="8" style="position:absolute;left:72%;top:64%;width:min(28vw,400px);border-radius:16px;overflow:hidden;transform:rotate(-9deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:3/4.2;background:#EDEBE6;"><img loading="eager" decoding="async" src="assets/opt/Shelf-closeup_1.webp" alt="Snapin Select shelf detail" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
+        <div class="scCard" data-speed="0.35" data-drift="-6" style="position:absolute;left:32%;top:78%;width:min(32vw,470px);border-radius:16px;overflow:hidden;transform:rotate(7deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:3/4;background:#EDEBE6;"><img loading="eager" decoding="async" src="assets/opt/IMG-20251118-WA0005.webp" alt="Snapin Select material sample" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
+        <div class="scCard" data-speed="-0.4" data-drift="7" style="position:absolute;left:40%;top:-14%;width:min(20vw,280px);border-radius:16px;overflow:hidden;transform:rotate(-6deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:9/16;background:#EDEBE6;"><img loading="eager" decoding="async" src="uploads/VID-20251118-WA0004-ezgif.com-optimize.gif" alt="Snapin Select installation in situ" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
+      </div>
+    </section>
+
+    <section data-stage-wrap data-screen-label="Project 4" style="height:280vh;position:relative;">
+      <div style="position:sticky;top:0;height:100vh;overflow:clip;">
+        <div class="scCard" data-speed="0.5" data-drift="-7" style="position:absolute;left:6%;top:-8%;width:min(38vw,560px);border-radius:16px;overflow:hidden;transform:rotate(10deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:16/10;background:#EDEBE6;"><img loading="eager" decoding="async" src="assets/opt/render_1.webp" alt="Nothing Phone 3a CE — hero with robot insect" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
+        <div class="scCard" data-speed="0.28" data-drift="9" style="position:absolute;left:62%;top:2%;width:min(30vw,440px);border-radius:16px;overflow:hidden;transform:rotate(-9deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:16/9;background:#EDEBE6;"><img loading="eager" decoding="async" src="assets/opt/render_2.webp" alt="Nothing Phone 3a CE — angled back" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
+        <div class="scCard" data-speed="-0.3" data-drift="-8" style="position:absolute;left:2%;top:50%;width:min(30vw,440px);border-radius:16px;overflow:hidden;transform:rotate(10deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:16/9;background:#EDEBE6;"><img loading="eager" decoding="async" src="assets/opt/render_3.webp" alt="Nothing Phone 3a CE — back detail" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
+        <div class="scCard" data-speed="0.4" data-drift="7" style="position:absolute;left:52%;top:70%;width:min(32vw,470px);border-radius:16px;overflow:hidden;transform:rotate(-9deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:16/9;background:#EDEBE6;"><img loading="eager" decoding="async" src="assets/opt/render_4.webp" alt="Nothing Phone 3a CE — colorway" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
+      </div>
+    </section>
+
+    <section data-stage-wrap data-screen-label="Project 5" style="height:280vh;position:relative;">
+      <div style="position:sticky;top:0;height:100vh;overflow:clip;">
+        <div class="scCard" data-speed="0.5" data-drift="-7" style="position:absolute;left:8%;top:-8%;width:min(30vw,440px);border-radius:16px;overflow:hidden;transform:rotate(10deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:1/1;background:#EDEBE6;"><img loading="eager" decoding="async" src="assets/opt/1-44fcc8b3.webp" alt="Praan HIVE hub — wall-mounted AQI display" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
+        <div class="scCard" data-speed="0.28" data-drift="9" style="position:absolute;left:60%;top:0%;width:min(36vw,520px);border-radius:16px;overflow:hidden;transform:rotate(-9deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:16/9;background:#EDEBE6;"><img loading="eager" decoding="async" src="assets/opt/2-8816bc2f.webp" alt="Praan HIVE hub — concept sketch" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
+        <div class="scCard" data-speed="-0.3" data-drift="-8" style="position:absolute;left:2%;top:52%;width:min(30vw,440px);border-radius:16px;overflow:hidden;transform:rotate(10deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:1/1;background:#EDEBE6;"><img loading="eager" decoding="async" src="assets/opt/3-c0355db5.webp" alt="Praan HIVE hub — product render" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
+        <div class="scCard" data-speed="0.4" data-drift="7" style="position:absolute;left:56%;top:72%;width:min(30vw,440px);border-radius:16px;overflow:hidden;transform:rotate(-9deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:4/3;background:#EDEBE6;"><img loading="eager" decoding="async" src="assets/opt/Screenshot-2025-04-02-144133.webp" alt="Praan HIVE hub — on dock" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
+      </div>
+    </section>
+
+    <section data-stage-wrap data-screen-label="Project 6" style="height:300vh;position:relative;">
+      <div style="position:sticky;top:0;height:100vh;overflow:clip;">
+        <div class="scCard" data-speed="0.5" data-drift="-7" style="position:absolute;left:7%;top:-8%;width:min(28vw,400px);border-radius:16px;overflow:hidden;transform:rotate(9deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:1/1;background:#EDEBE6;"><img loading="eager" decoding="async" src="assets/opt/Minimal_straight.webp" alt="Artime — minimal face" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
+        <div class="scCard" data-speed="0.28" data-drift="9" style="position:absolute;left:60%;top:-2%;width:min(26vw,380px);border-radius:16px;overflow:hidden;transform:rotate(-8deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:1/1;background:#EDEBE6;"><img loading="eager" decoding="async" src="assets/opt/Lightbox_perspective.webp" alt="Artime — lightbox perspective" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
+        <div class="scCard" data-speed="-0.28" data-drift="-8" style="position:absolute;left:2%;top:30%;width:min(24vw,350px);border-radius:16px;overflow:hidden;transform:rotate(9deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:1/1;background:#EDEBE6;"><img loading="eager" decoding="async" src="assets/opt/Puffed_perspective.webp" alt="Artime — puffed perspective" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
+        <div class="scCard" data-speed="0.55" data-drift="8" style="position:absolute;left:72%;top:34%;width:min(24vw,350px);border-radius:16px;overflow:hidden;transform:rotate(-8deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:1/1;background:#EDEBE6;"><img loading="eager" decoding="async" src="assets/opt/Puffed_straight.webp" alt="Artime — puffed face" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
+        <div class="scCard" data-speed="0.32" data-drift="-6" style="position:absolute;left:30%;top:54%;width:min(26vw,380px);border-radius:16px;overflow:hidden;transform:rotate(9deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:1/1;background:#EDEBE6;"><img loading="eager" decoding="async" src="assets/opt/Lightbox_3d-render.webp" alt="Artime — lightbox render" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
+        <div class="scCard" data-speed="-0.35" data-drift="7" style="position:absolute;left:1%;top:70%;width:min(24vw,350px);border-radius:16px;overflow:hidden;transform:rotate(-8deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:1/1;background:#EDEBE6;"><img loading="eager" decoding="async" src="assets/opt/Minimal-LED_perspective.webp" alt="Artime — LED perspective" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
+        <div class="scCard" data-speed="0.45" data-drift="-9" style="position:absolute;left:56%;top:72%;width:min(26vw,380px);border-radius:16px;overflow:hidden;transform:rotate(9deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:1/1;background:#EDEBE6;"><img loading="eager" decoding="async" src="assets/opt/Lightbox_straight.webp" alt="Artime — lightbox lit" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
+        <div class="scCard" data-speed="0.3" data-drift="8" style="position:absolute;left:32%;top:-14%;width:min(22vw,320px);border-radius:16px;overflow:hidden;transform:rotate(-8deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:1/1;background:#EDEBE6;"><img loading="eager" decoding="async" src="assets/opt/Minimal-LED_3d-render.webp" alt="Artime — LED render" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
+      </div>
+    </section>
+
+    <section data-outro data-screen-label="Outro" style="height:150vh;position:relative;">
+      <div style="position:sticky;top:0;height:100vh;overflow:clip;"></div>
+    </section>
+
+  </main>
+
+  <div ref="{{ titleRef }}" style="position:fixed;left:50%;top:50%;z-index:1;width:min(34vw,460px);background:rgba(255,255,255,.08);backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4);border:1px solid rgba(255,255,255,.35);border-radius:16px;padding:clamp(24px,3vw,48px) clamp(20px,2.6vw,40px);box-shadow:0 30px 80px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.4);pointer-events:none;opacity:0;transform:translate(-50%,-50%) translateY(-120vh) rotate(-14deg);transition:transform 1.6s cubic-bezier(.3,1.25,.45,1),opacity .8s ease;will-change:transform;">
+    <div data-inner style="transition:opacity .18s ease,transform .18s ease;">
+      <div data-pill style="display:inline-block;background:var(--red);color:#fff;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.08em;padding:6px 14px;border-radius:100px;margin-bottom:14px;">01</div>
+      <div data-name style="font-family:'Archivo',sans-serif;font-weight:600;font-size:clamp(28px,3.6vw,52px);line-height:1;letter-spacing:-.02em;color:#fff;">Full Metal</div>
+      <div data-desc style="font-weight:600;font-size:clamp(12px,1.15vw,15px);line-height:1.35;color:rgba(255,255,255,.6);margin-top:12px;text-wrap:pretty;">Bedside tables made entirely from sheet-metal construction.</div>
+    </div>
+    <div data-cta style="display:none;text-align:center;">
+      <div style="display:flex;align-items:center;justify-content:center;gap:clamp(14px,1.6vw,22px);">
+        <div data-eyes style="display:flex;gap:clamp(3px,.4vw,6px);">
+          <div data-eye style="position:relative;width:clamp(34px,4.4vw,62px);height:clamp(46px,6vw,84px);border-radius:9999px;background:#fff;">
+            <div data-pupil style="position:absolute;left:50%;top:34%;width:52%;height:52%;margin-left:-26%;margin-top:-26%;border-radius:9999px;background:#0E0E0E;will-change:transform;">
+              <div style="position:absolute;left:52%;top:14%;width:34%;aspect-ratio:1;border-radius:50%;background:#fff;"></div>
+            </div>
+          </div>
+          <div data-eye style="position:relative;width:clamp(34px,4.4vw,62px);height:clamp(46px,6vw,84px);border-radius:9999px;background:#fff;">
+            <div data-pupil style="position:absolute;left:50%;top:34%;width:52%;height:52%;margin-left:-26%;margin-top:-26%;border-radius:9999px;background:#0E0E0E;will-change:transform;">
+              <div style="position:absolute;left:52%;top:14%;width:34%;aspect-ratio:1;border-radius:50%;background:#fff;"></div>
+            </div>
+          </div>
+        </div>
+        <div style="font-family:'Archivo',sans-serif;font-weight:600;font-size:clamp(40px,6vw,86px);line-height:1;letter-spacing:.02em;color:#fff;">→</div>
+      </div>
+      <div style="font-weight:700;font-size:clamp(11px,1vw,13px);text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.6);margin-top:16px;">See more on Instagram</div>
+    </div>
+  </div>
+
+  <footer style="padding:24px clamp(16px,3vw,40px) 40px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.18);position:relative;z-index:5;background:#0E0E0E;">
+    <span style="font-size:13px;opacity:.6;font-weight:600;text-transform:uppercase;letter-spacing:.06em;">Ritwiz Sharma — Industrial Designer</span>
+    <div style="display:flex;gap:18px;flex-wrap:wrap;">
+      <a href="mailto:ritwizsharma1@gmail.com?subject=Ritwiz%2C%20work%20with%20me!" style="color:#F7F5F0;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.06em;text-decoration:none;" style-hover="opacity:.55">Email</a>
+      <a href="https://www.behance.net/ritwizsharma" target="_blank" rel="noopener" style="color:#F7F5F0;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.06em;text-decoration:none;" style-hover="opacity:.55">Behance</a>
+      <a href="https://www.linkedin.com/in/ritwizsharma/" target="_blank" rel="noopener" style="color:#F7F5F0;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.06em;text-decoration:none;" style-hover="opacity:.55">LinkedIn</a>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  constructor(props){
+    super(props);
+    this.mainRef = React.createRef();
+    this.titleRef = React.createRef();
+    this.loaderRef = React.createRef();
+    this.barRef = React.createRef();
+    this.pctRef = React.createRef();
+  }
+  componentDidMount(){
+    this._preload();
+    try{ this._mount(); }catch(e){ console.log('MOUNT-ERR', e && e.message, e && e.stack); }
+    try{ this._eyes(); }catch(e){ console.log('EYES-ERR', e && e.message); }
+  }
+  _preload(){
+    const loader = this.loaderRef.current;
+    const bar = this.barRef.current;
+    const pct = this.pctRef.current;
+    const imgs = [...this.mainRef.current.querySelectorAll('img')];
+    const total = imgs.length || 1;
+    let done = 0, finished = false;
+    const set = () => {
+      const p = Math.round(done/total*100);
+      if(bar) bar.style.width = p + '%';
+      if(pct) pct.textContent = 'Loading ' + p + '%';
+    };
+    const hide = () => {
+      if(finished) return; finished = true;
+      set();
+      if(!loader) return;
+      loader.style.opacity = '0';
+      setTimeout(()=>{ loader.style.display = 'none'; }, 650);
+    };
+    const tick = () => { done++; set(); if(done >= total) hide(); };
+    imgs.forEach(img=>{
+      if(img.complete && img.naturalWidth > 0){ tick(); return; }
+      img.addEventListener('load', tick, {once:true});
+      img.addEventListener('error', tick, {once:true});
+    });
+    set();
+    setTimeout(hide, 12000); // safety fallback
+  }
+  _mount(){
+    const main = this.mainRef.current;
+    main.querySelectorAll('video').forEach(v=>{ v.muted = true; const p = v.play(); if(p&&p.catch) p.catch(()=>{}); });
+    if(matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const wraps = [...main.querySelectorAll('[data-stage-wrap]')].map(w=>({
+      el: w,
+      cards: [...w.querySelectorAll('.scCard')].map(c=>({
+        el: c,
+        speed: parseFloat(c.dataset.speed),
+        drift: parseFloat(c.dataset.drift),
+        base: (c.style.transform.match(/rotate\(([-\d.]+)deg\)/)||[0,0])[1]*1
+      }))
+    }));
+    const outro = main.querySelector('[data-outro]');
+    const wrap = main.parentElement;
+    wrap.style.transition = 'background .7s ease';
+    const title = this.titleRef.current;
+    const inner = title.querySelector('[data-inner]');
+    const cta = title.querySelector('[data-cta]');
+    const pill = title.querySelector('[data-pill]');
+    const nameEl = title.querySelector('[data-name]');
+    const descEl = title.querySelector('[data-desc]');
+    title.addEventListener('click', ()=>{ if(title.dataset.cta==='1') window.open('https://www.instagram.com/ritwiz.sharma/','_blank','noopener'); });
+    const projects = [
+      {n:'01', name:'Full Metal',    desc:'Bedside tables made entirely from sheet-metal construction.', color:'var(--red)',   rot:-7},
+      {n:'02', name:'XOOX', desc:'A children\'s drone designed for the leManoosh competition — Finalist.',                              color:'var(--blue)',  rot:6},
+      {n:'03', name:'Snapin’ Select FSU', desc:'A retail installation showcasing Snapin’s newest premium collection of salts and spices.',                              color:'var(--green)', rot:-5},
+      {n:'04', name:'Nothing Phone 3a — Community Edition', desc:'A dream of robot insects — a colorway raising awareness of the dwindling insect population worldwide.', color:'var(--orange)', rot:6},
+      {n:'05', name:'Praan HIVE Hub', desc:'A concept remote hub for Praan air purifiers, contrasting indoor and outdoor air quality alongside other essentials.', color:'var(--purple)', rot:-6},
+      {n:'06', name:'Artime', desc:'A concept line of clocks made with additive manufacturing and Tyvek.', color:'var(--teal)', rot:5}
+    ];
+    let active = -1, swapT = null;
+    const setContent = i => {
+      pill.textContent = projects[i].n; pill.style.background = projects[i].color;
+      nameEl.textContent = projects[i].name; descEl.textContent = projects[i].desc;
+    };
+    const showCard = i => { title.style.opacity = 1; title.style.transform = `translate(-50%,-50%) rotate(${projects[i].rot}deg)`; };
+    const hideCard = up => { title.style.opacity = 0; title.style.transform = `translate(-50%,-50%) translateY(${up?'-120vh':'70vh'}) rotate(${up?-14:10}deg)`; };
+    const enterCTA = () => {
+      title.dataset.cta = '1';
+      inner.style.opacity = 0; inner.style.transform = 'translateY(18px)';
+      clearTimeout(swapT);
+      swapT = setTimeout(()=>{
+        inner.style.display = 'none';
+        cta.style.display = 'block';
+        cta.style.transition = 'none'; cta.style.opacity = 0; cta.style.transform = 'translateY(-14px)';
+        void cta.offsetWidth;
+        cta.style.transition = 'opacity .3s ease, transform .4s cubic-bezier(.4,0,.6,1)';
+        cta.style.opacity = 1; cta.style.transform = 'none';
+      }, 220);
+      title.style.opacity = 1;
+      title.style.transform = 'translate(-50%,-50%) translateY(6vh) rotate(0deg)';
+      title.style.pointerEvents = 'auto'; title.style.cursor = 'pointer';
+      wrap.style.background = '#000';
+    };
+    const exitCTA = () => {
+      title.dataset.cta = '';
+      cta.style.display = 'none';
+      inner.style.display = '';
+      inner.style.opacity = 1; inner.style.transform = 'none';
+      title.style.pointerEvents = 'none'; title.style.cursor = '';
+      wrap.style.background = '';
+    };
+    let ticking = false;
+    const update = () => {
+      ticking = false;
+      const vh = innerHeight;
+      const mid = vh*0.5;
+      let idx = wraps.findIndex(w=>{ const r = w.el.getBoundingClientRect(); return r.top <= mid && r.bottom > mid; });
+      if(idx === -1 && outro.getBoundingClientRect().top <= mid) idx = 6;
+      if(idx !== active){
+        const wasCTA = active === 6;
+        if(idx === 6){
+          enterCTA();
+        } else if(idx === -1){
+          if(wasCTA) exitCTA();
+          hideCard(wraps[0].el.getBoundingClientRect().top > mid);
+        } else if(active === -1 || wasCTA){
+          if(wasCTA) exitCTA();
+          clearTimeout(swapT);
+          setContent(idx);
+          showCard(idx);
+        } else {
+          const i = idx;
+          showCard(i);   // wobble to the new base tilt
+          inner.style.opacity = 0; inner.style.transform = 'translateY(18px)';
+          clearTimeout(swapT);
+          swapT = setTimeout(()=>{
+            setContent(i);
+            inner.style.transition = 'none';
+            inner.style.transform = 'translateY(-16px)';
+            void inner.offsetWidth;
+            inner.style.transition = 'opacity .28s ease, transform .34s cubic-bezier(.4,0,.6,1)';
+            inner.style.opacity = 1; inner.style.transform = 'none';
+          }, 180);
+        }
+        active = idx;
+      }
+      wraps.forEach(w=>{
+        const r = w.el.getBoundingClientRect();
+        if(r.bottom < -vh || r.top > vh*2) return;      // far offscreen, skip
+        const span = r.height - vh;
+        const p = Math.min(1.25, Math.max(-0.25, -r.top / span));
+        const off = 0.5 - p;                             // +early → -late
+        w.cards.forEach(c=>{
+          const y = off * c.speed * vh * 1.6;
+          const rot = c.base + off * c.drift;
+          c.el.style.transform = `translate3d(0, ${y}px, 0) rotate(${rot}deg)`;
+        });
+      });
+    };
+    const onScroll = () => { if(!ticking){ ticking = true; requestAnimationFrame(update); setTimeout(update, 50); } };
+    addEventListener('scroll', onScroll, {passive:true});
+    addEventListener('resize', onScroll);
+    update();
+    this._cleanup = () => { removeEventListener('scroll', onScroll); removeEventListener('resize', onScroll); };
+  }
+  _eyes(){
+    const title = this.titleRef.current; if(!title) return;
+    const eyes = [...title.querySelectorAll('[data-eye]')];
+    if(!eyes.length) return;
+    let mx = innerWidth/2, my = innerHeight/2, raf = null;
+    const tick = () => {
+      raf = null;
+      eyes.forEach(eye => {
+        const p = eye.querySelector('[data-pupil]');
+        const r = eye.getBoundingClientRect();
+        if(!r.width) return;
+        const cx = r.left + r.width/2, cy = r.top + r.height*0.34;
+        const a = Math.atan2(my - cy, mx - cx);
+        const d = Math.min(1, Math.hypot(mx - cx, my - cy) / (r.width * 2.6));
+        const rx = r.width * 0.2 * d, ry = r.height * 0.13 * d;
+        p.style.transform = 'translate(' + (Math.cos(a)*rx).toFixed(2) + 'px,' + (Math.sin(a)*ry).toFixed(2) + 'px)';
+      });
+    };
+    const onMove = e => { mx = e.clientX; my = e.clientY; if(!raf) raf = requestAnimationFrame(tick); };
+    addEventListener('mousemove', onMove, {passive:true});
+    addEventListener('scroll', () => { if(!raf) raf = requestAnimationFrame(tick); }, {passive:true});
+    tick();
+    this._eyesOff = () => { removeEventListener('mousemove', onMove); if(raf) cancelAnimationFrame(raf); };
+  }
+  componentWillUnmount(){ if(this._cleanup) this._cleanup(); if(this._eyesOff) this._eyesOff(); }
+  renderVals(){
+    return { mainRef: this.mainRef, titleRef: this.titleRef, loaderRef: this.loaderRef, barRef: this.barRef, pctRef: this.pctRef };
+  }
+}
+</script>
+</body>
+</html>
