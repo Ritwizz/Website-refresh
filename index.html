@@ -52,7 +52,7 @@ html[data-rwtheme="dark"] .rwHome .cloud .block,html[data-rwtheme="dark"] .rwHom
   --dur-fast:85ms;--dur-base:200ms;
 }
 .rwHome #stage.cloud .grid{height:100%;display:flex;flex-wrap:wrap;align-content:center;justify-content:center;gap:clamp(8px,1.2vw,16px);max-width:1100px;margin:0 auto;}
-.rwHome #stage.list .grid{height:100%;display:grid;grid-template-columns:fit-content(38%) minmax(0,1fr) auto;align-content:start;row-gap:clamp(6px,.9vh,10px);column-gap:clamp(10px,1.6vw,24px);}
+.rwHome #stage.list .grid{height:100%;display:grid;grid-template-columns:fit-content(38%) minmax(0,1fr) auto;align-content:start;row-gap:clamp(4px,.62vh,8px);column-gap:clamp(10px,1.6vw,24px);}
 .rwHome .block{display:flex;align-items:center;border-radius:var(--r-block);color:#fff;text-decoration:none;will-change:transform;transform-origin:center center;}
 
 .rwHome .cloud .block{background:#131313 !important;color:#fff !important;justify-content:center;padding:clamp(8px,1.2vw,17px) clamp(13px,2vw,28px);border-radius:clamp(10px,1.5vw,18px) !important;}
@@ -70,10 +70,12 @@ html[data-rwtheme="dark"] .rwHome .cloud .block.cf3{background:#17B26A !importan
 .rwHome .cloud .cbreak{flex:0 0 100%;height:0;margin:0}
 .rwHome .list .cbreak{display:none}
 .rwHome .cloud .clabel{display:none}
-.rwHome .list .clabel{grid-column:1/-1;font-family:var(--font);font-weight:600;font-size:clamp(10px,1.35vh,13px);line-height:1;text-transform:uppercase;letter-spacing:.14em;color:var(--pg-ink);opacity:.42;padding:0 0 clamp(6px,1vh,10px)}
-.rwHome .list .clabel.later{padding-top:clamp(16px,2.6vh,34px)}
-.rwHome .list .block{position:relative;flex:0 0 auto;min-height:0;display:grid;grid-column:1/-1;grid-template-columns:subgrid;align-items:center;gap:clamp(10px,1.6vw,24px);border-radius:0;padding:clamp(8px,1.3vh,18px) 0 clamp(10px,1.6vh,22px);background:transparent !important;color:var(--pill) !important;}
-.rwHome #stage.list{background:var(--pg-card);padding-top:clamp(96px,12vh,152px) !important}
+.rwHome .list .clabel{grid-column:1/-1;font-family:var(--font);font-weight:600;font-size:clamp(10px,1.35vh,13px);line-height:1;text-transform:uppercase;letter-spacing:.14em;color:var(--pg-ink);opacity:.42;padding:0 0 clamp(4px,.7vh,8px)}
+.rwHome .list .clabel.later{padding-top:clamp(12px,1.9vh,26px)}
+.rwHome .list .block{position:relative;flex:0 0 auto;min-height:0;display:grid;grid-column:1/-1;grid-template-columns:subgrid;align-items:center;gap:clamp(10px,1.6vw,24px);border-radius:0;padding:clamp(5px,.95vh,15px) 0 clamp(6px,1.16vh,18px);background:transparent !important;color:var(--pill) !important;}
+html:has(#stage.list),html:has(#stage.list) body{background:var(--pg-card)}
+.rwHome:has(#stage.list){background:var(--pg-card)}
+.rwHome #stage.list{background:var(--pg-card);padding-top:clamp(76px,9.6vh,124px) !important}
 .rwHome .list .block.gone{display:none}
 .rwHome .list .word{display:none}
 .rwHome .list .proj{justify-self:start;max-width:100%;font-family:var(--font);font-weight:700;font-size:clamp(13px,2.1vh,32px);line-height:1.15;letter-spacing:0;text-transform:uppercase;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;background:var(--pill);color:#fff;border-radius:var(--r-pill);padding:.32em .82em;}
@@ -105,10 +107,10 @@ html[data-rwtheme="dark"] .rwHome .list .tag{background:rgba(237,233,228,.08)}
 }
 /* rows must never be shorter than their pills, or the hairline draws through them */
 .rwHome #stage.list .grid{grid-auto-rows:min-content}
-@media (min-width:861px) and (max-height:780px){
+@media (min-width:861px){
   html:has(#stage.list),body:has(#stage.list){overflow-y:auto !important;height:auto !important}
   .rwHome:has(#stage.list){overflow-y:auto !important;overflow-x:hidden !important;height:auto !important;min-height:100% !important;-webkit-overflow-scrolling:touch}
-  .rwHome #stage.list{position:relative !important;inset:auto !important;height:auto !important;min-height:100%;padding-bottom:clamp(24px,5vh,48px) !important}
+  .rwHome #stage.list{position:relative !important;inset:auto !important;height:auto !important;min-height:100%;box-sizing:border-box;padding-bottom:clamp(8px,1.2vh,16px) !important}
   .rwHome #stage.list .grid{height:auto}
 }
 @media (hover:hover) and (min-width:861px){
@@ -126,8 +128,8 @@ html[data-rwtheme="dark"] .rwHome .list .tag{background:rgba(237,233,228,.08)}
 }
 .rwHome .list .block:focus-visible{outline:2px solid #2E6BFF;outline-offset:2px}
 .rwHome .cloud .credits{display:none}
-.rwHome .list .credits{flex:0 0 auto;display:grid;grid-column:1/-1;grid-template-columns:subgrid;row-gap:0;margin-top:clamp(14px,2.4vh,34px);background:var(--pg-card)}
-.rwHome .list .crow{position:relative;display:grid;grid-column:1/-1;grid-template-columns:subgrid;align-items:center;gap:clamp(10px,1.6vw,24px);padding:clamp(8px,1.3vh,18px) 0 clamp(10px,1.6vh,22px);color:var(--pill-mute);cursor:default}
+.rwHome .list .credits{flex:0 0 auto;display:grid;grid-column:1/-1;grid-template-columns:subgrid;row-gap:0;margin-top:clamp(10px,1.6vh,24px);background:var(--pg-card)}
+.rwHome .list .crow{position:relative;display:grid;grid-column:1/-1;grid-template-columns:subgrid;align-items:center;gap:clamp(10px,1.6vw,24px);padding:clamp(5px,.95vh,15px) 0 clamp(6px,1.16vh,18px);color:var(--pill-mute);cursor:default}
 .rwHome .list .ctext{justify-self:start;max-width:100%;font-family:var(--font);font-weight:700;font-size:clamp(13px,2.1vh,32px);line-height:1.15;text-transform:uppercase;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;background:var(--pill-mute);color:#131313;border-radius:var(--r-pill);padding:.32em .82em;}
 .rwHome .list .crow .right{gap:clamp(6px,.7vw,12px);flex-wrap:wrap}
 .rwHome .list .crow .tag{background:var(--pill-mute);color:#131313}
@@ -229,7 +231,7 @@ function sched(){if(!pending){pending=true;requestAnimationFrame(tick);}}
 addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;paint();sched();},{passive:true});
 sched();})();</script>
 </helmet>
-<div class="rwHome" style="position:relative;height:100vh;width:100vw;overflow:hidden;background:var(--pg-bg);color:var(--pg-ink);font-family:var(--font);">
+<div class="rwHome" style="position:relative;height:100vh;width:100%;overflow:hidden;background:var(--pg-bg);color:var(--pg-ink);font-family:var(--font);">
   <div class="rwIntro cloud" ref="{{ introRef }}" style="position:fixed;inset:0;z-index:25;pointer-events:none;">
     <span class="block cf0 rwMorph" style="position:fixed;box-sizing:border-box;overflow:hidden;opacity:0;"><span class="word rwMName" style="display:inline-block;white-space:nowrap;overflow:hidden;">Ritwiz Sharma</span></span>
   </div>
