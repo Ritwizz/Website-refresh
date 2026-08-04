@@ -9,19 +9,11 @@
 <body>
 <x-dc>
 <helmet>
-<script>(function(){var k='rwTheme';var d=document.documentElement;
-function paint(){var dark=d.dataset.rwtheme==='dark';document.querySelectorAll('[data-theme-toggle]').forEach(function(b){b.textContent=dark?'\u25D1':'\u25D0';b.setAttribute('aria-pressed',dark);});}
-if(!d.dataset.rwtheme){var t=null;try{t=localStorage.getItem(k)}catch(e){}d.dataset.rwtheme=t||'dark';}
-window.rwSetTheme=function(n){d.dataset.rwtheme=n;try{localStorage.setItem(k,n)}catch(e){}paint();};
-window.rwPaintTheme=paint;
-if(!window.__rwThemeBound){window.__rwThemeBound=1;
-document.addEventListener('click',function(e){var b=e.target&&e.target.closest&&e.target.closest('[data-theme-toggle]');if(!b)return;window.rwSetTheme(d.dataset.rwtheme==='dark'?'light':'dark');});
-document.addEventListener('DOMContentLoaded',paint);}
-setTimeout(paint,0);})();</script>
+<script>document.documentElement.dataset.rwtheme='dark';</script>
 <script>(function(){var d=document.documentElement,AK='rwAccent';
-var A={violet:['#9B8CFF','#B3A7FF'],mint:['#8FD694','#A9E5AD'],clay:['#F09070','#F7A98D']};
+var A={violet:['#2E6BFF','#5C8AFF'],mint:['#8FD694','#A9E5AD'],clay:['#F09070','#F7A98D']};
 function apply(n,save){var v=A[n]||A.violet;d.style.setProperty('--pill',v[0]);d.style.setProperty('--pill-hi',v[1]);d.dataset.rwaccent=A[n]?n:'violet';if(save){try{localStorage.setItem(AK,d.dataset.rwaccent)}catch(e){}}}
-var saved=null;try{saved=localStorage.getItem(AK)}catch(e){}apply(saved||'violet',false);
+apply('violet',false);
 function paint(){var dark=d.dataset.rwtheme==='dark';
  document.querySelectorAll('[data-set-theme]').forEach(function(b){b.classList.toggle('on',b.getAttribute('data-set-theme')===(dark?'dark':'light'))});
  document.querySelectorAll('[data-accent]').forEach(function(b){b.classList.toggle('on',b.getAttribute('data-accent')===d.dataset.rwaccent)});}
@@ -34,17 +26,14 @@ if(!window.__rwCtlBound){window.__rwCtlBound=1;
  setInterval(function(){clock();paint()},1000);}
 setTimeout(function(){clock();paint()},0);
 document.addEventListener('DOMContentLoaded',function(){clock();paint()});})();</script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Archivo+Black&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
 <style>
+@font-face{font-family:'Overused Grotesk';src:url('https://cdn.jsdelivr.net/gh/RandomMaerks/Overused-Grotesk@main/fonts/variable/OverusedGrotesk-VF.woff2') format('woff2-variations'),url('https://cdn.jsdelivr.net/gh/RandomMaerks/Overused-Grotesk@main/fonts/variable/OverusedGrotesk-VF.ttf') format('truetype-variations');font-weight:300 900;font-display:swap;}
 :root{--pg-bg:#F7F5F0;--pg-ink:#131313;--pg-card:#fff;--pg-panel:#131313;--pg-panel-ink:#F7F5F0;--pg-hair:rgba(19,19,19,.12);--pg-hair2:rgba(19,19,19,.2);--pg-shadow:rgba(19,19,19,.16);}
-html[data-rwtheme="dark"]{--pg-bg:#0F0D0C;--pg-ink:#EDE9E4;--pg-card:#1A1716;--pg-panel:#241F1E;--pg-panel-ink:#EDE9E4;--pg-hair:rgba(237,233,228,.14);--pg-hair2:rgba(237,233,228,.26);--pg-shadow:rgba(0,0,0,.5);}
+html[data-rwtheme="dark"]{--pg-bg:#0F0D0C;--pg-ink:#EDE9E4;--pg-card:#1A1716;--pg-panel:#241F1E;--pg-panel-ink:#EDE9E4;--pg-hair:rgba(237,233,228,.16);--pg-hair2:rgba(237,233,228,.26);--pg-shadow:rgba(0,0,0,.5);}
 html[data-rwtheme="dark"] [style*="color: rgb(255, 255, 255)"],html[data-rwtheme="dark"] [style*="color:#fff"]{color:#131313 !important}
 html[data-rwtheme="dark"] [style*="--pg-panel)"]{color:var(--pg-panel-ink) !important}
 html[data-rwtheme="dark"] body{background:#0F0D0C}
-.rwThemeBtn{font:inherit;cursor:pointer;background:transparent;color:var(--pg-ink);border:1px solid var(--pg-hair2);border-radius:.7em;width:34px;height:34px;display:inline-flex;align-items:center;justify-content:center;font-size:14px;line-height:1;padding:0;transition:background 200ms ease-out,color 200ms ease-out;}
-.rwThemeBtn:hover{background:var(--pg-ink);color:var(--pg-bg)}
 
 body{margin:0}
 a{color:var(--pg-ink)}
@@ -69,48 +58,26 @@ html[data-rwtheme="dark"] .rwCtl{--ctl-bg:rgba(237,233,228,.10);--ctl-thumb:#EDE
 .rwCtl .rwTrack[style*="gap:8px"]{border-radius:14px}
 .rwClk{font-variant-numeric:tabular-nums}
 .rwClkLab{font-size:9.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;opacity:.5}
-.rwAccentPill{background:var(--pill);color:#131313}
+.rwAccentPill{background:var(--pill);color:#fff}
 .rwAccentPill:hover{background:var(--pill-hi)}
 @media (max-width:900px){.rwClkGrp{display:none}}
 @media (max-width:760px){.rwLab{display:none}.rwColGrp{display:none}
-.rwCtl{--font:'Archivo',sans-serif}
+.rwCtl{--font:'Overused Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Helvetica,Arial,sans-serif}
 @media (max-width:640px){.rwMqWrap{display:none}}
 </style>
 </helmet>
-<div style="--red:#FF4438;--blue:#2E6BFF;--yellow:#FFC700;--green:#17B26A;--purple:#7A3BFF;--orange:#FF7A00;--pink:#FF5CA8;--teal:#00B8C4;background:var(--pg-bg);color:var(--pg-ink);font-family:'Archivo',sans-serif;min-height:100vh;">
+<div style="--red:#FF4438;--blue:#2E6BFF;--yellow:#FFC700;--green:#17B26A;--purple:#7A3BFF;--orange:#FF7A00;--pink:#FF5CA8;--teal:#00B8C4;background:var(--pg-bg);color:var(--pg-ink);font-family:'Overused Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Helvetica,Arial,sans-serif;min-height:100vh;">
   <header class="rwCtl" style="position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;align-items:flex-end;gap:16px 24px;padding:18px clamp(16px,3vw,40px);background:var(--pg-bg);">
     <div class="rwMqWrap rwGrp" style="min-width:0;pointer-events:auto;">
       <span class="rwLab">Meanwhile</span>
-      <div style="box-sizing:border-box;width:clamp(230px,27vw,390px);max-width:100%;background:var(--ctl-bg);border-radius:13px;padding:9px 18px;overflow:hidden;">
+      <a href="index.html" aria-label="Back to home" style="box-sizing:border-box;display:block;text-decoration:none;color:inherit;cursor:pointer;width:clamp(230px,27vw,390px);max-width:100%;background:var(--ctl-bg);border-radius:13px;padding:9px 18px;overflow:hidden;">
         <div class="rwMqTrack" style="display:inline-flex;white-space:nowrap;">
           <span style="display:inline-flex;gap:36px;padding-right:36px;font-weight:600;font-size:13px;color:var(--pg-ink);align-items:center;"><span>Ritwiz is an industrial designer ✏️</span><span>Ritwiz is a cat dad 🐈</span><span>Ritwiz fights distractions 🤳</span><span>Ritwiz needs coffee every morning ☕</span><span>Ritwiz collects hotwheels 🚗</span><span>Ritwiz watches a lot of movies 🎥</span><span>Ritwiz is an audiophile 🎧</span><span>Ritwiz visits photography forums 📷</span><span>Ritwiz is a cinestill 800T fan 🎞️</span><span>Ritwiz loses in video games 🎮</span></span>
           <span style="display:inline-flex;gap:36px;padding-right:36px;font-weight:600;font-size:13px;color:var(--pg-ink);align-items:center;"><span>Ritwiz is an industrial designer ✏️</span><span>Ritwiz is a cat dad 🐈</span><span>Ritwiz fights distractions 🤳</span><span>Ritwiz needs coffee every morning ☕</span><span>Ritwiz collects hotwheels 🚗</span><span>Ritwiz watches a lot of movies 🎥</span><span>Ritwiz is an audiophile 🎧</span><span>Ritwiz visits photography forums 📷</span><span>Ritwiz is a cinestill 800T fan 🎞️</span><span>Ritwiz loses in video games 🎮</span></span>
         </div>
-      </div>
+      </a>
     </div>
     <nav style="display:flex;align-items:flex-end;gap:clamp(8px,1.1vw,14px);pointer-events:auto;">
-      <div class="rwGrp rwClkGrp">
-        <span class="rwLab">Time</span>
-        <div class="rwTrack">
-          <span class="rwSeg"><span class="rwClkLab">You</span><span class="rwClk" id="rwClkYou">--:--</span></span>
-          <span class="rwSeg on"><span class="rwClkLab">India</span><span class="rwClk" id="rwClkInd">--:--</span></span>
-        </div>
-      </div>
-      <div class="rwGrp">
-        <span class="rwLab">Theme</span>
-        <div class="rwTrack">
-          <button type="button" class="rwSeg btn" data-set-theme="light" aria-label="Light mode"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"></circle><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.4 5.4l1.6 1.6M17 17l1.6 1.6M18.6 5.4L17 7M7 17l-1.6 1.6"></path></svg></button>
-          <button type="button" class="rwSeg btn" data-set-theme="dark" aria-label="Dark mode"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20.2 14.6A8.6 8.6 0 1 1 9.4 3.8a6.9 6.9 0 0 0 10.8 10.8z"></path></svg></button>
-        </div>
-      </div>
-      <div class="rwGrp rwColGrp">
-        <span class="rwLab">Colour</span>
-        <div class="rwTrack" style="gap:8px;padding:5px 8px;">
-          <button type="button" class="rwDot" data-accent="violet" aria-label="Violet accent" style="background:#9B8CFF;"></button>
-          <button type="button" class="rwDot" data-accent="mint" aria-label="Mint accent" style="background:#8FD694;"></button>
-          <button type="button" class="rwDot" data-accent="clay" aria-label="Clay accent" style="background:#F09070;"></button>
-        </div>
-      </div>
       <div class="rwGrp">
         <span class="rwLab">More</span>
         <div style="display:flex;align-items:center;gap:clamp(6px,.8vw,10px);">
@@ -123,19 +90,19 @@ html[data-rwtheme="dark"] .rwCtl{--ctl-bg:rgba(237,233,228,.10);--ctl-thumb:#EDE
 
   <section style="max-width:1200px;margin:0 auto;padding:clamp(40px,8vw,100px) clamp(16px,3vw,40px) clamp(40px,6vw,80px);display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,5vw,64px);align-items:center;">
     <div>
-      <h1 style="font-family:'Archivo',sans-serif;font-weight:600;font-size:clamp(32px,5.4vw,64px);line-height:1.05;letter-spacing:-.02em;margin:0 0 28px;text-wrap:pretty;">Hi! I'm Ritwiz, an <span ref="{{ scrRef }}" style="display:inline-block;white-space:nowrap;vertical-align:baseline;"><span ref="{{ scrInner }}" style="display:inline-block;white-space:nowrap;transform-origin:left center;">Assamese</span></span> industrial designer, and I design experiences that you remember.</h1>
+      <h1 style="font-family:'Overused Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Helvetica,Arial,sans-serif;font-weight:700;font-size:clamp(36px,5.4vw,72px);line-height:1.38;letter-spacing:-.025em;margin:0 0 28px;text-wrap:pretty;">Objects have <span style="background:var(--red);color:#fff;border-radius:.28em;padding:.04em .3em;margin:.07em 0;display:inline-block;">personalities.</span> I speak <span style="background:var(--blue);color:#fff;border-radius:.28em;padding:.04em .3em;margin:.07em 0;display:inline-block;">fluent</span> <span style="background:var(--yellow);color:#131313;border-radius:.28em;padding:.04em .3em;margin:.07em 0;display:inline-block;">object.</span></h1>
       <a href="https://www.ritwizsharma.com/_files/ugd/5a2ab1_978cf67a406c4fb6b81123d04f5989c8.pdf" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;background:var(--pg-panel);color:var(--pg-panel-ink);text-decoration:none;font-weight:700;font-size:14px;text-transform:uppercase;letter-spacing:.06em;padding:14px 26px;border-radius:.66em;" style-hover="background:#FF4438;color:#fff;">Download CV <span aria-hidden="true">↓</span></a>
     </div>
     <div ref="{{ asciiWrap }}" onMouseEnter="{{ asciiOn }}" onMouseMove="{{ asciiMove }}" onMouseLeave="{{ asciiOff }}" style="width:100%;aspect-ratio:4/5;position:relative;border-radius:16px;overflow:hidden;cursor:crosshair;">
-      <img ref="{{ bgImg }}" src="assets/Background.webp" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
-      <img ref="{{ asciiImg }}" src="assets/Ritwiz.webp" alt="Ritwiz Sharma" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
-      <img ref="{{ ditherImg }}" src="assets/Ritwiz_stipple.webp" alt="" aria-hidden="true" style="position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;">
+      <img ref="{{ bgImg }}" src="uploads/Background.png" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
+      <img ref="{{ asciiImg }}" src="uploads/Ritwiz.png" alt="Ritwiz Sharma" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
+      <img ref="{{ ditherImg }}" src="uploads/Ritwiz_stipple.png" alt="" aria-hidden="true" style="position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;">
       <canvas ref="{{ asciiOut }}" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;display:block;pointer-events:none;"></canvas>
     </div>
   </section>
 
   <section style="padding:0 clamp(16px,3vw,40px) clamp(40px,6vw,80px);max-width:1200px;margin:0 auto;">
-    <h2 style="font-family:'Archivo',sans-serif;font-weight:600;font-size:clamp(20px,2.2vw,26px);letter-spacing:-.01em;margin:0 0 20px;">Some awesome people I've worked with</h2>
+    <h2 style="font-family:'Overused Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Helvetica,Arial,sans-serif;font-weight:650;font-size:clamp(20px,2.2vw,26px);letter-spacing:-.015em;margin:0 0 20px;">Some awesome people I've worked with</h2>
     <div style="display:flex;flex-wrap:wrap;gap:10px;">
       <a href="https://www.coreexperience.com/" target="_blank" rel="noopener" style="background:var(--red);color:#fff;text-decoration:none;font-weight:700;font-size:14px;text-transform:uppercase;letter-spacing:.03em;padding:14px 22px;border-radius:.66em;" style-hover="opacity:.8;">Core Experience</a>
       <a href="https://svasalife.com/" target="_blank" rel="noopener" style="background:var(--blue);color:#fff;text-decoration:none;font-weight:700;font-size:14px;text-transform:uppercase;letter-spacing:.03em;padding:14px 22px;border-radius:.66em;" style-hover="opacity:.8;">Svasa</a>

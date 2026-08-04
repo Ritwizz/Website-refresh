@@ -9,15 +9,7 @@
 <body>
 <x-dc>
 <helmet>
-<script>(function(){var k='rwTheme';var d=document.documentElement;
-function paint(){var dark=d.dataset.rwtheme==='dark';document.querySelectorAll('[data-theme-toggle]').forEach(function(b){b.textContent=dark?'\u25D1':'\u25D0';b.setAttribute('aria-pressed',dark);});}
-if(!d.dataset.rwtheme){var t=null;try{t=localStorage.getItem(k)}catch(e){}d.dataset.rwtheme=t||'dark';}
-window.rwSetTheme=function(n){d.dataset.rwtheme=n;try{localStorage.setItem(k,n)}catch(e){}paint();};
-window.rwPaintTheme=paint;
-if(!window.__rwThemeBound){window.__rwThemeBound=1;
-document.addEventListener('click',function(e){var b=e.target&&e.target.closest&&e.target.closest('[data-theme-toggle]');if(!b)return;window.rwSetTheme(d.dataset.rwtheme==='dark'?'light':'dark');});
-document.addEventListener('DOMContentLoaded',paint);}
-setTimeout(paint,0);})();</script>
+<script>document.documentElement.dataset.rwtheme='dark';</script>
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
 <style>
 @font-face{font-family:'Overused Grotesk';src:url('https://cdn.jsdelivr.net/gh/RandomMaerks/Overused-Grotesk@main/fonts/variable/OverusedGrotesk-VF.woff2') format('woff2-variations'),url('https://cdn.jsdelivr.net/gh/RandomMaerks/Overused-Grotesk@main/fonts/variable/OverusedGrotesk-VF.ttf') format('truetype-variations');font-weight:300 900;font-display:swap;}
@@ -26,16 +18,18 @@ html[data-rwtheme="dark"]{--pg-bg:#0F0D0C;--pg-ink:#EDE9E4;--pg-hair:rgba(237,23
 html[data-rwtheme="dark"] body{background:#0F0D0C}
 body{margin:0;background:var(--pg-bg)}
 a{color:var(--pg-ink)}a:hover{opacity:.55}
-.rwThemeBtn{font:inherit;cursor:pointer;background:transparent;color:var(--pg-ink);border:1px solid var(--pg-hair);border-radius:9999px;width:30px;height:30px;flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;font-size:13px;line-height:1;padding:0;transition:background 200ms ease-out,color 200ms ease-out;}
-.rwThemeBtn:hover{background:var(--pg-ink);color:var(--pg-bg)}
+.rwCtl .rwTrack{display:flex;align-items:center;gap:3px;background:rgba(237,233,228,.10);border-radius:13px;padding:3px}
+.rwCtl .rwSeg{font-family:inherit;font-size:12.5px;font-weight:600;line-height:1;letter-spacing:.01em;color:var(--pg-ink);background:transparent;border:0;border-radius:10px;height:30px;padding:0 11px;display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;text-decoration:none}
+.rwCtl a.rwSeg:hover{background:rgba(237,233,228,.09);opacity:1}
+.rwCtl .rwAccentPill{background:#2E6BFF;color:#fff}
+.rwCtl a.rwAccentPill:hover{background:#5C8AFF;opacity:1}
 @media (max-width:760px){
   #rwCursorTag{display:none}
   main section > div{grid-template-columns:1fr !important}
   [data-screen-label="Title"]{padding-top:24px !important}
   [data-screen-label="Credits"]{grid-template-columns:1fr 1fr !important}
   blockquote{margin-left:0 !important;margin-right:0 !important}
-  header nav{gap:12px !important}
-  header nav a{font-size:11px !important}
+  header nav{gap:8px !important}
 }
 @media (max-width:420px){
   [data-screen-label="Credits"]{grid-template-columns:1fr !important}
@@ -45,99 +39,155 @@ a{color:var(--pg-ink)}a:hover{opacity:.55}
 <div style="background:var(--pg-bg);color:var(--pg-ink);font-family:'Overused Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Helvetica,Arial,sans-serif;min-height:100vh;">
   <header style="display:flex;justify-content:space-between;align-items:center;gap:14px 24px;flex-wrap:wrap;padding:16px clamp(16px,3vw,48px);">
     <a href="index.html" style="font-weight:600;font-size:18px;letter-spacing:-.02em;text-decoration:none;color:var(--pg-ink);white-space:nowrap;">Ritwiz Sharma</a>
-    <nav style="display:flex;align-items:center;gap:clamp(14px,2.5vw,32px);">
-      <button type="button" class="rwThemeBtn" data-theme-toggle="" aria-label="Toggle dark mode" aria-pressed="false">◐</button>
-      <a href="index.html" style="color:var(--pg-ink);text-decoration:none;font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.06em;" style-hover="opacity:.55">Work</a>
-      <a href="about.html" style="color:var(--pg-ink);text-decoration:none;font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.06em;" style-hover="opacity:.55">About</a>
-      <a href="shenanigans.html" style="color:#9B8CFF;text-decoration:none;font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.06em;" style-hover="opacity:.6">Shenanigans</a>
+    <nav class="rwCtl" style="display:flex;align-items:center;gap:clamp(6px,.8vw,10px);">
+      <div class="rwTrack"><a href="index.html" class="rwSeg">Work</a><a href="about.html" class="rwSeg">About</a></div>
+      <a href="shenanigans.html" class="rwSeg rwAccentPill" style="height:36px;padding:0 16px;">Shenanigans</a>
     </nav>
   </header>
 
   <main style="max-width:1440px;margin:0 auto;padding:0 clamp(16px,3vw,48px) clamp(48px,7vw,110px);">
     <section data-screen-label="Title" style="padding:clamp(40px,9vh,120px) 0 clamp(28px,5vh,60px);display:flex;flex-direction:column;gap:clamp(18px,2.6vw,34px);max-width:1100px;">
-      <h1 style="font-weight:800;font-size:clamp(42px,7.4vw,112px);line-height:.94;letter-spacing:-.03em;margin:0;">Altr</h1>
+      <h1 style="font-weight:700;font-size:clamp(42px,7.4vw,112px);line-height:.96;letter-spacing:-.03em;margin:0;">Altr</h1>
       <p style="font-weight:400;font-size:clamp(18px,2.3vw,30px);line-height:1.3;letter-spacing:-.015em;margin:0;max-width:760px;text-wrap:pretty;">Making your work, more you. A modular, personalized desk system for luxury offices.</p>
       <div style="display:flex;flex-wrap:wrap;gap:clamp(8px,.9vw,12px);font-weight:600;font-size:clamp(11px,.9vw,13px);text-transform:uppercase;letter-spacing:.06em;">
-        <span style="background:#9B8CFF;color:#131313;border-radius:9999px;padding:.5em 1.05em;">Furniture / Product Design</span>
-        <span style="background:var(--pg-tint);color:var(--pg-ink);border-radius:9999px;padding:.5em 1.05em;">Team project</span>
-        <span style="background:var(--pg-tint);color:var(--pg-ink);border-radius:9999px;padding:.5em 1.05em;">2023</span>
+        <span style="background:#2E6BFF;color:#fff;border-radius:.66em;padding:.5em 1.05em;">Furniture / Product Design</span>
+        <span style="background:var(--pg-tint);color:var(--pg-ink);border-radius:.66em;padding:.5em 1.05em;">Team project</span>
+        <span style="background:var(--pg-tint);color:var(--pg-ink);border-radius:.66em;padding:.5em 1.05em;">2023</span>
       </div>
     </section>
 
-    <img src="https://static.wixstatic.com/media/5a2ab1_0e68df8bb29c4736bfdbb39ded6c9f9d~mv2.png/v1/fill/w_2560,h_1396,al_c,q_95,usm_0.66_1.00_0.01,enc_avif,quality_auto/5a2ab1_0e68df8bb29c4736bfdbb39ded6c9f9d~mv2.png" alt="ALTR desks, all together" style="width:100%;display:block;border-radius:16px;">
+    <img src="altr/altr-desks-all-together.jpg" alt="ALTR desks, all together" style="width:100%;display:block;border-radius:16px;">
 
     <blockquote data-screen-label="Quote" style="margin:clamp(56px,10vh,150px) auto;max-width:1000px;font-weight:500;font-size:clamp(24px,3.4vw,48px);line-height:1.14;letter-spacing:-.025em;text-wrap:pretty;">Cluttered, messy workspaces create friction that breaks focus and slows down the workday.</blockquote>
 
     <section data-screen-label="Images 1" style="display:flex;flex-direction:column;gap:clamp(12px,1.6vw,24px);">
-      <img src="https://static.wixstatic.com/media/5a2ab1_17dbb149cdaf4cc8b8b645dd17cd27ad~mv2.jpg" alt="A messy desk — the problem ALTR addresses" style="width:100%;display:block;border-radius:16px;">
-      <div style="display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:clamp(12px,1.6vw,24px);">
-        <img src="https://static.wixstatic.com/media/5a2ab1_4b0c80a3d9314174a699a0e0c303a4d4~mv2.png" alt="Concept one" style="width:100%;height:auto;display:block;border-radius:16px;">
-        <img src="https://static.wixstatic.com/media/5a2ab1_55fc710bb76e44288efb102f580ea8bf~mv2.png" alt="Concept two" style="width:100%;height:auto;display:block;border-radius:16px;">
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:clamp(12px,1.6vw,24px);">
-        <img src="https://static.wixstatic.com/media/5a2ab1_5c10bf1c7e0c4d9cac380dc27615bb52~mv2.png" alt="Concept three" style="width:100%;height:auto;display:block;border-radius:16px;">
-        <img src="https://static.wixstatic.com/media/5a2ab1_86e50f9201794e0295d8c23d41b8f4af~mv2.png" alt="Concept four" style="width:100%;height:auto;display:block;border-radius:16px;">
-      </div>
-      <img data-cap="Proposed concept option" src="https://static.wixstatic.com/media/5a2ab1_61de0b6abeaf435da0adb31758120193~mv2.png" alt="Proposed concept option" style="width:100%;display:block;border-radius:16px;">
+      <img src="altr/a-messy-desk-the-problem-altr-addresses.jpg" alt="A messy desk — the problem ALTR addresses" style="width:100%;display:block;border-radius:16px;">
     </section>
 
     <blockquote data-screen-label="Quote" style="margin:clamp(56px,10vh,150px) auto;max-width:1000px;font-weight:500;font-size:clamp(24px,3.4vw,48px);line-height:1.14;letter-spacing:-.025em;text-wrap:pretty;">The beauty in chaos concept was selected and taken forward.</blockquote>
 
-    <section data-screen-label="Images 2" style="display:flex;flex-direction:column;gap:clamp(12px,1.6vw,24px);">
-      <img src="https://static.wixstatic.com/media/5a2ab1_080bca1993674e999ced0e77ea819a49~mv2.jpg" alt="Sketch sheet exploring desk configurations" style="width:100%;display:block;border-radius:16px;">
+    <section data-screen-label="Concept boards" style="display:flex;flex-direction:column;gap:clamp(12px,1.6vw,24px);margin-bottom:clamp(12px,1.6vw,24px);">
       <div style="display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:clamp(12px,1.6vw,24px);">
-        <img src="https://static.wixstatic.com/media/5a2ab1_935c75d2dc3d4b92a14cfaddd2e5c90b~mv2.jpg" alt="Research session mapping pain points" style="width:100%;height:auto;display:block;border-radius:16px;">
-        <img src="https://static.wixstatic.com/media/5a2ab1_83bc07d1a0df463b8b709bc70215e43d~mv2.jpg" alt="Research detail" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img data-cap="Modular desk — beauty in chaos" src="altr/board-desk-chaos.jpg" alt="Concept board, modular desk: beauty in chaos, with quick access storage and Tetris-style back separator" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img data-cap="Modular desk — invisible" src="altr/board-desk-invisible-1.jpg" alt="Concept board, modular desk: invisible, metal exoskeleton and wood veneer desktop with modular separators" style="width:100%;height:auto;display:block;border-radius:16px;">
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:clamp(12px,1.6vw,24px);">
+        <img data-cap="Modular desk — invisible" src="altr/board-desk-invisible-2.jpg" alt="Concept board, modular desk: invisible, separator modules with side and under-desk modules" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img data-cap="Home office chair — embrace" src="altr/board-chair-embrace.jpg" alt="Concept board, home office chair: embrace, wrap-around wood and flexible segments" style="width:100%;height:auto;display:block;border-radius:16px;">
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:clamp(12px,1.6vw,24px);">
+        <img data-cap="Home office chair — tranquility" src="altr/board-chair-tranquility-1.jpg" alt="Concept board, home office chair: tranquility, wood back with speakers and charging mat" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img data-cap="Home office chair — tranquility" src="altr/board-chair-tranquility-2.jpg" alt="Concept board, home office chair: tranquility, winged headrest with speakers and removable charging dock" style="width:100%;height:auto;display:block;border-radius:16px;">
+      </div>
+    </section>
+
+    <section data-screen-label="Images 2" style="display:flex;flex-direction:column;gap:clamp(12px,1.6vw,24px);">
+      <img src="altr/sketch-sheet-exploring-desk-configurations.jpg" alt="Sketch sheet exploring desk configurations" style="width:100%;display:block;border-radius:16px;">
+      <div style="display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:clamp(12px,1.6vw,24px);">
+        <img src="altr/research-session-mapping-pain-points.jpg" alt="Research session mapping pain points" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img src="altr/review-session.jpg" alt="Team reviewing the printed concept boards around a table" style="width:100%;height:auto;display:block;border-radius:16px;">
       </div>
     </section>
 
     <blockquote data-screen-label="Quote" style="margin:clamp(56px,10vh,150px) auto;max-width:1000px;font-weight:500;font-size:clamp(24px,3.4vw,48px);line-height:1.14;letter-spacing:-.025em;text-wrap:pretty;">Five pre-configurations — academia, creative, fiscal, managerial and technical — each a whole desk.</blockquote>
 
-    <section data-screen-label="Images 3" style="display:flex;flex-direction:column;gap:clamp(12px,1.6vw,24px);">
-      <div style="display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:clamp(12px,1.6vw,24px);">
-        <img src="https://static.wixstatic.com/media/5a2ab1_1edcf608be2c4b188ac23f8e4aca0442~mv2.png" alt="Compartment development" style="width:100%;height:auto;display:block;border-radius:16px;">
-        <img data-cap="Compartment development" src="https://static.wixstatic.com/media/5a2ab1_40073ce1d1534e11b45437aa6efe936e~mv2.png" alt="Compartment development" style="width:100%;height:auto;display:block;border-radius:16px;">
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:clamp(12px,1.6vw,24px);">
-        <img src="https://static.wixstatic.com/media/5a2ab1_94c9e8f53fbf4752aa94ceae3c662345~mv2.png" alt="Module development" style="width:100%;height:auto;display:block;border-radius:16px;">
-        <img data-cap="Module development" src="https://static.wixstatic.com/media/5a2ab1_11671c8aaed841069b05aa3a3a220237~mv2.png" alt="Module development" style="width:100%;height:auto;display:block;border-radius:16px;">
-      </div>
-      <img src="https://static.wixstatic.com/media/5a2ab1_46d9edbc98be43a396f1e0560ecc558b~mv2.png" alt="Attachment system development" style="width:100%;display:block;border-radius:16px;">
-      <div style="display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:clamp(12px,1.6vw,24px);">
-        <img src="https://static.wixstatic.com/media/5a2ab1_e5314c0a60684cfbbdf73f2b36915bec~mv2.png" alt="Configuration study" style="width:100%;height:auto;display:block;border-radius:16px;">
-        <img data-cap="Configuration study" src="https://static.wixstatic.com/media/5a2ab1_7815002b8a5d4da094937f9abbc87df3~mv2.png" alt="Configuration study" style="width:100%;height:auto;display:block;border-radius:16px;">
-      </div>
-    </section>
-
-    <blockquote data-screen-label="Quote" style="margin:clamp(56px,10vh,150px) auto;max-width:1000px;font-weight:500;font-size:clamp(24px,3.4vw,48px);line-height:1.14;letter-spacing:-.025em;text-wrap:pretty;">When an employee leaves, the desk is reassigned and re-personalized — a cyclical system rather than a purchase.</blockquote>
-
     <section data-screen-label="Images 4" style="display:flex;flex-direction:column;gap:clamp(12px,1.6vw,24px);">
-      <img data-cap="Academia desk" src="https://static.wixstatic.com/media/5a2ab1_5bdc5ff8659e4cdbaac1bce4bd90e6be~mv2.png" alt="Academia desk" style="width:100%;display:block;border-radius:16px;">
-      <div style="display:grid;grid-template-columns:1fr 1fr;align-items:stretch;gap:clamp(12px,1.6vw,24px);">
-        <img src="https://static.wixstatic.com/media/5a2ab1_507eb57cb16749c7a4c83c59d995a46d~mv2.jpg" alt="Academia desk detail" style="width:100%;height:auto;display:block;border-radius:16px;">
-        <img src="https://static.wixstatic.com/media/5a2ab1_37376cb60f604d72b4a00960963def86~mv2.jpg" alt="Academia desk detail" style="width:100%;height:100%;display:block;border-radius:16px;object-fit:cover;">
+      <div style="display:flex;flex-direction:column;gap:10px;max-width:760px;margin:clamp(20px,3.4vh,44px) 0 clamp(2px,.6vh,8px);">
+        <span style="align-self:flex-start;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--pg-ink);background:var(--pg-tint);border-radius:.66em;padding:.5em 1.05em;">Academia</span>
+        <p style="margin:0;font-size:clamp(16px,1.15vw,19px);line-height:1.62;text-wrap:pretty;">For academics deep in research, writing and review — ample room for books, papers, stationery and personal effects like photos and plants.</p>
       </div>
-      <img data-cap="Creative desk" src="https://static.wixstatic.com/media/5a2ab1_7474b801444541a28ebbf7789c8b51c2~mv2.jpg" alt="Creative desk" style="width:100%;display:block;border-radius:16px;">
+      <img data-cap="Academia desk" src="altr/academia-top.jpg" alt="Academia desk, top-down view" style="width:100%;display:block;border-radius:16px;">
       <div style="display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:clamp(12px,1.6vw,24px);">
-        <img src="https://static.wixstatic.com/media/5a2ab1_b681d8ecdbaf47dba5a9171d0e61a10b~mv2.jpg" alt="Creative desk detail" style="width:100%;height:auto;display:block;border-radius:16px;">
-        <img src="https://static.wixstatic.com/media/5a2ab1_7e12bea17e564914ae338e031327c039~mv2.jpg" alt="Creative desk detail" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img src="altr/academia-iso.jpg" alt="Academia desk, three-quarter view" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img src="altr/academia-left-landing.jpg" alt="Academia desk, whiteboard and document sleeves on the left panel" style="width:100%;height:auto;display:block;border-radius:16px;">
       </div>
-      <img data-cap="Fiscal desk" src="https://static.wixstatic.com/media/5a2ab1_9b3e904d04aa40e0a1e27474dabab6c3~mv2.jpg" alt="Fiscal desk" style="width:100%;display:block;border-radius:16px;">
       <div style="display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:clamp(12px,1.6vw,24px);">
-        <img src="https://static.wixstatic.com/media/5a2ab1_fc53d167bcc64ac185214f8046f2d958~mv2.jpg" alt="Fiscal desk detail" style="width:100%;height:auto;display:block;border-radius:16px;">
-        <img src="https://static.wixstatic.com/media/5a2ab1_ba8bff538fb84642ab11f0a1af9e6a25~mv2.jpg" alt="Fiscal desk detail" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img src="altr/academia-top-left.jpg" alt="Academia desk, left panel" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img src="altr/academia-top-right.jpg" alt="Academia desk, right panel" style="width:100%;height:auto;display:block;border-radius:16px;">
       </div>
-      <img data-cap="Managerial desk" src="https://static.wixstatic.com/media/5a2ab1_c4be2a3e6609471abc7692a88d59da3b~mv2.jpg" alt="Managerial desk" style="width:100%;display:block;border-radius:16px;">
       <div style="display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:clamp(12px,1.6vw,24px);">
-        <img src="https://static.wixstatic.com/media/5a2ab1_59ba189dfe1640bd9e1b193925d53a33~mv2.jpg" alt="Managerial desk detail" style="width:100%;height:auto;display:block;border-radius:16px;">
-        <img src="https://static.wixstatic.com/media/5a2ab1_677599d14881431fb27ce146195baa95~mv2.jpg" alt="Managerial desk detail" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img src="altr/academia-left.jpg" alt="Academia desk close-up, whiteboard and paper sleeves" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img src="altr/academia-right.jpg" alt="Academia desk close-up, plant shelf and pen pockets" style="width:100%;height:auto;display:block;border-radius:16px;">
       </div>
-      <img data-cap="Technical desk" src="https://static.wixstatic.com/media/5a2ab1_79837cec1283455bbb057c42f31ef732~mv2.jpg" alt="Technical desk" style="width:100%;display:block;border-radius:16px;">
+      <video src="altr/academia-intro.mp4" aria-label="Academia desk animation" autoplay="" muted="" loop="" playsinline="" preload="metadata" style="width:100%;height:auto;display:block;border-radius:16px;"></video>
+      <div style="display:flex;flex-direction:column;gap:10px;max-width:760px;margin:clamp(20px,3.4vh,44px) 0 clamp(2px,.6vh,8px);">
+        <span style="align-self:flex-start;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--pg-ink);background:var(--pg-tint);border-radius:.66em;padding:.5em 1.05em;">Creative</span>
+        <p style="margin:0;font-size:clamp(16px,1.15vw,19px);line-height:1.62;text-wrap:pretty;">For creatives working across tools — storage for drawing tablets and headphones, space for figurines and inspiration, a notice board at the back and a whiteboard module on the left.</p>
+      </div>
+      <img data-cap="Creative desk" src="altr/creative-top.jpg" alt="Creative desk, top-down view" style="width:100%;display:block;border-radius:16px;">
       <div style="display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:clamp(12px,1.6vw,24px);">
-        <img src="https://static.wixstatic.com/media/5a2ab1_d93c45ad3dea4a8cbe76f934a8024ca9~mv2.jpg" alt="Technical desk detail" style="width:100%;height:auto;display:block;border-radius:16px;">
-        <img src="https://static.wixstatic.com/media/5a2ab1_8278e130e2134c429e2e60fdb3cb5a67~mv2.jpg" alt="Technical desk detail" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img src="altr/creative-iso.jpg" alt="Creative desk, three-quarter view" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img src="altr/creative-right-landing.jpg" alt="Creative desk, pen and notebook pockets on the right panel" style="width:100%;height:auto;display:block;border-radius:16px;">
       </div>
-      <img src="https://static.wixstatic.com/media/5a2ab1_768c6fa40a1b418e85309a6528b4d97d~mv2.png" alt="The ALTR desk system" style="width:100%;display:block;border-radius:16px;">
+      <div style="display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:clamp(12px,1.6vw,24px);">
+        <img src="altr/creative-top-left.jpg" alt="Creative desk, left panel with pegboard, headphones and tablet tray" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img src="altr/creative-top-right.jpg" alt="Creative desk, right panel with display shelves and sketchbook tray" style="width:100%;height:auto;display:block;border-radius:16px;">
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:clamp(12px,1.6vw,24px);">
+        <img src="altr/creative-closeup-left.jpg" alt="Creative desk close-up, whiteboard and pegboard modules" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img src="altr/creative-closeup-right.jpg" alt="Creative desk close-up, figurine shelf and inspiration board" style="width:100%;height:auto;display:block;border-radius:16px;">
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:clamp(12px,1.6vw,24px);">
+        <video src="altr/creative-1.mp4" aria-label="Creative desk animation" autoplay="" muted="" loop="" playsinline="" preload="metadata" style="width:100%;height:auto;display:block;border-radius:16px;"></video>
+        <video src="altr/creative-2.mp4" aria-label="Creative desk animation" autoplay="" muted="" loop="" playsinline="" preload="metadata" style="width:100%;height:auto;display:block;border-radius:16px;"></video>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px;max-width:760px;margin:clamp(20px,3.4vh,44px) 0 clamp(2px,.6vh,8px);">
+        <span style="align-self:flex-start;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--pg-ink);background:var(--pg-tint);border-radius:.66em;padding:.5em 1.05em;">Fiscal</span>
+        <p style="margin:0;font-size:clamp(16px,1.15vw,19px);line-height:1.62;text-wrap:pretty;">For finance work — generous document storage within quick reach, modules for calculators and personal items, and a whiteboard for calendars and sticky notes.</p>
+      </div>
+      <img data-cap="Fiscal desk" src="altr/fiscal-top.jpg" alt="Fiscal desk, top-down view" style="width:100%;display:block;border-radius:16px;">
+      <div style="display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:clamp(12px,1.6vw,24px);">
+        <img src="altr/fiscal-iso.jpg" alt="Fiscal desk, three-quarter view" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img src="altr/fiscal-right-landing.jpg" alt="Fiscal desk, document sleeves and pen pockets on the right panel" style="width:100%;height:auto;display:block;border-radius:16px;">
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:clamp(12px,1.6vw,24px);">
+        <img src="altr/fiscal-top-left.jpg" alt="Fiscal desk, left panel" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img src="altr/fiscal-top-right.jpg" alt="Fiscal desk, right panel" style="width:100%;height:auto;display:block;border-radius:16px;">
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:clamp(12px,1.6vw,24px);">
+        <img src="altr/fiscal-left.jpg" alt="Fiscal desk close-up, whiteboard, planner and sticky notes" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img src="altr/fiscal-right.jpg" alt="Fiscal desk close-up, filing sleeves and calculator tray" style="width:100%;height:auto;display:block;border-radius:16px;">
+      </div>
+      <video src="altr/fiscal-intro.mp4" aria-label="Fiscal desk animation" autoplay="" muted="" loop="" playsinline="" preload="metadata" style="width:100%;height:auto;display:block;border-radius:16px;"></video>
+      <div style="display:flex;flex-direction:column;gap:10px;max-width:760px;margin:clamp(20px,3.4vh,44px) 0 clamp(2px,.6vh,8px);">
+        <span style="align-self:flex-start;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--pg-ink);background:var(--pg-tint);border-radius:.66em;padding:.5em 1.05em;">Managerial</span>
+        <p style="margin:0;font-size:clamp(16px,1.15vw,19px);line-height:1.62;text-wrap:pretty;">For managers — a large noticeboard directly ahead with personalisation space alongside, calendars and personal effects on the left, extensive document storage on the right.</p>
+      </div>
+      <img data-cap="Managerial desk" src="altr/managerial-top.jpg" alt="Managerial desk, top-down view" style="width:100%;display:block;border-radius:16px;">
+      <div style="display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:clamp(12px,1.6vw,24px);">
+        <img src="altr/managerial-iso.jpg" alt="Managerial desk, three-quarter view" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img src="altr/managerial-right-landing.jpg" alt="Managerial desk, document sleeves and stationery tray on the right panel" style="width:100%;height:auto;display:block;border-radius:16px;">
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:clamp(12px,1.6vw,24px);">
+        <img src="altr/managerial-top-left.jpg" alt="Managerial desk, left panel" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img src="altr/managerial-top-right.jpg" alt="Managerial desk, right panel" style="width:100%;height:auto;display:block;border-radius:16px;">
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:clamp(12px,1.6vw,24px);">
+        <img src="altr/managerial-left.jpg" alt="Managerial desk close-up, planner, pegboard and personalisation shelf" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img src="altr/managerial-right.jpg" alt="Managerial desk close-up, noticeboard and filing sleeves" style="width:100%;height:auto;display:block;border-radius:16px;">
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:clamp(12px,1.6vw,24px);">
+        <video src="altr/managerial-1.mp4" aria-label="Managerial desk animation" autoplay="" muted="" loop="" playsinline="" preload="metadata" style="width:100%;height:auto;display:block;border-radius:16px;"></video>
+        <video src="altr/managerial-2.mp4" aria-label="Managerial desk animation" autoplay="" muted="" loop="" playsinline="" preload="metadata" style="width:100%;height:auto;display:block;border-radius:16px;"></video>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px;max-width:760px;margin:clamp(20px,3.4vh,44px) 0 clamp(2px,.6vh,8px);">
+        <span style="align-self:flex-start;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--pg-ink);background:var(--pg-tint);border-radius:.66em;padding:.5em 1.05em;">Technical</span>
+        <p style="margin:0;font-size:clamp(16px,1.15vw,19px);line-height:1.62;text-wrap:pretty;">For technical teams — a medium whiteboard front and centre for planning and collaborative problem-solving, tool pouches, shelves and a pegboard on the left, a smaller whiteboard and noticeboard on the right.</p>
+      </div>
+      <img data-cap="Technical desk" src="altr/technical-top.jpg" alt="Technical desk, top-down view" style="width:100%;display:block;border-radius:16px;">
+      <div style="display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:clamp(12px,1.6vw,24px);">
+        <img src="altr/technical-iso.jpg" alt="Technical desk, three-quarter view" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img src="altr/technical-right-landing.jpg" alt="Technical desk, whiteboards and instrument tray on the right panel" style="width:100%;height:auto;display:block;border-radius:16px;">
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:clamp(12px,1.6vw,24px);">
+        <img src="altr/technical-top-left.jpg" alt="Technical desk, left panel" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img src="altr/technical-top-right.jpg" alt="Technical desk, right panel" style="width:100%;height:auto;display:block;border-radius:16px;">
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:clamp(12px,1.6vw,24px);">
+        <img src="altr/technical-closeup-left.jpg" alt="Technical desk close-up, pegboard, tool shelves and personalisation" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img src="altr/technical-closeup-right.jpg" alt="Technical desk close-up, working whiteboards and reference sheets" style="width:100%;height:auto;display:block;border-radius:16px;">
+      </div>
+      <img src="altr/the-altr-desk-system.jpg" alt="The ALTR desk system" style="width:100%;display:block;border-radius:16px;">
     </section>
 
     <section data-screen-label="About the project" style="max-width:760px;margin:clamp(64px,12vh,180px) 0 0;display:flex;flex-direction:column;gap:clamp(16px,2vh,26px);font-size:clamp(16px,1.15vw,19px);line-height:1.62;">
@@ -151,30 +201,30 @@ a{color:var(--pg-ink)}a:hover{opacity:.55}
 
     <section data-screen-label="Credits" style="margin:clamp(56px,9vh,130px) 0 0;padding-top:clamp(24px,3vh,40px);border-top:1px solid var(--pg-hair);display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:clamp(24px,3vw,48px);font-size:14px;line-height:1.55;">
       <div style="display:flex;flex-direction:column;gap:10px;">
-        <span style="align-self:flex-start;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--pg-ink);background:var(--pg-tint);border-radius:9999px;padding:.5em 1.05em;">Discipline</span>
+        <span style="align-self:flex-start;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--pg-ink);background:var(--pg-tint);border-radius:.66em;padding:.5em 1.05em;">Discipline</span>
         <span>Furniture / Product Design</span>
         <span>Systems &amp; service design</span>
         <span>Visualization</span>
       </div>
       <div style="display:flex;flex-direction:column;gap:10px;">
-        <span style="align-self:flex-start;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--pg-ink);background:var(--pg-tint);border-radius:9999px;padding:.5em 1.05em;">My role</span>
+        <span style="align-self:flex-start;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--pg-ink);background:var(--pg-tint);border-radius:.66em;padding:.5em 1.05em;">My role</span>
         <span>Designer, concept lead</span>
         <span>4 months, 2023</span>
       </div>
       <div style="display:flex;flex-direction:column;gap:10px;">
-        <span style="align-self:flex-start;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--pg-ink);background:var(--pg-tint);border-radius:9999px;padding:.5em 1.05em;">Status</span>
+        <span style="align-self:flex-start;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--pg-ink);background:var(--pg-tint);border-radius:.66em;padding:.5em 1.05em;">Status</span>
         <span>Concept</span>
       </div>
       <div style="display:flex;flex-direction:column;gap:10px;">
-        <span style="align-self:flex-start;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--pg-ink);background:var(--pg-tint);border-radius:9999px;padding:.5em 1.05em;">Context</span>
+        <span style="align-self:flex-start;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--pg-ink);background:var(--pg-tint);border-radius:.66em;padding:.5em 1.05em;">Context</span>
         <span>Team project</span>
         <span>B2B, luxury workplaces</span>
       </div>
     </section>
 
     <a href="art-of-concealing.html" data-screen-label="Next project" style="display:flex;flex-direction:column;gap:12px;margin-top:clamp(56px,9vh,130px);padding-top:clamp(24px,3vh,40px);border-top:1px solid var(--pg-hair);text-decoration:none;color:var(--pg-ink);" style-hover="opacity:.55">
-      <span style="align-self:flex-start;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--pg-ink);background:var(--pg-tint);border-radius:9999px;padding:.5em 1.05em;">Next project</span>
-      <span style="font-weight:800;font-size:clamp(28px,4.4vw,64px);line-height:1;letter-spacing:-.03em;text-transform:uppercase;">The art of concealing</span>
+      <span style="align-self:flex-start;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--pg-ink);background:var(--pg-tint);border-radius:.66em;padding:.5em 1.05em;">Next project</span>
+      <span style="font-weight:700;font-size:clamp(28px,4.4vw,64px);line-height:1;letter-spacing:-.03em;text-transform:uppercase;">The art of concealing</span>
       <span style="font-size:clamp(15px,1.1vw,18px);line-height:1.5;max-width:620px;text-wrap:pretty;">A line of home appliances that complement luxury apartments in India.</span>
     </a>
 
@@ -189,47 +239,151 @@ a{color:var(--pg-ink)}a:hover{opacity:.55}
   </main>
 </div>
 
-<div id="rwCursorTag" style="position:fixed;left:0;top:0;z-index:60;pointer-events:none;background:#9B8CFF;color:#131313;font-family:'Overused Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Helvetica,Arial,sans-serif;font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.06em;white-space:nowrap;padding:9px 16px;border-radius:9999px;transform:translate(-50%,-140%) scale(.7);opacity:0;transition:opacity 160ms ease-out,transform 200ms ease-out;"></div></x-dc>
+<div id="rwCursorTag" style="position:fixed;left:0;top:0;z-index:60;pointer-events:none;background:#2E6BFF;color:#fff;font-family:'Overused Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Helvetica,Arial,sans-serif;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.08em;white-space:nowrap;padding:6px 12px;border-radius:8px;transform:translateY(-5px);opacity:0;transition:opacity 140ms ease-out,transform 180ms ease-out;"></div></x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
   componentDidMount(){
+    // React drops the boolean `muted` attribute; set it as a property so autoplay is
+    // allowed, and drive play/pause from visibility (browsers stall offscreen video).
+    const vio = new IntersectionObserver(es => es.forEach(e => {
+      const v = e.target;
+      if (e.isIntersecting) { const p = v.play(); if (p && p.catch) p.catch(() => {}); }
+      else v.pause();
+    }), { rootMargin: '200px 0px' });
+    const wire = () => document.querySelectorAll('video').forEach(v => {
+      v.muted = true; v.defaultMuted = true; v.loop = true;
+      v.setAttribute('playsinline',''); v.setAttribute('preload','auto');
+      if (!v.dataset.vio) { v.dataset.vio = '1'; vio.observe(v); }
+    });
+    wire(); setTimeout(wire, 600); setTimeout(wire, 2000);
+    this._vio = vio;
+
+    // Rows of side-by-side images: width each by its own aspect ratio so a row
+    // shares one height with nothing cropped (justified-gallery style)
+    const justifyRows = () => {
+      const narrow = innerWidth <= 760;
+      // ratio of one column: an image, or a vertical stack of images
+      const ratioOf = el => {
+        if (el.tagName === 'IMG')
+          return el.naturalWidth && el.naturalHeight ? el.naturalWidth / el.naturalHeight : 0;
+        const inner = [...el.querySelectorAll('img')];
+        if (!inner.length || !inner.every(im => im.naturalWidth && im.naturalHeight)) return 0;
+        return 1 / inner.reduce((sum, im) => sum + im.naturalHeight / im.naturalWidth, 0);
+      };
+      document.querySelectorAll('main section > div').forEach(row => {
+        const cols = [...row.children].filter(
+          el => el.tagName === 'IMG' || (el.tagName === 'DIV' && el.querySelector('img'))
+        );
+        if (cols.length < 2) return;
+        const imgs = row.querySelectorAll('img');
+        if (narrow) {
+          row.style.display = 'grid';
+          row.style.gridTemplateColumns = '1fr';
+          row.style.gridTemplateRows = '';
+          cols.forEach(el => { el.style.flex = ''; el.style.width = ''; });
+          imgs.forEach(im => { im.style.flex = ''; im.style.width = '100%'; im.style.height = 'auto'; });
+          return;
+        }
+        const ratios = cols.map(ratioOf);
+        if (ratios.some(r => !r)) return;
+        row.style.display = 'flex';
+        row.style.alignItems = 'flex-start';
+        const gap = parseFloat(getComputedStyle(row).columnGap) || 0;
+        // every stack uses the SAME gap as the row, so spacing reads uniform
+        const stackGap = cols.map(el => {
+          if (el.tagName !== 'DIV') return 0;
+          el.style.display = 'flex';
+          el.style.flexDirection = 'column';
+          el.style.gap = gap + 'px';
+          return gap * Math.max(0, el.querySelectorAll('img').length - 1);
+        });
+        // solve for the single row height H: width_i = ratio_i * (H - stackGap_i)
+        const avail = row.clientWidth - gap * (cols.length - 1);
+        const sumR = ratios.reduce((a, r) => a + r, 0);
+        const sumGR = ratios.reduce((a, r, i) => a + r * stackGap[i], 0);
+        const H = (avail + sumGR) / sumR;
+        cols.forEach((el, i) => {
+          const w = ratios[i] * (H - stackGap[i]);
+          el.style.flex = '0 0 ' + w.toFixed(2) + 'px';
+          el.style.minWidth = '0';
+          if (el.tagName === 'IMG') { el.style.width = w.toFixed(2) + 'px'; el.style.height = 'auto'; }
+          else el.querySelectorAll('img').forEach(im => { im.style.width = '100%'; im.style.height = 'auto'; });
+        });
+      });
+    };
+    // Captions live in the cursor tag on desktop; on touch/narrow they sit inside the image's top-left.
+    // Each captioned image gets a relative wrapper up front — justifyRows already treats a div-of-img
+    // as one column, so the wrapper is safe to leave in place at every width.
+    document.querySelectorAll('main img[data-cap]').forEach(im => {
+      if (im.parentElement && im.parentElement.dataset.capwrap === '1') return;
+      const wrap = document.createElement('div');
+      wrap.dataset.capwrap = '1';
+      wrap.style.cssText = 'position:relative;width:100%;display:block;';
+      im.insertAdjacentElement('beforebegin', wrap);
+      wrap.appendChild(im);
+    });
+    const syncCaps = () => {
+      const narrow = innerWidth <= 760 || matchMedia('(hover:none)').matches;
+      document.querySelectorAll('main [data-capwrap="1"]').forEach(wrap => {
+        const im = wrap.querySelector('img[data-cap]');
+        const tag = wrap.querySelector('[data-capfor="1"]');
+        if (narrow && im && !tag) {
+          const s = document.createElement('span');
+          s.dataset.capfor = '1';
+          s.textContent = im.dataset.cap;
+          s.style.cssText = 'position:absolute;left:12px;top:12px;z-index:2;max-width:calc(100% - 24px);font-weight:600;font-size:11px;line-height:1.35;text-transform:uppercase;letter-spacing:.08em;background:#2E6BFF;color:#fff;border-radius:8px;padding:6px 12px;text-wrap:pretty;';
+          wrap.appendChild(s);
+        } else if (!narrow && tag) tag.remove();
+      });
+    };
+    this._syncCaps = syncCaps;
+    syncCaps();
+    addEventListener('resize', syncCaps, {passive:true});
+    this._justify = justifyRows;
+    justifyRows();
+    document.querySelectorAll('main img').forEach(im => {
+      if (!im.complete) im.addEventListener('load', justifyRows, {once:true});
+    });
+    addEventListener('resize', justifyRows, {passive:true});
     if(matchMedia('(pointer:coarse)').matches) return;
     const tag = document.getElementById('rwCursorTag');
     if(!tag) return;
-    let mx = 0, my = 0, tx = 0, ty = 0, raf = null, on = false;
-    const follow = () => {
-      raf = null;
-      tx += (mx - tx) * .22; ty += (my - ty) * .22;
-      tag.style.left = tx + 'px'; tag.style.top = ty + 'px';
-      if(on) raf = requestAnimationFrame(follow);
+    let cur = null;
+    const hide = () => { cur = null; tag.style.opacity = 0; tag.style.transform = 'translateY(-5px)'; };
+    // Label sits at the top-left INSIDE the hovered image, not on the cursor
+    const place = () => {
+      if(!cur || !cur.isConnected){ hide(); return; }
+      const r = cur.getBoundingClientRect();
+      if(r.bottom < 8 || r.top > innerHeight - 8){ hide(); return; }
+      tag.style.left = (r.left + 14) + 'px';
+      tag.style.top = Math.max(r.top + 14, 14) + 'px';
     };
-    const show = label => {
-      tag.textContent = label;
+    const show = im => {
+      cur = im;
+      tag.textContent = im.dataset.cap;
+      place();
       tag.style.opacity = 1;
-      tag.style.transform = 'translate(-50%,-140%) scale(1)';
-    };
-    const hide = () => {
-      on = false;
-      tag.style.opacity = 0;
-      tag.style.transform = 'translate(-50%,-140%) scale(.7)';
+      tag.style.transform = 'translateY(0)';
     };
     this._move = e => {
-      mx = e.clientX; my = e.clientY;
       const im = e.target && e.target.closest ? e.target.closest('main img[data-cap]') : null;
-      if(im && im.dataset.cap){
-        if(!on){ tx = mx; ty = my; on = true; raf = requestAnimationFrame(follow); }
-        show(im.dataset.cap);
-      } else if(on){ hide(); }
+      if(im && im.dataset.cap){ if(im !== cur) show(im); }
+      else if(cur) hide();
     };
     this._leave = () => hide();
+    this._track = () => { if(cur) place(); };
     addEventListener('mousemove', this._move, {passive:true});
     addEventListener('mouseleave', this._leave);
-    this._stop = () => { if(raf) cancelAnimationFrame(raf); };
+    addEventListener('scroll', this._track, {passive:true});
+    addEventListener('resize', this._track, {passive:true});
   }
   componentWillUnmount(){
     removeEventListener('mousemove', this._move);
     removeEventListener('mouseleave', this._leave);
-    if(this._stop) this._stop();
+    removeEventListener('resize', this._justify);
+    removeEventListener('resize', this._syncCaps);
+    removeEventListener('scroll', this._track);
+    removeEventListener('resize', this._track);
   }
 }
 </script>

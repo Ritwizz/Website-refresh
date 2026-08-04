@@ -9,31 +9,38 @@
 <body>
 <x-dc>
 <helmet>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Archivo+Black&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
 <style>
-body{margin:0;background:#0E0E0E}
-a{color:#F7F5F0}
+@font-face{font-family:'Overused Grotesk';src:url('https://cdn.jsdelivr.net/gh/RandomMaerks/Overused-Grotesk@main/fonts/variable/OverusedGrotesk-VF.woff2') format('woff2-variations'),url('https://cdn.jsdelivr.net/gh/RandomMaerks/Overused-Grotesk@main/fonts/variable/OverusedGrotesk-VF.ttf') format('truetype-variations');font-weight:300 900;font-display:swap;}
+.rwTrack{display:flex;align-items:center;gap:3px;background:rgba(237,233,228,.10);border-radius:13px;padding:3px}
+.rwSeg{font-size:12.5px;font-weight:600;line-height:1;letter-spacing:.01em;color:#EDE9E4;background:transparent;border-radius:10px;height:30px;padding:0 11px;display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;text-decoration:none}
+.rwSeg:hover{background:rgba(237,233,228,.09);opacity:1}
+body{margin:0;background:#0F0D0C}
+a{color:#EDE9E4}
 a:hover{opacity:.55}
 @media (prefers-reduced-motion:reduce){.scCard{transform:none!important}}
 </style>
 </helmet>
-<div ref="{{ loaderRef }}" style="position:fixed;inset:0;z-index:100;background:#0E0E0E;color:#F7F5F0;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:'Archivo',sans-serif;transition:opacity .6s ease;">
-    <div style="font-family:'Archivo',sans-serif;font-weight:600;font-size:clamp(30px,5vw,64px);line-height:1;letter-spacing:-.02em;">Shenanigans</div>
-    <div style="width:min(46vw,280px);height:3px;background:rgba(255,255,255,.14);border-radius:100px;margin-top:26px;overflow:hidden;">
-      <div ref="{{ barRef }}" style="height:100%;width:0%;background:#9B8CFF;border-radius:100px;transition:width .35s cubic-bezier(.4,0,.6,1);"></div>
+<div ref="{{ loaderRef }}" style="position:fixed;inset:0;z-index:100;background:#0F0D0C;color:#EDE9E4;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:'Overused Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Helvetica,Arial,sans-serif;transition:opacity .6s ease;">
+<div ref="{{ loadInnerRef }}" style="display:flex;flex-direction:column;align-items:center;opacity:0;transition:opacity .3s ease;">
+    <div style="font-family:'Overused Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Helvetica,Arial,sans-serif;font-weight:700;font-size:clamp(40px,8vw,110px);line-height:1;letter-spacing:-.02em;">Shenanigans</div>
+    <div style="position:relative;display:flex;justify-content:center;">
+      <p ref="{{ pillCopyRef }}" style="display:flex;align-items:center;justify-content:center;font-weight:600;font-size:clamp(13px,1.6vw,16px);line-height:1.25;margin:14px 0 0;padding:.62em 1.05em;background:rgba(237,233,228,.07);border-radius:.66em;max-width:min(460px,calc(100vw - 56px));text-align:center;text-wrap:pretty;opacity:0;transition:opacity .4s ease .1s;">Smaller projects, experiments and things made for fun.</p>
+      <div ref="{{ barWrapRef }}" style="position:absolute;left:50%;top:calc(50% + 7px);transform:translate(-50%,-50%);width:min(46vw,280px);height:3px;background:rgba(237,233,228,.14);border-radius:100px;overflow:hidden;transition:opacity .3s ease;">
+        <div ref="{{ barRef }}" style="height:100%;width:0%;background:#2E6BFF;border-radius:100px;transition:width .35s cubic-bezier(.4,0,.6,1);"></div>
+      </div>
     </div>
-    <div ref="{{ pctRef }}" style="font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.14em;opacity:.55;margin-top:16px;">Loading 0%</div>
+    </div>
+    <div ref="{{ pctRef }}" style="position:absolute;bottom:34px;left:50%;transform:translateX(-50%);font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.14em;opacity:.55;transition:opacity .3s ease;">Loading 0%</div>
   </div>
-  <div style="--red:#FF4438;--blue:#2E6BFF;--yellow:#FFC700;--green:#17B26A;--purple:#7A3BFF;--orange:#FF7A00;--pink:#FF5CA8;--teal:#00B8C4;background:#0E0E0E;color:#F7F5F0;font-family:'Archivo',sans-serif;min-height:100vh;overflow-x:clip;">
+  <div style="--red:#FF4438;--blue:#2E6BFF;--yellow:#FFC700;--green:#17B26A;--purple:#7A3BFF;--orange:#FF7A00;--pink:#FF5CA8;--teal:#00B8C4;background:#0F0D0C;color:#EDE9E4;font-family:'Overused Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Helvetica,Arial,sans-serif;min-height:100vh;overflow-x:clip;">
   <header style="position:fixed;inset:0 0 auto 0;z-index:20;display:flex;align-items:center;padding:18px clamp(16px,3vw,40px);pointer-events:none;">
-    <a href="index.html" style="display:inline-flex;align-items:center;gap:8px;color:#F7F5F0;text-decoration:none;font-weight:700;font-size:14px;text-transform:uppercase;letter-spacing:.06em;pointer-events:auto;" style-hover="opacity:.55"><span aria-hidden="true">←</span> Back</a>
+    <div class="rwTrack" style="pointer-events:auto;"><a href="index.html" class="rwSeg">← Work</a><a href="about.html" class="rwSeg">About</a></div>
   </header>
 
   <div style="height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 20px;position:relative;">
-    <h1 style="font-family:'Archivo',sans-serif;font-weight:600;font-size:clamp(40px,8vw,110px);line-height:1;letter-spacing:-.02em;margin:0;">Shenanigans</h1>
-    <p style="font-weight:600;font-size:clamp(13px,1.6vw,16px);opacity:.6;margin:14px 0 0;max-width:460px;text-wrap:pretty;">Smaller projects, experiments and things made for fun.</p>
+    <h1 style="font-family:'Overused Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Helvetica,Arial,sans-serif;font-weight:700;font-size:clamp(40px,8vw,110px);line-height:1;letter-spacing:-.02em;margin:0;">Shenanigans</h1>
+    <p style="display:flex;align-items:center;justify-content:center;font-weight:600;font-size:clamp(13px,1.6vw,16px);line-height:1.25;margin:14px 0 0;padding:.62em 1.05em;background:rgba(237,233,228,.07);border-radius:.66em;max-width:min(460px,calc(100vw - 56px));text-align:center;text-wrap:pretty;">Smaller projects, experiments and things made for fun.</p>
     <div style="position:absolute;bottom:34px;left:50%;transform:translateX(-50%);font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.1em;opacity:.5;">Scroll ↓</div>
   </div>
 
@@ -41,67 +48,67 @@ a:hover{opacity:.55}
 
     <section data-stage-wrap data-screen-label="Project 1" style="height:280vh;position:relative;">
       <div style="position:sticky;top:0;height:100vh;overflow:clip;">
-        <div class="scCard" data-speed="0.5" data-drift="-6" style="position:absolute;left:7%;top:-8%;width:min(28vw,400px);border-radius:16px;overflow:hidden;transform:rotate(12deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:3/4.2;background:#EDEBE6;"><img loading="eager" decoding="async" src="assets/opt/2-bda72db6.webp" alt="Full Metal — bedside table styled" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
-        <div class="scCard" data-speed="0.25" data-drift="8" style="position:absolute;left:54%;top:0%;width:min(34vw,500px);border-radius:16px;overflow:hidden;transform:rotate(-14deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:16/10;background:#EDEBE6;"><img loading="eager" decoding="async" src="assets/opt/1.webp" alt="Full Metal — exploded construction" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
-        <div class="scCard" data-speed="-0.2" data-drift="-9" style="position:absolute;left:75%;top:40%;width:min(28vw,400px);border-radius:16px;overflow:hidden;transform:rotate(9deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:4/3;background:#EDEBE6;"><img loading="eager" decoding="async" src="assets/opt/1-32fc7d14.webp" alt="Full Metal — sheet metal form" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
-        <div class="scCard" data-speed="0.6" data-drift="12" style="position:absolute;left:-4%;top:56%;width:min(30vw,440px);border-radius:16px;overflow:hidden;transform:rotate(18deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:16/10;background:#EDEBE6;"><img loading="eager" decoding="async" src="assets/opt/2.webp" alt="Full Metal — styled in situ" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
-        <div class="scCard" data-speed="0.35" data-drift="-7" style="position:absolute;left:26%;top:74%;width:min(32vw,470px);border-radius:16px;overflow:hidden;transform:rotate(-9deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:16/10;background:#EDEBE6;"><img loading="eager" decoding="async" src="assets/opt/1-59a62268.webp" alt="Full Metal — colour variant" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
-        <div class="scCard" data-speed="-0.4" data-drift="6" style="position:absolute;left:62%;top:80%;width:min(26vw,370px);border-radius:16px;overflow:hidden;transform:rotate(6deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:4/3;background:#EDEBE6;"><img loading="eager" decoding="async" src="assets/opt/2-d309b8d3.webp" alt="Full Metal — styled in situ" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
+        <div class="scCard" data-speed="0.5" data-drift="-6" style="position:absolute;left:7%;top:-8%;width:min(28vw,400px);border-radius:16px;overflow:hidden;transform:rotate(12deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:3/4.2;background:#EDEBE6;"><img loading="eager" decoding="async" src="uploads/opt/2-bda72db6.jpg" alt="Full Metal — bedside table styled" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
+        <div class="scCard" data-speed="0.25" data-drift="8" style="position:absolute;left:54%;top:0%;width:min(34vw,500px);border-radius:16px;overflow:hidden;transform:rotate(-14deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:16/10;background:#EDEBE6;"><img loading="eager" decoding="async" src="uploads/opt/1.jpg" alt="Full Metal — exploded construction" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
+        <div class="scCard" data-speed="-0.2" data-drift="-9" style="position:absolute;left:75%;top:40%;width:min(28vw,400px);border-radius:16px;overflow:hidden;transform:rotate(9deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:4/3;background:#EDEBE6;"><img loading="eager" decoding="async" src="uploads/opt/1-32fc7d14.jpg" alt="Full Metal — sheet metal form" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
+        <div class="scCard" data-speed="0.6" data-drift="12" style="position:absolute;left:-4%;top:56%;width:min(30vw,440px);border-radius:16px;overflow:hidden;transform:rotate(18deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:16/10;background:#EDEBE6;"><img loading="eager" decoding="async" src="uploads/opt/2.jpg" alt="Full Metal — styled in situ" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
+        <div class="scCard" data-speed="0.35" data-drift="-7" style="position:absolute;left:26%;top:74%;width:min(32vw,470px);border-radius:16px;overflow:hidden;transform:rotate(-9deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:16/10;background:#EDEBE6;"><img loading="eager" decoding="async" src="uploads/opt/1-59a62268.jpg" alt="Full Metal — colour variant" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
+        <div class="scCard" data-speed="-0.4" data-drift="6" style="position:absolute;left:62%;top:80%;width:min(26vw,370px);border-radius:16px;overflow:hidden;transform:rotate(6deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:4/3;background:#EDEBE6;"><img loading="eager" decoding="async" src="uploads/opt/2-d309b8d3.jpg" alt="Full Metal — styled in situ" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
       </div>
     </section>
 
     <section data-stage-wrap data-screen-label="Project 2" style="height:280vh;position:relative;">
       <div style="position:sticky;top:0;height:100vh;overflow:clip;">
-        <div class="scCard" data-speed="0.45" data-drift="8" style="position:absolute;left:70%;top:-8%;width:min(28vw,400px);border-radius:16px;overflow:hidden;transform:rotate(-12deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:3/4.2;background:#EDEBE6;"><img loading="eager" decoding="async" src="assets/opt/ABSTRACT-1.webp" alt="XOOX — hero abstract" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
-        <div class="scCard" data-speed="0.25" data-drift="-8" style="position:absolute;left:10%;top:2%;width:min(34vw,500px);border-radius:16px;overflow:hidden;transform:rotate(11deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:16/10;background:#EDEBE6;"><img loading="eager" decoding="async" src="assets/opt/Drone-flying.webp" alt="XOOX — flying" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
-        <div class="scCard" data-speed="-0.25" data-drift="9" style="position:absolute;left:2%;top:44%;width:min(28vw,400px);border-radius:16px;overflow:hidden;transform:rotate(-8deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:4/3;background:#EDEBE6;"><img loading="eager" decoding="async" src="assets/opt/Hero-shot-2.webp" alt="XOOX — top view" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
-        <div class="scCard" data-speed="0.55" data-drift="-11" style="position:absolute;left:76%;top:52%;width:min(30vw,440px);border-radius:16px;overflow:hidden;transform:rotate(-16deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:16/10;background:#EDEBE6;"><img loading="eager" decoding="async" src="assets/opt/Top-ortho.webp" alt="XOOX — top ortho" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
-        <div class="scCard" data-speed="0.35" data-drift="7" style="position:absolute;left:38%;top:76%;width:min(32vw,470px);border-radius:16px;overflow:hidden;transform:rotate(8deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:16/10;background:#EDEBE6;"><img loading="eager" decoding="async" src="assets/opt/label.webp" alt="XOOX — label detail" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
-        <div class="scCard" data-speed="-0.35" data-drift="7" style="position:absolute;left:42%;top:-12%;width:min(24vw,340px);border-radius:16px;overflow:hidden;transform:rotate(-6deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:1/1;background:#EDEBE6;"><img loading="eager" decoding="async" src="assets/opt/propeller.webp" alt="XOOX — propeller detail" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
-        <div class="scCard" data-speed="0.5" data-drift="-9" style="position:absolute;left:12%;top:74%;width:min(22vw,320px);border-radius:16px;overflow:hidden;transform:rotate(12deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:1/1;background:#EDEBE6;"><img loading="eager" decoding="async" src="assets/opt/Button.webp" alt="XOOX — power button" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
-        <div class="scCard" data-speed="0.3" data-drift="8" style="position:absolute;left:72%;top:82%;width:min(24vw,340px);border-radius:16px;overflow:hidden;transform:rotate(-11deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:1/1;background:#EDEBE6;"><img loading="eager" decoding="async" src="assets/opt/camera-detail.webp" alt="XOOX — camera detail" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
+        <div class="scCard" data-speed="0.45" data-drift="8" style="position:absolute;left:70%;top:-8%;width:min(28vw,400px);border-radius:16px;overflow:hidden;transform:rotate(-12deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:3/4.2;background:#EDEBE6;"><img loading="eager" decoding="async" src="uploads/opt/ABSTRACT%201.jpg" alt="XOOX — hero abstract" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
+        <div class="scCard" data-speed="0.25" data-drift="-8" style="position:absolute;left:10%;top:2%;width:min(34vw,500px);border-radius:16px;overflow:hidden;transform:rotate(11deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:16/10;background:#EDEBE6;"><img loading="eager" decoding="async" src="uploads/opt/Drone%20flying.jpg" alt="XOOX — flying" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
+        <div class="scCard" data-speed="-0.25" data-drift="9" style="position:absolute;left:2%;top:44%;width:min(28vw,400px);border-radius:16px;overflow:hidden;transform:rotate(-8deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:4/3;background:#EDEBE6;"><img loading="eager" decoding="async" src="uploads/opt/Hero%20shot%202.jpg" alt="XOOX — top view" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
+        <div class="scCard" data-speed="0.55" data-drift="-11" style="position:absolute;left:76%;top:52%;width:min(30vw,440px);border-radius:16px;overflow:hidden;transform:rotate(-16deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:16/10;background:#EDEBE6;"><img loading="eager" decoding="async" src="uploads/opt/Top%20ortho.jpg" alt="XOOX — top ortho" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
+        <div class="scCard" data-speed="0.35" data-drift="7" style="position:absolute;left:38%;top:76%;width:min(32vw,470px);border-radius:16px;overflow:hidden;transform:rotate(8deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:16/10;background:#EDEBE6;"><img loading="eager" decoding="async" src="uploads/opt/label.jpg" alt="XOOX — label detail" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
+        <div class="scCard" data-speed="-0.35" data-drift="7" style="position:absolute;left:42%;top:-12%;width:min(24vw,340px);border-radius:16px;overflow:hidden;transform:rotate(-6deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:1/1;background:#EDEBE6;"><img loading="eager" decoding="async" src="uploads/opt/propeller.jpg" alt="XOOX — propeller detail" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
+        <div class="scCard" data-speed="0.5" data-drift="-9" style="position:absolute;left:12%;top:74%;width:min(22vw,320px);border-radius:16px;overflow:hidden;transform:rotate(12deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:1/1;background:#EDEBE6;"><img loading="eager" decoding="async" src="uploads/opt/Button.jpg" alt="XOOX — power button" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
+        <div class="scCard" data-speed="0.3" data-drift="8" style="position:absolute;left:72%;top:82%;width:min(24vw,340px);border-radius:16px;overflow:hidden;transform:rotate(-11deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:1/1;background:#EDEBE6;"><img loading="eager" decoding="async" src="uploads/opt/camera%20detail.jpg" alt="XOOX — camera detail" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
       </div>
     </section>
 
     <section data-stage-wrap data-screen-label="Project 3" style="height:280vh;position:relative;">
       <div style="position:sticky;top:0;height:100vh;overflow:clip;">
-        <div class="scCard" data-speed="0.5" data-drift="-7" style="position:absolute;left:8%;top:-6%;width:min(34vw,500px);border-radius:16px;overflow:hidden;transform:rotate(-13deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:16/10;background:#EDEBE6;"><img loading="eager" decoding="async" src="assets/opt/pasted-1784650943592-0.webp" alt="Snapin Select technical drawing" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
-        <div class="scCard" data-speed="0.3" data-drift="9" style="position:absolute;left:64%;top:4%;width:min(28vw,400px);border-radius:16px;overflow:hidden;transform:rotate(10deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:3/4.2;background:#EDEBE6;"><img loading="eager" decoding="async" src="assets/opt/3.webp" alt="Snapin Select dome display" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
-        <div class="scCard" data-speed="-0.3" data-drift="-8" style="position:absolute;left:0%;top:52%;width:min(30vw,440px);border-radius:16px;overflow:hidden;transform:rotate(14deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:3/4.2;background:#EDEBE6;"><img loading="eager" decoding="async" src="assets/opt/4.webp" alt="Snapin Select dome display" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
-        <div class="scCard" data-speed="0.55" data-drift="8" style="position:absolute;left:72%;top:64%;width:min(28vw,400px);border-radius:16px;overflow:hidden;transform:rotate(-9deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:3/4.2;background:#EDEBE6;"><img loading="eager" decoding="async" src="assets/opt/Shelf-closeup_1.webp" alt="Snapin Select shelf detail" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
-        <div class="scCard" data-speed="0.35" data-drift="-6" style="position:absolute;left:32%;top:78%;width:min(32vw,470px);border-radius:16px;overflow:hidden;transform:rotate(7deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:3/4;background:#EDEBE6;"><img loading="eager" decoding="async" src="assets/opt/IMG-20251118-WA0005.webp" alt="Snapin Select material sample" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
+        <div class="scCard" data-speed="0.5" data-drift="-7" style="position:absolute;left:8%;top:-6%;width:min(34vw,500px);border-radius:16px;overflow:hidden;transform:rotate(-13deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:16/10;background:#EDEBE6;"><img loading="eager" decoding="async" src="uploads/opt/pasted-1784650943592-0.jpg" alt="Snapin Select technical drawing" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
+        <div class="scCard" data-speed="0.3" data-drift="9" style="position:absolute;left:64%;top:4%;width:min(28vw,400px);border-radius:16px;overflow:hidden;transform:rotate(10deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:3/4.2;background:#EDEBE6;"><img loading="eager" decoding="async" src="uploads/opt/3.jpg" alt="Snapin Select dome display" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
+        <div class="scCard" data-speed="-0.3" data-drift="-8" style="position:absolute;left:0%;top:52%;width:min(30vw,440px);border-radius:16px;overflow:hidden;transform:rotate(14deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:3/4.2;background:#EDEBE6;"><img loading="eager" decoding="async" src="uploads/opt/4.jpg" alt="Snapin Select dome display" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
+        <div class="scCard" data-speed="0.55" data-drift="8" style="position:absolute;left:72%;top:64%;width:min(28vw,400px);border-radius:16px;overflow:hidden;transform:rotate(-9deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:3/4.2;background:#EDEBE6;"><img loading="eager" decoding="async" src="uploads/opt/Shelf%20closeup_1.jpg" alt="Snapin Select shelf detail" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
+        <div class="scCard" data-speed="0.35" data-drift="-6" style="position:absolute;left:32%;top:78%;width:min(32vw,470px);border-radius:16px;overflow:hidden;transform:rotate(7deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:3/4;background:#EDEBE6;"><img loading="eager" decoding="async" src="uploads/opt/IMG-20251118-WA0005.jpg" alt="Snapin Select material sample" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
         <div class="scCard" data-speed="-0.4" data-drift="7" style="position:absolute;left:40%;top:-14%;width:min(20vw,280px);border-radius:16px;overflow:hidden;transform:rotate(-6deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:9/16;background:#EDEBE6;"><img loading="eager" decoding="async" src="uploads/VID-20251118-WA0004-ezgif.com-optimize.gif" alt="Snapin Select installation in situ" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
       </div>
     </section>
 
     <section data-stage-wrap data-screen-label="Project 4" style="height:280vh;position:relative;">
       <div style="position:sticky;top:0;height:100vh;overflow:clip;">
-        <div class="scCard" data-speed="0.5" data-drift="-7" style="position:absolute;left:6%;top:-8%;width:min(38vw,560px);border-radius:16px;overflow:hidden;transform:rotate(10deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:16/10;background:#EDEBE6;"><img loading="eager" decoding="async" src="assets/opt/render_1.webp" alt="Nothing Phone 3a CE — hero with robot insect" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
-        <div class="scCard" data-speed="0.28" data-drift="9" style="position:absolute;left:62%;top:2%;width:min(30vw,440px);border-radius:16px;overflow:hidden;transform:rotate(-9deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:16/9;background:#EDEBE6;"><img loading="eager" decoding="async" src="assets/opt/render_2.webp" alt="Nothing Phone 3a CE — angled back" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
-        <div class="scCard" data-speed="-0.3" data-drift="-8" style="position:absolute;left:2%;top:50%;width:min(30vw,440px);border-radius:16px;overflow:hidden;transform:rotate(10deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:16/9;background:#EDEBE6;"><img loading="eager" decoding="async" src="assets/opt/render_3.webp" alt="Nothing Phone 3a CE — back detail" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
-        <div class="scCard" data-speed="0.4" data-drift="7" style="position:absolute;left:52%;top:70%;width:min(32vw,470px);border-radius:16px;overflow:hidden;transform:rotate(-9deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:16/9;background:#EDEBE6;"><img loading="eager" decoding="async" src="assets/opt/render_4.webp" alt="Nothing Phone 3a CE — colorway" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
+        <div class="scCard" data-speed="0.5" data-drift="-7" style="position:absolute;left:6%;top:-8%;width:min(38vw,560px);border-radius:16px;overflow:hidden;transform:rotate(10deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:16/10;background:#EDEBE6;"><img loading="eager" decoding="async" src="uploads/opt/render_1.jpg" alt="Nothing Phone 3a CE — hero with robot insect" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
+        <div class="scCard" data-speed="0.28" data-drift="9" style="position:absolute;left:62%;top:2%;width:min(30vw,440px);border-radius:16px;overflow:hidden;transform:rotate(-9deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:16/9;background:#EDEBE6;"><img loading="eager" decoding="async" src="uploads/opt/render_2.jpg" alt="Nothing Phone 3a CE — angled back" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
+        <div class="scCard" data-speed="-0.3" data-drift="-8" style="position:absolute;left:2%;top:50%;width:min(30vw,440px);border-radius:16px;overflow:hidden;transform:rotate(10deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:16/9;background:#EDEBE6;"><img loading="eager" decoding="async" src="uploads/opt/render_3.jpg" alt="Nothing Phone 3a CE — back detail" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
+        <div class="scCard" data-speed="0.4" data-drift="7" style="position:absolute;left:52%;top:70%;width:min(32vw,470px);border-radius:16px;overflow:hidden;transform:rotate(-9deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:16/9;background:#EDEBE6;"><img loading="eager" decoding="async" src="uploads/opt/render_4.jpg" alt="Nothing Phone 3a CE — colorway" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
       </div>
     </section>
 
     <section data-stage-wrap data-screen-label="Project 5" style="height:280vh;position:relative;">
       <div style="position:sticky;top:0;height:100vh;overflow:clip;">
-        <div class="scCard" data-speed="0.5" data-drift="-7" style="position:absolute;left:8%;top:-8%;width:min(30vw,440px);border-radius:16px;overflow:hidden;transform:rotate(10deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:1/1;background:#EDEBE6;"><img loading="eager" decoding="async" src="assets/opt/1-44fcc8b3.webp" alt="Praan HIVE hub — wall-mounted AQI display" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
-        <div class="scCard" data-speed="0.28" data-drift="9" style="position:absolute;left:60%;top:0%;width:min(36vw,520px);border-radius:16px;overflow:hidden;transform:rotate(-9deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:16/9;background:#EDEBE6;"><img loading="eager" decoding="async" src="assets/opt/2-8816bc2f.webp" alt="Praan HIVE hub — concept sketch" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
-        <div class="scCard" data-speed="-0.3" data-drift="-8" style="position:absolute;left:2%;top:52%;width:min(30vw,440px);border-radius:16px;overflow:hidden;transform:rotate(10deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:1/1;background:#EDEBE6;"><img loading="eager" decoding="async" src="assets/opt/3-c0355db5.webp" alt="Praan HIVE hub — product render" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
-        <div class="scCard" data-speed="0.4" data-drift="7" style="position:absolute;left:56%;top:72%;width:min(30vw,440px);border-radius:16px;overflow:hidden;transform:rotate(-9deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:4/3;background:#EDEBE6;"><img loading="eager" decoding="async" src="assets/opt/Screenshot-2025-04-02-144133.webp" alt="Praan HIVE hub — on dock" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
+        <div class="scCard" data-speed="0.5" data-drift="-7" style="position:absolute;left:8%;top:-8%;width:min(30vw,440px);border-radius:16px;overflow:hidden;transform:rotate(10deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:1/1;background:#EDEBE6;"><img loading="eager" decoding="async" src="uploads/opt/1-44fcc8b3.jpg" alt="Praan HIVE hub — wall-mounted AQI display" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
+        <div class="scCard" data-speed="0.28" data-drift="9" style="position:absolute;left:60%;top:0%;width:min(36vw,520px);border-radius:16px;overflow:hidden;transform:rotate(-9deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:16/9;background:#EDEBE6;"><img loading="eager" decoding="async" src="uploads/opt/2-8816bc2f.jpg" alt="Praan HIVE hub — concept sketch" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
+        <div class="scCard" data-speed="-0.3" data-drift="-8" style="position:absolute;left:2%;top:52%;width:min(30vw,440px);border-radius:16px;overflow:hidden;transform:rotate(10deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:1/1;background:#EDEBE6;"><img loading="eager" decoding="async" src="uploads/opt/3-c0355db5.jpg" alt="Praan HIVE hub — product render" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
+        <div class="scCard" data-speed="0.4" data-drift="7" style="position:absolute;left:56%;top:72%;width:min(30vw,440px);border-radius:16px;overflow:hidden;transform:rotate(-9deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:4/3;background:#EDEBE6;"><img loading="eager" decoding="async" src="uploads/opt/Screenshot%202025-04-02%20144133.jpg" alt="Praan HIVE hub — on dock" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
       </div>
     </section>
 
     <section data-stage-wrap data-screen-label="Project 6" style="height:300vh;position:relative;">
       <div style="position:sticky;top:0;height:100vh;overflow:clip;">
-        <div class="scCard" data-speed="0.5" data-drift="-7" style="position:absolute;left:7%;top:-8%;width:min(28vw,400px);border-radius:16px;overflow:hidden;transform:rotate(9deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:1/1;background:#EDEBE6;"><img loading="eager" decoding="async" src="assets/opt/Minimal_straight.webp" alt="Artime — minimal face" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
-        <div class="scCard" data-speed="0.28" data-drift="9" style="position:absolute;left:60%;top:-2%;width:min(26vw,380px);border-radius:16px;overflow:hidden;transform:rotate(-8deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:1/1;background:#EDEBE6;"><img loading="eager" decoding="async" src="assets/opt/Lightbox_perspective.webp" alt="Artime — lightbox perspective" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
-        <div class="scCard" data-speed="-0.28" data-drift="-8" style="position:absolute;left:2%;top:30%;width:min(24vw,350px);border-radius:16px;overflow:hidden;transform:rotate(9deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:1/1;background:#EDEBE6;"><img loading="eager" decoding="async" src="assets/opt/Puffed_perspective.webp" alt="Artime — puffed perspective" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
-        <div class="scCard" data-speed="0.55" data-drift="8" style="position:absolute;left:72%;top:34%;width:min(24vw,350px);border-radius:16px;overflow:hidden;transform:rotate(-8deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:1/1;background:#EDEBE6;"><img loading="eager" decoding="async" src="assets/opt/Puffed_straight.webp" alt="Artime — puffed face" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
-        <div class="scCard" data-speed="0.32" data-drift="-6" style="position:absolute;left:30%;top:54%;width:min(26vw,380px);border-radius:16px;overflow:hidden;transform:rotate(9deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:1/1;background:#EDEBE6;"><img loading="eager" decoding="async" src="assets/opt/Lightbox_3d-render.webp" alt="Artime — lightbox render" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
-        <div class="scCard" data-speed="-0.35" data-drift="7" style="position:absolute;left:1%;top:70%;width:min(24vw,350px);border-radius:16px;overflow:hidden;transform:rotate(-8deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:1/1;background:#EDEBE6;"><img loading="eager" decoding="async" src="assets/opt/Minimal-LED_perspective.webp" alt="Artime — LED perspective" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
-        <div class="scCard" data-speed="0.45" data-drift="-9" style="position:absolute;left:56%;top:72%;width:min(26vw,380px);border-radius:16px;overflow:hidden;transform:rotate(9deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:1/1;background:#EDEBE6;"><img loading="eager" decoding="async" src="assets/opt/Lightbox_straight.webp" alt="Artime — lightbox lit" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
-        <div class="scCard" data-speed="0.3" data-drift="8" style="position:absolute;left:32%;top:-14%;width:min(22vw,320px);border-radius:16px;overflow:hidden;transform:rotate(-8deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:1/1;background:#EDEBE6;"><img loading="eager" decoding="async" src="assets/opt/Minimal-LED_3d-render.webp" alt="Artime — LED render" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
+        <div class="scCard" data-speed="0.5" data-drift="-7" style="position:absolute;left:7%;top:-8%;width:min(28vw,400px);border-radius:16px;overflow:hidden;transform:rotate(9deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:1/1;background:#EDEBE6;"><img loading="eager" decoding="async" src="uploads/opt/Minimal_straight.jpg" alt="Artime — minimal face" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
+        <div class="scCard" data-speed="0.28" data-drift="9" style="position:absolute;left:60%;top:-2%;width:min(26vw,380px);border-radius:16px;overflow:hidden;transform:rotate(-8deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:1/1;background:#EDEBE6;"><img loading="eager" decoding="async" src="uploads/opt/Lightbox_perspective.jpg" alt="Artime — lightbox perspective" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
+        <div class="scCard" data-speed="-0.28" data-drift="-8" style="position:absolute;left:2%;top:30%;width:min(24vw,350px);border-radius:16px;overflow:hidden;transform:rotate(9deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:1/1;background:#EDEBE6;"><img loading="eager" decoding="async" src="uploads/opt/Puffed_perspective.jpg" alt="Artime — puffed perspective" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
+        <div class="scCard" data-speed="0.55" data-drift="8" style="position:absolute;left:72%;top:34%;width:min(24vw,350px);border-radius:16px;overflow:hidden;transform:rotate(-8deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:1/1;background:#EDEBE6;"><img loading="eager" decoding="async" src="uploads/opt/Puffed_straight.jpg" alt="Artime — puffed face" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
+        <div class="scCard" data-speed="0.32" data-drift="-6" style="position:absolute;left:30%;top:54%;width:min(26vw,380px);border-radius:16px;overflow:hidden;transform:rotate(9deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:1/1;background:#EDEBE6;"><img loading="eager" decoding="async" src="uploads/opt/Lightbox_3d%20render.jpg" alt="Artime — lightbox render" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
+        <div class="scCard" data-speed="-0.35" data-drift="7" style="position:absolute;left:1%;top:70%;width:min(24vw,350px);border-radius:16px;overflow:hidden;transform:rotate(-8deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:1/1;background:#EDEBE6;"><img loading="eager" decoding="async" src="uploads/opt/Minimal%20LED_perspective.jpg" alt="Artime — LED perspective" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
+        <div class="scCard" data-speed="0.45" data-drift="-9" style="position:absolute;left:56%;top:72%;width:min(26vw,380px);border-radius:16px;overflow:hidden;transform:rotate(9deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:1/1;background:#EDEBE6;"><img loading="eager" decoding="async" src="uploads/opt/Lightbox_straight.jpg" alt="Artime — lightbox lit" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
+        <div class="scCard" data-speed="0.3" data-drift="8" style="position:absolute;left:32%;top:-14%;width:min(22vw,320px);border-radius:16px;overflow:hidden;transform:rotate(-8deg);will-change:transform;z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.55);"><div style="aspect-ratio:1/1;background:#EDEBE6;"><img loading="eager" decoding="async" src="uploads/opt/Minimal%20LED_3d%20render.jpg" alt="Artime — LED render" style="width:100%;height:100%;object-fit:cover;display:block;"></div></div>
       </div>
     </section>
 
@@ -113,36 +120,36 @@ a:hover{opacity:.55}
 
   <div ref="{{ titleRef }}" style="position:fixed;left:50%;top:50%;z-index:1;width:min(34vw,460px);background:rgba(255,255,255,.08);backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4);border:1px solid rgba(255,255,255,.35);border-radius:16px;padding:clamp(24px,3vw,48px) clamp(20px,2.6vw,40px);box-shadow:0 30px 80px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.4);pointer-events:none;opacity:0;transform:translate(-50%,-50%) translateY(-120vh) rotate(-14deg);transition:transform 1.6s cubic-bezier(.3,1.25,.45,1),opacity .8s ease;will-change:transform;">
     <div data-inner style="transition:opacity .18s ease,transform .18s ease;">
-      <div data-pill style="display:inline-block;background:var(--red);color:#fff;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.08em;padding:6px 14px;border-radius:100px;margin-bottom:14px;">01</div>
-      <div data-name style="font-family:'Archivo',sans-serif;font-weight:600;font-size:clamp(28px,3.6vw,52px);line-height:1;letter-spacing:-.02em;color:#fff;">Full Metal</div>
+      <div data-pill style="display:inline-block;background:var(--red);color:#fff;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.08em;padding:6px 14px;border-radius:.66em;margin-bottom:14px;">01</div>
+      <div data-name style="font-family:'Overused Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Helvetica,Arial,sans-serif;font-weight:600;font-size:clamp(28px,3.6vw,52px);line-height:1;letter-spacing:-.02em;color:#fff;">Full Metal</div>
       <div data-desc style="font-weight:600;font-size:clamp(12px,1.15vw,15px);line-height:1.35;color:rgba(255,255,255,.6);margin-top:12px;text-wrap:pretty;">Bedside tables made entirely from sheet-metal construction.</div>
     </div>
     <div data-cta style="display:none;text-align:center;">
       <div style="display:flex;align-items:center;justify-content:center;gap:clamp(14px,1.6vw,22px);">
         <div data-eyes style="display:flex;gap:clamp(3px,.4vw,6px);">
           <div data-eye style="position:relative;width:clamp(34px,4.4vw,62px);height:clamp(46px,6vw,84px);border-radius:9999px;background:#fff;">
-            <div data-pupil style="position:absolute;left:50%;top:34%;width:52%;height:52%;margin-left:-26%;margin-top:-26%;border-radius:9999px;background:#0E0E0E;will-change:transform;">
+            <div data-pupil style="position:absolute;left:50%;top:34%;width:52%;height:52%;margin-left:-26%;margin-top:-26%;border-radius:9999px;background:#0F0D0C;will-change:transform;">
               <div style="position:absolute;left:52%;top:14%;width:34%;aspect-ratio:1;border-radius:50%;background:#fff;"></div>
             </div>
           </div>
           <div data-eye style="position:relative;width:clamp(34px,4.4vw,62px);height:clamp(46px,6vw,84px);border-radius:9999px;background:#fff;">
-            <div data-pupil style="position:absolute;left:50%;top:34%;width:52%;height:52%;margin-left:-26%;margin-top:-26%;border-radius:9999px;background:#0E0E0E;will-change:transform;">
+            <div data-pupil style="position:absolute;left:50%;top:34%;width:52%;height:52%;margin-left:-26%;margin-top:-26%;border-radius:9999px;background:#0F0D0C;will-change:transform;">
               <div style="position:absolute;left:52%;top:14%;width:34%;aspect-ratio:1;border-radius:50%;background:#fff;"></div>
             </div>
           </div>
         </div>
-        <div style="font-family:'Archivo',sans-serif;font-weight:600;font-size:clamp(40px,6vw,86px);line-height:1;letter-spacing:.02em;color:#fff;">→</div>
+        <div style="font-family:'Overused Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Helvetica,Arial,sans-serif;font-weight:600;font-size:clamp(40px,6vw,86px);line-height:1;letter-spacing:.02em;color:#fff;">→</div>
       </div>
       <div style="font-weight:700;font-size:clamp(11px,1vw,13px);text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.6);margin-top:16px;">See more on Instagram</div>
     </div>
   </div>
 
-  <footer style="padding:24px clamp(16px,3vw,40px) 40px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.18);position:relative;z-index:5;background:#0E0E0E;">
+  <footer style="padding:24px clamp(16px,3vw,40px) 40px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;border-top:1px solid rgba(237,233,228,.16);position:relative;z-index:5;background:#0F0D0C;">
     <span style="font-size:13px;opacity:.6;font-weight:600;text-transform:uppercase;letter-spacing:.06em;">Ritwiz Sharma — Industrial Designer</span>
     <div style="display:flex;gap:18px;flex-wrap:wrap;">
-      <a href="mailto:ritwizsharma1@gmail.com?subject=Ritwiz%2C%20work%20with%20me!" style="color:#F7F5F0;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.06em;text-decoration:none;" style-hover="opacity:.55">Email</a>
-      <a href="https://www.behance.net/ritwizsharma" target="_blank" rel="noopener" style="color:#F7F5F0;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.06em;text-decoration:none;" style-hover="opacity:.55">Behance</a>
-      <a href="https://www.linkedin.com/in/ritwizsharma/" target="_blank" rel="noopener" style="color:#F7F5F0;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.06em;text-decoration:none;" style-hover="opacity:.55">LinkedIn</a>
+      <a href="mailto:ritwizsharma1@gmail.com?subject=Ritwiz%2C%20work%20with%20me!" style="color:#EDE9E4;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.06em;text-decoration:none;" style-hover="opacity:.55">Email</a>
+      <a href="https://www.behance.net/ritwizsharma" target="_blank" rel="noopener" style="color:#EDE9E4;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.06em;text-decoration:none;" style-hover="opacity:.55">Behance</a>
+      <a href="https://www.linkedin.com/in/ritwizsharma/" target="_blank" rel="noopener" style="color:#EDE9E4;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.06em;text-decoration:none;" style-hover="opacity:.55">LinkedIn</a>
     </div>
   </footer>
 </div>
@@ -156,6 +163,10 @@ class Component extends DCLogic {
     this.loaderRef = React.createRef();
     this.barRef = React.createRef();
     this.pctRef = React.createRef();
+    this.pillCopyRef = React.createRef();
+    this.barWrapRef = React.createRef();
+    this.heroPillRef = React.createRef();
+    this.loadInnerRef = React.createRef();
   }
   componentDidMount(){
     this._preload();
@@ -174,12 +185,22 @@ class Component extends DCLogic {
       if(bar) bar.style.width = p + '%';
       if(pct) pct.textContent = 'Loading ' + p + '%';
     };
+    const reveal = () => { const inner = this.loadInnerRef.current; if(inner) inner.style.opacity = '1'; };
+    if(document.fonts && document.fonts.ready) document.fonts.ready.then(reveal); else reveal();
+    setTimeout(reveal, 1500);
+    const morph = () => {
+      const barWrap = this.barWrapRef.current, pill = this.pillCopyRef.current;
+      if(barWrap) barWrap.style.opacity = '0';
+      if(pill) pill.style.opacity = '1';
+      if(pct) pct.style.opacity = '0';
+    };
     const hide = () => {
       if(finished) return; finished = true;
       set();
+      morph();
       if(!loader) return;
-      loader.style.opacity = '0';
-      setTimeout(()=>{ loader.style.display = 'none'; }, 650);
+      setTimeout(()=>{ loader.style.opacity = '0'; }, 700);
+      setTimeout(()=>{ loader.style.display = 'none'; }, 1400);
     };
     const tick = () => { done++; set(); if(done >= total) hide(); };
     imgs.forEach(img=>{
@@ -200,8 +221,19 @@ class Component extends DCLogic {
         el: c,
         speed: parseFloat(c.dataset.speed),
         drift: parseFloat(c.dataset.drift),
-        base: (c.style.transform.match(/rotate\(([-\d.]+)deg\)/)||[0,0])[1]*1
+        base: (c.style.transform.match(/rotate\(([-\d.]+)deg\)/)||[0,0])[1]*1,
+        j: 0
       }))
+    }));
+    wraps.forEach(w=>w.cards.forEach((c,i)=>{
+      const s = Math.sin((i+1)*12.9898)*43758.5453, r = s - Math.floor(s);
+      const s2 = Math.sin((i+1)*78.233)*12345.6789, r2 = s2 - Math.floor(s2);
+      c.jy = 0.72 + r*0.62;
+      c.jx = 0.68 + r2*0.7;
+      c.jt = 0.7 + ((r+r2)/2)*0.7;
+      c.lag = 0.055 + r2*0.06;
+      c.sy = r > 0.74 ? -1 : 1;
+      c.mx = 0; c.my = 0;
     }));
     const outro = main.querySelector('[data-outro]');
     const wrap = main.parentElement;
@@ -295,17 +327,41 @@ class Component extends DCLogic {
         const p = Math.min(1.25, Math.max(-0.25, -r.top / span));
         const off = 0.5 - p;                             // +early → -late
         w.cards.forEach(c=>{
-          const y = off * c.speed * vh * 1.6;
-          const rot = c.base + off * c.drift;
-          c.el.style.transform = `translate3d(0, ${y}px, 0) rotate(${rot}deg)`;
+          c.y = off * c.speed * vh * 1.6;
+          c.rot = c.base + off * c.drift;
         });
       });
+      paint();
     };
+    let tmx = 0, tmy = 0, praf = null;
+    const paint = () => {
+      wraps.forEach(w=>w.cards.forEach(c=>{
+        if(c.y === undefined) return;
+        const d = 0.35 + Math.abs(c.speed) * 0.9;
+        c.el.style.transform = `perspective(1100px) translate3d(${(c.mx*22*d*c.jt).toFixed(2)}px, ${(c.y + c.my*13*d*c.jt).toFixed(2)}px, 0) rotateY(${(c.mx*6.5*d*c.jy*c.sy).toFixed(2)}deg) rotateX(${(-c.my*4.5*d*c.jx).toFixed(2)}deg) rotate(${c.rot}deg)`;
+      }));
+    };
+    const loop = () => {
+      praf = null;
+      let moving = false;
+      wraps.forEach(w=>w.cards.forEach(c=>{
+        c.mx += (tmx-c.mx)*c.lag; c.my += (tmy-c.my)*c.lag;
+        if(Math.abs(tmx-c.mx) > 0.002 || Math.abs(tmy-c.my) > 0.002) moving = true;
+      }));
+      paint();
+      if(moving) praf = requestAnimationFrame(loop);
+    };
+    const onMove = e => {
+      tmx = (e.clientX/innerWidth - 0.5)*2;
+      tmy = (e.clientY/innerHeight - 0.5)*2;
+      if(!praf) praf = requestAnimationFrame(loop);
+    };
+    if(matchMedia('(pointer:fine)').matches) addEventListener('pointermove', onMove, {passive:true});
     const onScroll = () => { if(!ticking){ ticking = true; requestAnimationFrame(update); setTimeout(update, 50); } };
     addEventListener('scroll', onScroll, {passive:true});
     addEventListener('resize', onScroll);
     update();
-    this._cleanup = () => { removeEventListener('scroll', onScroll); removeEventListener('resize', onScroll); };
+    this._cleanup = () => { removeEventListener('scroll', onScroll); removeEventListener('resize', onScroll); removeEventListener('pointermove', onMove); if(praf) cancelAnimationFrame(praf); };
   }
   _eyes(){
     const title = this.titleRef.current; if(!title) return;
@@ -333,7 +389,7 @@ class Component extends DCLogic {
   }
   componentWillUnmount(){ if(this._cleanup) this._cleanup(); if(this._eyesOff) this._eyesOff(); }
   renderVals(){
-    return { mainRef: this.mainRef, titleRef: this.titleRef, loaderRef: this.loaderRef, barRef: this.barRef, pctRef: this.pctRef };
+    return { mainRef: this.mainRef, titleRef: this.titleRef, loaderRef: this.loaderRef, barRef: this.barRef, pctRef: this.pctRef, pillCopyRef: this.pillCopyRef, barWrapRef: this.barWrapRef, loadInnerRef: this.loadInnerRef };
   }
 }
 </script>

@@ -9,15 +9,7 @@
 <body>
 <x-dc>
 <helmet>
-<script>(function(){var k='rwTheme';var d=document.documentElement;
-function paint(){var dark=d.dataset.rwtheme==='dark';document.querySelectorAll('[data-theme-toggle]').forEach(function(b){b.textContent=dark?'\u25D1':'\u25D0';b.setAttribute('aria-pressed',dark);});}
-if(!d.dataset.rwtheme){var t=null;try{t=localStorage.getItem(k)}catch(e){}d.dataset.rwtheme=t||'dark';}
-window.rwSetTheme=function(n){d.dataset.rwtheme=n;try{localStorage.setItem(k,n)}catch(e){}paint();};
-window.rwPaintTheme=paint;
-if(!window.__rwThemeBound){window.__rwThemeBound=1;
-document.addEventListener('click',function(e){var b=e.target&&e.target.closest&&e.target.closest('[data-theme-toggle]');if(!b)return;window.rwSetTheme(d.dataset.rwtheme==='dark'?'light':'dark');});
-document.addEventListener('DOMContentLoaded',paint);}
-setTimeout(paint,0);})();</script>
+<script>document.documentElement.dataset.rwtheme='dark';</script>
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
 <style>
 @font-face{font-family:'Overused Grotesk';src:url('https://cdn.jsdelivr.net/gh/RandomMaerks/Overused-Grotesk@main/fonts/variable/OverusedGrotesk-VF.woff2') format('woff2-variations'),url('https://cdn.jsdelivr.net/gh/RandomMaerks/Overused-Grotesk@main/fonts/variable/OverusedGrotesk-VF.ttf') format('truetype-variations');font-weight:300 900;font-display:swap;}
@@ -26,16 +18,18 @@ html[data-rwtheme="dark"]{--pg-bg:#0F0D0C;--pg-ink:#EDE9E4;--pg-hair:rgba(237,23
 html[data-rwtheme="dark"] body{background:#0F0D0C}
 body{margin:0;background:var(--pg-bg)}
 a{color:var(--pg-ink)}a:hover{opacity:.55}
-.rwThemeBtn{font:inherit;cursor:pointer;background:transparent;color:var(--pg-ink);border:1px solid var(--pg-hair);border-radius:9999px;width:30px;height:30px;flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;font-size:13px;line-height:1;padding:0;transition:background 200ms ease-out,color 200ms ease-out;}
-.rwThemeBtn:hover{background:var(--pg-ink);color:var(--pg-bg)}
+.rwCtl .rwTrack{display:flex;align-items:center;gap:3px;background:rgba(237,233,228,.10);border-radius:13px;padding:3px}
+.rwCtl .rwSeg{font-family:inherit;font-size:12.5px;font-weight:600;line-height:1;letter-spacing:.01em;color:var(--pg-ink);background:transparent;border:0;border-radius:10px;height:30px;padding:0 11px;display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;text-decoration:none}
+.rwCtl a.rwSeg:hover{background:rgba(237,233,228,.09);opacity:1}
+.rwCtl .rwAccentPill{background:#2E6BFF;color:#fff}
+.rwCtl a.rwAccentPill:hover{background:#5C8AFF;opacity:1}
 @media (max-width:760px){
   #rwCursorTag{display:none}
   main section > div{grid-template-columns:1fr !important}
   [data-screen-label="Title"]{padding-top:24px !important}
   [data-screen-label="Credits"]{grid-template-columns:1fr 1fr !important}
   blockquote{margin-left:0 !important;margin-right:0 !important}
-  header nav{gap:12px !important}
-  header nav a{font-size:11px !important}
+  header nav{gap:8px !important}
 }
 @media (max-width:420px){
   [data-screen-label="Credits"]{grid-template-columns:1fr !important}
@@ -45,143 +39,168 @@ a{color:var(--pg-ink)}a:hover{opacity:.55}
 <div style="background:var(--pg-bg);color:var(--pg-ink);font-family:'Overused Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Helvetica,Arial,sans-serif;min-height:100vh;">
   <header style="display:flex;justify-content:space-between;align-items:center;gap:14px 24px;flex-wrap:wrap;padding:16px clamp(16px,3vw,48px);">
     <a href="index.html" style="font-weight:600;font-size:18px;letter-spacing:-.02em;text-decoration:none;color:var(--pg-ink);white-space:nowrap;">Ritwiz Sharma</a>
-    <nav style="display:flex;align-items:center;gap:clamp(14px,2.5vw,32px);">
-      <button type="button" class="rwThemeBtn" data-theme-toggle="" aria-label="Toggle dark mode" aria-pressed="false">◐</button>
-      <a href="index.html" style="color:var(--pg-ink);text-decoration:none;font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.06em;" style-hover="opacity:.55">Work</a>
-      <a href="about.html" style="color:var(--pg-ink);text-decoration:none;font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.06em;" style-hover="opacity:.55">About</a>
-      <a href="shenanigans.html" style="color:#9B8CFF;text-decoration:none;font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.06em;" style-hover="opacity:.6">Shenanigans</a>
+    <nav class="rwCtl" style="display:flex;align-items:center;gap:clamp(6px,.8vw,10px);">
+      <div class="rwTrack"><a href="index.html" class="rwSeg">Work</a><a href="about.html" class="rwSeg">About</a></div>
+      <a href="shenanigans.html" class="rwSeg rwAccentPill" style="height:36px;padding:0 16px;">Shenanigans</a>
     </nav>
   </header>
 
   <main style="max-width:1440px;margin:0 auto;padding:0 clamp(16px,3vw,48px) clamp(48px,7vw,110px);">
     <section data-screen-label="Title" style="padding:clamp(40px,9vh,120px) 0 clamp(28px,5vh,60px);display:flex;flex-direction:column;gap:clamp(18px,2.6vw,34px);max-width:1100px;">
-      <h1 style="font-weight:800;font-size:clamp(42px,7.4vw,112px);line-height:.94;letter-spacing:-.03em;margin:0;">The art of concealing</h1>
+      <h1 style="font-weight:700;font-size:clamp(42px,7.4vw,112px);line-height:.96;letter-spacing:-.03em;margin:0;">The art of concealing</h1>
       <p style="font-weight:400;font-size:clamp(18px,2.3vw,30px);line-height:1.3;letter-spacing:-.015em;margin:0;max-width:760px;text-wrap:pretty;">A line of home appliances that complement luxury apartments in India.</p>
       <div style="display:flex;flex-wrap:wrap;gap:clamp(8px,.9vw,12px);font-weight:600;font-size:clamp(11px,.9vw,13px);text-transform:uppercase;letter-spacing:.06em;">
-        <span style="background:#9B8CFF;color:#131313;border-radius:9999px;padding:.5em 1.05em;">Industrial / Product Design</span>
-        <span style="background:var(--pg-tint);color:var(--pg-ink);border-radius:9999px;padding:.5em 1.05em;">Home appliances</span>
-        <span style="background:var(--pg-tint);color:var(--pg-ink);border-radius:9999px;padding:.5em 1.05em;">2021–22</span>
+        <span style="background:#2E6BFF;color:#fff;border-radius:.66em;padding:.5em 1.05em;">Industrial / Product Design</span>
+        <span style="background:var(--pg-tint);color:var(--pg-ink);border-radius:.66em;padding:.5em 1.05em;">Home appliances</span>
+        <span style="background:var(--pg-tint);color:var(--pg-ink);border-radius:.66em;padding:.5em 1.05em;">2022</span>
       </div>
     </section>
 
-    <img src="https://static.wixstatic.com/media/5a2ab1_f5b35808e7cf4e70875de990b8919427~mv2.png/v1/fill/w_1920,h_1080,al_c,q_90,enc_avif,quality_auto/5a2ab1_f5b35808e7cf4e70875de990b8919427~mv2.png" alt="All products staged" style="width:100%;display:block;border-radius:16px;">
+    <img src="aoc/all-products-staged.jpg" alt="All products staged" style="width:100%;display:block;border-radius:16px;">
 
-    <blockquote data-screen-label="Quote" style="margin:clamp(56px,10vh,150px) auto;max-width:1000px;font-weight:500;font-size:clamp(24px,3.4vw,48px);line-height:1.14;letter-spacing:-.025em;text-wrap:pretty;">It's hard to sell luxury homes with poorly designed, run of the mill appliances populating them.</blockquote>
+    <blockquote data-screen-label="Quote" style="margin:clamp(56px,10vh,150px) auto;max-width:1000px;font-weight:500;font-size:clamp(24px,3.4vw,48px);line-height:1.14;letter-spacing:-.025em;text-wrap:pretty;">You can't sell someone a luxury home and then fill it with the same ugly appliances they'd find anywhere else.</blockquote>
 
     <section data-screen-label="Images 1" style="display:flex;flex-direction:column;gap:clamp(12px,1.6vw,24px);">
       <div style="display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:clamp(12px,1.6vw,24px);">
-        <img src="https://static.wixstatic.com/media/5a2ab1_d928f371ebc8477caf10340348989bf6~mv2.jpg/v1/fill/w_980,h_735,al_c,q_85,enc_avif,quality_auto/5a2ab1_d928f371ebc8477caf10340348989bf6~mv2.jpg" alt="Run of the mill appliance" style="width:100%;height:auto;display:block;border-radius:16px;">
-        <img src="https://static.wixstatic.com/media/5a2ab1_35b4cd69777e40f284ac7fde9bd17440~mv2.jpg/v1/fill/w_980,h_735,al_c,q_85,enc_avif,quality_auto/5a2ab1_35b4cd69777e40f284ac7fde9bd17440~mv2.jpg" alt="Run of the mill appliance" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img src="aoc/run-of-the-mill-appliance.jpg" alt="Run of the mill appliance" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img src="aoc/run-of-the-mill-appliance-2.jpg" alt="Run of the mill appliance" style="width:100%;height:auto;display:block;border-radius:16px;">
       </div>
-      <img src="https://static.wixstatic.com/media/5a2ab1_6db54862587344f9b1d21e829296313b~mv2.jpg/v1/fill/w_980,h_735,al_c,q_90,enc_avif,quality_auto/5a2ab1_6db54862587344f9b1d21e829296313b~mv2.jpg" alt="Mapping the home interior for intervention points" style="width:100%;display:block;border-radius:16px;">
+      
     </section>
 
-    <blockquote data-screen-label="Quote" style="margin:clamp(56px,10vh,150px) auto;max-width:1000px;font-weight:500;font-size:clamp(24px,3.4vw,48px);line-height:1.14;letter-spacing:-.025em;text-wrap:pretty;">We hid the inverter in plain sight by giving it a new persona; the UPS, by putting it centre-stage.</blockquote>
+    <blockquote data-screen-label="Quote" style="margin:clamp(56px,10vh,150px) auto;max-width:1000px;font-weight:500;font-size:clamp(24px,3.4vw,48px);line-height:1.14;letter-spacing:-.025em;text-wrap:pretty;">We hid the inverter by turning it into furniture, and hid the UPS by making it something you'd actually want to look at.</blockquote>
 
     <section data-screen-label="Images 2" style="display:flex;flex-direction:column;gap:clamp(12px,1.6vw,24px);">
-      <img data-cap="Inverter" src="https://static.wixstatic.com/media/5a2ab1_d62394bb5a834aa1bd960de3d81e5d07~mv2.png/v1/fill/w_1920,h_1080,al_c,q_90,enc_avif,quality_auto/5a2ab1_d62394bb5a834aa1bd960de3d81e5d07~mv2.png" alt="Inverter" style="width:100%;display:block;border-radius:16px;">
-      <div style="display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:clamp(12px,1.6vw,24px);">
-        <img src="https://static.wixstatic.com/media/5a2ab1_8df3659e9ba24a4daee8e76cec0d43c8~mv2.png/v1/fill/w_1920,h_1080,al_c,q_90,enc_avif,quality_auto/5a2ab1_8df3659e9ba24a4daee8e76cec0d43c8~mv2.png" alt="Inverter detail" style="width:100%;height:auto;display:block;border-radius:16px;">
-        <img src="https://static.wixstatic.com/media/5a2ab1_00a05a1b56e94d49959d1c8ae0163f2d~mv2.png/v1/fill/w_980,h_640,al_c,q_90,enc_avif,quality_auto/5a2ab1_00a05a1b56e94d49959d1c8ae0163f2d~mv2.png" alt="Inverter in context" style="width:100%;height:auto;display:block;border-radius:16px;">
+      <img data-cap="Inverter and UPS ideation" src="aoc/inverter-sketches.jpg" alt="Inverter and UPS sketch sheet" style="width:100%;display:block;border-radius:16px;">
+      <img data-cap="Form studies" src="aoc/inverter-forms-colour.jpg" alt="Grid of inverter and UPS form studies in colour" style="width:100%;display:block;border-radius:16px;">
+      <img data-cap="Inverter" src="aoc/inverter-render.jpg" alt="The inverter console by the front door" style="width:100%;display:block;border-radius:16px;">
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;align-items:start;gap:clamp(12px,1.6vw,24px);">
+        <img src="aoc/inverter-detail-1.jpg" alt="Inverter console seen head-on" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img src="aoc/inverter-detail-2.jpg" alt="Console top with status LEDs" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img src="aoc/inverter-detail-3.jpg" alt="Perforated rear panel and labelling" style="width:100%;height:auto;display:block;border-radius:16px;">
       </div>
-      <img src="https://static.wixstatic.com/media/5a2ab1_dfca26cd095b446482c70351c90333ec~mv2.png/v1/fill/w_980,h_640,al_c,q_90,enc_avif,quality_auto/5a2ab1_dfca26cd095b446482c70351c90333ec~mv2.png" alt="UPS in context" style="width:100%;display:block;border-radius:16px;">
-      <img src="https://static.wixstatic.com/media/5a2ab1_5813a64f98f8458b95dbf94ab1641045f000.jpg/v1/fill/w_1920,h_960,al_c,q_85,enc_avif,quality_auto/5a2ab1_5813a64f98f8458b95dbf94ab1641045f000.jpg" alt="Inverter and UPS film still" style="width:100%;display:block;border-radius:16px;">
+      <img data-cap="UPS" src="aoc/ups-context.jpg" alt="The UPS beside a guitar at night" style="width:100%;display:block;border-radius:16px;">
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;align-items:start;gap:clamp(12px,1.6vw,24px);">
+        <img src="aoc/ups-detail-1.jpg" alt="UPS three-quarter view" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img src="aoc/ups-detail-2.jpg" alt="UPS grille from above" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img src="aoc/ups-detail-3.jpg" alt="UPS rear panel with sockets and warning label" style="width:100%;height:auto;display:block;border-radius:16px;">
+      </div>
+      <video src="aoc/inverter-ups-film.mp4" autoplay="autoplay" muted="muted" loop="loop" playsinline="playsinline" preload="metadata" aria-label="Inverter and UPS film" style="width:100%;display:block;border-radius:16px;"></video>
     </section>
 
-    <blockquote data-screen-label="Quote" style="margin:clamp(56px,10vh,150px) auto;max-width:1000px;font-weight:500;font-size:clamp(24px,3.4vw,48px);line-height:1.14;letter-spacing:-.025em;text-wrap:pretty;">The bathroom heater changes persona entirely — from utilitarian appliance to contemporary art.</blockquote>
+    <blockquote data-screen-label="Quote" style="margin:clamp(56px,10vh,150px) auto;max-width:1000px;font-weight:500;font-size:clamp(24px,3.4vw,48px);line-height:1.14;letter-spacing:-.025em;text-wrap:pretty;">The bathroom heater stops looking like a heater altogether and starts reading as a piece of art on the wall.</blockquote>
 
     <section data-screen-label="Images 3" style="display:flex;flex-direction:column;gap:clamp(12px,1.6vw,24px);">
-      <img data-cap="Geysers" src="https://static.wixstatic.com/media/5a2ab1_591b07821bf9485cbbd8681f2d2cf9fa~mv2.png/v1/fill/w_1920,h_1080,al_c,q_90,enc_avif,quality_auto/5a2ab1_591b07821bf9485cbbd8681f2d2cf9fa~mv2.png" alt="Geysers" style="width:100%;display:block;border-radius:16px;">
-      <div style="display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:clamp(12px,1.6vw,24px);">
-        <img src="https://static.wixstatic.com/media/5a2ab1_1911bb038a3949b19c6ef7586d28ea6e~mv2.png/v1/fill/w_1920,h_1080,al_c,q_90,enc_avif,quality_auto/5a2ab1_1911bb038a3949b19c6ef7586d28ea6e~mv2.png" alt="Geysers detail" style="width:100%;height:auto;display:block;border-radius:16px;">
-        <img src="https://static.wixstatic.com/media/5a2ab1_1ce575cc3fd44312af8bbe92426a21b5~mv2.png/v1/fill/w_980,h_640,al_c,q_90,enc_avif,quality_auto/5a2ab1_1ce575cc3fd44312af8bbe92426a21b5~mv2.png" alt="Bathroom geyser in context" style="width:100%;height:auto;display:block;border-radius:16px;">
+      <img data-cap="Water heater ideation" src="aoc/geyser-sketches.jpg" alt="Water heater sketch sheet" style="width:100%;display:block;border-radius:16px;">
+      <img data-cap="Form studies" src="aoc/geyser-forms-colour.jpg" alt="Grid of water heater form studies in colour" style="width:100%;display:block;border-radius:16px;">
+      <img data-cap="Bathroom heater" src="aoc/bathroom-geyser-context.jpg" alt="The bathroom heater above a freestanding tub" style="width:100%;display:block;border-radius:16px;">
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;align-items:start;gap:clamp(12px,1.6vw,24px);">
+        <img src="aoc/bathroom-detail-1.jpg" alt="Bathroom heater head-on" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img src="aoc/bathroom-detail-2.jpg" alt="Close-up of the glowing centre dial" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img src="aoc/bathroom-detail-3.jpg" alt="Model and serial, quietly placed" style="width:100%;height:auto;display:block;border-radius:16px;">
       </div>
-      <img src="https://static.wixstatic.com/media/5a2ab1_7e40dd10a39743ef8a075cd50f162a52~mv2.png/v1/fill/w_980,h_640,al_c,q_90,enc_avif,quality_auto/5a2ab1_7e40dd10a39743ef8a075cd50f162a52~mv2.png" alt="Kitchen geyser in context" style="width:100%;display:block;border-radius:16px;">
-      <img src="https://static.wixstatic.com/media/5a2ab1_ac5cb62029c8470e96792ee1400d9af7f000.jpg/v1/fill/w_1920,h_960,al_c,q_85,enc_avif,quality_auto/5a2ab1_ac5cb62029c8470e96792ee1400d9af7f000.jpg" alt="Water heaters film still" style="width:100%;display:block;border-radius:16px;">
+      <img data-cap="Kitchen heater" src="aoc/kitchen-geyser-context.jpg" alt="The kitchen heater above the sink" style="width:100%;display:block;border-radius:16px;">
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;align-items:start;gap:clamp(12px,1.6vw,24px);">
+        <img src="aoc/kitchen-detail-1.jpg" alt="Kitchen heater head-on, lit from below" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img src="aoc/kitchen-detail-2.jpg" alt="Corner of the curved plastic panel" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img src="aoc/kitchen-detail-3.jpg" alt="Labelling on the kitchen heater edge" style="width:100%;height:auto;display:block;border-radius:16px;">
+      </div>
+      <video src="aoc/water-heaters-film.mp4" autoplay="autoplay" muted="muted" loop="loop" playsinline="playsinline" preload="metadata" aria-label="Water heaters film" style="width:100%;display:block;border-radius:16px;"></video>
     </section>
 
-    <blockquote data-screen-label="Quote" style="margin:clamp(56px,10vh,150px) auto;max-width:1000px;font-weight:500;font-size:clamp(24px,3.4vw,48px);line-height:1.14;letter-spacing:-.025em;text-wrap:pretty;">The play dustbin conceals itself by vaguely resembling a cartoon character, bright accents and all.</blockquote>
+    <blockquote data-screen-label="Quote" style="margin:clamp(56px,10vh,150px) auto;max-width:1000px;font-weight:500;font-size:clamp(24px,3.4vw,48px);line-height:1.14;letter-spacing:-.025em;text-wrap:pretty;">The play dustbin hides by looking a little like a cartoon character, so kids stop treating it like a chore.</blockquote>
 
     <section data-screen-label="Images 4" style="display:flex;flex-direction:column;gap:clamp(12px,1.6vw,24px);">
-      <img data-cap="Dustbins" src="https://static.wixstatic.com/media/5a2ab1_2b3f049396a04a7690df57d50453b3d6~mv2.png/v1/fill/w_1920,h_1080,al_c,q_90,enc_avif,quality_auto/5a2ab1_2b3f049396a04a7690df57d50453b3d6~mv2.png" alt="Dustbins" style="width:100%;display:block;border-radius:16px;">
-      <div style="display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:clamp(12px,1.6vw,24px);">
-        <img src="https://static.wixstatic.com/media/5a2ab1_b1689b93fc4c4947be05c115a098c617~mv2.png/v1/fill/w_1920,h_1080,al_c,q_90,enc_avif,quality_auto/5a2ab1_b1689b93fc4c4947be05c115a098c617~mv2.png" alt="Dustbins detail" style="width:100%;height:auto;display:block;border-radius:16px;">
-        <img src="https://static.wixstatic.com/media/5a2ab1_714c46fc95a1407594160a566b8cac07~mv2.png/v1/fill/w_980,h_640,al_c,q_90,enc_avif,quality_auto/5a2ab1_714c46fc95a1407594160a566b8cac07~mv2.png" alt="Playroom dustbin in context" style="width:100%;height:auto;display:block;border-radius:16px;">
+      <img data-cap="Dustbin ideation" src="aoc/dustbin-sketches.jpg" alt="Dustbin sketch sheet" style="width:100%;display:block;border-radius:16px;">
+      <img data-cap="Form studies" src="aoc/dustbin-forms-colour.jpg" alt="Grid of dustbin form studies in colour" style="width:100%;display:block;border-radius:16px;">
+      <img data-cap="Play dustbin" src="aoc/playroom-dustbin-in-context.jpg" alt="Play dustbin in a playroom" style="width:100%;display:block;border-radius:16px;">
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;align-items:start;gap:clamp(12px,1.6vw,24px);">
+        <img src="aoc/playroom-detail-1.jpg" alt="Play dustbin lid and frame from above" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img src="aoc/playroom-detail-2.jpg" alt="Play dustbin underside, legs and slide-door" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img src="aoc/playroom-detail-3.jpg" alt="Play dustbin exploded into its parts" style="width:100%;height:auto;display:block;border-radius:16px;">
       </div>
-      <img src="https://static.wixstatic.com/media/5a2ab1_45497f7711314b1383e8041e6986718a~mv2.png/v1/fill/w_980,h_640,al_c,q_90,enc_avif,quality_auto/5a2ab1_45497f7711314b1383e8041e6986718a~mv2.png" alt="Sphere dustbin in context" style="width:100%;display:block;border-radius:16px;">
-      <img src="https://static.wixstatic.com/media/5a2ab1_d8e63615e9c04780addd1fbdd88cc23df000.jpg/v1/fill/w_1920,h_960,al_c,q_85,enc_avif,quality_auto/5a2ab1_d8e63615e9c04780addd1fbdd88cc23df000.jpg" alt="Dustbins film still" style="width:100%;display:block;border-radius:16px;">
+      <img data-cap="Sphere dustbin" src="aoc/sphere-dustbin-in-context.jpg" alt="Sphere dustbin in a living room" style="width:100%;display:block;border-radius:16px;">
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;align-items:start;gap:clamp(12px,1.6vw,24px);">
+        <img src="aoc/sphere-detail-1.jpg" alt="Close-up of the sphere dustbin opening" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img src="aoc/sphere-detail-2.jpg" alt="Sphere dustbin legs from below" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img src="aoc/sphere-detail-3.jpg" alt="Sphere dustbin exploded into its parts" style="width:100%;height:auto;display:block;border-radius:16px;">
+      </div>
+      <video src="aoc/dustbins-film.mp4" autoplay="autoplay" muted="muted" loop="loop" playsinline="playsinline" preload="metadata" aria-label="Dustbins film" style="width:100%;display:block;border-radius:16px;"></video>
     </section>
 
-    <blockquote data-screen-label="Quote" style="margin:clamp(56px,10vh,150px) auto;max-width:1000px;font-weight:500;font-size:clamp(24px,3.4vw,48px);line-height:1.14;letter-spacing:-.025em;text-wrap:pretty;">Six appliances, taken from strategy through to working prototypes on the workshop floor.</blockquote>
+    <blockquote data-screen-label="Quote" style="margin:clamp(56px,10vh,150px) auto;max-width:1000px;font-weight:500;font-size:clamp(24px,3.4vw,48px);line-height:1.14;letter-spacing:-.025em;text-wrap:pretty;">Two made the cut: the play dustbin and the inverter were shortlisted for production, built in small quantities for the showcase apartments.</blockquote>
 
     <section data-screen-label="Images 5" style="display:flex;flex-direction:column;gap:clamp(12px,1.6vw,24px);">
       <div style="display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:clamp(12px,1.6vw,24px);">
-        <img src="https://static.wixstatic.com/media/5a2ab1_c4dda2e64c5a4060a2c2a5a14cc528e0~mv2.jpg/v1/fill/w_980,h_735,al_c,q_90,enc_avif,quality_auto/5a2ab1_c4dda2e64c5a4060a2c2a5a14cc528e0~mv2.jpg" alt="Workshop photo" style="width:100%;height:auto;display:block;border-radius:16px;">
-        <img src="https://static.wixstatic.com/media/5a2ab1_3b123d04e4704d4abaadcdbbeb441b66~mv2.jpg/v1/fill/w_980,h_735,al_c,q_90,enc_avif,quality_auto/5a2ab1_3b123d04e4704d4abaadcdbbeb441b66~mv2.jpg" alt="Workshop photo" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img data-cap="Paper models, first pass" src="aoc/paper-models.jpg" alt="Paper study models on the desk" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img src="aoc/paper-model-in-hand.jpg" alt="Paper model of the play dustbin in hand" style="width:100%;height:auto;display:block;border-radius:16px;">
       </div>
       <div style="display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:clamp(12px,1.6vw,24px);">
-        <img src="https://static.wixstatic.com/media/5a2ab1_16eca8c08c8b4483b21bc77ce48d09b3~mv2.jpg/v1/fill/w_980,h_735,al_c,q_90,enc_avif,quality_auto/5a2ab1_16eca8c08c8b4483b21bc77ce48d09b3~mv2.jpg" alt="Workshop photo" style="width:100%;height:auto;display:block;border-radius:16px;">
-        <img src="https://static.wixstatic.com/media/5a2ab1_83c6c6789ab840fb9bd6ab4c203bd08f~mv2.png/v1/fill/w_980,h_735,al_c,q_90,enc_avif,quality_auto/5a2ab1_83c6c6789ab840fb9bd6ab4c203bd08f~mv2.png" alt="Workshop photo" style="width:100%;height:auto;display:block;border-radius:16px;">
-      </div>
-      <img src="https://static.wixstatic.com/media/5a2ab1_f60abfc7b09f41cab619b933f208b1e7~mv2.jpg/v1/fill/w_980,h_735,al_c,q_90,enc_avif,quality_auto/5a2ab1_f60abfc7b09f41cab619b933f208b1e7~mv2.jpg" alt="Prototype photo" style="width:100%;display:block;border-radius:16px;">
-      <img data-cap="Inverter console, finished prototype" src="https://static.wixstatic.com/media/5a2ab1_e495943fd7074c56932e9a398dc26fc2~mv2.jpeg/v1/fill/w_1280,h_1280,al_c,q_90,enc_avif,quality_auto/5a2ab1_e495943fd7074c56932e9a398dc26fc2~mv2.jpeg" alt="Inverter console, finished prototype" style="width:100%;display:block;border-radius:16px;">
-      <div style="display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:clamp(12px,1.6vw,24px);">
-        <img src="https://static.wixstatic.com/media/5a2ab1_10298b66df274edeb14230cd0087765b~mv2.webp/v1/fill/w_980,h_735,al_c,q_90,enc_avif,quality_auto/5a2ab1_10298b66df274edeb14230cd0087765b~mv2.webp" alt="Inverter perforated panel" style="width:100%;height:auto;display:block;border-radius:16px;">
-        <img src="https://static.wixstatic.com/media/5a2ab1_babf701e9e664c83be8d89b56ce393dc~mv2.jpeg/v1/fill/w_980,h_735,al_c,q_90,enc_avif,quality_auto/5a2ab1_babf701e9e664c83be8d89b56ce393dc~mv2.jpeg" alt="Inverter metal enclosure" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img src="aoc/workshop-photo.jpg" alt="Cutting paper models in the workshop" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img src="aoc/workshop-photo-3.jpg" alt="Inverter electronics on the bench" style="width:100%;height:auto;display:block;border-radius:16px;">
       </div>
       <div style="display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:clamp(12px,1.6vw,24px);">
-        <img src="https://static.wixstatic.com/media/5a2ab1_2f0b6647cc2b42229de48ed83aa83668~mv2.jpeg/v1/fill/w_980,h_735,al_c,q_90,enc_avif,quality_auto/5a2ab1_2f0b6647cc2b42229de48ed83aa83668~mv2.jpeg" alt="Inverter console top detail" style="width:100%;height:auto;display:block;border-radius:16px;">
-        <img src="https://static.wixstatic.com/media/5a2ab1_149d49dd190a4b1088306451ca6f3904~mv2.jpeg/v1/fill/w_980,h_735,al_c,q_90,enc_avif,quality_auto/5a2ab1_149d49dd190a4b1088306451ca6f3904~mv2.jpeg" alt="Inverter console in use" style="width:100%;height:auto;display:block;border-radius:16px;">
-      </div>
-      <img data-cap="Play dustbin, finished prototype" src="https://static.wixstatic.com/media/5a2ab1_a7da51b4e771475985446a8a4f134401~mv2.jpeg/v1/fill/w_1280,h_1280,al_c,q_90,enc_avif,quality_auto/5a2ab1_a7da51b4e771475985446a8a4f134401~mv2.jpeg" alt="Play dustbin, finished prototype" style="width:100%;display:block;border-radius:16px;">
-      <div style="display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:clamp(12px,1.6vw,24px);">
-        <img src="https://static.wixstatic.com/media/5a2ab1_2093c659b248400c8af1eb5f5a5d1d06~mv2.gif" alt="Play dustbin in motion" style="width:100%;height:auto;display:block;border-radius:16px;">
-        <img src="https://static.wixstatic.com/media/5a2ab1_99184cf8e81f4df399a2eb76933797ae~mv2.jpeg/v1/fill/w_980,h_735,al_c,q_90,enc_avif,quality_auto/5a2ab1_99184cf8e81f4df399a2eb76933797ae~mv2.jpeg" alt="Dustbin shell in progress" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img src="aoc/workshop-photo-4.jpg" alt="Assembling a model by hand" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img src="aoc/prototype-photo.jpg" alt="Wiring inside the inverter prototype" style="width:100%;height:auto;display:block;border-radius:16px;">
       </div>
       <div style="display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:clamp(12px,1.6vw,24px);">
-        <img src="https://static.wixstatic.com/media/5a2ab1_2110661b67494d73b6560c5512a2ecf4~mv2.jpeg/v1/fill/w_980,h_735,al_c,q_90,enc_avif,quality_auto/5a2ab1_2110661b67494d73b6560c5512a2ecf4~mv2.jpeg" alt="Dustbin plywood structure" style="width:100%;height:auto;display:block;border-radius:16px;">
-        <img src="https://static.wixstatic.com/media/5a2ab1_d7f4dc12d9cd4004a0ce380d4a7916d2~mv2.jpeg/v1/fill/w_980,h_735,al_c,q_90,enc_avif,quality_auto/5a2ab1_d7f4dc12d9cd4004a0ce380d4a7916d2~mv2.jpeg" alt="Dustbin frame construction" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img src="aoc/inverter-perforated-panel.jpg" alt="Perforated panel for the inverter" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img src="aoc/inverter-metal-enclosure.jpg" alt="Inverter metal enclosure" style="width:100%;height:auto;display:block;border-radius:16px;">
+      </div>
+      <img data-cap="Inverter console, finished prototype" src="aoc/inverter-console-finished-prototype.jpg" alt="Inverter console, finished prototype" style="width:100%;display:block;border-radius:16px;">
+      <div style="display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:clamp(12px,1.6vw,24px);">
+        <img src="aoc/inverter-console-top-detail.jpg" alt="Console top holding everyday carry" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img src="aoc/inverter-console-in-use.jpg" alt="Charging a phone on the console top" style="width:100%;height:auto;display:block;border-radius:16px;">
+      </div>
+      <img data-cap="Play dustbin, finished prototype" src="aoc/play-dustbin-finished-prototype.jpg" alt="Play dustbin, finished prototype" style="width:100%;display:block;border-radius:16px;">
+      <div style="display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:clamp(12px,1.6vw,24px);">
+        <img src="aoc/play-dustbin-in-motion.gif" alt="Play dustbin lid in motion" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img src="aoc/dustbin-shell-in-progress.jpg" alt="Dustbin shell in progress" style="width:100%;height:auto;display:block;border-radius:16px;">
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:clamp(12px,1.6vw,24px);">
+        <img src="aoc/dustbin-plywood-structure.jpg" alt="Dustbin plywood structure" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img src="aoc/dustbin-frame-construction.jpg" alt="Dustbin frame construction" style="width:100%;height:auto;display:block;border-radius:16px;">
       </div>
     </section>
 
     <section data-screen-label="About the project" style="max-width:760px;margin:clamp(64px,12vh,180px) 0 0;display:flex;flex-direction:column;gap:clamp(16px,2vh,26px);font-size:clamp(16px,1.15vw,19px);line-height:1.62;">
-      <p style="margin:0;text-wrap:pretty;">From January to July 2021, I worked as a design intern at Core Experience, where I led the design and development of six unique home appliances for Svasa Homes' luxury residences. The project aimed to elevate the interior experience of high-end apartments through thoughtfully integrated product design. Acting as the lead designer, I worked primarily independently, while regularly collaborating with a multidisciplinary team of designers, architects and engineers for feedback and alignment.</p>
-      <p style="margin:0;text-wrap:pretty;">A lot of work went into figuring out which household appliances cause the biggest disturbances and what the consequences of changing their user experience and aesthetics might look like. This laid a fantastic groundwork and had a massive impact on the process going forward. We also mapped the typical home interior and the market to find intervention points and choose which products to take forward.</p>
-      <p style="margin:0;text-wrap:pretty;">We hid the inverter, otherwise an ugly home appliance, in plain sight by giving it a new persona. It doubles as an entrance console, a piece of furniture designed to house all your day-to-day essentials. It stands near your home entrance to give you one simple solution to store your everyday carry and keep your secondary devices charged. The UPS took the opposite approach: it is hidden by being put centre-stage, adorning a user-customizable LED matrix screen on the front so it reads as an accessory rather than a utility.</p>
-      <p style="margin:0;text-wrap:pretty;">We hid the bathroom water heater by concealing it as artwork, completely changing its persona from boring utilitarian appliance to contemporary modern art. The kitchen water heater conceals itself behind a gently curved panel of plastic, aiming to disappear in plain sight by attracting the least possible attention to the fact that it's a water heater.</p>
-      <p style="margin:0;text-wrap:pretty;">The play dustbin is aimed at environments primarily meant for kids, so it conceals itself by vaguely resembling a cartoon character with bright coloured accents, blending into any colourful environment it's placed in. The sphere dustbin is aimed at living spaces where the overall aesthetic matters, disguising what it is by taking an unconventional form that reads more like a piece of technology or furniture.</p>
-      <p style="margin:0;text-wrap:pretty;">The line was taken past renders: prototypes were built in the workshop — perforated panels, metal enclosures, plywood structures and shells — to verify that the concealment held up at full scale, in the hand, and in the room.</p>
+      <p style="margin:0;text-wrap:pretty;">I spent the first half of 2022 as a design intern at Core Experience, and ended up leading the design of six home appliances for Svasa Homes' luxury residences. Svasa was selling beautiful apartments, and the appliances going into them were letting the whole thing down. I ran the work mostly on my own, checking in regularly with the designers, architects and engineers on the team to keep everything grounded.</p>
+      <p style="margin:0;text-wrap:pretty;">We spent a good while up front just working out which appliances actually annoy people in their own homes, and what would happen if we changed how they looked and worked. That research shaped everything after it. We mapped a typical apartment room by room alongside the market, and used that to pick which six products were worth doing.</p>
+      <p style="margin:0;text-wrap:pretty;">The inverter is the clearest example. Instead of hiding it in a cupboard, we gave it a completely different job: it became an entrance console, the piece of furniture where you drop your keys and wallet on the way in and pick up a charged phone on the way out. The UPS went the other way. We put it right out in the open with a customisable LED matrix on the front, so it reads as something you chose rather than something you tolerate.</p>
+      <p style="margin:0;text-wrap:pretty;">The bathroom water heater became artwork — same function, entirely different presence on the wall. The kitchen one hides behind a softly curved plastic panel instead, doing its best to give you no reason to notice it at all.</p>
+      <p style="margin:0;text-wrap:pretty;">The two dustbins are aimed at different rooms. The play dustbin lives where kids do, so it borrows a bit of cartoon character and sits happily in a colourful room. The sphere dustbin is for living spaces where the room has been styled, so it takes a form odd enough that people read it as an object rather than a bin.</p>
+      <p style="margin:0;text-wrap:pretty;">None of this stayed in renders. We built the prototypes in the workshop — perforating panels, welding enclosures, cutting plywood structures — because the only way to know whether something disappears into a room is to put it in one. Of the six, the play dustbin and the inverter were shortlisted for production, built in small quantities for Svasa's showcase apartments.</p>
     </section>
 
     <section data-screen-label="Credits" style="margin:clamp(56px,9vh,130px) 0 0;padding-top:clamp(24px,3vh,40px);border-top:1px solid var(--pg-hair);display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:clamp(24px,3vw,48px);font-size:14px;line-height:1.55;">
       <div style="display:flex;flex-direction:column;gap:10px;">
-        <span style="align-self:flex-start;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--pg-ink);background:var(--pg-tint);border-radius:9999px;padding:.5em 1.05em;">Client</span>
+        <span style="align-self:flex-start;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--pg-ink);background:var(--pg-tint);border-radius:.66em;padding:.5em 1.05em;">Client</span>
         <span>Svasa Homes</span>
       </div>
       <div style="display:flex;flex-direction:column;gap:10px;">
-        <span style="align-self:flex-start;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--pg-ink);background:var(--pg-tint);border-radius:9999px;padding:.5em 1.05em;">Studio</span>
+        <span style="align-self:flex-start;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--pg-ink);background:var(--pg-tint);border-radius:.66em;padding:.5em 1.05em;">Studio</span>
         <span>Core Experience</span>
       </div>
       <div style="display:flex;flex-direction:column;gap:10px;">
-        <span style="align-self:flex-start;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--pg-ink);background:var(--pg-tint);border-radius:9999px;padding:.5em 1.05em;">Discipline</span>
+        <span style="align-self:flex-start;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--pg-ink);background:var(--pg-tint);border-radius:.66em;padding:.5em 1.05em;">Discipline</span>
         <span>Industrial / Product Design</span>
         <span>Design-led business strategy</span>
         <span>Prototyping</span>
       </div>
       <div style="display:flex;flex-direction:column;gap:10px;">
-        <span style="align-self:flex-start;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--pg-ink);background:var(--pg-tint);border-radius:9999px;padding:.5em 1.05em;">My role</span>
+        <span style="align-self:flex-start;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--pg-ink);background:var(--pg-tint);border-radius:.66em;padding:.5em 1.05em;">My role</span>
         <span>Lead designer</span>
-        <span>6 months, 2021</span>
+        <span>Jan – Jun 2022</span>
       </div>
       <div style="display:flex;flex-direction:column;gap:10px;">
-        <span style="align-self:flex-start;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--pg-ink);background:var(--pg-tint);border-radius:9999px;padding:.5em 1.05em;">Status</span>
+        <span style="align-self:flex-start;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--pg-ink);background:var(--pg-tint);border-radius:.66em;padding:.5em 1.05em;">Status</span>
         <span>In production</span>
       </div>
     </section>
 
     <a href="snapin.html" data-screen-label="Next project" style="display:flex;flex-direction:column;gap:12px;margin-top:clamp(56px,9vh,130px);padding-top:clamp(24px,3vh,40px);border-top:1px solid var(--pg-hair);text-decoration:none;color:var(--pg-ink);" style-hover="opacity:.55">
-      <span style="align-self:flex-start;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--pg-ink);background:var(--pg-tint);border-radius:9999px;padding:.5em 1.05em;">Next project</span>
-      <span style="font-weight:800;font-size:clamp(28px,4.4vw,64px);line-height:1;letter-spacing:-.03em;text-transform:uppercase;">Snapin' Street</span>
+      <span style="align-self:flex-start;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--pg-ink);background:var(--pg-tint);border-radius:.66em;padding:.5em 1.05em;">Next project</span>
+      <span style="font-weight:700;font-size:clamp(28px,4.4vw,64px);line-height:1;letter-spacing:-.03em;text-transform:uppercase;">Snapin' Street</span>
       <span style="font-size:clamp(15px,1.1vw,18px);line-height:1.5;max-width:620px;text-wrap:pretty;">Sample a jaljeera in a mall, leave with the premix that made it.</span>
     </a>
 
@@ -196,47 +215,136 @@ a{color:var(--pg-ink)}a:hover{opacity:.55}
   </main>
 </div>
 
-<div id="rwCursorTag" style="position:fixed;left:0;top:0;z-index:60;pointer-events:none;background:#9B8CFF;color:#131313;font-family:'Overused Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Helvetica,Arial,sans-serif;font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.06em;white-space:nowrap;padding:9px 16px;border-radius:9999px;transform:translate(-50%,-140%) scale(.7);opacity:0;transition:opacity 160ms ease-out,transform 200ms ease-out;"></div></x-dc>
+<div id="rwCursorTag" style="position:fixed;left:0;top:0;z-index:60;pointer-events:none;background:#2E6BFF;color:#fff;font-family:'Overused Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Helvetica,Arial,sans-serif;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.08em;white-space:nowrap;padding:6px 12px;border-radius:8px;transform:translateY(-5px);opacity:0;transition:opacity 140ms ease-out,transform 180ms ease-out;"></div></x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
   componentDidMount(){
+    // Rows of side-by-side images: width each by its own aspect ratio so a row
+    // shares one height with nothing cropped (justified-gallery style)
+    const justifyRows = () => {
+      const narrow = innerWidth <= 760;
+      // ratio of one column: an image, or a vertical stack of images
+      const ratioOf = el => {
+        if (el.tagName === 'IMG')
+          return el.naturalWidth && el.naturalHeight ? el.naturalWidth / el.naturalHeight : 0;
+        const inner = [...el.querySelectorAll('img')];
+        if (!inner.length || !inner.every(im => im.naturalWidth && im.naturalHeight)) return 0;
+        return 1 / inner.reduce((sum, im) => sum + im.naturalHeight / im.naturalWidth, 0);
+      };
+      document.querySelectorAll('main section > div').forEach(row => {
+        const cols = [...row.children].filter(
+          el => el.tagName === 'IMG' || (el.tagName === 'DIV' && el.querySelector('img'))
+        );
+        if (cols.length < 2) return;
+        const imgs = row.querySelectorAll('img');
+        if (narrow) {
+          row.style.display = 'grid';
+          row.style.gridTemplateColumns = '1fr';
+          row.style.gridTemplateRows = '';
+          cols.forEach(el => { el.style.flex = ''; el.style.width = ''; });
+          imgs.forEach(im => { im.style.flex = ''; im.style.width = '100%'; im.style.height = 'auto'; });
+          return;
+        }
+        const ratios = cols.map(ratioOf);
+        if (ratios.some(r => !r)) return;
+        row.style.display = 'flex';
+        row.style.alignItems = 'flex-start';
+        const gap = parseFloat(getComputedStyle(row).columnGap) || 0;
+        // every stack uses the SAME gap as the row, so spacing reads uniform
+        const stackGap = cols.map(el => {
+          if (el.tagName !== 'DIV') return 0;
+          el.style.display = 'flex';
+          el.style.flexDirection = 'column';
+          el.style.gap = gap + 'px';
+          return gap * Math.max(0, el.querySelectorAll('img').length - 1);
+        });
+        // solve for the single row height H: width_i = ratio_i * (H - stackGap_i)
+        const avail = row.clientWidth - gap * (cols.length - 1);
+        const sumR = ratios.reduce((a, r) => a + r, 0);
+        const sumGR = ratios.reduce((a, r, i) => a + r * stackGap[i], 0);
+        const H = (avail + sumGR) / sumR;
+        cols.forEach((el, i) => {
+          const w = ratios[i] * (H - stackGap[i]);
+          el.style.flex = '0 0 ' + w.toFixed(2) + 'px';
+          el.style.minWidth = '0';
+          if (el.tagName === 'IMG') { el.style.width = w.toFixed(2) + 'px'; el.style.height = 'auto'; }
+          else el.querySelectorAll('img').forEach(im => { im.style.width = '100%'; im.style.height = 'auto'; });
+        });
+      });
+    };
+    // Captions live in the cursor tag on desktop; on touch/narrow they sit inside the image's top-left.
+    // Each captioned image gets a relative wrapper up front — justifyRows already treats a div-of-img
+    // as one column, so the wrapper is safe to leave in place at every width.
+    document.querySelectorAll('main img[data-cap]').forEach(im => {
+      if (im.parentElement && im.parentElement.dataset.capwrap === '1') return;
+      const wrap = document.createElement('div');
+      wrap.dataset.capwrap = '1';
+      wrap.style.cssText = 'position:relative;width:100%;display:block;';
+      im.insertAdjacentElement('beforebegin', wrap);
+      wrap.appendChild(im);
+    });
+    const syncCaps = () => {
+      const narrow = innerWidth <= 760 || matchMedia('(hover:none)').matches;
+      document.querySelectorAll('main [data-capwrap="1"]').forEach(wrap => {
+        const im = wrap.querySelector('img[data-cap]');
+        const tag = wrap.querySelector('[data-capfor="1"]');
+        if (narrow && im && !tag) {
+          const s = document.createElement('span');
+          s.dataset.capfor = '1';
+          s.textContent = im.dataset.cap;
+          s.style.cssText = 'position:absolute;left:12px;top:12px;z-index:2;max-width:calc(100% - 24px);font-weight:600;font-size:11px;line-height:1.35;text-transform:uppercase;letter-spacing:.08em;background:#2E6BFF;color:#fff;border-radius:8px;padding:6px 12px;text-wrap:pretty;';
+          wrap.appendChild(s);
+        } else if (!narrow && tag) tag.remove();
+      });
+    };
+    this._syncCaps = syncCaps;
+    syncCaps();
+    addEventListener('resize', syncCaps, {passive:true});
+    this._justify = justifyRows;
+    justifyRows();
+    document.querySelectorAll('main img').forEach(im => {
+      if (!im.complete) im.addEventListener('load', justifyRows, {once:true});
+    });
+    addEventListener('resize', justifyRows, {passive:true});
     if(matchMedia('(pointer:coarse)').matches) return;
     const tag = document.getElementById('rwCursorTag');
     if(!tag) return;
-    let mx = 0, my = 0, tx = 0, ty = 0, raf = null, on = false;
-    const follow = () => {
-      raf = null;
-      tx += (mx - tx) * .22; ty += (my - ty) * .22;
-      tag.style.left = tx + 'px'; tag.style.top = ty + 'px';
-      if(on) raf = requestAnimationFrame(follow);
+    let cur = null;
+    const hide = () => { cur = null; tag.style.opacity = 0; tag.style.transform = 'translateY(-5px)'; };
+    // Label sits at the top-left INSIDE the hovered image, not on the cursor
+    const place = () => {
+      if(!cur || !cur.isConnected){ hide(); return; }
+      const r = cur.getBoundingClientRect();
+      if(r.bottom < 8 || r.top > innerHeight - 8){ hide(); return; }
+      tag.style.left = (r.left + 14) + 'px';
+      tag.style.top = Math.max(r.top + 14, 14) + 'px';
     };
-    const show = label => {
-      tag.textContent = label;
+    const show = im => {
+      cur = im;
+      tag.textContent = im.dataset.cap;
+      place();
       tag.style.opacity = 1;
-      tag.style.transform = 'translate(-50%,-140%) scale(1)';
-    };
-    const hide = () => {
-      on = false;
-      tag.style.opacity = 0;
-      tag.style.transform = 'translate(-50%,-140%) scale(.7)';
+      tag.style.transform = 'translateY(0)';
     };
     this._move = e => {
-      mx = e.clientX; my = e.clientY;
       const im = e.target && e.target.closest ? e.target.closest('main img[data-cap]') : null;
-      if(im && im.dataset.cap){
-        if(!on){ tx = mx; ty = my; on = true; raf = requestAnimationFrame(follow); }
-        show(im.dataset.cap);
-      } else if(on){ hide(); }
+      if(im && im.dataset.cap){ if(im !== cur) show(im); }
+      else if(cur) hide();
     };
     this._leave = () => hide();
+    this._track = () => { if(cur) place(); };
     addEventListener('mousemove', this._move, {passive:true});
     addEventListener('mouseleave', this._leave);
-    this._stop = () => { if(raf) cancelAnimationFrame(raf); };
+    addEventListener('scroll', this._track, {passive:true});
+    addEventListener('resize', this._track, {passive:true});
   }
   componentWillUnmount(){
     removeEventListener('mousemove', this._move);
     removeEventListener('mouseleave', this._leave);
-    if(this._stop) this._stop();
+    removeEventListener('resize', this._justify);
+    removeEventListener('resize', this._syncCaps);
+    removeEventListener('scroll', this._track);
+    removeEventListener('resize', this._track);
   }
 }
 </script>

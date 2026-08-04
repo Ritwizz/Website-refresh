@@ -9,15 +9,7 @@
 <body>
 <x-dc>
 <helmet>
-<script>(function(){var k='rwTheme';var d=document.documentElement;
-function paint(){var dark=d.dataset.rwtheme==='dark';document.querySelectorAll('[data-theme-toggle]').forEach(function(b){b.textContent=dark?'\u25D1':'\u25D0';b.setAttribute('aria-pressed',dark);});}
-if(!d.dataset.rwtheme){var t=null;try{t=localStorage.getItem(k)}catch(e){}d.dataset.rwtheme=t||'dark';}
-window.rwSetTheme=function(n){d.dataset.rwtheme=n;try{localStorage.setItem(k,n)}catch(e){}paint();};
-window.rwPaintTheme=paint;
-if(!window.__rwThemeBound){window.__rwThemeBound=1;
-document.addEventListener('click',function(e){var b=e.target&&e.target.closest&&e.target.closest('[data-theme-toggle]');if(!b)return;window.rwSetTheme(d.dataset.rwtheme==='dark'?'light':'dark');});
-document.addEventListener('DOMContentLoaded',paint);}
-setTimeout(paint,0);})();</script>
+<script>document.documentElement.dataset.rwtheme='dark';</script>
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
 <style>
 @font-face{font-family:'Overused Grotesk';src:url('https://cdn.jsdelivr.net/gh/RandomMaerks/Overused-Grotesk@main/fonts/variable/OverusedGrotesk-VF.woff2') format('woff2-variations'),url('https://cdn.jsdelivr.net/gh/RandomMaerks/Overused-Grotesk@main/fonts/variable/OverusedGrotesk-VF.ttf') format('truetype-variations');font-weight:300 900;font-display:swap;}
@@ -26,16 +18,18 @@ html[data-rwtheme="dark"]{--pg-bg:#0F0D0C;--pg-ink:#EDE9E4;--pg-hair:rgba(237,23
 html[data-rwtheme="dark"] body{background:#0F0D0C}
 body{margin:0;background:var(--pg-bg)}
 a{color:var(--pg-ink)}a:hover{opacity:.55}
-.rwThemeBtn{font:inherit;cursor:pointer;background:transparent;color:var(--pg-ink);border:1px solid var(--pg-hair);border-radius:9999px;width:30px;height:30px;flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;font-size:13px;line-height:1;padding:0;transition:background 200ms ease-out,color 200ms ease-out;}
-.rwThemeBtn:hover{background:var(--pg-ink);color:var(--pg-bg)}
+.rwCtl .rwTrack{display:flex;align-items:center;gap:3px;background:rgba(237,233,228,.10);border-radius:13px;padding:3px}
+.rwCtl .rwSeg{font-family:inherit;font-size:12.5px;font-weight:600;line-height:1;letter-spacing:.01em;color:var(--pg-ink);background:transparent;border:0;border-radius:10px;height:30px;padding:0 11px;display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;text-decoration:none}
+.rwCtl a.rwSeg:hover{background:rgba(237,233,228,.09);opacity:1}
+.rwCtl .rwAccentPill{background:#2E6BFF;color:#fff}
+.rwCtl a.rwAccentPill:hover{background:#5C8AFF;opacity:1}
 @media (max-width:760px){
   #rwCursorTag{display:none}
   main section > div{grid-template-columns:1fr !important}
   [data-screen-label="Title"]{padding-top:24px !important}
   [data-screen-label="Credits"]{grid-template-columns:1fr 1fr !important}
   blockquote{margin-left:0 !important;margin-right:0 !important}
-  header nav{gap:12px !important}
-  header nav a{font-size:11px !important}
+  header nav{gap:8px !important}
 }
 @media (max-width:420px){
   [data-screen-label="Credits"]{grid-template-columns:1fr !important}
@@ -45,134 +39,142 @@ a{color:var(--pg-ink)}a:hover{opacity:.55}
 <div style="background:var(--pg-bg);color:var(--pg-ink);font-family:'Overused Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Helvetica,Arial,sans-serif;min-height:100vh;">
   <header style="display:flex;justify-content:space-between;align-items:center;gap:14px 24px;flex-wrap:wrap;padding:16px clamp(16px,3vw,48px);">
     <a href="index.html" style="font-weight:600;font-size:18px;letter-spacing:-.02em;text-decoration:none;color:var(--pg-ink);white-space:nowrap;">Ritwiz Sharma</a>
-    <nav style="display:flex;align-items:center;gap:clamp(14px,2.5vw,32px);">
-      <button type="button" class="rwThemeBtn" data-theme-toggle="" aria-label="Toggle dark mode" aria-pressed="false">◐</button>
-      <a href="index.html" style="color:var(--pg-ink);text-decoration:none;font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.06em;" style-hover="opacity:.55">Work</a>
-      <a href="about.html" style="color:var(--pg-ink);text-decoration:none;font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.06em;" style-hover="opacity:.55">About</a>
-      <a href="shenanigans.html" style="color:#9B8CFF;text-decoration:none;font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.06em;" style-hover="opacity:.6">Shenanigans</a>
+    <nav class="rwCtl" style="display:flex;align-items:center;gap:clamp(6px,.8vw,10px);">
+      <div class="rwTrack"><a href="index.html" class="rwSeg">Work</a><a href="about.html" class="rwSeg">About</a></div>
+      <a href="shenanigans.html" class="rwSeg rwAccentPill" style="height:36px;padding:0 16px;">Shenanigans</a>
     </nav>
   </header>
 
   <main style="max-width:1440px;margin:0 auto;padding:0 clamp(16px,3vw,48px) clamp(48px,7vw,110px);">
     <section data-screen-label="Title" style="padding:clamp(40px,9vh,120px) 0 clamp(28px,5vh,60px);display:flex;flex-direction:column;gap:clamp(18px,2.6vw,34px);max-width:1100px;">
-      <h1 style="font-weight:800;font-size:clamp(42px,7.4vw,112px);line-height:.94;letter-spacing:-.03em;margin:0;">Ergoplay</h1>
-      <p style="font-weight:400;font-size:clamp(18px,2.3vw,30px);line-height:1.3;letter-spacing:-.015em;margin:0;max-width:760px;text-wrap:pretty;">A mouse that transforms between a gaming grip and an ergonomic shape — and never needs charging.</p>
+      <h1 style="font-weight:700;font-size:clamp(42px,7.4vw,112px);line-height:.96;letter-spacing:-.03em;margin:0;">Ergoplay</h1>
+      <p style="font-weight:400;font-size:clamp(18px,2.3vw,30px);line-height:1.3;letter-spacing:-.015em;margin:0;max-width:760px;text-wrap:pretty;">It changes from a low gaming grip into a taller ergonomic shape, and it charges itself every time you make the switch.</p>
       <div style="display:flex;flex-wrap:wrap;gap:clamp(8px,.9vw,12px);font-weight:600;font-size:clamp(11px,.9vw,13px);text-transform:uppercase;letter-spacing:.06em;">
-        <span style="background:#9B8CFF;color:#131313;border-radius:9999px;padding:.5em 1.05em;">Industrial / Product Design</span>
-        <span style="background:var(--pg-tint);color:var(--pg-ink);border-radius:9999px;padding:.5em 1.05em;">Personal project</span>
-        <span style="background:var(--pg-tint);color:var(--pg-ink);border-radius:9999px;padding:.5em 1.05em;">2024</span>
+        <span style="background:#2E6BFF;color:#fff;border-radius:.66em;padding:.5em 1.05em;">Industrial / Product Design</span>
+        <span style="background:var(--pg-tint);color:var(--pg-ink);border-radius:.66em;padding:.5em 1.05em;">Personal project</span>
+        <span style="background:var(--pg-tint);color:var(--pg-ink);border-radius:.66em;padding:.5em 1.05em;">2024</span>
       </div>
     </section>
 
-    <img src="https://static.wixstatic.com/media/5a2ab1_8100e4e0a57047d3b75ab305ec411593~mv2.png/v1/fit/w_2000,h_2000,q_90,enc_avif,quality_auto/5a2ab1_8100e4e0a57047d3b75ab305ec411593~mv2.png" alt="Ergoplay floating render" style="width:100%;display:block;border-radius:16px;">
+    <img src="ergoplay/opt/floating-render.jpg" alt="Ergoplay floating render" style="width:100%;display:block;border-radius:16px;">
 
-    <blockquote data-screen-label="Quote" style="margin:clamp(56px,10vh,150px) auto;max-width:1000px;font-weight:500;font-size:clamp(24px,3.4vw,48px);line-height:1.14;letter-spacing:-.025em;text-wrap:pretty;">Is it possible to combine the best of both gaming and comfort in a mouse without compromise?</blockquote>
+    <blockquote data-screen-label="Quote" style="margin:clamp(56px,10vh,150px) auto;max-width:1000px;font-weight:500;font-size:clamp(24px,3.4vw,48px);line-height:1.14;letter-spacing:-.025em;text-wrap:pretty;">Could one mouse be quick enough for gaming and still be comfortable after a full day of work?</blockquote>
 
     <section data-screen-label="Images 1" style="display:flex;flex-direction:column;gap:clamp(12px,1.6vw,24px);">
       <div style="display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:clamp(12px,1.6vw,24px);">
-        <img src="https://static.wixstatic.com/media/5a2ab1_09bba4e435524e25b94614633fa6957c~mv2.png/v1/fit/w_1800,h_1200,q_90,enc_avif,quality_auto/5a2ab1_09bba4e435524e25b94614633fa6957c~mv2.png" alt="Stress on hand comparison" style="width:100%;height:auto;display:block;border-radius:16px;">
-        <img src="https://static.wixstatic.com/media/5a2ab1_396a8e68dab04a53aa7c83aecb3c0cc4~mv2.png/v1/fill/w_800,h_1400,al_c,q_90,enc_avif,quality_auto/5a2ab1_396a8e68dab04a53aa7c83aecb3c0cc4~mv2.png" alt="Stress on hand" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img src="ergoplay/opt/stress-hand-top-rot.jpg" alt="Stress on hand comparison" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img src="ergoplay/opt/stress-hand-side.jpg" alt="Stress on hand" style="width:100%;height:auto;display:block;border-radius:16px;">
       </div>
-      <img src="https://static.wixstatic.com/media/5a2ab1_1faffd95507d466286cbf83389c9efe9~mv2.png/v1/fit/w_2400,h_2400,q_90,enc_avif,quality_auto/5a2ab1_1faffd95507d466286cbf83389c9efe9~mv2.png" alt="Mouse sketches ideation" style="width:100%;display:block;border-radius:16px;">
+      <img src="ergoplay/opt/sketches.jpg" alt="Mouse sketches ideation" style="width:100%;display:block;border-radius:16px;">
       <div style="display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:clamp(12px,1.6vw,24px);">
-        <img data-cap="Mouse shape tests" src="https://static.wixstatic.com/media/5a2ab1_2739af407e1646caa091a5cf4a4f6bf7~mv2.jpg/v1/fit/w_1600,h_1600,q_90,enc_avif,quality_auto/5a2ab1_2739af407e1646caa091a5cf4a4f6bf7~mv2.jpg" alt="Mouse shape tests" style="width:100%;height:auto;display:block;border-radius:16px;">
-        <img data-cap="Clay prototypes" src="https://static.wixstatic.com/media/5a2ab1_3ae1c7f4a75a4eabbce43a63d4789150~mv2.jpg/v1/fit/w_1600,h_1600,q_90,enc_avif,quality_auto/5a2ab1_3ae1c7f4a75a4eabbce43a63d4789150~mv2.jpg" alt="Clay prototypes" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img data-cap="Mouse shape tests" src="ergoplay/opt/shape-tests.jpg" alt="Mouse shape tests" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img src="ergoplay/opt/clay-protos.jpg" alt="Clay prototypes" style="width:100%;height:auto;display:block;border-radius:16px;">
       </div>
       <div style="display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:clamp(12px,1.6vw,24px);">
-        <img data-cap="Photogrammetry setup" src="https://static.wixstatic.com/media/5a2ab1_86878d803dc24e18b1a510ce2cf96292~mv2.png/v1/fit/w_1600,h_1600,q_90,enc_avif,quality_auto/5a2ab1_86878d803dc24e18b1a510ce2cf96292~mv2.png" alt="Photogrammetry setup" style="width:100%;height:auto;display:block;border-radius:16px;">
-        <img data-cap="3D scans of PCB and clay model" src="https://static.wixstatic.com/media/5a2ab1_230772b3a74441fc9789c4419d2217e1~mv2.png/v1/fit/w_1600,h_1600,q_90,enc_avif,quality_auto/5a2ab1_230772b3a74441fc9789c4419d2217e1~mv2.png" alt="3D scans of PCB and clay model" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img data-cap="Photogrammetry scan of the clay model and PCB" src="ergoplay/opt/scan-shell-pcb.jpg" alt="Photogrammetry setup" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img src="ergoplay/opt/scan-pcb.jpg" alt="3D scans of PCB and clay model" style="width:100%;height:auto;display:block;border-radius:16px;">
       </div>
     </section>
 
-    <blockquote data-screen-label="Quote" style="margin:clamp(56px,10vh,150px) auto;max-width:1000px;font-weight:500;font-size:clamp(24px,3.4vw,48px);line-height:1.14;letter-spacing:-.025em;text-wrap:pretty;">A single mouse that transforms between shapes, so nobody has to buy two and manage two sets of batteries.</blockquote>
+    <blockquote data-screen-label="Quote" style="margin:clamp(56px,10vh,150px) auto;max-width:1000px;font-weight:500;font-size:clamp(24px,3.4vw,48px);line-height:1.14;letter-spacing:-.025em;text-wrap:pretty;">One mouse changes shape instead, so you are not buying two of them and keeping two sets of batteries alive.</blockquote>
 
     <section data-screen-label="Images 2" style="display:flex;flex-direction:column;gap:clamp(12px,1.6vw,24px);">
-      <img src="https://static.wixstatic.com/media/5a2ab1_91c97dde55584ed2a40f02c50eefa110~mv2.png/v1/fit/w_2400,h_2400,q_90,enc_avif,quality_auto/5a2ab1_91c97dde55584ed2a40f02c50eefa110~mv2.png" alt="Concept 1 prismatic" style="width:100%;display:block;border-radius:16px;">
-      <img src="https://static.wixstatic.com/media/5a2ab1_9a3812fe1a9c48d99521a68454af8bab~mv2.png/v1/fit/w_2400,h_2400,q_90,enc_avif,quality_auto/5a2ab1_9a3812fe1a9c48d99521a68454af8bab~mv2.png" alt="User journey" style="width:100%;display:block;border-radius:16px;">
-      <img src="https://static.wixstatic.com/media/5a2ab1_c270c416635145738fa80d4c2fc54c71~mv2.png/v1/fit/w_2400,h_2400,q_90,enc_avif,quality_auto/5a2ab1_c270c416635145738fa80d4c2fc54c71~mv2.png" alt="Mouse floating in both shapes" style="width:100%;display:block;border-radius:16px;">
+      <img src="ergoplay/opt/journey.jpg" alt="User journey" style="width:100%;display:block;border-radius:16px;">
       <div style="display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:clamp(12px,1.6vw,24px);">
-        <img src="https://static.wixstatic.com/media/5a2ab1_fbafa5aefef046f8a11c940624f86185~mv2.jpg/v1/fit/w_1600,h_1600,q_90,enc_avif,quality_auto/5a2ab1_fbafa5aefef046f8a11c940624f86185~mv2.jpg" alt="Base top-down" style="width:100%;height:auto;display:block;border-radius:16px;">
-        <img src="https://static.wixstatic.com/media/5a2ab1_08b89e05c8674b69b5becf2eed33cada~mv2.jpg/v1/fit/w_1600,h_1600,q_90,enc_avif,quality_auto/5a2ab1_08b89e05c8674b69b5becf2eed33cada~mv2.jpg" alt="Internals perspective" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img src="ergoplay/opt/base-top-down.jpg" alt="Base top-down" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img src="ergoplay/opt/internals-perspective.jpg" alt="Internals perspective" style="width:100%;height:auto;display:block;border-radius:16px;">
       </div>
-      <img data-cap="Grips" src="https://static.wixstatic.com/media/5a2ab1_ed0c152c64a949698d648053e6944c69~mv2.jpg/v1/fit/w_1600,h_1600,q_90,enc_avif,quality_auto/5a2ab1_ed0c152c64a949698d648053e6944c69~mv2.jpg" alt="Grips" style="width:100%;display:block;border-radius:16px;">
+      <img src="ergoplay/opt/grips.jpg" alt="Grips" style="width:100%;display:block;border-radius:16px;">
     </section>
 
-    <blockquote data-screen-label="Quote" style="margin:clamp(56px,10vh,150px) auto;max-width:1000px;font-weight:500;font-size:clamp(24px,3.4vw,48px);line-height:1.14;letter-spacing:-.025em;text-wrap:pretty;">The ergo-grip transfers charge from the dock to the mouse, so swapping modes never costs a charging stop.</blockquote>
+    <blockquote data-screen-label="Quote" style="margin:clamp(56px,10vh,150px) auto;max-width:1000px;font-weight:500;font-size:clamp(24px,3.4vw,48px);line-height:1.14;letter-spacing:-.025em;text-wrap:pretty;">The ergo grip carries charge from the dock into the mouse, so changing shape never means stopping to plug in.</blockquote>
 
     <section data-screen-label="Images 3" style="display:flex;flex-direction:column;gap:clamp(12px,1.6vw,24px);">
       <div style="display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:clamp(12px,1.6vw,24px);">
-        <img data-cap="Final prototype, functional" src="https://static.wixstatic.com/media/5a2ab1_7ba11e3dd9e54027a797f65463b27304~mv2.jpg/v1/fit/w_1600,h_1600,q_90,enc_avif,quality_auto/5a2ab1_7ba11e3dd9e54027a797f65463b27304~mv2.jpg" alt="Final prototype, functional" style="width:100%;height:auto;display:block;border-radius:16px;">
-        <img data-cap="Final prototype, non-functional" src="https://static.wixstatic.com/media/5a2ab1_d3a67d5e4fa44643a7e93fbbeb21c74d~mv2.jpg/v1/fit/w_2400,h_2400,q_90,enc_avif,quality_auto/5a2ab1_d3a67d5e4fa44643a7e93fbbeb21c74d~mv2.jpg" alt="Final prototype, non-functional" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img data-cap="Final prototype, functional" src="ergoplay/opt/final-functional.jpg" alt="Final prototype, functional" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img data-cap="Final prototype, non-functional" src="ergoplay/opt/final-non-functional.jpg" alt="Final prototype, non-functional" style="width:100%;height:auto;display:block;border-radius:16px;">
       </div>
       <div style="display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:clamp(12px,1.6vw,24px);">
-        <img src="https://static.wixstatic.com/media/5a2ab1_1eb68cc793fd44adbad4050dc38af8a2~mv2.png/v1/fit/w_1600,h_1600,q_90,enc_avif,quality_auto/5a2ab1_1eb68cc793fd44adbad4050dc38af8a2~mv2.png" alt="Concept 2 prismatic" style="width:100%;height:auto;display:block;border-radius:16px;">
-        <img data-cap="Concept 2 internals" src="https://static.wixstatic.com/media/5a2ab1_2478d3ae9b254b99b37c96a75c5c6a02~mv2.png/v1/fit/w_1600,h_1600,q_90,enc_avif,quality_auto/5a2ab1_2478d3ae9b254b99b37c96a75c5c6a02~mv2.png" alt="Concept 2 internals" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img src="ergoplay/opt/v1-in-hand-grip.jpg" alt="V1 prototype in hand with the ergo grip" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img src="ergoplay/opt/v1-in-hand-desk.jpg" alt="V1 prototype in hand on the desk, grip alongside" style="width:100%;height:auto;display:block;border-radius:16px;">
+      </div>
+      <img src="ergoplay/opt/concept-1-prismatic.jpg" alt="Concept 1 prismatic" style="width:100%;display:block;border-radius:16px;">
+      <img src="ergoplay/opt/floating-both.jpg" alt="Mouse floating in both shapes" style="width:100%;display:block;border-radius:16px;">
+      <blockquote style="margin:clamp(56px,10vh,150px) auto;max-width:1000px;font-weight:500;font-size:clamp(24px,3.4vw,48px);line-height:1.14;letter-spacing:-.025em;text-wrap:pretty;">The first version worked, but it was chunky and the swap was fiddly, so I rebuilt the internals on a slimmer base, reshaped both tops and made the grip snap on with magnets.</blockquote>
+      <div style="display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:clamp(12px,1.6vw,24px);">
+        <img data-cap="Clay ergo test over new V2 shell" src="ergoplay/opt/clay-model.jpg" alt="Clay sculpted over the printed shell" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img src="ergoplay/opt/parts-1-pcb.jpg" alt="Parts 1 with PCB" style="width:100%;height:auto;display:block;border-radius:16px;">
       </div>
       <div style="display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:clamp(12px,1.6vw,24px);">
-        <img data-cap="Clay model" src="https://static.wixstatic.com/media/5a2ab1_5f352b253c314376891720a219f6ff3b~mv2.png/v1/fit/w_1600,h_1600,q_90,enc_avif,quality_auto/5a2ab1_5f352b253c314376891720a219f6ff3b~mv2.png" alt="Clay model" style="width:100%;height:auto;display:block;border-radius:16px;">
-        <img src="https://static.wixstatic.com/media/5a2ab1_4a6223c0bd454b9097f5c3883d2c3c17~mv2.png/v1/fit/w_1600,h_1600,q_90,enc_avif,quality_auto/5a2ab1_4a6223c0bd454b9097f5c3883d2c3c17~mv2.png" alt="Parts 1 with PCB" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img data-cap="Old tops" src="ergoplay/opt/old-tops.jpg" alt="Old tops" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img data-cap="Base improvements" src="ergoplay/opt/base-improvements.jpg" alt="Base improvements" style="width:100%;height:auto;display:block;border-radius:16px;">
+      </div>
+      <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);align-items:start;gap:clamp(12px,1.6vw,24px);">
+        <img src="ergoplay/transform.gif" alt="Transform in action" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <div style="display:flex;flex-direction:column;gap:clamp(12px,1.6vw,24px);">
+          <img src="ergoplay/opt/gaming-top-improvement.jpg" alt="Gaming top improvement" style="width:100%;height:auto;display:block;border-radius:16px;">
+          <img src="ergoplay/opt/shell-ergo-top.jpg" alt="Shell and ergo top" style="width:100%;height:auto;display:block;border-radius:16px;">
+        </div>
       </div>
       <div style="display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:clamp(12px,1.6vw,24px);">
-        <img data-cap="Old tops" src="https://static.wixstatic.com/media/5a2ab1_7c5b9b2680354708bcecda2f88cb80fa~mv2.png/v1/fit/w_2400,h_2400,q_90,enc_avif,quality_auto/5a2ab1_7c5b9b2680354708bcecda2f88cb80fa~mv2.png" alt="Old tops" style="width:100%;height:auto;display:block;border-radius:16px;">
-        <img data-cap="Base improvements" src="https://static.wixstatic.com/media/5a2ab1_763ca7c820ca457d9cd635ce9fcc4f2e~mv2.png/v1/fit/w_2400,h_2400,q_90,enc_avif,quality_auto/5a2ab1_763ca7c820ca457d9cd635ce9fcc4f2e~mv2.png" alt="Base improvements" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img src="ergoplay/opt/base-final.jpg" alt="Printed dock plate and mouse base" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img src="ergoplay/opt/dock-final.jpg" alt="Printed shell with its supports still attached" style="width:100%;height:auto;display:block;border-radius:16px;">
       </div>
       <div style="display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:clamp(12px,1.6vw,24px);">
-        <img data-cap="Gaming top improvement" src="https://static.wixstatic.com/media/5a2ab1_dfc3d3d4f0a34d1a8c4d1c0a22da066d~mv2.png/v1/fit/w_2400,h_2400,q_90,enc_avif,quality_auto/5a2ab1_dfc3d3d4f0a34d1a8c4d1c0a22da066d~mv2.png" alt="Gaming top improvement" style="width:100%;height:auto;display:block;border-radius:16px;">
-        <img data-cap="Shell and ergo top" src="https://static.wixstatic.com/media/5a2ab1_c68326e6c30d43e588b0eb9906a0db36~mv2.png/v1/fit/w_2400,h_2400,q_90,enc_avif,quality_auto/5a2ab1_c68326e6c30d43e588b0eb9906a0db36~mv2.png" alt="Shell and ergo top" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img src="ergoplay/opt/in-hand.jpg" alt="Prototype in hand" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img src="ergoplay/opt/in-hand-internals.jpg" alt="Prototype opened, internals in hand" style="width:100%;height:auto;display:block;border-radius:16px;">
       </div>
-      <img data-cap="Transform in action" src="https://static.wixstatic.com/media/5a2ab1_e9568134afcd48f8badae97fd148f25e~mv2.gif" alt="Transform in action" style="width:100%;display:block;border-radius:16px;">
-      <img data-cap="Prototype in hand" src="https://static.wixstatic.com/media/5a2ab1_7a780f521e8842fa9bd51d7c994ce23f~mv2.jpg/v1/fit/w_1600,h_1600,q_90,enc_avif,quality_auto/5a2ab1_7a780f521e8842fa9bd51d7c994ce23f~mv2.jpg" alt="Prototype in hand" style="width:100%;display:block;border-radius:16px;">
     </section>
 
-    <blockquote data-screen-label="Quote" style="margin:clamp(56px,10vh,150px) auto;max-width:1000px;font-weight:500;font-size:clamp(24px,3.4vw,48px);line-height:1.14;letter-spacing:-.025em;text-wrap:pretty;">Almost the entire product is 3D printed, built around the reliable internals of a Logitech G304.</blockquote>
+    <blockquote data-screen-label="Quote" style="margin:clamp(56px,10vh,150px) auto;max-width:1000px;font-weight:500;font-size:clamp(24px,3.4vw,48px);line-height:1.14;letter-spacing:-.025em;text-wrap:pretty;">Nearly every part of it comes off my printer. The only pieces I did not make are the internals of a Logitech G304.</blockquote>
 
     <section data-screen-label="Images 4" style="display:flex;flex-direction:column;gap:clamp(12px,1.6vw,24px);">
       <div style="display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:clamp(12px,1.6vw,24px);">
-        <img src="https://static.wixstatic.com/media/5a2ab1_93da4a0de4494bf9bfb6243020aa832d~mv2.png/v1/fit/w_1600,h_1600,q_90,enc_avif,quality_auto/5a2ab1_93da4a0de4494bf9bfb6243020aa832d~mv2.png" alt="Base final" style="width:100%;height:auto;display:block;border-radius:16px;">
-        <img src="https://static.wixstatic.com/media/5a2ab1_9b0b3d8e6082420ea3cb5116043b7b9e~mv2.png/v1/fit/w_1600,h_1600,q_90,enc_avif,quality_auto/5a2ab1_9b0b3d8e6082420ea3cb5116043b7b9e~mv2.png" alt="Dock final" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img src="ergoplay/opt/concept-2-prismatic.jpg" alt="Concept 2 prismatic" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img src="ergoplay/opt/concept-2-internals.jpg" alt="Concept 2 internals" style="width:100%;height:auto;display:block;border-radius:16px;">
       </div>
-      <img src="https://static.wixstatic.com/media/5a2ab1_2821d5db66df4c839d1d08635b09f70e~mv2.gif" alt="Dock animation" style="width:100%;display:block;border-radius:16px;">
-      <img src="https://static.wixstatic.com/media/5a2ab1_df479e0fdbad4e7888f774567e693fd2~mv2.png/v1/fit/w_2400,h_2400,q_90,enc_avif,quality_auto/5a2ab1_df479e0fdbad4e7888f774567e693fd2~mv2.png" alt="Studio shot" style="width:100%;display:block;border-radius:16px;">
-      <div style="display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:clamp(12px,1.6vw,24px);">
-        <img src="https://static.wixstatic.com/media/5a2ab1_d52dd2fc936f4333b4c0ba99cb4f6375~mv2.png/v1/fit/w_2400,h_2400,q_90,enc_avif,quality_auto/5a2ab1_d52dd2fc936f4333b4c0ba99cb4f6375~mv2.png" alt="Maker set" style="width:100%;height:auto;display:block;border-radius:16px;">
-        <img src="https://static.wixstatic.com/media/5a2ab1_ff0544dd6cfa4749b0e789387bb1c904~mv2.png/v1/fit/w_2400,h_2400,q_90,enc_avif,quality_auto/5a2ab1_ff0544dd6cfa4749b0e789387bb1c904~mv2.png" alt="Ergoplay in context" style="width:100%;height:auto;display:block;border-radius:16px;">
+      <div style="display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);align-items:start;gap:clamp(12px,1.6vw,24px);">
+        <img src="ergoplay/gaming-shell-360.gif" alt="360 turntable of the printed final gaming shell" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img src="ergoplay/opt/studio-shot.jpg" alt="Studio shot" style="width:100%;height:auto;display:block;border-radius:16px;">
       </div>
+      <img src="ergoplay/opt/maker-set.jpg" alt="Ergoplay parts, tools and sketches laid out on the cutting mat" style="width:100%;display:block;border-radius:16px;">
+      <img src="ergoplay/opt/context.jpg" alt="Ergoplay in context" style="width:100%;display:block;border-radius:16px;">
     </section>
 
     <section data-screen-label="About the project" style="max-width:760px;margin:clamp(64px,12vh,180px) 0 0;display:flex;flex-direction:column;gap:clamp(16px,2vh,26px);font-size:clamp(16px,1.15vw,19px);line-height:1.62;">
-      <p style="margin:0;text-wrap:pretty;">This project started with a simple question: what if a single mouse could perfectly adapt to both high-intensity gaming and long hours of comfortable work? The answer is a transforming mouse, a concept designed to shift from a nimble gaming grip to a supportive ergonomic shape, all without ever needing to stop for a charge.</p>
-      <p style="margin:0;text-wrap:pretty;">Like many gamers, I've used a gaming mouse as my primary and only device for years, both for playing FPS titles and for everyday work. Over time, I started to notice a bit of wrist pain, especially during long sessions. I saw friends who weren't gamers use ergonomic mice for work and wondered why a single mouse couldn't serve both needs. The idea of buying two expensive mice and managing two sets of batteries didn't make sense. That's how Ergoplay was born.</p>
-      <p style="margin:0;text-wrap:pretty;">As a personal, enthusiast-driven project, the goal was to see what could be achieved almost entirely with 3D printing. By integrating the reliable internals of a Logitech G304, I created a fully working prototype that brings this transforming design to life, showing how desktop manufacturing can be used to make highly functional products.</p>
-      <p style="margin:0;text-wrap:pretty;">Two overall directions were explored, then validated as clay models and photogrammetry scans against the real PCB. Although the first working version of the mouse worked, I wanted to improve it further both aesthetically and ergonomically. The user journey, however, was exactly what I was looking for: it allowed for quickly swapping the mouse's modes while never needing to charge the mouse itself, since the ergo-grip transferred charge from the dock to the mouse's internal battery.</p>
-      <p style="margin:0;text-wrap:pretty;">The first thing I developed and validated in the second round was the updated gaming shape and internals. The base and top are separate and magnetically attached. Once that shape was validated, I moved on to develop the ergonomic shape, then iterated the tops and base together until the transformation felt deliberate rather than fiddly.</p>
+      <p style="margin:0;text-wrap:pretty;">This started with a question I kept coming back to, about whether I really needed one mouse for playing and a second one for working. Ergoplay is my answer to it. The mouse changes from a low gaming grip into a taller ergonomic shape, and it tops itself up every time you make the switch.</p>
+      <p style="margin:0;text-wrap:pretty;">Like a lot of people, I have used a gaming mouse as my only mouse for years, for FPS games and for everything else. After a while my wrist started to complain, especially on the long days. Friends who don't game were using ergonomic mice for work, and I kept wondering why I had to pick one or the other. Buying two expensive mice and keeping two sets of batteries charged never made sense to me, so I started drawing.</p>
+      <p style="margin:0;text-wrap:pretty;">This is a personal project, so I wanted to see how far I could get with the printer on my desk. The internals come from a Logitech G304, which I already trusted, and everything around them is printed. What came out of it is a prototype that actually works rather than a shape to look at.</p>
+      <p style="margin:0;text-wrap:pretty;">I took two directions forward and checked both as clay models and photogrammetry scans against the real PCB. The first working version did what I asked of it, but it was rough to look at and to hold. The way you use it was right, though. Swapping modes was quick, and the ergo grip passed charge from the dock into the battery, so the mouse never had to leave the desk to charge.</p>
+      <p style="margin:0;text-wrap:pretty;">In the second round I started again with the gaming shape and the internals, since everything else sits on top of them. The base and the top are separate parts held together with magnets. Once that felt right I moved on to the ergonomic shape, then kept going back and forth between the two tops and the base until the swap became one clean movement.</p>
     </section>
 
     <section data-screen-label="Credits" style="margin:clamp(56px,9vh,130px) 0 0;padding-top:clamp(24px,3vh,40px);border-top:1px solid var(--pg-hair);display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:clamp(24px,3vw,48px);font-size:14px;line-height:1.55;">
       <div style="display:flex;flex-direction:column;gap:10px;">
-        <span style="align-self:flex-start;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--pg-ink);background:var(--pg-tint);border-radius:9999px;padding:.5em 1.05em;">Discipline</span>
+        <span style="align-self:flex-start;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--pg-ink);background:var(--pg-tint);border-radius:.66em;padding:.5em 1.05em;">Discipline</span>
         <span>Industrial / Product Design</span>
         <span>Ergonomics research</span>
         <span>Prototyping</span>
       </div>
       <div style="display:flex;flex-direction:column;gap:10px;">
-        <span style="align-self:flex-start;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--pg-ink);background:var(--pg-tint);border-radius:9999px;padding:.5em 1.05em;">My role</span>
+        <span style="align-self:flex-start;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--pg-ink);background:var(--pg-tint);border-radius:.66em;padding:.5em 1.05em;">My role</span>
         <span>Sole designer</span>
         <span>3 months, 2024</span>
       </div>
       <div style="display:flex;flex-direction:column;gap:10px;">
-        <span style="align-self:flex-start;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--pg-ink);background:var(--pg-tint);border-radius:9999px;padding:.5em 1.05em;">Status</span>
+        <span style="align-self:flex-start;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--pg-ink);background:var(--pg-tint);border-radius:.66em;padding:.5em 1.05em;">Status</span>
         <span>Working prototype</span>
       </div>
       <div style="display:flex;flex-direction:column;gap:10px;">
-        <span style="align-self:flex-start;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--pg-ink);background:var(--pg-tint);border-radius:9999px;padding:.5em 1.05em;">Made with</span>
+        <span style="align-self:flex-start;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--pg-ink);background:var(--pg-tint);border-radius:.66em;padding:.5em 1.05em;">Made with</span>
         <span>3D printing</span>
         <span>Logitech G304 internals</span>
       </div>
     </section>
 
     <a href="vita.html" data-screen-label="Next project" style="display:flex;flex-direction:column;gap:12px;margin-top:clamp(56px,9vh,130px);padding-top:clamp(24px,3vh,40px);border-top:1px solid var(--pg-hair);text-decoration:none;color:var(--pg-ink);" style-hover="opacity:.55">
-      <span style="align-self:flex-start;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--pg-ink);background:var(--pg-tint);border-radius:9999px;padding:.5em 1.05em;">Next project</span>
-      <span style="font-weight:800;font-size:clamp(28px,4.4vw,64px);line-height:1;letter-spacing:-.03em;text-transform:uppercase;">Vita</span>
+      <span style="align-self:flex-start;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--pg-ink);background:var(--pg-tint);border-radius:.66em;padding:.5em 1.05em;">Next project</span>
+      <span style="font-weight:700;font-size:clamp(28px,4.4vw,64px);line-height:1;letter-spacing:-.03em;text-transform:uppercase;">Vita</span>
       <span style="font-size:clamp(15px,1.1vw,18px);line-height:1.5;max-width:620px;text-wrap:pretty;">The grand touring philosophy applied to a scooter for people in their early 20s.</span>
     </a>
 
@@ -187,47 +189,136 @@ a{color:var(--pg-ink)}a:hover{opacity:.55}
   </main>
 </div>
 
-<div id="rwCursorTag" style="position:fixed;left:0;top:0;z-index:60;pointer-events:none;background:#9B8CFF;color:#131313;font-family:'Overused Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Helvetica,Arial,sans-serif;font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.06em;white-space:nowrap;padding:9px 16px;border-radius:9999px;transform:translate(-50%,-140%) scale(.7);opacity:0;transition:opacity 160ms ease-out,transform 200ms ease-out;"></div></x-dc>
+<div id="rwCursorTag" style="position:fixed;left:0;top:0;z-index:60;pointer-events:none;background:#2E6BFF;color:#fff;font-family:'Overused Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Helvetica,Arial,sans-serif;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.08em;white-space:nowrap;padding:6px 12px;border-radius:8px;transform:translateY(-5px);opacity:0;transition:opacity 140ms ease-out,transform 180ms ease-out;"></div></x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
   componentDidMount(){
+    // Rows of side-by-side images: width each by its own aspect ratio so a row
+    // shares one height with nothing cropped (justified-gallery style)
+    const justifyRows = () => {
+      const narrow = innerWidth <= 760;
+      // ratio of one column: an image, or a vertical stack of images
+      const ratioOf = el => {
+        if (el.tagName === 'IMG')
+          return el.naturalWidth && el.naturalHeight ? el.naturalWidth / el.naturalHeight : 0;
+        const inner = [...el.querySelectorAll('img')];
+        if (!inner.length || !inner.every(im => im.naturalWidth && im.naturalHeight)) return 0;
+        return 1 / inner.reduce((sum, im) => sum + im.naturalHeight / im.naturalWidth, 0);
+      };
+      document.querySelectorAll('main section > div').forEach(row => {
+        const cols = [...row.children].filter(
+          el => el.tagName === 'IMG' || (el.tagName === 'DIV' && el.querySelector('img'))
+        );
+        if (cols.length < 2) return;
+        const imgs = row.querySelectorAll('img');
+        if (narrow) {
+          row.style.display = 'grid';
+          row.style.gridTemplateColumns = '1fr';
+          row.style.gridTemplateRows = '';
+          cols.forEach(el => { el.style.flex = ''; el.style.width = ''; });
+          imgs.forEach(im => { im.style.flex = ''; im.style.width = '100%'; im.style.height = 'auto'; });
+          return;
+        }
+        const ratios = cols.map(ratioOf);
+        if (ratios.some(r => !r)) return;
+        row.style.display = 'flex';
+        row.style.alignItems = 'flex-start';
+        const gap = parseFloat(getComputedStyle(row).columnGap) || 0;
+        // every stack uses the SAME gap as the row, so spacing reads uniform
+        const stackGap = cols.map(el => {
+          if (el.tagName !== 'DIV') return 0;
+          el.style.display = 'flex';
+          el.style.flexDirection = 'column';
+          el.style.gap = gap + 'px';
+          return gap * Math.max(0, el.querySelectorAll('img').length - 1);
+        });
+        // solve for the single row height H: width_i = ratio_i * (H - stackGap_i)
+        const avail = row.clientWidth - gap * (cols.length - 1);
+        const sumR = ratios.reduce((a, r) => a + r, 0);
+        const sumGR = ratios.reduce((a, r, i) => a + r * stackGap[i], 0);
+        const H = (avail + sumGR) / sumR;
+        cols.forEach((el, i) => {
+          const w = ratios[i] * (H - stackGap[i]);
+          el.style.flex = '0 0 ' + w.toFixed(2) + 'px';
+          el.style.minWidth = '0';
+          if (el.tagName === 'IMG') { el.style.width = w.toFixed(2) + 'px'; el.style.height = 'auto'; }
+          else el.querySelectorAll('img').forEach(im => { im.style.width = '100%'; im.style.height = 'auto'; });
+        });
+      });
+    };
+    // Captions live in the cursor tag on desktop; on touch/narrow they sit inside the image's top-left.
+    // Each captioned image gets a relative wrapper up front — justifyRows already treats a div-of-img
+    // as one column, so the wrapper is safe to leave in place at every width.
+    document.querySelectorAll('main img[data-cap]').forEach(im => {
+      if (im.parentElement && im.parentElement.dataset.capwrap === '1') return;
+      const wrap = document.createElement('div');
+      wrap.dataset.capwrap = '1';
+      wrap.style.cssText = 'position:relative;width:100%;display:block;';
+      im.insertAdjacentElement('beforebegin', wrap);
+      wrap.appendChild(im);
+    });
+    const syncCaps = () => {
+      const narrow = innerWidth <= 760 || matchMedia('(hover:none)').matches;
+      document.querySelectorAll('main [data-capwrap="1"]').forEach(wrap => {
+        const im = wrap.querySelector('img[data-cap]');
+        const tag = wrap.querySelector('[data-capfor="1"]');
+        if (narrow && im && !tag) {
+          const s = document.createElement('span');
+          s.dataset.capfor = '1';
+          s.textContent = im.dataset.cap;
+          s.style.cssText = 'position:absolute;left:12px;top:12px;z-index:2;max-width:calc(100% - 24px);font-weight:600;font-size:11px;line-height:1.35;text-transform:uppercase;letter-spacing:.08em;background:#2E6BFF;color:#fff;border-radius:8px;padding:6px 12px;text-wrap:pretty;';
+          wrap.appendChild(s);
+        } else if (!narrow && tag) tag.remove();
+      });
+    };
+    this._syncCaps = syncCaps;
+    syncCaps();
+    addEventListener('resize', syncCaps, {passive:true});
+    this._justify = justifyRows;
+    justifyRows();
+    document.querySelectorAll('main img').forEach(im => {
+      if (!im.complete) im.addEventListener('load', justifyRows, {once:true});
+    });
+    addEventListener('resize', justifyRows, {passive:true});
     if(matchMedia('(pointer:coarse)').matches) return;
     const tag = document.getElementById('rwCursorTag');
     if(!tag) return;
-    let mx = 0, my = 0, tx = 0, ty = 0, raf = null, on = false;
-    const follow = () => {
-      raf = null;
-      tx += (mx - tx) * .22; ty += (my - ty) * .22;
-      tag.style.left = tx + 'px'; tag.style.top = ty + 'px';
-      if(on) raf = requestAnimationFrame(follow);
+    let cur = null;
+    const hide = () => { cur = null; tag.style.opacity = 0; tag.style.transform = 'translateY(-5px)'; };
+    // Label sits at the top-left INSIDE the hovered image, not on the cursor
+    const place = () => {
+      if(!cur || !cur.isConnected){ hide(); return; }
+      const r = cur.getBoundingClientRect();
+      if(r.bottom < 8 || r.top > innerHeight - 8){ hide(); return; }
+      tag.style.left = (r.left + 14) + 'px';
+      tag.style.top = Math.max(r.top + 14, 14) + 'px';
     };
-    const show = label => {
-      tag.textContent = label;
+    const show = im => {
+      cur = im;
+      tag.textContent = im.dataset.cap;
+      place();
       tag.style.opacity = 1;
-      tag.style.transform = 'translate(-50%,-140%) scale(1)';
-    };
-    const hide = () => {
-      on = false;
-      tag.style.opacity = 0;
-      tag.style.transform = 'translate(-50%,-140%) scale(.7)';
+      tag.style.transform = 'translateY(0)';
     };
     this._move = e => {
-      mx = e.clientX; my = e.clientY;
       const im = e.target && e.target.closest ? e.target.closest('main img[data-cap]') : null;
-      if(im && im.dataset.cap){
-        if(!on){ tx = mx; ty = my; on = true; raf = requestAnimationFrame(follow); }
-        show(im.dataset.cap);
-      } else if(on){ hide(); }
+      if(im && im.dataset.cap){ if(im !== cur) show(im); }
+      else if(cur) hide();
     };
     this._leave = () => hide();
+    this._track = () => { if(cur) place(); };
     addEventListener('mousemove', this._move, {passive:true});
     addEventListener('mouseleave', this._leave);
-    this._stop = () => { if(raf) cancelAnimationFrame(raf); };
+    addEventListener('scroll', this._track, {passive:true});
+    addEventListener('resize', this._track, {passive:true});
   }
   componentWillUnmount(){
     removeEventListener('mousemove', this._move);
     removeEventListener('mouseleave', this._leave);
-    if(this._stop) this._stop();
+    removeEventListener('resize', this._justify);
+    removeEventListener('resize', this._syncCaps);
+    removeEventListener('scroll', this._track);
+    removeEventListener('resize', this._track);
   }
 }
 </script>
