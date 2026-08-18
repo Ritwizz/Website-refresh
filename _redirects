@@ -1,0 +1,4 @@
+/Home.dc.html            /            301
+/About.dc.html           /about       301
+/Shenanigans.dc.html     /shenanigans 301
+/work/*                  /:splat      301

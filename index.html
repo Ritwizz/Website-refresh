@@ -3,658 +3,225 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#131313"/><text x="50" y="58" font-family="sans-serif" font-size="30" font-weight="900" fill="#fff" text-anchor="middle">RS</text></svg></template>
-<meta name="ext-resource-dependency" content="snapin/s11-f.jpg" data-resource-id="tileSnap1" />
-<meta name="ext-resource-dependency" content="snapin/s2-a.jpg" data-resource-id="tileSnap2" />
-<meta name="ext-resource-dependency" content="snapin/final-7.jpg" data-resource-id="tileSnap3" />
-<meta name="ext-resource-dependency" content="snapin/final-wa9.jpg" data-resource-id="tileSnap4" />
 <script src="./support.js"></script>
 </head>
 <body>
 <x-dc>
 <helmet>
-<script>document.documentElement.dataset.rwtheme='dark';</script>
-<script>(function(){var d=document.documentElement,AK='rwAccent';
-var A={violet:['#2E6BFF','#5C8AFF'],mint:['#8FD694','#A9E5AD'],clay:['#F09070','#F7A98D']};
-function apply(n,save){var v=A[n]||A.violet;d.style.setProperty('--pill',v[0]);d.style.setProperty('--pill-hi',v[1]);d.dataset.rwaccent=A[n]?n:'violet';if(save){try{localStorage.setItem(AK,d.dataset.rwaccent)}catch(e){}}}
-apply('violet',false);
-function paint(){var dark=d.dataset.rwtheme==='dark';
- document.querySelectorAll('[data-set-theme]').forEach(function(b){b.classList.toggle('on',b.getAttribute('data-set-theme')===(dark?'dark':'light'))});
- document.querySelectorAll('[data-accent]').forEach(function(b){b.classList.toggle('on',b.getAttribute('data-accent')===d.dataset.rwaccent)});}
-function clock(){var y=document.getElementById('rwClkYou');if(!y)return;var i=document.getElementById('rwClkInd'),o={hour:'2-digit',minute:'2-digit',hour12:false},n=new Date();
- try{y.textContent=new Intl.DateTimeFormat([],o).format(n);i.textContent=new Intl.DateTimeFormat([],{hour:'2-digit',minute:'2-digit',hour12:false,timeZone:'Asia/Kolkata'}).format(n)}catch(e){}}
-if(!window.__rwCtlBound){window.__rwCtlBound=1;
- document.addEventListener('click',function(e){var t=e.target.closest&&e.target.closest('[data-set-theme]');
-  if(t){if(window.rwSetTheme)window.rwSetTheme(t.getAttribute('data-set-theme'));paint();return;}
-  var c=e.target.closest&&e.target.closest('[data-accent]');if(c){apply(c.getAttribute('data-accent'),true);paint();}});
- setInterval(function(){clock();paint()},1000);}
-setTimeout(function(){clock();paint()},0);
-document.addEventListener('DOMContentLoaded',function(){clock();paint()});})();</script>
+<title>Ritwiz Sharma — Industrial Designer, Guwahati</title>
+<meta name="description" content="Ritwiz Sharma is an industrial designer in Guwahati working across consumer products, robotics and retail environments — from first blockout to a manufacturing package.">
+<meta property="og:title" content="Ritwiz Sharma — Industrial Designer">
+<meta property="og:description" content="Consumer products, robotics and retail environments. Guwahati, Assam, India.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="crossorigin">
+<link rel="preload" as="font" type="font/woff2" href="https://cdn.jsdelivr.net/gh/RandomMaerks/Overused-Grotesk@main/fonts/variable/OverusedGrotesk-VF.woff2" crossorigin="crossorigin">
 <style>
-:root{--pg-bg:#F7F5F0;--pg-ink:#131313;--pg-card:#fff;--pg-panel:#131313;--pg-panel-ink:#F7F5F0;--pg-hair:rgba(19,19,19,.12);--pg-hair2:rgba(19,19,19,.2);--pg-shadow:rgba(19,19,19,.16);}
-html[data-rwtheme="dark"]{--pg-bg:#0F0D0C;--pg-ink:#EDE9E4;--pg-card:#1A1716;--pg-panel:#241F1E;--pg-panel-ink:#EDE9E4;--pg-hair:rgba(237,233,228,.16);--pg-hair2:rgba(237,233,228,.26);--pg-shadow:rgba(0,0,0,.5);}
-html[data-rwtheme="dark"] body{background:#0F0D0C}
-.rwThemeBtn{font:inherit;cursor:pointer;background:transparent;color:var(--pg-ink);border:1px solid var(--pg-hair2);border-radius:9999px;width:30px;height:30px;flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;font-size:13px;line-height:1;padding:0;align-self:center;transition:background 200ms ease-out,color 200ms ease-out;}
-.rwThemeBtn:hover{background:var(--pg-ink);color:var(--pg-bg)}
-
 @font-face{font-family:'Overused Grotesk';src:url('https://cdn.jsdelivr.net/gh/RandomMaerks/Overused-Grotesk@main/fonts/variable/OverusedGrotesk-VF.woff2') format('woff2-variations'),url('https://cdn.jsdelivr.net/gh/RandomMaerks/Overused-Grotesk@main/fonts/variable/OverusedGrotesk-VF.ttf') format('truetype-variations');font-weight:300 900;font-display:swap;}
-html[data-rwtheme="dark"] .rwHome{--ink:#EDE9E4}
-html[data-rwtheme="dark"] .rwHome .cloud .block{background:#F7F5F0 !important;color:#131313 !important}
-html[data-rwtheme="dark"] .rwHome .cloud .block,html[data-rwtheme="dark"] .rwHome #cursorImg .fb{color:#131313}
-:root{--pill:#2E6BFF;--pill-hi:#5C8AFF}
-.rwHome{
-  --red:#FF4438;--blue:#2E6BFF;--yellow:#FFC700;--green:#17B26A;
-  --purple:#7A3BFF;--orange:#FF7A00;--pink:#FF5CA8;--teal:#00B8C4;
-  --ink:#2E2C2A;--pill-mute:#9A948C;--pill-mute-hi:#B4AEA6;
-  --font:'Overused Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Helvetica,Arial,sans-serif;
-  --r-block:16px;--r-row:12px;--r-pill:.66em;
-  --ease-pop:ease-out;--ease-morph:ease-out;
-  --dur-fast:85ms;--dur-base:200ms;
-}
-.rwHome #stage.cloud .grid{height:100%;display:flex;flex-wrap:wrap;align-content:center;justify-content:center;gap:clamp(8px,1.2vw,16px);max-width:1100px;margin:0 auto;}
-.rwHome #stage.list .grid{height:100%;display:grid;grid-template-columns:fit-content(38%) minmax(0,1fr) auto;align-content:start;row-gap:clamp(4px,.62vh,8px);column-gap:clamp(10px,1.6vw,24px);}
-.rwHome .block{display:flex;align-items:center;border-radius:var(--r-block);color:#fff;text-decoration:none;will-change:transform;transform-origin:center center;}
-
-.rwHome .cloud .block{background:#131313 !important;color:#fff !important;justify-content:center;padding:clamp(8px,1.2vw,17px) clamp(13px,2vw,28px);border-radius:clamp(10px,1.5vw,18px) !important;}
-html[data-rwtheme] .rwHome .cloud .block.cf0{background:#FF4438 !important;color:#fff !important}
-html[data-rwtheme] .rwHome .cloud .block.cf1{background:#2E6BFF !important;color:#fff !important}
-html[data-rwtheme] .rwHome .cloud .block.cf2{background:#FFC700 !important;color:#131313 !important}
-html[data-rwtheme] .rwHome .cloud .block.cf3{background:#17B26A !important;color:#fff !important}
-html[data-rwtheme="dark"] .rwHome .cloud .block.cf0{background:#FF4438 !important;color:#fff !important}
-html[data-rwtheme="dark"] .rwHome .cloud .block.cf1{background:#2E6BFF !important;color:#fff !important}
-html[data-rwtheme="dark"] .rwHome .cloud .block.cf2{background:#FFC700 !important;color:#131313 !important}
-html[data-rwtheme="dark"] .rwHome .cloud .block.cf3{background:#17B26A !important;color:#fff !important}
-.rwHome .cloud .word{font-family:var(--font);font-weight:600;font-size:clamp(21px,4.1vw,50px);line-height:1.2;letter-spacing:-.02em;white-space:nowrap;}
-.rwHome .cloud .proj,.rwHome .cloud .right{display:none}
-.rwHome .cloud .block.soon{border:0}
-.rwHome .cloud .cbreak{flex:0 0 100%;height:0;margin:0}
-.rwHome .list .cbreak{display:none}
-.rwHome .cloud .clabel{display:none}
-.rwHome .list .clabel{grid-column:1/-1;font-family:var(--font);font-weight:600;font-size:clamp(10px,1.35vh,13px);line-height:1;text-transform:uppercase;letter-spacing:.14em;color:var(--pg-ink);opacity:.42;padding:0 0 clamp(4px,.7vh,8px)}
-.rwHome .list .clabel.later{padding-top:clamp(12px,1.9vh,26px)}
-.rwHome .list .block{position:relative;flex:0 0 auto;min-height:0;display:grid;grid-column:1/-1;grid-template-columns:subgrid;align-items:center;gap:clamp(10px,1.6vw,24px);border-radius:0;padding:clamp(5px,.95vh,15px) 0 clamp(6px,1.16vh,18px);background:transparent !important;color:var(--pill) !important;}
-html:has(#stage.list),html:has(#stage.list) body{background:var(--pg-card)}
-.rwHome:has(#stage.list){background:var(--pg-card)}
-.rwHome #stage.list{background:var(--pg-card);padding-top:clamp(76px,9.6vh,124px) !important}
-.rwHome .list .block.gone{display:none}
-.rwHome .list .word{display:none}
-.rwHome .list .proj{justify-self:start;max-width:100%;font-family:var(--font);font-weight:700;font-size:clamp(13px,2.1vh,32px);line-height:1.15;letter-spacing:0;text-transform:uppercase;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;background:var(--pill);color:#fff;border-radius:var(--r-pill);padding:.32em .82em;}
-.rwHome .list .right{position:relative;display:flex;align-items:center;justify-self:start;min-width:0;width:100%}
-.rwHome .list .tags{display:flex;align-items:center;flex-wrap:nowrap;overflow:visible;gap:clamp(6px,.7vw,12px);min-width:0;transition:opacity var(--dur-fast) ease-out}
-.rwHome .list .tagimg{display:none}
-.rwHome .list .tagimg img{width:100%;height:100%;object-fit:cover;display:block}
-.rwHome .cloud .tagimg{display:none}
-.rwHome .list .tag{font-family:var(--font);font-weight:500;font-size:clamp(13px,2.1vh,32px);line-height:1.15;text-transform:uppercase;white-space:nowrap;background:rgba(19,19,19,.07);color:var(--pill);border-radius:var(--r-pill);padding:.32em .82em;}
-html[data-rwtheme="dark"] .rwHome .list .tag{background:rgba(237,233,228,.08)}
-.rwHome .list .abadge{justify-self:end;display:flex;align-items:center;justify-content:center;font-size:clamp(13px,2.1vh,32px);width:2.9em;height:1.85em;border-radius:var(--r-pill);background:var(--pill);color:#fff}
-.rwHome .cloud .abadge,.rwHome .cloud .tag{display:none}
-.rwHome .list .meta{display:contents}
-.rwHome .list .arrow{font-family:var(--font);font-weight:600;font-size:clamp(16px,2.6vh,28px);line-height:1;transition:transform var(--dur-base) var(--ease-pop);}
-/* the badge sits in a fixed-width slot and grows leftwards, so opening it never reflows the row */
-.rwHome .list .badgeslot{position:relative;justify-self:end;flex:0 0 auto;width:2.9em;height:1.85em;font-size:clamp(13px,2.1vh,32px)}
-.rwHome .list .abadge{position:absolute;right:0;top:0;width:2.9em;height:100%;font-size:1em;overflow:hidden;gap:.5em;padding:0;transition:width 440ms cubic-bezier(.22,.61,.36,1),background var(--dur-base) ease-out}
-.rwHome .list .cta{max-width:0;opacity:0;overflow:hidden;white-space:nowrap;font-family:var(--font);font-size:.46em;font-weight:700;letter-spacing:.09em;text-transform:uppercase;transition:max-width 440ms cubic-bezier(.22,.61,.36,1),opacity 240ms ease-out 80ms}
-.rwHome .list .arrowbox{position:relative;flex:0 0 auto;width:.92em;height:1.1em;overflow:hidden}
-.rwHome .list .arrow,.rwHome .list .arrow2{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--font);font-weight:600;font-size:.82em;line-height:1;transition:transform 440ms cubic-bezier(.22,.61,.36,1) 140ms}
-.rwHome .list .arrow2{transform:translateX(-100%)}
-.rwHome .list .block::after{transition:height 280ms cubic-bezier(.22,.61,.36,1),background 280ms cubic-bezier(.22,.61,.36,1)}
-.rwHome .list .proj,.rwHome .list .tag{transition:background 280ms cubic-bezier(.22,.61,.36,1),color 280ms cubic-bezier(.22,.61,.36,1),font-variation-settings 320ms cubic-bezier(.22,.61,.36,1),letter-spacing 320ms cubic-bezier(.22,.61,.36,1)}
-/* between the mobile breakpoint and a comfortable desktop, shrink the meta so a row always fits on one line */
-@media (min-width:861px) and (max-width:1200px){
-  .rwHome .list .tag{font-size:clamp(11px,min(1.5vw,2.1vh),19px)}
-  .rwHome .list .proj,.rwHome .list .ctext{font-size:clamp(12px,min(1.7vw,2.1vh),24px)}
-  .rwHome .list .badgeslot,.rwHome .list .abadge{font-size:clamp(12px,min(1.7vw,2.1vh),24px)}
-}
-/* rows must never be shorter than their pills, or the hairline draws through them */
-.rwHome #stage.list .grid{grid-auto-rows:min-content}
-@media (min-width:861px){
-  html:has(#stage.list),body:has(#stage.list){overflow-y:auto !important;height:auto !important}
-  .rwHome:has(#stage.list){overflow-y:auto !important;overflow-x:hidden !important;height:auto !important;min-height:100% !important;-webkit-overflow-scrolling:touch}
-  .rwHome #stage.list{position:relative !important;inset:auto !important;height:auto !important;min-height:100%;box-sizing:border-box;padding-bottom:clamp(8px,1.2vh,16px) !important}
-  .rwHome #stage.list .grid{height:auto}
-}
-@media (hover:hover) and (min-width:861px){
-  .rwHome .list a.block:hover .proj{font-variation-settings:'wght' 800;letter-spacing:-.016em;background:var(--pill-hi)}
-  .rwHome .list a.block:hover .abadge{background:var(--pill-hi)}
-  .rwHome .list a.block:hover .tag{background:rgba(19,19,19,.12);color:var(--ink)}
-  html[data-rwtheme="dark"] .rwHome .list a.block:hover .tag{background:rgba(237,233,228,.15)}
-  .rwHome .list a.block:hover::after{height:2px;background:var(--ink)}
-  .rwHome .list .crow:hover .ctext{font-variation-settings:'wght' 800;letter-spacing:-.016em}
-  .rwHome .list .crow:hover::after{height:2px;background:var(--pill-mute-hi)}
-  .rwHome .list .proj,.rwHome .list .ctext{overflow:visible;text-overflow:clip}
-  .rwHome .list .ctext{transition:background 280ms cubic-bezier(.22,.61,.36,1),color 280ms cubic-bezier(.22,.61,.36,1),font-variation-settings 320ms cubic-bezier(.22,.61,.36,1),letter-spacing 320ms cubic-bezier(.22,.61,.36,1)}
-  .rwHome .list a.block:hover .arrow{transform:translateX(100%)}
-  .rwHome .list a.block:hover .arrow2{transform:none}
-}
-.rwHome .list .block:focus-visible{outline:2px solid #2E6BFF;outline-offset:2px}
-.rwHome .cloud .credits{display:none}
-.rwHome .list .credits{flex:0 0 auto;display:grid;grid-column:1/-1;grid-template-columns:subgrid;row-gap:0;margin-top:clamp(10px,1.6vh,24px);background:var(--pg-card)}
-.rwHome .list .crow{position:relative;display:grid;grid-column:1/-1;grid-template-columns:subgrid;align-items:center;gap:clamp(10px,1.6vw,24px);padding:clamp(5px,.95vh,15px) 0 clamp(6px,1.16vh,18px);color:var(--pill-mute);cursor:default}
-.rwHome .list .ctext{justify-self:start;max-width:100%;font-family:var(--font);font-weight:700;font-size:clamp(13px,2.1vh,32px);line-height:1.15;text-transform:uppercase;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;background:var(--pill-mute);color:#131313;border-radius:var(--r-pill);padding:.32em .82em;}
-.rwHome .list .crow .right{gap:clamp(6px,.7vw,12px);flex-wrap:wrap}
-.rwHome .list .crow .tag{background:var(--pill-mute);color:#131313}
-html[data-rwtheme="dark"] .rwHome .list .crow .tag{color:var(--ink)}
-html[data-rwtheme="dark"] .rwHome .list .crow:hover .tag{color:#131313}
-.rwHome .list .crow:hover .ctext,.rwHome .list .crow:hover .tag{background:var(--pill-mute-hi)}
-.rwHome .cblurb{display:none}
-.rwHome .list .tag.blurb{white-space:normal;text-transform:none;font-weight:400}
-.rwHome .list .block.soon{background:var(--pg-card) !important;color:var(--ink);opacity:.55;}
-.rwHome .list .soonpill{font-weight:700;font-size:clamp(9px,1.3vh,12px);text-transform:uppercase;letter-spacing:.08em;border:1px solid var(--ink);border-radius:var(--r-pill);padding:5px 12px;white-space:nowrap;}
-.rwMqTrack{animation:rwMarquee 30s linear infinite}
-@keyframes rwMarquee{to{transform:translateX(-50%)}}
-@media (max-width:760px){.rwMqWrap{display:none}}
-@media (prefers-reduced-motion:reduce){.rwMqTrack{animation:none}}
-/* row rule is a pseudo-element so it can wipe in from the left */
-.rwHome .list .block::after,.rwHome .list .crow::after{content:'';position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--pill);transform-origin:0 50%;pointer-events:none}
-.rwHome .list .crow::after{background:var(--pill-mute)}
-.rwHome #stage.pre .block::after,.rwHome #stage.pre .crow::after{transform:scaleX(0)}
-.rwHome #stage.pre .proj,.rwHome #stage.pre .ctext,.rwHome #stage.pre .tag,.rwHome #stage.pre .abadge,.rwHome #stage.pre .tagimg,.rwHome #stage.pre .cblurb,.rwHome #stage.pre .clabel{opacity:0}
-.rwHome #stage.en .block::after,.rwHome #stage.en .crow::after{animation:rwLine .58s var(--ease-morph) both;animation-delay:var(--ld,0ms)}
-@keyframes rwLine{from{transform:scaleX(0)}to{transform:scaleX(1)}}
-.rwHome .pill-in{animation:rwPillUp .52s var(--ease-pop) both}
-@keyframes rwPillUp{from{opacity:0;transform:translateY(15px) scale(.92)}to{opacity:1;transform:none}}
-.rwIntro .block{box-shadow:0 18px 48px var(--pg-shadow)}
-.rwHome .word,.rwHome .proj,.rwHome .right{transition:opacity var(--dur-fast) ease-out}
-.rwHome .txt-hide .word,.rwHome .txt-hide .proj,.rwHome .txt-hide .right{opacity:0}
-.rwHome .block.hidden{transform:scale(0);opacity:0}
-.rwHome .pop{animation:rwPop .5s var(--ease-pop) both}
-@keyframes rwPop{0%{transform:scale(.2) rotate(-7deg);opacity:0}50%{transform:scale(1.08) rotate(2deg);opacity:1}76%{transform:scale(.96) rotate(-1deg)}100%{transform:scale(1) rotate(0);opacity:1}}
-.rwHome .shrink{animation:rwShrink var(--dur-base) var(--ease-morph) both}
-@keyframes rwShrink{to{transform:scale(0);opacity:0}}
-.rwHome .proj-in{animation:rwFadeup var(--dur-base) ease-out both}
-@keyframes rwFadeup{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-@media (max-width:640px){.rwHome .cloud .word{font-size:clamp(17px,6vw,28px)}.rwHome .list .meta{display:none}}
-@media (max-width:860px){
-  .rwHome .list .block{grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"proj img" "meta img";gap:7px clamp(10px,3vw,18px);align-items:center;padding:clamp(11px,1.8vh,16px) 0}
-  .rwHome .list .proj{grid-area:proj;align-self:end;white-space:normal;overflow:visible;text-overflow:clip;font-size:clamp(15px,4.4vw,22px);justify-self:start}
-  .rwHome .list .block .right{display:contents}
-  .rwHome .list .tags{grid-area:meta;align-self:start;display:flex;flex-wrap:wrap;gap:2px 12px;padding-left:.82em}
-  .rwHome .list .tag{background:transparent !important;padding:0;font-size:clamp(11px,3vw,13px);font-weight:500;letter-spacing:.04em;opacity:.62;color:var(--pill)}
-  .rwHome .list .tag:not(:first-child)::before{content:none}
-  .rwHome .list .tagimg{grid-area:img;display:block;width:clamp(72px,21vw,104px);aspect-ratio:1;border-radius:12px;overflow:hidden;background:rgba(19,19,19,.06)}
-  .rwHome .list .abadge,.rwHome .list .badgeslot{display:none}
-  .rwHome .list .crow{grid-template-columns:minmax(0,1fr);gap:7px;padding:clamp(9px,1.5vh,14px) 0}
-  .rwHome .list .ctext,.rwHome .list .crow .right{display:none}
-  .rwHome .list .cblurb{display:block;justify-self:start;max-width:100%;font-family:var(--font);font-weight:500;font-size:clamp(13px,3.7vw,17px);line-height:1.32;text-wrap:pretty;background:var(--pill-mute);color:#131313;border-radius:var(--r-pill);padding:.5em .85em}
-  .rwHome .list a.block:hover .arrow{transform:none}
-  .rwHome .list a.block:hover .proj,.rwHome .list a.block:hover .abadge{background:var(--pill)}
-  .rwHome .list .crow:hover .ctext,.rwHome .list .crow:hover .tag{background:var(--pill-mute)}
-  .rwHome:has(#stage.list){overflow-y:auto !important;-webkit-overflow-scrolling:touch}
-  .rwHome #stage.list{position:relative !important;inset:auto !important;height:auto !important;min-height:100%;padding-bottom:clamp(28px,6vh,56px) !important}
-  .rwHome #stage.list .grid{height:auto}
-}
-@media (prefers-reduced-motion:reduce){.rwHome .pop,.rwHome .shrink,.rwHome .proj-in,.rwHome .pill-in,.rwHome #stage.en .block::after,.rwHome #stage.en .crow::after{animation:none}.rwIntro{display:none!important}.rwHome .block{transition:none!important}.rwHome #cursorImg{display:none!important}}
-
-.rwHome #stage{z-index:2}
-.rwHome #cursorImg{position:fixed;left:0;top:0;z-index:20;width:clamp(260px,27vw,420px);border-radius:var(--r-block);overflow:hidden;pointer-events:none;transform:translate(20px,-50%) rotate(-3deg);opacity:0;box-shadow:0 12px 32px var(--pg-shadow);background:var(--pg-panel);}
-.rwHome #cursorImg.on{opacity:1}
-.rwHome #cursorImg img{width:100%;height:auto;display:block}
-.rwHome #cursorImg .fb{width:100%;aspect-ratio:3/2;display:none;align-items:center;justify-content:center;font-family:var(--font);font-weight:600;font-size:34px;color:#fff;text-transform:uppercase;}
-.rwHome #cursorImg.fallback img{display:none}
-.rwHome #cursorImg.fallback .fb{display:flex}
-@media (hover:none),(pointer:coarse){.rwHome #cursorImg{display:none}}
-
-.rwCtl{--ctl-bg:rgba(19,19,19,.07);--ctl-thumb:#131313;--ctl-thumb-ink:#F7F5F0;--ctl-soft:rgba(19,19,19,.06)}
-html[data-rwtheme="dark"] .rwCtl{--ctl-bg:rgba(237,233,228,.10);--ctl-thumb:#EDE9E4;--ctl-thumb-ink:#131313;--ctl-soft:rgba(237,233,228,.09)}
-.rwGrp{display:flex;flex-direction:column;gap:5px;align-items:flex-start}
-.rwLab{font-family:var(--font);font-size:9.5px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--pg-ink);opacity:.45;padding-left:11px}
-.rwTrack{display:flex;align-items:center;gap:3px;background:var(--ctl-bg);border-radius:13px;padding:3px}
-.rwSeg{font-family:var(--font);font-size:12.5px;font-weight:600;line-height:1;letter-spacing:.01em;color:var(--pg-ink);background:transparent;border:0;border-radius:10px;height:30px;min-width:32px;padding:0 11px;display:inline-flex;align-items:center;justify-content:center;gap:7px;white-space:nowrap;text-decoration:none;}
-.rwSeg.btn{cursor:pointer}
-.rwSeg.btn:hover{background:var(--ctl-soft)}
-.rwSeg.on{background:var(--ctl-thumb);color:var(--ctl-thumb-ink)}
-.rwSeg.on:hover{background:var(--ctl-thumb)}
-.rwSeg svg{width:15px;height:15px;display:block}
-.rwDot{width:22px;height:22px;border-radius:7px;border:0;padding:0;cursor:pointer;box-shadow:0 0 0 0 transparent;transition:box-shadow 120ms ease-out}
-.rwDot.on{box-shadow:0 0 0 2px var(--ctl-bg),0 0 0 4px var(--ctl-thumb)}
-.rwCtl .rwTrack[style*="gap:8px"]{border-radius:14px}
-.rwClk{font-variant-numeric:tabular-nums}
-.rwClkLab{font-size:9.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;opacity:.5}
-.rwAccentPill{background:var(--pill);color:#fff}
-.rwAccentPill:hover{background:var(--pill-hi)}
-@media (max-width:900px){.rwClkGrp{display:none}}
-@media (max-width:760px){.rwLab{display:none}.rwColGrp{display:none}}
+html{background:#0B0B0B}
+body{margin:0;padding:0;background:#0B0B0B;}
+a{color:#F4F2EE;text-decoration:none}
+a:hover{color:#F4F2EE}
+:focus-visible{outline:1.5px solid #F4F2EE;outline-offset:3px}
+@keyframes v8up{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:none}}
+.v8up{animation:v8up 660ms cubic-bezier(.22,.7,.24,1) both}
+@media (prefers-reduced-motion:reduce){.v8up{animation:none}}
+.v8nav a,.v8pg{transition:opacity 140ms ease-out,color 140ms ease-out}
+.v8nav a:hover{opacity:.62}
+.v8pg:hover{opacity:1 !important}
+.v8ar{transition:opacity 130ms ease-out,transform 180ms cubic-bezier(.2,.8,.24,1)}
+.v8pg:hover .v8ar{opacity:1;transform:translate(2px,-2px)}
+@media (max-width:1420px){.v8pgsec{display:none !important}}
+@media (max-width:1100px){.v8pager{grid-template-columns:repeat(6,minmax(0,1fr)) !important}}
+@media (max-width:900px){.v8navmid{display:none !important}.v8pager{grid-template-columns:repeat(3,minmax(0,1fr)) !important}.v8hero{min-height:88vh !important}}
+@media print{h1,h2,h3,blockquote,[data-screen-label="Note"]{break-after:avoid}figure,figcaption,[data-screen-label^="Images"]{break-inside:avoid}}
 </style>
-<script>(function(){var mx=innerWidth/2,my=innerHeight/2,cx=mx,cy=my,pending=false,el=null;
-function paint(){
- if(!el||!el.isConnected) el=document.getElementById('cursorImg');
- if(!el) return;
- cx+=(mx-cx)*0.16; cy+=(my-cy)*0.16;
- var vx=mx-cx, vy=my-cy;                                   // lag = velocity, drives the tilt
- var rot=Math.max(-15,Math.min(15,vx*0.2))-3, dy=Math.max(-18,Math.min(18,vy*0.35));
- var w=el.offsetWidth||320, x=(cx+20+w>innerWidth-14)?'calc(-100% - 20px)':'20px';
- el.style.left=cx+'px'; el.style.top=cy+'px';
- el.style.transform='translate('+x+',calc(-50% + '+dy.toFixed(1)+'px)) rotate('+rot.toFixed(2)+'deg)';
-}
-function tick(){pending=false;paint();sched();}
-function sched(){if(!pending){pending=true;requestAnimationFrame(tick);}}
-addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;paint();sched();},{passive:true});
-sched();})();</script>
 </helmet>
-<div class="rwHome" style="position:relative;height:100vh;width:100%;overflow:hidden;background:var(--pg-bg);color:var(--pg-ink);font-family:var(--font);">
-  <div class="rwIntro cloud" ref="{{ introRef }}" style="position:fixed;inset:0;z-index:25;pointer-events:none;">
-    <span class="block cf0 rwMorph" style="position:fixed;box-sizing:border-box;overflow:hidden;opacity:0;"><span class="word rwMName" style="display:inline-block;white-space:nowrap;overflow:hidden;">Ritwiz Sharma</span></span>
+
+<div style="background:#0B0B0B;padding:clamp(0px,1.4vh,16px);box-sizing:border-box;">
+<section class="v8hero" data-screen-label="Hero" style="position:relative;min-height:calc(100vh - clamp(0px,2.8vh,32px));background:#0B0B0B;overflow:hidden;font-family:'Overused Grotesk',Helvetica,Arial,sans-serif;color:#F4F2EE;">
+  <img ref="{{ imgA }}" alt="" decoding="sync" draggable="false" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:opacity 260ms ease-out;" />
+  <img ref="{{ imgB }}" alt="" decoding="sync" draggable="false" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity 260ms ease-out;" />
+  <div ref="{{ holdRef }}" style="position:absolute;inset:0;background:#131313;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 260ms ease-out;">
+    <span style="font-size:11.5px;font-weight:500;letter-spacing:-.004em;opacity:.3;">Teaser pending</span>
   </div>
-  <header ref="{{ headerRef }}" class="rwCtl" style="position:fixed;inset:0 0 auto 0;z-index:10;display:flex;justify-content:space-between;align-items:flex-end;gap:16px 24px;padding:18px clamp(16px,3vw,40px);pointer-events:none;transition:transform .45s var(--ease-pop),opacity var(--dur-base) ease-out;">
-    <div class="rwMqWrap rwGrp" style="min-width:0;pointer-events:auto;">
-      <span class="rwLab">Meanwhile</span>
-      <div style="box-sizing:border-box;width:clamp(230px,27vw,390px);max-width:100%;background:var(--ctl-bg);border-radius:13px;padding:9px 18px;overflow:hidden;">
-        <div class="rwMqTrack" style="display:inline-flex;white-space:nowrap;">
-          <span style="display:inline-flex;gap:36px;padding-right:36px;font-weight:600;font-size:13px;color:var(--pg-ink);align-items:center;"><span>Ritwiz is an industrial designer ✏️</span><span>Ritwiz is a cat dad 🐈</span><span>Ritwiz fights distractions 🤳</span><span>Ritwiz needs coffee every morning ☕</span><span>Ritwiz collects hotwheels 🚗</span><span>Ritwiz watches a lot of movies 🎥</span><span>Ritwiz is an audiophile 🎧</span><span>Ritwiz visits photography forums 📷</span><span>Ritwiz is a cinestill 800T fan 🎞️</span><span>Ritwiz loses in video games 🎮</span></span>
-          <span style="display:inline-flex;gap:36px;padding-right:36px;font-weight:600;font-size:13px;color:var(--pg-ink);align-items:center;"><span>Ritwiz is an industrial designer ✏️</span><span>Ritwiz is a cat dad 🐈</span><span>Ritwiz fights distractions 🤳</span><span>Ritwiz needs coffee every morning ☕</span><span>Ritwiz collects hotwheels 🚗</span><span>Ritwiz watches a lot of movies 🎥</span><span>Ritwiz is an audiophile 🎧</span><span>Ritwiz visits photography forums 📷</span><span>Ritwiz is a cinestill 800T fan 🎞️</span><span>Ritwiz loses in video games 🎮</span></span>
+  <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(11,11,11,.58) 0%,rgba(11,11,11,.08) 30%,rgba(11,11,11,.32) 62%,rgba(11,11,11,.84) 100%);"></div>
+
+  <div style="position:relative;min-height:calc(100vh - clamp(0px,2.8vh,32px));display:flex;flex-direction:column;justify-content:space-between;box-sizing:border-box;padding:clamp(18px,2.4vw,30px) clamp(18px,2.8vw,40px);">
+
+    <header class="v8nav v8up" style="display:grid;grid-template-columns:1fr auto 1fr;align-items:baseline;gap:20px;font-size:12.5px;font-weight:500;letter-spacing:-.005em;">
+      <a href="index.html" style="font-weight:600;">Ritwiz Sharma — Industrial Designer</a>
+      <span class="v8navmid" style="display:flex;gap:clamp(14px,1.6vw,24px);">
+        <a href="index.html" style="font-weight:600;">Index</a>
+        <a href="shenanigans.html" style="opacity:.62;">Shenanigans</a>
+        <a href="about.html" style="opacity:.62;">About</a>
+      </span>
+      <span style="justify-self:end;display:flex;gap:clamp(12px,1.4vw,20px);">
+        <span style="opacity:.62;">Guwahati, IN</span>
+        <a href="mailto:ritwizsharma1@gmail.com?subject=Ritwiz%2C%20work%20with%20me!">Contact</a>
+      </span>
+    </header>
+
+    <div style="display:flex;flex-direction:column;gap:clamp(16px,2.4vh,26px);">
+      <a ref="{{ caseRef }}" class="v8up" href="{{ heroHref }}" style="display:flex;flex-direction:column;gap:clamp(10px,1.4vh,16px);max-width:900px;animation-delay:90ms;">
+        <span ref="{{ metaRef }}" style="font-size:12.5px;font-weight:500;letter-spacing:-.005em;opacity:.7;font-variant-numeric:tabular-nums;"></span>
+        <h1 ref="{{ titleRef }}" style="margin:0;font-weight:600;font-size:clamp(34px,5.2vw,76px);line-height:.98;letter-spacing:-.036em;text-wrap:balance;"></h1>
+        <p ref="{{ blurbRef }}" style="margin:0;font-size:16px;font-weight:450;line-height:1.5;letter-spacing:-.008em;opacity:.74;max-width:54ch;text-wrap:pretty;"></p>
+      </a>
+
+      <div class="v8up" style="display:flex;flex-direction:column;gap:clamp(6px,.8vh,9px);animation-delay:170ms;">
+        <div class="v8pager" style="display:grid;grid-template-columns:repeat(11,minmax(0,1fr));border-top:1px solid rgba(244,242,238,.26);">
+          <sc-for list="{{ rows }}" as="r" hint-placeholder-count="11">
+            <a class="v8pg" href="{{ r.href }}" target="{{ r.target }}" rel="{{ r.rel }}" onMouseEnter="{{ r.hover }}" onFocus="{{ r.hover }}" ref="{{ r.ref }}" style="display:flex;flex-direction:column;gap:4px;padding:clamp(10px,1.2vh,14px) clamp(8px,.9vw,14px) 0 0;opacity:.6;border-top:1px solid transparent;margin-top:-1px;">
+              <span style="display:flex;align-items:center;gap:6px;min-width:0;">
+                <span style="font-size:12px;font-weight:500;opacity:.62;font-variant-numeric:tabular-nums;">{{ r.year }}</span>
+                <sc-if value="{{ r.nda }}" hint-placeholder-val="{{ false }}">
+                  <span style="flex:none;padding:1.5px 5px;border:1px solid rgba(244,242,238,.16);border-radius:.66em;font-size:10px;font-weight:500;letter-spacing:.01em;line-height:1.35;opacity:.62;white-space:nowrap;">Confidential</span>
+                </sc-if>
+              </span>
+              <span style="display:flex;align-items:baseline;gap:5px;min-width:0;">
+                <span style="min-width:0;font-size:13px;font-weight:600;letter-spacing:-.012em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">{{ r.short }}</span>
+                <span class="v8ar" style="font-size:11px;line-height:1;opacity:.4;">{{ r.mark }}</span>
+              </span>
+              <span class="v8pgsec" style="font-size:12px;font-weight:500;opacity:.62;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">{{ r.sector }}</span>
+            </a>
+          </sc-for>
         </div>
       </div>
     </div>
-    <nav style="display:flex;align-items:flex-end;gap:clamp(8px,1.1vw,14px);pointer-events:auto;">
-      <div class="rwGrp rwClkGrp">
-        <span class="rwLab">Time</span>
-        <div class="rwTrack">
-          <span class="rwSeg"><span class="rwClkLab">You</span><span class="rwClk" id="rwClkYou">--:--</span></span>
-          <span class="rwSeg on"><span class="rwClkLab">India</span><span class="rwClk" id="rwClkInd">--:--</span></span>
-        </div>
-      </div>
-      <div class="rwGrp">
-        <span class="rwLab">More</span>
-        <div style="display:flex;align-items:center;gap:clamp(6px,.8vw,10px);">
-          <div class="rwTrack"><a href="about.html" class="rwSeg btn">About</a></div>
-          <a href="shenanigans.html" class="rwSeg btn rwAccentPill" style="height:36px;padding:0 16px;">Shenanigans</a>
-        </div>
-      </div>
-    </nav>
-  </header>
-  <div id="stage" class="cloud" ref="{{ stageRef }}" style="position:absolute;inset:0;padding:72px clamp(12px,2.5vw,32px) clamp(12px,2.5vw,28px);">
-    <div class="grid" ref="{{ gridRef }}"></div>
   </div>
-  <div id="cursorImg" ref="{{ cursorRef }}"><img alt=""><div class="fb"></div></div>
+</section>
+
+<section data-screen-label="Footer" style="background:#0B0B0B;color:#F4F2EE;font-family:'Overused Grotesk',Helvetica,Arial,sans-serif;padding:clamp(20px,3vh,34px) clamp(18px,2.8vw,40px);">
+  <div style="max-width:1560px;margin:0 auto;display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;font-size:12.5px;font-weight:500;letter-spacing:-.005em;opacity:.55;font-variant-numeric:tabular-nums;">
+    <span>Ritwiz Sharma — Industrial Designer</span>
+    <span>Guwahati, IN</span>
+  </div>
+</section>
 </div>
 
 </x-dc>
-<script type="text/x-dc" data-dc-script>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:900}}">
+const ITEMS = [
+  {t:"Snapin' Street", short:"Snapin' Street", sector:"Retail", year:"2025", href:"snapin.html", img:"snapin/final-render-1.png",
+   blurb:"Street-food sampling kiosk for a spice brand. Manufactured."},
+  {t:"Aakaar, a chess set", short:"Aakaar", sector:"Consumer", year:"2025", href:"aakaar.html", img:"web/aakaar/full-board_fix_2.webp",
+   blurb:"A chess set for modern India, in terracotta and bronze."},
+  {t:"Ergoplay, a mouse that changes shape", short:"Ergoplay", sector:"Peripherals", year:"2024", href:"ergoplay.html", img:"ergoplay/opt/maker-set.jpg",
+   blurb:"One mouse, two shapes — gaming grip to ergonomic, charging as it switches."},
+  {t:"Vita, a grand touring scooter", short:"Vita", sector:"Transport", year:"2023", href:"vita.html", img:"vita/vita-scooter-concrete-side-view.jpg",
+   blurb:"Grand touring, applied to a scooter for riders in their early twenties."},
+  {t:"Altr, a modular desk system", short:"Altr", sector:"Furniture", year:"2023", href:"altr.html", img:"altr/altr-desks-all-together.jpg",
+   blurb:"Modular office furniture for premium co-working spaces in Bengaluru."},
+  {t:"The art of concealing", short:"Concealing", sector:"Appliances", year:"2022", href:"art-of-concealing.html", img:"aoc/all-products-staged.jpg",
+   blurb:"Six home appliances and furniture pieces for luxury interiors."}
+];
+
+// Under agreement: hovering one takes over the hero like any case study.
+// img: drop a teaser file in nda/ and set its path here to replace the placeholder field.
+const NDA = [
+  {t:"Innate", short:"Innate", sector:"Robotics", year:"2026", href:"https://www.innate.bot/", img:"nda/innate-teaser.jpg", nda:true,
+   blurb:"Semi humanoid robot."},
+  {t:"Posha", short:"Posha", sector:"Appliances", year:"2026", href:"https://www.posha.com/", img:"nda/posha-teaser.jpg", nda:true,
+   blurb:"Countertop cooking robot."},
+  {t:"Sonic Lamb", short:"Sonic Lamb", sector:"Audio", year:"2026", href:"https://soniclamb.com/en-in", img:"nda/soniclamb-teaser.jpg", nda:true,
+   blurb:"Headphones, through a Kickstarter campaign."},
+  {t:"Tangible Robots", short:"Tangible", sector:"Robotics", year:"2025", href:"https://tangiblerobots.ai/", img:"nda/tangible-teaser.jpg", nda:true,
+   blurb:"Semi humanoid home robot."},
+  {t:"Brewtal", short:"Brewtal", sector:"Appliances", year:"2025", href:"https://www.getbrewtal.com/", img:"nda/brewtal-teaser.jpg", nda:true,
+   blurb:"Tea brewer."}
+];
+
+// One timeline, newest (2026) left → oldest (2022) right.
+const ORDER = ["Innate","Posha","Sonic Lamb","Tangible Robots","Brewtal","Snapin' Street","Aakaar, a chess set",
+  "Ergoplay, a mouse that changes shape","Vita, a grand touring scooter","Altr, a modular desk system","The art of concealing"];
+const POOL = ITEMS.concat(NDA);
+const ALL = ORDER.map(n => POOL.find(it => it.t === n)).filter(Boolean);
+
 class Component extends DCLogic {
   constructor(props){
     super(props);
-    this.stageRef = React.createRef();
-    this.gridRef = React.createRef();
-    this.cursorRef = React.createRef();
-    this.headerRef = React.createRef();
-    this.introRef = React.createRef();
+    this.imgA_ = React.createRef();
+    this.imgB_ = React.createRef();
+    this.metaRef_ = React.createRef();
+    this.titleRef_ = React.createRef();
+    this.blurbRef_ = React.createRef();
+    this.caseRef_ = React.createRef();
+    this.holdRef_ = React.createRef();
+    this.pgRefs_ = ALL.map(() => React.createRef());
+    this.top_ = true;
+    this.cur_ = -1;
   }
-  componentDidMount(){ this.initAnim(); }
-  initAnim(){
-    const DATA = [
-      {w:"Ritwiz",    wHover:"ৰিত্বীজ",   c:"var(--red)",    p:"Art of Concealing",  m:"2022 · CORE Experience · In production", href:"art-of-concealing.html", img:"home/thumb-art-of-concealing.jpg"},
-      {w:"Sharma,",   wHover:"শৰ্মা",     c:"var(--blue)",   p:"Aakaar",             m:"2025 · YDI · Community project · Prototype",     href:"aakaar.html",  img:"home/thumb-aakaar.jpg"},
-      {w:"Industrial",wHover:"experience",c:"var(--yellow)", p:"Ergoplay",           m:"2024 · Personal project · Prototype",     href:"ergoplay.html", light:1, img:"home/thumb-ergoplay.jpg"},
-      {w:"designer,", c:"var(--green)",  p:"Vita",               m:"2023 · Personal project · Concept",       href:"vita.html",    img:"home/thumb-vita.jpg"},
-      {w:"designing", c:"var(--purple)", p:"Altr",               m:"2023 · CORE Experience · Concept",       href:"altr.html", img:"home/thumb-altr.jpg"},
-      {w:"the",       c:"var(--pink)",   gone:1},
-      {w:"future",    c:"var(--orange)", p:"Snapin' Street Kiosk", m:"2025 · Snapin' · Client · Manufactured",   href:"snapin.html", img:"home/thumb-snapin-street-kiosk.jpg"},
-      {w:"of",        c:"var(--teal)",   gone:1},
-      {w:"human",     c:"var(--teal)",   gone:1},
-      {w:"experience",c:"var(--pink)",   gone:1}
-    ];
-    const CREDITS = [
-      {t:"Innate",          url:"https://www.innate.bot/",       y:"2026", d:"Semi humanoid robot"},
-      {t:"Posha",           url:"https://www.posha.com/",        y:"2026", d:"Cooking robot"},
-      {t:"Sonic Lamb",      url:"https://soniclamb.com/en-in",    y:"2026", d:"Kickstarter campaign"},
-      {t:"Tangible Robots", url:"https://tangiblerobots.ai/",     y:"2025", d:"Semi humanoid robot"},
-      {t:"Brewtal",         url:"https://www.getbrewtal.com/",    y:"2025", d:"Tea brewer"}
-    ];
-    const grid = this.gridRef.current;
-    const stage = this.stageRef.current;
-    const cur = () => document.getElementById('cursorImg') || this.cursorRef.current;
-    const noHover = () => matchMedia('(max-width:860px),(hover:none),(pointer:coarse)').matches;
-    const header = this.headerRef.current;
-    const showHeader = () => { header.style.transform=''; header.style.opacity=''; };
-    const hideHeader = () => { header.style.transform='translateY(-120%)'; header.style.opacity='0'; };
-    const curImg = () => cur().querySelector('img');
-    const curFb = () => cur().querySelector('.fb');
-    const blocks = DATA.map(d=>{
-      const el = d.href ? document.createElement('a') : document.createElement('div');
-      if(d.href) el.href = d.href;
-      el.className = d.soon ? 'block hidden soon' : 'block hidden';
-      el.style.background = d.c;
-      el.style.setProperty('--c', d.c);
-      if(d.light) el.dataset.light = '';
-      const tags = (d.m||'').split('·').map(t=>t.trim()).filter(Boolean).map(t=>`<span class="tag">${t}</span>`).join('');
-      const inner = d.soon ? '<span class="soonpill">Coming soon</span>' : tags;
-      el.innerHTML = `<span class="word">${d.w}</span><span class="proj">${d.p||''}</span><span class="right"><span class="tags">${inner}</span>${d.img?`<span class="tagimg"><img src="${d.img}" alt=""></span>`:''}</span>${d.href?'<span class="badgeslot"><span class="abadge"><span class="cta">View project</span><span class="arrowbox"><span class="arrow">→</span><span class="arrow2">→</span></span></span></span>':''}`;
-      grid.appendChild(el);
-      return el;
-    });
-    [6,3].forEach(pos=>{ const br=document.createElement('div'); br.className='cbreak'; grid.insertBefore(br, blocks[pos]); });
 
-    const credits = document.createElement('div');
-    credits.className = 'credits';
-    credits.style.order = 99;
-    const labRecent = document.createElement('div');
-    labRecent.className = 'clabel later';
-    labRecent.textContent = 'Recently';
-    labRecent.style.order = 98;
-    grid.appendChild(labRecent);
-    const labPrev = document.createElement('div');
-    labPrev.className = 'clabel';
-    labPrev.textContent = 'Previously';
-    labPrev.style.order = -1;
-    grid.appendChild(labPrev);
-    CREDITS.forEach(cd=>{
-      const row = document.createElement('a');
-      row.className = 'crow';
-      row.href = cd.url; row.target = '_blank'; row.rel = 'noopener';
-      row.style.textDecoration = 'none'; row.style.color = 'inherit';
-      row.innerHTML = `<span class="ctext">${cd.t}</span><span class="right"><span class="tag">${cd.y}</span><span class="tag">${cd.d}</span><span class="tag">Confidential</span></span><span class="cblurb">${cd.t} · ${cd.y} · ${cd.d} · Confidential</span>`;
-      credits.appendChild(row);
-    });
-    grid.appendChild(credits);
-    blocks.forEach((b,i)=>{
-      b.classList.add(i < 4 ? 'cf0' : 'cf' + (1 + ((i - 4) % 3)));
-      // once the pop settles, drop the class so hover transforms can apply
-      b.addEventListener('animationend', ()=>{ if(b.classList.contains('pop')) b.classList.remove('pop'); });
-      const tilt = (Math.random()*8 - 4).toFixed(2);   // -4deg..4deg, per bubble
-      b.addEventListener('mouseenter', ()=>{
-        if(stage.classList.contains('list')) return;
-        b.style.transition = 'transform var(--dur-base) var(--ease-pop)';
-        b.style.transform = 'translateY(-8px) rotate(' + tilt + 'deg)';
-        b.style.zIndex = 5;
-      });
-      b.addEventListener('mouseleave', ()=>{
-        if(stage.classList.contains('list')) return;
-        b.style.transition = 'transform var(--dur-base) var(--ease-pop)';
-        b.style.transform = 'none';
-        b.style.zIndex = '';
-      });
-    });
-    blocks.forEach((b,i)=>{
-      const d = DATA[i];
-      if(!d.wHover) return;
-      const word = b.querySelector('.word');
-      word.style.transition = 'opacity var(--dur-fast) ease-out';
-      let t;
-      b.addEventListener('mouseenter', ()=>{
-        clearTimeout(t);
-        // freeze bubble to its current size so hover never resizes it
-        b.style.boxSizing = 'border-box';
-        b.style.width = b.offsetWidth + 'px';
-        b.style.height = b.offsetHeight + 'px';
-        const avail = word.offsetWidth;          // space the English word occupies
-        word.style.opacity = 0;
-        t = setTimeout(()=>{
-          word.textContent = d.wHover;
-          word.style.transform = 'none';
-          const availH = word.offsetHeight;
-          const w = word.scrollWidth, h = word.scrollHeight;
-          const sc = Math.min(w > avail ? avail / w : 1, h > availH ? availH / h : 1);
-          if(sc < 1) word.style.transform = 'scale(' + sc + ')';
-          word.style.opacity = 1;
-        }, 160);
-      });
-      b.addEventListener('mouseleave', ()=>{
-        clearTimeout(t);
-        word.style.opacity = 0;
-        t = setTimeout(()=>{
-          word.textContent = d.w;
-          word.style.transform = 'none';
-          word.style.opacity = 1;
-          b.style.width = '';                    // release lock (list mode stays flexible)
-          b.style.height = '';
-          b.style.boxSizing = '';
-        }, 160);
-      });
-    });
-
-    // list view is ordered newest-first; the cloud keeps the sentence order
-    const yearOf = d => { const m = /\b(20\d\d)\b/.exec(d.m || ''); return m ? +m[1] : 0; };
-    const ranked = DATA.map((d,i)=>({i, y:yearOf(d)})).filter(r=>r.y)
-      .sort((a,b)=> b.y - a.y || a.i - b.i);
-    const orderList = () => ranked.forEach((r,n)=>{ blocks[r.i].style.order = n; });
-
-    const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
-    let px = innerWidth/2, py = innerHeight/2, hasPtr = false;
-    addEventListener('mousemove', e => { px = e.clientX; py = e.clientY; hasPtr = true; }, {passive:true});
-    const showFor = d => {
-      if(d.img){ cur().classList.remove('fallback'); curImg().src = d.img; }
-      else { cur().classList.add('fallback'); curFb().textContent = d.p; curFb().style.background = d.c; }
-      cur().classList.add('on');
-    };
-    // The bubble under a STATIONARY cursor gets no mouseenter — re-resolve it from the last pointer position
-    const syncHover = () => {
-      if(!hasPtr || noHover()) return;
-      if(!stage.classList.contains('list')){ cur().classList.remove('on'); return; }
-      const el = document.elementFromPoint(px, py);
-      const b = el && el.closest ? el.closest('.block') : null;
-      const i = b ? blocks.indexOf(b) : -1;
-      if(i < 0 || DATA[i].gone){ cur().classList.remove('on'); return; }
-      showFor(DATA[i]);
-    };
-    this.syncHover = syncHover;
-    function bindHover(){
-      DATA.forEach(d=>{ if(d.img){ const im=new Image(); im.src=d.img; } });
-      blocks.forEach((b,i)=>{
-        const d = DATA[i];
-        if(d.gone) return;
-        b.addEventListener('mouseenter',()=>{
-          if(noHover()) return;
-          if(!stage.classList.contains('list')) return;
-          showFor(d);
-        });
-        b.addEventListener('mouseleave',()=>{ cur().classList.remove('on'); });
-      });
-    }
-    // Row hover: type gains weight, pills drift toward the cursor, badge opens into its label
-    const SOFT = 'cubic-bezier(.34,1.24,.5,1)', REF = 'cubic-bezier(.22,.61,.36,1)';
-    blocks.forEach(b=>{
-      if(b.tagName !== 'A') return;
-      const proj = b.querySelector('.proj'), badge = b.querySelector('.abadge');
-      if(!proj || !badge) return;
-      const cta = badge.querySelector('.cta'), tagsWrap = b.querySelector('.tags');
-      const rowTags = Array.from(b.querySelectorAll('.tag'));
-      const parts = [{el:proj,f:3,lift:3},...rowTags.map((t,i)=>({el:t,f:6+i*1.1,lift:2.5})),{el:badge,f:4.5,lift:4}];
-      const tr = (el,td,te) => { el.style.transition = `transform ${td}ms ${te}, width 440ms ${REF}, background 280ms ${REF}, box-shadow 300ms ease-out, color 280ms ${REF}, font-variation-settings 320ms ${REF}, letter-spacing 320ms ${REF}`; };
-      let hot = false;
-      b.addEventListener('mouseenter',()=>{
-        if(noHover() || window.__rwIntroActive || !stage.classList.contains('list')) return;
-        hot = true;
-        parts.forEach(p=>{
-          tr(p.el, 420, SOFT);
-          p.el.style.transform = `translateY(${-p.lift}px)`;
-          p.el.style.boxShadow = '0 8px 18px var(--pg-shadow)';
-        });
-        if(cta && tagsWrap){
-          const need = cta.scrollWidth + parseFloat(getComputedStyle(badge).fontSize) * 2.2;
-          if(badge.getBoundingClientRect().right - need > tagsWrap.getBoundingClientRect().right + 28){
-            cta.style.maxWidth = (cta.scrollWidth + 2) + 'px';
-            cta.style.opacity = '1';
-            badge.style.width = need + 'px';
-          }
-        }
-      });
-      b.addEventListener('mousemove',e=>{
-        if(!hot) return;
-        const r = b.getBoundingClientRect();
-        const nx = (e.clientX-(r.left+r.width/2))/(r.width/2), ny = (e.clientY-(r.top+r.height/2))/(r.height/2);
-        parts.forEach(p=>{
-          tr(p.el, 180, 'linear');
-          p.el.style.transform = `translate(${(nx*p.f).toFixed(2)}px,${(ny*p.f*0.4-p.lift).toFixed(2)}px)`;
-        });
-      });
-      b.addEventListener('mouseleave',()=>{
-        hot = false;
-        parts.forEach(p=>{ tr(p.el, 460, SOFT); p.el.style.transform = 'none'; p.el.style.boxShadow = 'none'; });
-        if(cta){ cta.style.maxWidth = '0'; cta.style.opacity = '0'; badge.style.width = ''; }
-      });
-    });
-    // Credits rows: same float, no badge — tags are re-rendered on hover, so they're queried live
-    grid.querySelectorAll('.crow').forEach(row=>{
-      const ct = row.querySelector('.ctext');
-      if(!ct) return;
-      const trc = (el,td,te) => { el.style.transition = `transform ${td}ms ${te}, background 280ms ${REF}, box-shadow 300ms ease-out, color 280ms ${REF}, font-variation-settings 320ms ${REF}, letter-spacing 320ms ${REF}`; };
-      const live = () => [{el:ct,f:3,lift:3},...Array.from(row.querySelectorAll('.tag')).map((t,i)=>({el:t,f:6+i*1.1,lift:2.5}))];
-      let hot = false;
-      row.addEventListener('mouseenter',()=>{
-        if(noHover() || window.__rwIntroActive) return;
-        hot = true;
-        live().forEach(p=>{ trc(p.el,420,SOFT); p.el.style.transform = `translateY(${-p.lift}px)`; p.el.style.boxShadow = '0 8px 18px var(--pg-shadow)'; });
-      });
-      row.addEventListener('mousemove',e=>{
-        if(!hot) return;
-        const r = row.getBoundingClientRect();
-        const nx = (e.clientX-(r.left+r.width/2))/(r.width/2), ny = (e.clientY-(r.top+r.height/2))/(r.height/2);
-        live().forEach(p=>{
-          trc(p.el,180,'linear');
-          p.el.style.transform = `translate(${(nx*p.f).toFixed(2)}px,${(ny*p.f*0.4-p.lift).toFixed(2)}px)`;
-        });
-      });
-      row.addEventListener('mouseleave',()=>{
-        hot = false;
-        live().forEach(p=>{ trc(p.el,460,SOFT); p.el.style.transform = 'none'; p.el.style.boxShadow = 'none'; });
-      });
-    });
-    // Lock each name pill to the wider of its 800 / 900 states so gaining weight never reflows the row
-    const lockPills = () => {
-      grid.querySelectorAll('.proj,.ctext').forEach(el=>{
-        const tr0 = el.style.transition;
-        el.style.transition = 'none';
-        el.style.boxSizing = 'border-box';
-        el.style.minWidth = '';
-        const a = el.getBoundingClientRect().width;
-        el.style.fontVariationSettings = "'wght' 800";
-        el.style.letterSpacing = '-.016em';
-        const b = el.getBoundingClientRect().width;
-        el.style.fontVariationSettings = '';
-        el.style.letterSpacing = '';
-        el.style.minWidth = Math.ceil(Math.max(a,b)) + 'px';
-        void el.offsetWidth;
-        el.style.transition = tr0;
-      });
-      // Freeze the shared name column too, so no row's hover can resize the column every row shares
-      if(innerWidth > 860){
-        let w = 0;
-        grid.querySelectorAll('.proj').forEach(el=>{ w = Math.max(w, el.getBoundingClientRect().width); });
-        grid.style.gridTemplateColumns = w ? Math.ceil(w) + 'px minmax(0,1fr) auto' : '';
-      } else {
-        grid.style.gridTemplateColumns = '';
-      }
-    };
-    lockPills();
-    if(document.fonts && document.fonts.ready) document.fonts.ready.then(lockPills);
-    let lockT;
-    addEventListener('resize', ()=>{ clearTimeout(lockT); lockT = setTimeout(lockPills, 160); }, {passive:true});
-    bindHover();
-    addEventListener('scroll', syncHover, {passive:true});
-    addEventListener('resize', syncHover, {passive:true});
-    // Name bubbles pop in, shrink and join into the marquee, then the list draws itself in
-    document.addEventListener('click', e => {
-      if(window.__rwIntroActive && e.target && e.target.closest && e.target.closest('a[href]')) e.preventDefault();
-    }, true);
-    blocks.forEach(b=>b.classList.remove('hidden'));
-    DATA.forEach((d,i)=>{ if(d.gone) blocks[i].classList.add('gone'); });
-    stage.classList.remove('txt-hide');
-    orderList();
-    stage.classList.replace('cloud','list');
-    stage.classList.add('pre');
-
-    const rows = () => ranked.map(r=>blocks[r.i]).concat(Array.from(grid.querySelectorAll('.crow')));
-    const drawList = () => {
-      stage.classList.remove('pre');
-      stage.classList.add('en');
-      rows().forEach((row,n)=>{
-        const rd = n*78;
-        row.style.setProperty('--ld', rd+'ms');
-        row.querySelectorAll('.proj,.ctext,.tag,.abadge,.tagimg,.cblurb').forEach((p,k)=>{
-          p.style.animationDelay = (rd+140+k*52)+'ms';
-          p.classList.add('pill-in');
-          p.addEventListener('animationend',()=>{ p.classList.remove('pill-in'); p.style.animationDelay=''; },{once:true});
-        });
-      });
-      grid.querySelectorAll('.clabel').forEach(p=>{
-        p.style.animationDelay = (p.classList.contains('later') ? 520 : 80)+'ms';
-        p.classList.add('pill-in');
-        p.addEventListener('animationend',()=>{ p.classList.remove('pill-in'); p.style.animationDelay=''; },{once:true});
+  componentDidMount(){
+    this.show(0);
+    // warm the rest, two at a time, so pager hovers are instant
+    const q = ALL.slice(1).filter(it => it.img);
+    let i = 0;
+    const next = () => {
+      if(i >= q.length) return;
+      const batch = q.slice(i, i + 2); i += 2;
+      let left = batch.length;
+      batch.forEach(it => {
+        const im = new Image();
+        im.onload = im.onerror = () => { if(--left === 0) setTimeout(next, 60); };
+        im.src = it.img;
       });
     };
-
-    const intro = this.introRef.current;
-    if(reduced || !intro){
-      if(intro) intro.remove();
-      showHeader();
-      stage.classList.remove('pre');
-      setTimeout(syncHover, 60);
-    } else {
-      const pill = intro.querySelector('.rwMorph');
-      const nm = intro.querySelector('.rwMName');
-      const mq = document.querySelector('.rwMqWrap > div');
-      const hdrEl = this.headerRef.current;
-      const imp = (el,p,v) => el.style.setProperty(p, v, 'important');
-      window.__rwIntroActive = true;
-      hideHeader();
-      stage.style.pointerEvents = 'none';
-      if(mq){ mq.style.opacity = '0'; }
-      // measure the natural centred pill, then collapse it to a bare accent bar
-      pill.style.transition = 'none';
-      pill.style.left = '50%'; pill.style.top = '50%'; pill.style.transform = 'translate(-50%,-50%)';
-      pill.style.width = 'max-content'; pill.style.height = 'max-content';
-      nm.style.transition = 'none'; nm.style.maxWidth = 'none'; nm.style.opacity = '1';
-      void pill.offsetWidth;
-      const r0 = pill.getBoundingClientRect(), inner = nm.offsetWidth;
-      const BAR = Math.max(r0.width - inner, 28);
-      pill.style.transform = 'none';
-      pill.style.left = (r0.left + (r0.width - BAR)/2).toFixed(1)+'px';
-      pill.style.top = r0.top.toFixed(1)+'px';
-      pill.style.width = BAR.toFixed(1)+'px'; pill.style.height = r0.height.toFixed(1)+'px';
-      nm.style.maxWidth = '0px'; nm.style.opacity = '0';
-      const timers = [];
-      const T = (fn,ms) => timers.push(setTimeout(fn,ms));
-      T(()=>{ pill.style.transition = 'opacity .24s ease-out'; pill.style.opacity = '1'; }, 90);
-      // the bar opens out into the name
-      T(()=>{
-        pill.style.transition = 'left .62s var(--ease-morph),width .62s var(--ease-morph)';
-        pill.style.left = r0.left.toFixed(1)+'px'; pill.style.width = r0.width.toFixed(1)+'px';
-        nm.style.transition = 'max-width .62s var(--ease-morph),opacity .26s ease-out .12s';
-        nm.style.maxWidth = inner+'px'; nm.style.opacity = '1';
-      }, 260);
-      T(showHeader, 1120);
-      // ...then the same pill flattens and travels into the marquee slot
-      T(()=>{
-        if(!mq){ pill.style.transition='opacity .4s ease-in'; pill.style.opacity='0'; return; }
-        // layout offsets, not rects — the header is still sliding down
-        const L = (hdrEl ? hdrEl.offsetLeft : 0) + mq.offsetLeft;
-        const TT = (hdrEl ? hdrEl.offsetTop : 0) + mq.offsetTop;
-        const cs = getComputedStyle(mq);
-        pill.style.transition = ['left','top','width','height','border-radius','padding']
-          .map(p=>p+' .82s var(--ease-morph)').join(',') + ',background-color .56s ease-out .18s,color .3s ease-out,box-shadow .5s ease-out';
-        pill.style.left = L+'px'; pill.style.top = TT+'px';
-        pill.style.width = mq.offsetWidth+'px'; pill.style.height = mq.offsetHeight+'px';
-        pill.style.padding = cs.padding;
-        pill.style.boxShadow = 'none';
-        imp(pill,'border-radius', cs.borderRadius);
-        imp(pill,'background', cs.backgroundColor);
-        imp(pill,'color', 'var(--pg-ink)');
-        nm.style.transition = 'max-width .5s var(--ease-morph),opacity .24s ease-in';
-        nm.style.maxWidth = '0px'; nm.style.opacity = '0';
-        // hand the landed shape over to the live marquee
-        T(()=>{ mq.style.transition = 'opacity .2s ease-out'; mq.style.opacity = '1'; }, 780);
-      }, 1220);
-      T(()=>{ window.__rwIntroActive=false; stage.style.pointerEvents=''; drawList(); }, 1520);
-      T(()=>{ intro.remove(); syncHover(); }, 2160);
-      const skip = e => {
-        if(!window.__rwIntroActive) return;
-        timers.forEach(clearTimeout);
-        window.__rwIntroActive=false;
-        intro.remove();
-        if(mq){ mq.style.transition=''; mq.style.opacity='1'; }
-        stage.style.pointerEvents='';
-        showHeader();
-        drawList();
-        setTimeout(syncHover, 400);
-      };
-      addEventListener('click', skip);
-    }
+    setTimeout(next, 400);
   }
-  componentWillUnmount(){ if(this._cleanup) this._cleanup(); }
+
+  paintText(it, i){
+    const m = this.metaRef_.current, t = this.titleRef_.current, b = this.blurbRef_.current, c = this.caseRef_.current;
+    if(m) m.textContent = it.sector + ' · ' + it.year + (it.nda ? ' · Confidential' : '');
+    if(t) t.textContent = it.t;
+    if(b) b.textContent = it.blurb;
+    if(c){
+      c.setAttribute('href', it.href);
+      if(it.nda){ c.setAttribute('target','_blank'); c.setAttribute('rel','noopener noreferrer'); }
+      else { c.removeAttribute('target'); c.removeAttribute('rel'); }
+    }
+    this.pgRefs_.forEach((r, j) => {
+      const el = r.current; if(!el) return;
+      el.style.opacity = j === i ? '1' : '.6';
+      el.style.borderTopColor = j === i ? '#F4F2EE' : 'transparent';
+    });
+  }
+
+  show(i){
+    if(i === this.cur_) return;
+    const it = ALL[i];
+    const a = this.imgA_.current, b = this.imgB_.current, h = this.holdRef_.current;
+    if(!it || !a || !b) return;
+    this.cur_ = i;
+    this.paintText(it, i);
+    if(!it.img){ if(h) h.style.opacity = '1'; return; }   // teaser not in yet — neutral field
+    if(h) h.style.opacity = '0';
+    if(a.getAttribute('src') === null && b.getAttribute('src') === null){
+      a.src = it.img; a.style.opacity = '1'; b.style.opacity = '0';
+      return;
+    }
+    const incoming = this.top_ ? b : a, outgoing = this.top_ ? a : b;
+    const swap = () => { incoming.style.opacity = '1'; outgoing.style.opacity = '0'; this.top_ = !this.top_; };
+    if(incoming.getAttribute('src') === it.img){ swap(); return; }
+    incoming.onload = swap;
+    incoming.src = it.img;
+  }
+
   renderVals(){
-    return { stageRef: this.stageRef, gridRef: this.gridRef, cursorRef: this.cursorRef, headerRef: this.headerRef, introRef: this.introRef };
+    return {
+      imgA: this.imgA_, imgB: this.imgB_, holdRef: this.holdRef_,
+      metaRef: this.metaRef_, titleRef: this.titleRef_,
+      blurbRef: this.blurbRef_, caseRef: this.caseRef_, heroHref: ALL[0].href,
+      rows: ALL.map((it, i) => ({
+        href: it.href, short: it.short, sector: it.sector, year: it.year,
+        target: it.nda ? '_blank' : undefined, rel: it.nda ? 'noopener noreferrer' : undefined,
+        mark: it.nda ? '\u2197' : '', nda: !!it.nda,
+        ref: this.pgRefs_[i], hover: () => this.show(i)
+      }))
+    };
   }
 }
+
 </script>
 </body>
 </html>

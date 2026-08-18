@@ -9,20 +9,37 @@
 <body>
 <x-dc>
 <helmet>
-<script>document.documentElement.dataset.rwtheme='dark';</script>
+<title>Ergoplay — shape-changing mouse · Ritwiz Sharma</title>
+<meta name="description" content="A computer mouse that changes shape between work and play postures.">
+<meta property="og:title" content="Ergoplay — shape-changing mouse · Ritwiz Sharma">
+<meta property="og:description" content="A computer mouse that changes shape between work and play postures.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="crossorigin">
+<link rel="preload" as="font" type="font/woff2" href="https://cdn.jsdelivr.net/gh/RandomMaerks/Overused-Grotesk@main/fonts/variable/OverusedGrotesk-VF.woff2" crossorigin="crossorigin">
+
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
 <style>
 @font-face{font-family:'Overused Grotesk';src:url('https://cdn.jsdelivr.net/gh/RandomMaerks/Overused-Grotesk@main/fonts/variable/OverusedGrotesk-VF.woff2') format('woff2-variations'),url('https://cdn.jsdelivr.net/gh/RandomMaerks/Overused-Grotesk@main/fonts/variable/OverusedGrotesk-VF.ttf') format('truetype-variations');font-weight:300 900;font-display:swap;}
-:root{--pg-bg:#F7F5F0;--pg-ink:#131313;--pg-hair:rgba(19,19,19,.14);--pg-mute:rgba(19,19,19,.5);--pg-tint:rgba(19,19,19,.07);}
-html[data-rwtheme="dark"]{--pg-bg:#0F0D0C;--pg-ink:#EDE9E4;--pg-hair:rgba(237,233,228,.16);--pg-mute:rgba(237,233,228,.5);--pg-tint:rgba(237,233,228,.09);}
-html[data-rwtheme="dark"] body{background:#0F0D0C}
-body{margin:0;background:var(--pg-bg)}
-a{color:var(--pg-ink)}a:hover{opacity:.55}
-.rwCtl .rwTrack{display:flex;align-items:center;gap:3px;background:rgba(237,233,228,.10);border-radius:13px;padding:3px}
-.rwCtl .rwSeg{font-family:inherit;font-size:12.5px;font-weight:600;line-height:1;letter-spacing:.01em;color:var(--pg-ink);background:transparent;border:0;border-radius:10px;height:30px;padding:0 11px;display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;text-decoration:none}
-.rwCtl a.rwSeg:hover{background:rgba(237,233,228,.09);opacity:1}
-.rwCtl .rwAccentPill{background:#2E6BFF;color:#fff}
-.rwCtl a.rwAccentPill:hover{background:#5C8AFF;opacity:1}
+:root{--pg-bg:#F4F2EE;--pg-ink:#0B0B0B;--pg-hair:rgba(11,11,11,.16);--pg-mute:rgba(11,11,11,.62);--pg-tint:rgba(11,11,11,.05);}
+html{background:#0B0B0B}
+body{margin:0;background:#0B0B0B;padding:clamp(0px,3.4vh,40px) clamp(0px,3.6vw,56px);box-sizing:border-box}
+a{color:var(--pg-ink);text-decoration:none}
+:focus-visible{outline:1.5px solid #0B0B0B;outline-offset:3px}
+@keyframes v7up{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.v7rev{opacity:0;transform:translateY(8px);transition:opacity 620ms cubic-bezier(.22,.7,.24,1),transform 620ms cubic-bezier(.22,.7,.24,1)}
+.v7rev.v7in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.v7rev{opacity:1;transform:none;transition:none}}
+.v7nav a{text-decoration:none;transition:color 130ms ease-out}
+.v7nav a:hover{color:#0B0B0B !important;opacity:1}
+.v7next{transition:background 150ms ease-out,padding 150ms ease-out}
+.v7next:hover{background:#0B0B0B}
+.v7next:hover .v7c{color:#FFF !important}
+.v7next:hover .v7ar{opacity:1 !important;transform:translate(2px,-2px)}
+.v7ar{transition:opacity 130ms ease-out,transform 180ms cubic-bezier(.2,.8,.24,1)}
+.v7lnk{transition:opacity 130ms ease-out}
+.v7lnk:hover{opacity:.45}
+@media (max-width:820px){.v7navmid{display:none}.v7g2{grid-template-columns:1fr !important}.v7g2 > .v7num{display:none}}
+
 @media (max-width:760px){
   #rwCursorTag{display:none}
   main section > div{grid-template-columns:1fr !important}
@@ -34,176 +51,329 @@ a{color:var(--pg-ink)}a:hover{opacity:.55}
 @media (max-width:420px){
   [data-screen-label="Credits"]{grid-template-columns:1fr !important}
 }
+.rwBoot{position:fixed;inset:0;z-index:90;background:#F4F2EE;display:flex;flex-direction:column;justify-content:flex-end;box-sizing:border-box;padding:clamp(20px,2.6vw,40px);transition:opacity 420ms ease-out,visibility 0s linear 420ms;font-variant-numeric:tabular-nums;}
+.rwBoot.rwDone{opacity:0;visibility:hidden;pointer-events:none;}
+.rwBar{position:relative;height:1px;background:rgba(11,11,11,.16);margin-top:11px;}
+.rwBar > i{position:absolute;left:0;top:0;bottom:0;display:block;width:0;background:#0B0B0B;transition:width 200ms linear;}
+@media (prefers-reduced-motion:reduce){.rwBoot{transition:opacity 1ms}.rwBar > i{transition:none}}
+@media print{h1,h2,h3,blockquote,[data-screen-label="Note"]{break-after:avoid}figure,figcaption,[data-screen-label^="Images"]{break-inside:avoid}}
 </style>
 </helmet>
-<div style="background:var(--pg-bg);color:var(--pg-ink);font-family:'Overused Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Helvetica,Arial,sans-serif;min-height:100vh;">
-  <header style="display:flex;justify-content:space-between;align-items:center;gap:14px 24px;flex-wrap:wrap;padding:16px clamp(16px,3vw,48px);">
-    <a href="index.html" style="font-weight:600;font-size:18px;letter-spacing:-.02em;text-decoration:none;color:var(--pg-ink);white-space:nowrap;">Ritwiz Sharma</a>
-    <nav class="rwCtl" style="display:flex;align-items:center;gap:clamp(6px,.8vw,10px);">
-      <div class="rwTrack"><a href="index.html" class="rwSeg">Work</a><a href="about.html" class="rwSeg">About</a></div>
-      <a href="shenanigans.html" class="rwSeg rwAccentPill" style="height:36px;padding:0 16px;">Shenanigans</a>
-    </nav>
+<div style="background:var(--pg-bg);color:var(--pg-ink);font-family:'Overused Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Helvetica,Arial,sans-serif;min-height:calc(100vh - clamp(0px,6.8vh,80px));box-sizing:border-box;">
+  <header class="v7nav" style="position:sticky;top:0;z-index:30;background:#F4F2EE;">
+    <div style="display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:20px;font-size:12.5px;font-weight:500;letter-spacing:-.005em;padding:clamp(14px,1.8vw,22px) clamp(20px,2.6vw,40px);">
+      <a href="index.html" style="font-weight:600;color:var(--pg-ink);">Ritwiz Sharma</a>
+      <span class="v7navmid" style="display:flex;gap:clamp(14px,1.6vw,24px);">
+        <a href="index.html" style="color:rgba(11,11,11,.55);">Index</a>
+        <a href="shenanigans.html" style="color:rgba(11,11,11,.55);">Shenanigans</a>
+        <a href="about.html" style="color:rgba(11,11,11,.55);">About</a>
+      </span>
+      <span style="justify-self:end;display:flex;gap:clamp(12px,1.4vw,20px);align-items:center;">
+        <span style="color:rgba(11,11,11,.62);font-variant-numeric:tabular-nums;">2024</span>
+        <a href="mailto:ritwizsharma1@gmail.com?subject=Ritwiz%2C%20work%20with%20me!" style="color:var(--pg-ink);">Contact</a>
+      </span>
+    </div>
+    <div style="height:1px;background:var(--pg-hair);position:relative;">
+      <div id="rwProg" style="position:absolute;inset:0 auto 0 0;width:0;background:#0B0B0B;"></div>
+    </div>
   </header>
 
   <main style="max-width:1440px;margin:0 auto;padding:0 clamp(16px,3vw,48px) clamp(48px,7vw,110px);">
-    <section data-screen-label="Title" style="padding:clamp(40px,9vh,120px) 0 clamp(28px,5vh,60px);display:flex;flex-direction:column;gap:clamp(18px,2.6vw,34px);max-width:1100px;">
-      <h1 style="font-weight:700;font-size:clamp(42px,7.4vw,112px);line-height:.96;letter-spacing:-.03em;margin:0;">Ergoplay</h1>
-      <p style="font-weight:400;font-size:clamp(18px,2.3vw,30px);line-height:1.3;letter-spacing:-.015em;margin:0;max-width:760px;text-wrap:pretty;">It changes from a low gaming grip into a taller ergonomic shape, and it charges itself every time you make the switch.</p>
-      <div style="display:flex;flex-wrap:wrap;gap:clamp(8px,.9vw,12px);font-weight:600;font-size:clamp(11px,.9vw,13px);text-transform:uppercase;letter-spacing:.06em;">
-        <span style="background:#2E6BFF;color:#fff;border-radius:.66em;padding:.5em 1.05em;">Industrial / Product Design</span>
-        <span style="background:var(--pg-tint);color:var(--pg-ink);border-radius:.66em;padding:.5em 1.05em;">Personal project</span>
-        <span style="background:var(--pg-tint);color:var(--pg-ink);border-radius:.66em;padding:.5em 1.05em;">2024</span>
+    <section data-screen-label="Title" class="v7g2 v7rev" style="display:grid;grid-template-columns:minmax(0,120px) minmax(0,1fr);gap:clamp(14px,3vw,48px);padding:clamp(34px,7vh,86px) 0 clamp(22px,3.4vh,40px);">
+      <span aria-hidden="true"></span>
+      <div style="display:flex;flex-direction:column;gap:clamp(14px,1.8vw,22px);max-width:980px;">
+        <h1 style="font-weight:600;font-size:clamp(34px,5.6vw,76px);line-height:.98;letter-spacing:-.035em;margin:0;text-wrap:balance;">Ergoplay</h1>
+        <p style="font-weight:400;font-size:clamp(17px,1.7vw,24px);line-height:1.32;letter-spacing:-.015em;margin:0;max-width:680px;text-wrap:pretty;">It changes from a low gaming grip into a taller ergonomic shape, and it charges itself every time you make the switch.</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:0 clamp(20px,2.6vw,40px);margin-top:clamp(8px,1.4vw,16px);border-top:1px solid var(--pg-hair);">
+        <div style="display:flex;flex-direction:column;gap:5px;padding:11px 0 12px;border-bottom:1px solid var(--pg-hair);">
+          <span style="font-size:12.5px;font-weight:500;letter-spacing:-.005em;color:rgba(11,11,11,.62);">Discipline</span>
+          <span style="font-size:12.5px;font-weight:500;letter-spacing:-.005em;">Industrial / Product Design</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:5px;padding:11px 0 12px;border-bottom:1px solid var(--pg-hair);">
+          <span style="font-size:12.5px;font-weight:500;letter-spacing:-.005em;color:rgba(11,11,11,.62);">Sector</span>
+          <span style="font-size:12.5px;font-weight:500;letter-spacing:-.005em;">Computer peripherals</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:5px;padding:11px 0 12px;border-bottom:1px solid var(--pg-hair);">
+          <span style="font-size:12.5px;font-weight:500;letter-spacing:-.005em;color:rgba(11,11,11,.62);">Year</span>
+          <span style="font-size:12.5px;font-weight:500;letter-spacing:-.005em;">2024</span>
+        </div>
+        </div>
       </div>
     </section>
 
-    <img src="ergoplay/opt/floating-render.jpg" alt="Ergoplay floating render" style="width:100%;display:block;border-radius:16px;">
+    <img width="1800" height="1800" decoding="async" fetchpriority="high" src="ergoplay/opt/floating-render.jpg" alt="Ergoplay floating render" style="height:auto;width:100%;display:block;border-radius:0;">
 
-    <blockquote data-screen-label="Quote" style="margin:clamp(56px,10vh,150px) auto;max-width:1000px;font-weight:500;font-size:clamp(24px,3.4vw,48px);line-height:1.14;letter-spacing:-.025em;text-wrap:pretty;">Could one mouse be quick enough for gaming and still be comfortable after a full day of work?</blockquote>
+    <section data-screen-label="Note" class="v7g2 v7rev" style="display:grid;grid-template-columns:minmax(0,120px) minmax(0,1fr);gap:clamp(14px,3vw,48px);align-items:start;margin:clamp(46px,8vh,104px) 0 clamp(24px,3.6vh,44px);padding-top:clamp(13px,1.7vh,20px);border-top:1px solid var(--pg-hair);">
+      <span aria-hidden="true"></span>
+      <p style="margin:0;font-weight:500;font-size:clamp(20px,2.3vw,32px);line-height:1.2;letter-spacing:-.022em;max-width:900px;text-wrap:balance;">Could one mouse be quick enough for gaming and still be comfortable after a full day of work?</p>
+    </section>
 
     <section data-screen-label="Images 1" style="display:flex;flex-direction:column;gap:clamp(12px,1.6vw,24px);">
       <div style="display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:clamp(12px,1.6vw,24px);">
-        <img src="ergoplay/opt/stress-hand-top-rot.jpg" alt="Stress on hand comparison" style="width:100%;height:auto;display:block;border-radius:16px;">
-        <img src="ergoplay/opt/stress-hand-side.jpg" alt="Stress on hand" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img width="981" height="456" decoding="async" fetchpriority="high" src="ergoplay/opt/stress-hand-top-rot.jpg" alt="Stress on hand comparison" style="width:100%;height:auto;display:block;border-radius:0;">
+        <img width="1800" height="648" loading="lazy" decoding="async" src="ergoplay/opt/stress-hand-side.jpg" alt="Stress on hand" style="width:100%;height:auto;display:block;border-radius:0;">
       </div>
-      <img src="ergoplay/opt/sketches.jpg" alt="Mouse sketches ideation" style="width:100%;display:block;border-radius:16px;">
+      <img width="1800" height="1013" loading="lazy" decoding="async" src="ergoplay/opt/sketches.jpg" alt="Mouse sketches ideation" style="height:auto;width:100%;display:block;border-radius:0;">
       <div style="display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:clamp(12px,1.6vw,24px);">
-        <img data-cap="Mouse shape tests" src="ergoplay/opt/shape-tests.jpg" alt="Mouse shape tests" style="width:100%;height:auto;display:block;border-radius:16px;">
-        <img src="ergoplay/opt/clay-protos.jpg" alt="Clay prototypes" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img width="1800" height="1460" loading="lazy" decoding="async" src="ergoplay/opt/shape-tests.jpg" alt="Mouse shape tests" style="width:100%;height:auto;display:block;border-radius:0;">
+        <img width="1436" height="1080" loading="lazy" decoding="async" src="ergoplay/opt/clay-protos.jpg" alt="Clay prototypes" style="width:100%;height:auto;display:block;border-radius:0;">
       </div>
       <div style="display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:clamp(12px,1.6vw,24px);">
-        <img data-cap="Photogrammetry scan of the clay model and PCB" src="ergoplay/opt/scan-shell-pcb.jpg" alt="Photogrammetry setup" style="width:100%;height:auto;display:block;border-radius:16px;">
-        <img src="ergoplay/opt/scan-pcb.jpg" alt="3D scans of PCB and clay model" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img width="1800" height="1013" loading="lazy" decoding="async" src="ergoplay/opt/scan-shell-pcb.jpg" alt="Photogrammetry setup" style="width:100%;height:auto;display:block;border-radius:0;">
+        <img width="1800" height="1013" loading="lazy" decoding="async" src="ergoplay/opt/scan-pcb.jpg" alt="3D scans of PCB and clay model" style="width:100%;height:auto;display:block;border-radius:0;">
       </div>
     </section>
 
-    <blockquote data-screen-label="Quote" style="margin:clamp(56px,10vh,150px) auto;max-width:1000px;font-weight:500;font-size:clamp(24px,3.4vw,48px);line-height:1.14;letter-spacing:-.025em;text-wrap:pretty;">One mouse changes shape instead, so you are not buying two of them and keeping two sets of batteries alive.</blockquote>
+    <section data-screen-label="Note" class="v7g2 v7rev" style="display:grid;grid-template-columns:minmax(0,120px) minmax(0,1fr);gap:clamp(14px,3vw,48px);align-items:start;margin:clamp(46px,8vh,104px) 0 clamp(24px,3.6vh,44px);padding-top:clamp(13px,1.7vh,20px);border-top:1px solid var(--pg-hair);">
+      <span aria-hidden="true"></span>
+      <p style="margin:0;font-weight:500;font-size:clamp(20px,2.3vw,32px);line-height:1.2;letter-spacing:-.022em;max-width:900px;text-wrap:balance;">One mouse changes shape instead, so you are not buying two of them and keeping two sets of batteries alive.</p>
+    </section>
 
     <section data-screen-label="Images 2" style="display:flex;flex-direction:column;gap:clamp(12px,1.6vw,24px);">
-      <img src="ergoplay/opt/journey.jpg" alt="User journey" style="width:100%;display:block;border-radius:16px;">
+      <img width="1800" height="984" loading="lazy" decoding="async" src="ergoplay/opt/journey.jpg" alt="User journey" style="height:auto;width:100%;display:block;border-radius:0;">
       <div style="display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:clamp(12px,1.6vw,24px);">
-        <img src="ergoplay/opt/base-top-down.jpg" alt="Base top-down" style="width:100%;height:auto;display:block;border-radius:16px;">
-        <img src="ergoplay/opt/internals-perspective.jpg" alt="Internals perspective" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img width="1800" height="1435" loading="lazy" decoding="async" src="ergoplay/opt/base-top-down.jpg" alt="Base top-down" style="width:100%;height:auto;display:block;border-radius:0;">
+        <img width="1800" height="1353" loading="lazy" decoding="async" src="ergoplay/opt/internals-perspective.jpg" alt="Internals perspective" style="width:100%;height:auto;display:block;border-radius:0;">
       </div>
-      <img src="ergoplay/opt/grips.jpg" alt="Grips" style="width:100%;display:block;border-radius:16px;">
+      <img width="1800" height="1353" loading="lazy" decoding="async" src="ergoplay/opt/grips.jpg" alt="Grips" style="height:auto;width:100%;display:block;border-radius:0;">
     </section>
 
-    <blockquote data-screen-label="Quote" style="margin:clamp(56px,10vh,150px) auto;max-width:1000px;font-weight:500;font-size:clamp(24px,3.4vw,48px);line-height:1.14;letter-spacing:-.025em;text-wrap:pretty;">The ergo grip carries charge from the dock into the mouse, so changing shape never means stopping to plug in.</blockquote>
+    <section data-screen-label="Note" class="v7g2 v7rev" style="display:grid;grid-template-columns:minmax(0,120px) minmax(0,1fr);gap:clamp(14px,3vw,48px);align-items:start;margin:clamp(46px,8vh,104px) 0 clamp(24px,3.6vh,44px);padding-top:clamp(13px,1.7vh,20px);border-top:1px solid var(--pg-hair);">
+      <span aria-hidden="true"></span>
+      <p style="margin:0;font-weight:500;font-size:clamp(20px,2.3vw,32px);line-height:1.2;letter-spacing:-.022em;max-width:900px;text-wrap:balance;">The ergo grip carries charge from the dock into the mouse, so changing shape never means stopping to plug in.</p>
+    </section>
 
     <section data-screen-label="Images 3" style="display:flex;flex-direction:column;gap:clamp(12px,1.6vw,24px);">
       <div style="display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:clamp(12px,1.6vw,24px);">
-        <img data-cap="Final prototype, functional" src="ergoplay/opt/final-functional.jpg" alt="Final prototype, functional" style="width:100%;height:auto;display:block;border-radius:16px;">
-        <img data-cap="Final prototype, non-functional" src="ergoplay/opt/final-non-functional.jpg" alt="Final prototype, non-functional" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img width="1800" height="1251" loading="lazy" decoding="async" src="ergoplay/opt/final-functional.jpg" alt="Final prototype, functional" style="width:100%;height:auto;display:block;border-radius:0;">
+        <img width="1800" height="1353" loading="lazy" decoding="async" src="ergoplay/opt/final-non-functional.jpg" alt="Final prototype, non-functional" style="width:100%;height:auto;display:block;border-radius:0;">
       </div>
       <div style="display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:clamp(12px,1.6vw,24px);">
-        <img src="ergoplay/opt/v1-in-hand-grip.jpg" alt="V1 prototype in hand with the ergo grip" style="width:100%;height:auto;display:block;border-radius:16px;">
-        <img src="ergoplay/opt/v1-in-hand-desk.jpg" alt="V1 prototype in hand on the desk, grip alongside" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img width="842" height="1123" loading="lazy" decoding="async" src="ergoplay/opt/v1-in-hand-grip.jpg" alt="V1 prototype in hand with the ergo grip" style="width:100%;height:auto;display:block;border-radius:0;">
+        <img width="1152" height="924" loading="lazy" decoding="async" src="ergoplay/opt/v1-in-hand-desk.jpg" alt="V1 prototype in hand on the desk, grip alongside" style="width:100%;height:auto;display:block;border-radius:0;">
       </div>
-      <img src="ergoplay/opt/concept-1-prismatic.jpg" alt="Concept 1 prismatic" style="width:100%;display:block;border-radius:16px;">
-      <img src="ergoplay/opt/floating-both.jpg" alt="Mouse floating in both shapes" style="width:100%;display:block;border-radius:16px;">
-      <blockquote style="margin:clamp(56px,10vh,150px) auto;max-width:1000px;font-weight:500;font-size:clamp(24px,3.4vw,48px);line-height:1.14;letter-spacing:-.025em;text-wrap:pretty;">The first version worked, but it was chunky and the swap was fiddly, so I rebuilt the internals on a slimmer base, reshaped both tops and made the grip snap on with magnets.</blockquote>
-      <div style="display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:clamp(12px,1.6vw,24px);">
-        <img data-cap="Clay ergo test over new V2 shell" src="ergoplay/opt/clay-model.jpg" alt="Clay sculpted over the printed shell" style="width:100%;height:auto;display:block;border-radius:16px;">
-        <img src="ergoplay/opt/parts-1-pcb.jpg" alt="Parts 1 with PCB" style="width:100%;height:auto;display:block;border-radius:16px;">
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:clamp(12px,1.6vw,24px);">
-        <img data-cap="Old tops" src="ergoplay/opt/old-tops.jpg" alt="Old tops" style="width:100%;height:auto;display:block;border-radius:16px;">
-        <img data-cap="Base improvements" src="ergoplay/opt/base-improvements.jpg" alt="Base improvements" style="width:100%;height:auto;display:block;border-radius:16px;">
-      </div>
-      <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);align-items:start;gap:clamp(12px,1.6vw,24px);">
-        <img src="ergoplay/transform.gif" alt="Transform in action" style="width:100%;height:auto;display:block;border-radius:16px;">
-        <div style="display:flex;flex-direction:column;gap:clamp(12px,1.6vw,24px);">
-          <img src="ergoplay/opt/gaming-top-improvement.jpg" alt="Gaming top improvement" style="width:100%;height:auto;display:block;border-radius:16px;">
-          <img src="ergoplay/opt/shell-ergo-top.jpg" alt="Shell and ergo top" style="width:100%;height:auto;display:block;border-radius:16px;">
-        </div>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:clamp(12px,1.6vw,24px);">
-        <img src="ergoplay/opt/base-final.jpg" alt="Printed dock plate and mouse base" style="width:100%;height:auto;display:block;border-radius:16px;">
-        <img src="ergoplay/opt/dock-final.jpg" alt="Printed shell with its supports still attached" style="width:100%;height:auto;display:block;border-radius:16px;">
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:clamp(12px,1.6vw,24px);">
-        <img src="ergoplay/opt/in-hand.jpg" alt="Prototype in hand" style="width:100%;height:auto;display:block;border-radius:16px;">
-        <img src="ergoplay/opt/in-hand-internals.jpg" alt="Prototype opened, internals in hand" style="width:100%;height:auto;display:block;border-radius:16px;">
-      </div>
+      <img width="1800" height="1125" loading="lazy" decoding="async" src="ergoplay/opt/concept-1-prismatic.jpg" alt="Concept 1 prismatic" style="height:auto;width:100%;display:block;border-radius:0;">
+      <img width="1800" height="1013" loading="lazy" decoding="async" src="ergoplay/opt/floating-both.jpg" alt="Mouse floating in both shapes" style="height:auto;width:100%;display:block;border-radius:0;">
     </section>
 
-    <blockquote data-screen-label="Quote" style="margin:clamp(56px,10vh,150px) auto;max-width:1000px;font-weight:500;font-size:clamp(24px,3.4vw,48px);line-height:1.14;letter-spacing:-.025em;text-wrap:pretty;">Nearly every part of it comes off my printer. The only pieces I did not make are the internals of a Logitech G304.</blockquote>
+    <section data-screen-label="Note" class="v7g2 v7rev" style="display:grid;grid-template-columns:minmax(0,120px) minmax(0,1fr);gap:clamp(14px,3vw,48px);align-items:start;margin:clamp(46px,8vh,104px) 0 clamp(24px,3.6vh,44px);padding-top:clamp(13px,1.7vh,20px);border-top:1px solid var(--pg-hair);">
+      <span aria-hidden="true"></span>
+      <p style="margin:0;font-weight:500;font-size:clamp(20px,2.3vw,32px);line-height:1.2;letter-spacing:-.022em;max-width:900px;text-wrap:balance;">The first version worked, but it was chunky and the swap was fiddly, so I rebuilt the internals on a slimmer base, reshaped both tops and made the grip snap on with magnets.</p>
+    </section>
 
     <section data-screen-label="Images 4" style="display:flex;flex-direction:column;gap:clamp(12px,1.6vw,24px);">
       <div style="display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:clamp(12px,1.6vw,24px);">
-        <img src="ergoplay/opt/concept-2-prismatic.jpg" alt="Concept 2 prismatic" style="width:100%;height:auto;display:block;border-radius:16px;">
-        <img src="ergoplay/opt/concept-2-internals.jpg" alt="Concept 2 internals" style="width:100%;height:auto;display:block;border-radius:16px;">
+        <img width="1682" height="1800" loading="lazy" decoding="async" src="ergoplay/opt/clay-model.jpg" alt="Clay sculpted over the printed shell" style="width:100%;height:auto;display:block;border-radius:0;">
+        <img width="1578" height="1800" loading="lazy" decoding="async" src="ergoplay/opt/parts-1-pcb.jpg" alt="Parts 1 with PCB" style="width:100%;height:auto;display:block;border-radius:0;">
       </div>
-      <div style="display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);align-items:start;gap:clamp(12px,1.6vw,24px);">
-        <img src="ergoplay/gaming-shell-360.gif" alt="360 turntable of the printed final gaming shell" style="width:100%;height:auto;display:block;border-radius:16px;">
-        <img src="ergoplay/opt/studio-shot.jpg" alt="Studio shot" style="width:100%;height:auto;display:block;border-radius:16px;">
+      <div style="display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:clamp(12px,1.6vw,24px);">
+        <img width="1800" height="822" loading="lazy" decoding="async" src="ergoplay/opt/old-tops.jpg" alt="Old tops" style="width:100%;height:auto;display:block;border-radius:0;">
+        <img width="1800" height="1112" loading="lazy" decoding="async" src="ergoplay/opt/base-improvements.jpg" alt="Base improvements" style="width:100%;height:auto;display:block;border-radius:0;">
       </div>
-      <img src="ergoplay/opt/maker-set.jpg" alt="Ergoplay parts, tools and sketches laid out on the cutting mat" style="width:100%;display:block;border-radius:16px;">
-      <img src="ergoplay/opt/context.jpg" alt="Ergoplay in context" style="width:100%;display:block;border-radius:16px;">
+      <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);align-items:start;gap:clamp(12px,1.6vw,24px);">
+        <img width="800" height="1422" loading="lazy" decoding="async" src="ergoplay/transform.gif" alt="Transform in action" style="width:100%;height:auto;display:block;border-radius:0;">
+        <div style="display:flex;flex-direction:column;gap:clamp(12px,1.6vw,24px);">
+          <img width="1800" height="844" loading="lazy" decoding="async" src="ergoplay/opt/gaming-top-improvement.jpg" alt="Gaming top improvement" style="width:100%;height:auto;display:block;border-radius:0;">
+          <img width="1800" height="846" loading="lazy" decoding="async" src="ergoplay/opt/shell-ergo-top.jpg" alt="Shell and ergo top" style="width:100%;height:auto;display:block;border-radius:0;">
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:clamp(12px,1.6vw,24px);">
+        <img width="1800" height="995" loading="lazy" decoding="async" src="ergoplay/opt/base-final.jpg" alt="Printed dock plate and mouse base" style="width:100%;height:auto;display:block;border-radius:0;">
+        <img width="1520" height="1800" loading="lazy" decoding="async" src="ergoplay/opt/dock-final.jpg" alt="Printed shell with its supports still attached" style="width:100%;height:auto;display:block;border-radius:0;">
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:clamp(12px,1.6vw,24px);">
+        <img width="1024" height="1024" loading="lazy" decoding="async" src="ergoplay/opt/in-hand.jpg" alt="Prototype in hand" style="width:100%;height:auto;display:block;border-radius:0;">
+        <img width="1024" height="1024" loading="lazy" decoding="async" src="ergoplay/opt/in-hand-internals.jpg" alt="Prototype opened, internals in hand" style="width:100%;height:auto;display:block;border-radius:0;">
+      </div>
     </section>
 
-    <section data-screen-label="About the project" style="max-width:760px;margin:clamp(64px,12vh,180px) 0 0;display:flex;flex-direction:column;gap:clamp(16px,2vh,26px);font-size:clamp(16px,1.15vw,19px);line-height:1.62;">
-      <p style="margin:0;text-wrap:pretty;">This started with a question I kept coming back to, about whether I really needed one mouse for playing and a second one for working. Ergoplay is my answer to it. The mouse changes from a low gaming grip into a taller ergonomic shape, and it tops itself up every time you make the switch.</p>
+    <section data-screen-label="Note" class="v7g2 v7rev" style="display:grid;grid-template-columns:minmax(0,120px) minmax(0,1fr);gap:clamp(14px,3vw,48px);align-items:start;margin:clamp(46px,8vh,104px) 0 clamp(24px,3.6vh,44px);padding-top:clamp(13px,1.7vh,20px);border-top:1px solid var(--pg-hair);">
+      <span aria-hidden="true"></span>
+      <p style="margin:0;font-weight:500;font-size:clamp(20px,2.3vw,32px);line-height:1.2;letter-spacing:-.022em;max-width:900px;text-wrap:balance;">Nearly every part of it comes off my printer. The only pieces I did not make are the internals of a Logitech G304.</p>
+    </section>
+
+    <section data-screen-label="Images 5" style="display:flex;flex-direction:column;gap:clamp(12px,1.6vw,24px);">
+      <div style="display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:clamp(12px,1.6vw,24px);">
+        <img width="1800" height="1800" loading="lazy" decoding="async" src="ergoplay/opt/concept-2-prismatic.jpg" alt="Concept 2 prismatic" style="width:100%;height:auto;display:block;border-radius:0;">
+        <img width="1013" height="1800" loading="lazy" decoding="async" src="ergoplay/opt/concept-2-internals.jpg" alt="Concept 2 internals" style="width:100%;height:auto;display:block;border-radius:0;">
+      </div>
+      <div style="display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);align-items:start;gap:clamp(12px,1.6vw,24px);">
+        <img width="800" height="800" loading="lazy" decoding="async" src="ergoplay/gaming-shell-360.gif" alt="360 turntable of the printed final gaming shell" style="width:100%;height:auto;display:block;border-radius:0;">
+        <img width="1800" height="1167" loading="lazy" decoding="async" src="ergoplay/opt/studio-shot.jpg" alt="Studio shot" style="width:100%;height:auto;display:block;border-radius:0;">
+      </div>
+      <img width="1800" height="1125" loading="lazy" decoding="async" src="ergoplay/opt/maker-set.jpg" alt="Ergoplay parts, tools and sketches laid out on the cutting mat" style="height:auto;width:100%;display:block;border-radius:0;">
+      <img width="1800" height="1125" loading="lazy" decoding="async" src="ergoplay/opt/context.jpg" alt="Ergoplay in context" style="height:auto;width:100%;display:block;border-radius:0;">
+    </section>
+
+    <section data-screen-label="Full account" class="v7g2 v7rev" style="display:grid;grid-template-columns:minmax(0,120px) minmax(0,1fr);gap:clamp(14px,3vw,48px);align-items:start;margin:clamp(56px,10vh,130px) 0 0;padding-top:clamp(13px,1.7vh,20px);border-top:1px solid var(--pg-hair);">
+      <span class="v7num" style="font-size:12.5px;font-weight:500;letter-spacing:-.005em;color:rgba(11,11,11,.62);">Full account</span>
+      <div style="max-width:52ch;display:flex;flex-direction:column;gap:clamp(16px,2vh,26px);font-size:15.5px;font-weight:450;letter-spacing:-.008em;line-height:1.62;">
+      <p style="margin:0;text-wrap:pretty;">This started with a question I kept coming back to, about whether I really needed one mouse for playing and a second one for working. Ergoplay is my answer to it.</p>
       <p style="margin:0;text-wrap:pretty;">Like a lot of people, I have used a gaming mouse as my only mouse for years, for FPS games and for everything else. After a while my wrist started to complain, especially on the long days. Friends who don't game were using ergonomic mice for work, and I kept wondering why I had to pick one or the other. Buying two expensive mice and keeping two sets of batteries charged never made sense to me, so I started drawing.</p>
       <p style="margin:0;text-wrap:pretty;">This is a personal project, so I wanted to see how far I could get with the printer on my desk. The internals come from a Logitech G304, which I already trusted, and everything around them is printed. What came out of it is a prototype that actually works rather than a shape to look at.</p>
       <p style="margin:0;text-wrap:pretty;">I took two directions forward and checked both as clay models and photogrammetry scans against the real PCB. The first working version did what I asked of it, but it was rough to look at and to hold. The way you use it was right, though. Swapping modes was quick, and the ergo grip passed charge from the dock into the battery, so the mouse never had to leave the desk to charge.</p>
       <p style="margin:0;text-wrap:pretty;">In the second round I started again with the gaming shape and the internals, since everything else sits on top of them. The base and the top are separate parts held together with magnets. Once that felt right I moved on to the ergonomic shape, then kept going back and forth between the two tops and the base until the swap became one clean movement.</p>
+    </div>
     </section>
 
-    <section data-screen-label="Credits" style="margin:clamp(56px,9vh,130px) 0 0;padding-top:clamp(24px,3vh,40px);border-top:1px solid var(--pg-hair);display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:clamp(24px,3vw,48px);font-size:14px;line-height:1.55;">
-      <div style="display:flex;flex-direction:column;gap:10px;">
-        <span style="align-self:flex-start;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--pg-ink);background:var(--pg-tint);border-radius:.66em;padding:.5em 1.05em;">Discipline</span>
+    <section data-screen-label="Credits" style="margin:clamp(52px,9vh,120px) 0 0;padding-top:clamp(13px,1.7vh,20px);border-top:1px solid var(--pg-hair);display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:clamp(20px,2.6vw,40px);font-size:12.5px;font-weight:500;letter-spacing:-.005em;line-height:1.6;">
+      <div style="display:flex;flex-direction:column;gap:6px;">
+        <span style="font-size:12.5px;font-weight:500;letter-spacing:-.005em;color:rgba(11,11,11,.62);">Discipline</span>
         <span>Industrial / Product Design</span>
         <span>Ergonomics research</span>
         <span>Prototyping</span>
       </div>
-      <div style="display:flex;flex-direction:column;gap:10px;">
-        <span style="align-self:flex-start;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--pg-ink);background:var(--pg-tint);border-radius:.66em;padding:.5em 1.05em;">My role</span>
+      <div style="display:flex;flex-direction:column;gap:6px;">
+        <span style="font-size:12.5px;font-weight:500;letter-spacing:-.005em;color:rgba(11,11,11,.62);">My role</span>
         <span>Sole designer</span>
         <span>3 months, 2024</span>
       </div>
-      <div style="display:flex;flex-direction:column;gap:10px;">
-        <span style="align-self:flex-start;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--pg-ink);background:var(--pg-tint);border-radius:.66em;padding:.5em 1.05em;">Status</span>
+      <div style="display:flex;flex-direction:column;gap:6px;">
+        <span style="font-size:12.5px;font-weight:500;letter-spacing:-.005em;color:rgba(11,11,11,.62);">Status</span>
         <span>Working prototype</span>
       </div>
-      <div style="display:flex;flex-direction:column;gap:10px;">
-        <span style="align-self:flex-start;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--pg-ink);background:var(--pg-tint);border-radius:.66em;padding:.5em 1.05em;">Made with</span>
+      <div style="display:flex;flex-direction:column;gap:6px;">
+        <span style="font-size:12.5px;font-weight:500;letter-spacing:-.005em;color:rgba(11,11,11,.62);">Made with</span>
         <span>3D printing</span>
         <span>Logitech G304 internals</span>
       </div>
     </section>
 
-    <a href="vita.html" data-screen-label="Next project" style="display:flex;flex-direction:column;gap:12px;margin-top:clamp(56px,9vh,130px);padding-top:clamp(24px,3vh,40px);border-top:1px solid var(--pg-hair);text-decoration:none;color:var(--pg-ink);" style-hover="opacity:.55">
-      <span style="align-self:flex-start;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--pg-ink);background:var(--pg-tint);border-radius:.66em;padding:.5em 1.05em;">Next project</span>
-      <span style="font-weight:700;font-size:clamp(28px,4.4vw,64px);line-height:1;letter-spacing:-.03em;text-transform:uppercase;">Vita</span>
-      <span style="font-size:clamp(15px,1.1vw,18px);line-height:1.5;max-width:620px;text-wrap:pretty;">The grand touring philosophy applied to a scooter for people in their early 20s.</span>
+    <a href="vita.html" data-screen-label="Next project" class="v7next v7rev" style="display:grid;grid-template-columns:minmax(0,120px) minmax(0,1fr) 24px;gap:clamp(14px,3vw,48px);align-items:baseline;margin-top:clamp(52px,9vh,120px);padding:clamp(20px,2.6vh,30px) clamp(10px,1.2vw,16px);border-top:1px solid var(--pg-hair);color:var(--pg-ink);">
+      <span class="v7c" style="font-size:12.5px;font-weight:500;letter-spacing:-.005em;color:rgba(11,11,11,.62);">Next project</span>
+      <span style="display:flex;flex-direction:column;gap:8px;min-width:0;">
+        <span class="v7c" style="font-weight:600;font-size:clamp(26px,3.6vw,48px);line-height:1;letter-spacing:-.03em;">Vita</span>
+        <span class="v7c" style="font-size:12.5px;font-weight:500;letter-spacing:-.005em;color:rgba(11,11,11,.62);max-width:560px;text-wrap:pretty;">The grand touring philosophy applied to a scooter for people in their early 20s.</span>
+      </span>
+      <span class="v7c v7ar" style="justify-self:end;font-size:12.5px;line-height:1;opacity:.45;">&#8599;</span>
     </a>
 
-    <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-top:clamp(40px,6vh,80px);padding-top:clamp(20px,2.6vh,32px);border-top:1px solid var(--pg-hair);">
-      <a href="index.html" style="font-weight:600;font-size:15px;text-decoration:none;color:var(--pg-ink);" style-hover="opacity:.55">← All projects</a>
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-top:clamp(34px,5vh,64px);padding-top:clamp(13px,1.7vh,20px);border-top:1px solid var(--pg-hair);">
+      <a href="index.html" style="font-size:12.5px;font-weight:500;letter-spacing:-.005em;text-decoration:none;color:var(--pg-ink);" style-hover="opacity:.45">Index</a>
       <div style="display:flex;gap:18px;flex-wrap:wrap;">
-        <a href="mailto:ritwizsharma1@gmail.com?subject=Ritwiz%2C%20work%20with%20me!" style="color:var(--pg-ink);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.08em;text-decoration:none;" style-hover="opacity:.55">Email</a>
-        <a href="https://www.behance.net/ritwizsharma" target="_blank" rel="noopener" style="color:var(--pg-ink);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.08em;text-decoration:none;" style-hover="opacity:.55">Behance</a>
-        <a href="https://www.linkedin.com/in/ritwizsharma/" target="_blank" rel="noopener" style="color:var(--pg-ink);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.08em;text-decoration:none;" style-hover="opacity:.55">LinkedIn</a>
+        <a href="mailto:ritwizsharma1@gmail.com?subject=Ritwiz%2C%20work%20with%20me!" style="color:var(--pg-ink);font-size:12.5px;font-weight:500;letter-spacing:-.005em;text-decoration:none;" style-hover="opacity:.45">Email</a>
+        <a href="https://www.behance.net/ritwizsharma" target="_blank" rel="noopener" style="color:var(--pg-ink);font-size:12.5px;font-weight:500;letter-spacing:-.005em;text-decoration:none;" style-hover="opacity:.45">Behance</a>
+        <a href="https://www.linkedin.com/in/ritwizsharma/" target="_blank" rel="noopener" style="color:var(--pg-ink);font-size:12.5px;font-weight:500;letter-spacing:-.005em;text-decoration:none;" style-hover="opacity:.45">LinkedIn</a>
       </div>
     </div>
   </main>
 </div>
 
-<div id="rwCursorTag" style="position:fixed;left:0;top:0;z-index:60;pointer-events:none;background:#2E6BFF;color:#fff;font-family:'Overused Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Helvetica,Arial,sans-serif;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.08em;white-space:nowrap;padding:6px 12px;border-radius:8px;transform:translateY(-5px);opacity:0;transition:opacity 140ms ease-out,transform 180ms ease-out;"></div></x-dc>
+<div id="rwCursorTag" style="position:fixed;left:0;top:0;z-index:60;pointer-events:none;background:#0B0B0B;color:#FFFFFF;font-family:'Overused Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Helvetica,Arial,sans-serif;font-weight:500;font-size:12.5px;letter-spacing:-.005em;white-space:nowrap;padding:6px 10px;border-radius:0;transform:translateY(-5px);opacity:0;transition:opacity 140ms ease-out,transform 180ms ease-out;"></div>
+<div class="rwBoot" id="rwBoot">
+  <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;font-family:'Overused Grotesk',Helvetica,Arial,sans-serif;font-size:12.5px;font-weight:500;letter-spacing:-.005em;color:#0B0B0B;">
+    <span>Ergoplay</span>
+    <span id="rwBootPct">08%</span>
+  </div>
+  <div class="rwBar"><i id="rwBootBar"></i></div>
+</div>
+</x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
   componentDidMount(){
+
+    // Boot plate: hold the page until the opening images are decoded, then warm the rest
+    const boot = document.getElementById('rwBoot');
+    if(boot){
+      const pct = document.getElementById('rwBootPct'), bar = document.getElementById('rwBootBar');
+      const lead = [...document.querySelectorAll('main img')].slice(0,3);
+      const total = Math.max(1, lead.length);
+      let loaded = 0, fin = false;
+      const set = v => { const p = Math.round(v*100); if(pct) pct.textContent = String(p).padStart(2,'0') + '%'; if(bar) bar.style.width = p + '%'; };
+      const warm = () => {
+        // Warm every deferred image, nearest-to-viewport first, six in flight — so
+        // scrolling never outruns the queue. Each one is un-lazied once cached, so
+        // the real <img> paints from cache instead of starting its own fetch.
+        const all = [...document.querySelectorAll('main img[loading="lazy"]')];
+        const taken = new Set();
+        let live = 0;
+        const fill = () => {
+          while(live < 6){
+            let best = null, bestD = Infinity;
+            for(const el of all){
+              if(taken.has(el)) continue;
+              const r = el.getBoundingClientRect();
+              const d = r.top >= 0 ? r.top : -r.bottom * 4;   // below the fold wins over far above
+              if(d < bestD){ bestD = d; best = el; }
+            }
+            if(!best){ if(live === 0) removeEventListener('scroll', fill); return; }
+            taken.add(best); live++;
+            const src = best.getAttribute('src');
+            const done = () => { best.loading = 'eager'; live--; fill(); };
+            if(!src){ done(); continue; }
+            const im = new Image();
+            im.onload = im.onerror = done;
+            im.src = src;
+          }
+        };
+        fill();
+        addEventListener('scroll', fill, {passive:true});
+      };
+      const finish = () => {
+        if(fin) return; fin = true; set(1);
+        setTimeout(() => {
+          boot.classList.add('rwDone');
+          this._bootT = setInterval(() => boot.classList.add('rwDone'), 200);
+          setTimeout(() => clearInterval(this._bootT), 4000);
+          warm();
+        }, 150);
+      };
+      lead.forEach(im => {
+        const on = () => { loaded++; set(Math.min(.96, loaded/total)); if(loaded >= total) finish(); };
+        if(im.complete) on(); else { im.addEventListener('load', on, {once:true}); im.addEventListener('error', on, {once:true}); }
+      });
+      set(Math.max(.08, loaded/total));
+      this._bootMax = setTimeout(finish, 4000);   // never hold the page hostage
+    }
+    // scroll reveal — same 8px rise as the index
+    if(!matchMedia('(prefers-reduced-motion:reduce)').matches){
+      const shown = new Set();
+      // key by content, not node identity: the runtime can replace nodes mid-scroll
+      const keyOf = (el, i) => (el.getAttribute('src') || el.getAttribute('data-screen-label') || el.tagName) + '#' + i;
+      const sweep = () => {
+        [...document.querySelectorAll('main img, main section.v7g2, main a.v7next')].forEach((el, i) => {
+          const k = keyOf(el, i);
+          if(shown.has(k)){ el.classList.remove('v7rev','v7in'); return; }   // done: natural opacity, nothing left to restart
+          el.classList.add('v7rev');
+          const r = el.getBoundingClientRect();
+          if(r.top < innerHeight * 0.94 && r.bottom > -80){
+            requestAnimationFrame(() => el.classList.add('v7in'));
+            setTimeout(() => { shown.add(k); el.classList.remove('v7rev','v7in'); }, 700);
+          }
+        });
+      };
+      this._sweep = () => { if(this._raf) return; this._raf = requestAnimationFrame(()=>{ this._raf = 0; sweep(); }); };
+      sweep();
+      this._tick = setInterval(sweep, 200);   // scroll events don't reach us in every host
+      addEventListener('scroll', this._sweep, {passive:true});
+      addEventListener('resize', this._sweep, {passive:true});
+    }
+    const prog = document.getElementById('rwProg');
+    this._prog = () => {
+      if(!prog) return;
+      const h = document.documentElement.scrollHeight - innerHeight;
+      prog.style.width = (h > 0 ? Math.min(1, scrollY / h) * 100 : 0) + '%';
+    };
+    this._prog();
+    this._ptick = setInterval(this._prog, 120);
+    addEventListener('scroll', this._prog, {passive:true});
+    addEventListener('resize', this._prog, {passive:true});
     // Rows of side-by-side images: width each by its own aspect ratio so a row
     // shares one height with nothing cropped (justified-gallery style)
     const justifyRows = () => {
       const narrow = innerWidth <= 760;
       // ratio of one column: an image, or a vertical stack of images
       const ratioOf = el => {
-        if (el.tagName === 'IMG')
-          return el.naturalWidth && el.naturalHeight ? el.naturalWidth / el.naturalHeight : 0;
+        const ratioOfImg = im => {
+          const aw = +im.getAttribute('width'), ah = +im.getAttribute('height');
+          if (aw && ah) return aw / ah;
+          return im.naturalWidth && im.naturalHeight ? im.naturalWidth / im.naturalHeight : 0;
+        };
+        if (el.tagName === 'IMG') return ratioOfImg(el);
         const inner = [...el.querySelectorAll('img')];
-        if (!inner.length || !inner.every(im => im.naturalWidth && im.naturalHeight)) return 0;
-        return 1 / inner.reduce((sum, im) => sum + im.naturalHeight / im.naturalWidth, 0);
+        const rs = inner.map(ratioOfImg);
+        if (!rs.length || rs.some(r => !r)) return 0;
+        return 1 / rs.reduce((sum, r) => sum + 1 / r, 0);
       };
       document.querySelectorAll('main section > div').forEach(row => {
         const cols = [...row.children].filter(
@@ -266,7 +436,7 @@ class Component extends DCLogic {
           const s = document.createElement('span');
           s.dataset.capfor = '1';
           s.textContent = im.dataset.cap;
-          s.style.cssText = 'position:absolute;left:12px;top:12px;z-index:2;max-width:calc(100% - 24px);font-weight:600;font-size:11px;line-height:1.35;text-transform:uppercase;letter-spacing:.08em;background:#2E6BFF;color:#fff;border-radius:8px;padding:6px 12px;text-wrap:pretty;';
+          s.style.cssText = 'position:absolute;left:12px;top:12px;z-index:2;max-width:calc(100% - 24px);font-weight:500;font-size:12.5px;line-height:1.35;letter-spacing:-.005em;background:#0B0B0B;color:#FFFFFF;border-radius:0;padding:6px 12px;text-wrap:pretty;';
           wrap.appendChild(s);
         } else if (!narrow && tag) tag.remove();
       });
@@ -313,6 +483,12 @@ class Component extends DCLogic {
     addEventListener('resize', this._track, {passive:true});
   }
   componentWillUnmount(){
+    clearInterval(this._tick);
+    removeEventListener('scroll', this._sweep);
+    removeEventListener('resize', this._sweep);
+    clearInterval(this._ptick);
+    removeEventListener('scroll', this._prog);
+    removeEventListener('resize', this._prog);
     removeEventListener('mousemove', this._move);
     removeEventListener('mouseleave', this._leave);
     removeEventListener('resize', this._justify);

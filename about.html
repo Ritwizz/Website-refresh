@@ -9,120 +9,158 @@
 <body>
 <x-dc>
 <helmet>
-<script>document.documentElement.dataset.rwtheme='dark';</script>
-<script>(function(){var d=document.documentElement,AK='rwAccent';
-var A={violet:['#2E6BFF','#5C8AFF'],mint:['#8FD694','#A9E5AD'],clay:['#F09070','#F7A98D']};
-function apply(n,save){var v=A[n]||A.violet;d.style.setProperty('--pill',v[0]);d.style.setProperty('--pill-hi',v[1]);d.dataset.rwaccent=A[n]?n:'violet';if(save){try{localStorage.setItem(AK,d.dataset.rwaccent)}catch(e){}}}
-apply('violet',false);
-function paint(){var dark=d.dataset.rwtheme==='dark';
- document.querySelectorAll('[data-set-theme]').forEach(function(b){b.classList.toggle('on',b.getAttribute('data-set-theme')===(dark?'dark':'light'))});
- document.querySelectorAll('[data-accent]').forEach(function(b){b.classList.toggle('on',b.getAttribute('data-accent')===d.dataset.rwaccent)});}
-function clock(){var y=document.getElementById('rwClkYou');if(!y)return;var i=document.getElementById('rwClkInd'),o={hour:'2-digit',minute:'2-digit',hour12:false},n=new Date();
- try{y.textContent=new Intl.DateTimeFormat([],o).format(n);i.textContent=new Intl.DateTimeFormat([],{hour:'2-digit',minute:'2-digit',hour12:false,timeZone:'Asia/Kolkata'}).format(n)}catch(e){}}
-if(!window.__rwCtlBound){window.__rwCtlBound=1;
- document.addEventListener('click',function(e){var t=e.target.closest&&e.target.closest('[data-set-theme]');
-  if(t){if(window.rwSetTheme)window.rwSetTheme(t.getAttribute('data-set-theme'));paint();return;}
-  var c=e.target.closest&&e.target.closest('[data-accent]');if(c){apply(c.getAttribute('data-accent'),true);paint();}});
- setInterval(function(){clock();paint()},1000);}
-setTimeout(function(){clock();paint()},0);
-document.addEventListener('DOMContentLoaded',function(){clock();paint()});})();</script>
+<title>Studio — Ritwiz Sharma, Industrial Designer</title>
+<meta name="description" content="Industrial designer in Guwahati working across consumer products, robotics and retail environments. Clients, CV and contact.">
+<meta property="og:title" content="Studio — Ritwiz Sharma, Industrial Designer">
+<meta property="og:description" content="Industrial designer in Guwahati working across consumer products, robotics and retail environments. Clients, CV and contact.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="crossorigin">
+<link rel="preload" as="font" type="font/woff2" href="https://cdn.jsdelivr.net/gh/RandomMaerks/Overused-Grotesk@main/fonts/variable/OverusedGrotesk-VF.woff2" crossorigin="crossorigin">
+
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
 <style>
 @font-face{font-family:'Overused Grotesk';src:url('https://cdn.jsdelivr.net/gh/RandomMaerks/Overused-Grotesk@main/fonts/variable/OverusedGrotesk-VF.woff2') format('woff2-variations'),url('https://cdn.jsdelivr.net/gh/RandomMaerks/Overused-Grotesk@main/fonts/variable/OverusedGrotesk-VF.ttf') format('truetype-variations');font-weight:300 900;font-display:swap;}
-:root{--pg-bg:#F7F5F0;--pg-ink:#131313;--pg-card:#fff;--pg-panel:#131313;--pg-panel-ink:#F7F5F0;--pg-hair:rgba(19,19,19,.12);--pg-hair2:rgba(19,19,19,.2);--pg-shadow:rgba(19,19,19,.16);}
-html[data-rwtheme="dark"]{--pg-bg:#0F0D0C;--pg-ink:#EDE9E4;--pg-card:#1A1716;--pg-panel:#241F1E;--pg-panel-ink:#EDE9E4;--pg-hair:rgba(237,233,228,.16);--pg-hair2:rgba(237,233,228,.26);--pg-shadow:rgba(0,0,0,.5);}
-html[data-rwtheme="dark"] [style*="color: rgb(255, 255, 255)"],html[data-rwtheme="dark"] [style*="color:#fff"]{color:#131313 !important}
-html[data-rwtheme="dark"] [style*="--pg-panel)"]{color:var(--pg-panel-ink) !important}
-html[data-rwtheme="dark"] body{background:#0F0D0C}
+:root{--pg-bg:#F4F2EE;--pg-ink:#0B0B0B;--pg-card:#F4F2EE;--pg-panel:#0B0B0B;--pg-panel-ink:#FFFFFF;--pg-hair:rgba(11,11,11,.16);--pg-hair2:rgba(11,11,11,.24);--pg-shadow:rgba(11,11,11,.12);}
 
-body{margin:0}
-a{color:var(--pg-ink)}
-a:hover{opacity:.55}
+html{background:#0B0B0B}
+body{margin:0;background:#0B0B0B;padding:clamp(0px,3.4vh,40px) clamp(0px,3.6vw,56px);box-sizing:border-box}
+.v7nav a{text-decoration:none;transition:color 130ms ease-out}
+.v7nav a:hover{color:#0B0B0B !important;opacity:1}
+a{color:var(--pg-ink);text-decoration:none}
+:focus-visible{outline:1.5px solid #0B0B0B;outline-offset:3px}
+.v7rev{opacity:0;transform:translateY(8px);transition:opacity 620ms cubic-bezier(.22,.7,.24,1),transform 620ms cubic-bezier(.22,.7,.24,1)}
+.v7rev.v7in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.v7rev{opacity:1;transform:none;transition:none}}
+.v7row{transition:background 130ms ease-out}
+.v7row:hover{background:#0B0B0B}
+.v7row:hover .v7c{color:#FFF !important}
+.v7row:hover .v7ar{opacity:1 !important;transform:translate(2px,-2px)}
+.v7ar{transition:opacity 130ms ease-out,transform 180ms cubic-bezier(.2,.8,.24,1)}
 .rwMqTrack{animation:rwMarquee 30s linear infinite}
 @keyframes rwMarquee{to{transform:translateX(-50%)}}
-@media (max-width:760px){.rwMqWrap{display:none}}
 @media (prefers-reduced-motion:reduce){.rwMqTrack{animation:none}}
-.rwCtl{--ctl-bg:rgba(19,19,19,.07);--ctl-thumb:#131313;--ctl-thumb-ink:#F7F5F0;--ctl-soft:rgba(19,19,19,.06)}
-html[data-rwtheme="dark"] .rwCtl{--ctl-bg:rgba(237,233,228,.10);--ctl-thumb:#EDE9E4;--ctl-thumb-ink:#131313;--ctl-soft:rgba(237,233,228,.09)}
-.rwGrp{display:flex;flex-direction:column;gap:5px;align-items:flex-start}
-.rwLab{font-family:var(--font);font-size:9.5px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--pg-ink);opacity:.45;padding-left:11px}
-.rwTrack{display:flex;align-items:center;gap:3px;background:var(--ctl-bg);border-radius:13px;padding:3px}
-.rwSeg{font-family:var(--font);font-size:12.5px;font-weight:600;line-height:1;letter-spacing:.01em;color:var(--pg-ink);background:transparent;border:0;border-radius:10px;height:30px;min-width:32px;padding:0 11px;display:inline-flex;align-items:center;justify-content:center;gap:7px;white-space:nowrap;text-decoration:none;}
-.rwSeg.btn{cursor:pointer}
-.rwSeg.btn:hover{background:var(--ctl-soft)}
-.rwSeg.on{background:var(--ctl-thumb);color:var(--ctl-thumb-ink)}
-.rwSeg.on:hover{background:var(--ctl-thumb)}
-.rwSeg svg{width:15px;height:15px;display:block}
-.rwDot{width:22px;height:22px;border-radius:7px;border:0;padding:0;cursor:pointer;box-shadow:0 0 0 0 transparent;transition:box-shadow 120ms ease-out}
-.rwDot.on{box-shadow:0 0 0 2px var(--ctl-bg),0 0 0 4px var(--ctl-thumb)}
-.rwCtl .rwTrack[style*="gap:8px"]{border-radius:14px}
-.rwClk{font-variant-numeric:tabular-nums}
-.rwClkLab{font-size:9.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;opacity:.5}
-.rwAccentPill{background:var(--pill);color:#fff}
-.rwAccentPill:hover{background:var(--pill-hi)}
-@media (max-width:900px){.rwClkGrp{display:none}}
-@media (max-width:760px){.rwLab{display:none}.rwColGrp{display:none}
-.rwCtl{--font:'Overused Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Helvetica,Arial,sans-serif}
-@media (max-width:640px){.rwMqWrap{display:none}}
+@media (max-width:820px){.v7navmid{display:none}.v7g2{grid-template-columns:1fr !important}.v7g2 > .v7num{display:none}.v7split{grid-template-columns:1fr !important}}
+@media (max-width:760px){.rwMqWrap{display:none}}
+@media print{h1,h2,h3,blockquote,[data-screen-label="Note"]{break-after:avoid}figure,figcaption,[data-screen-label^="Images"]{break-inside:avoid}}
 </style>
 </helmet>
-<div style="--red:#FF4438;--blue:#2E6BFF;--yellow:#FFC700;--green:#17B26A;--purple:#7A3BFF;--orange:#FF7A00;--pink:#FF5CA8;--teal:#00B8C4;background:var(--pg-bg);color:var(--pg-ink);font-family:'Overused Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Helvetica,Arial,sans-serif;min-height:100vh;">
-  <header class="rwCtl" style="position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;align-items:flex-end;gap:16px 24px;padding:18px clamp(16px,3vw,40px);background:var(--pg-bg);">
-    <div class="rwMqWrap rwGrp" style="min-width:0;pointer-events:auto;">
-      <span class="rwLab">Meanwhile</span>
-      <a href="index.html" aria-label="Back to home" style="box-sizing:border-box;display:block;text-decoration:none;color:inherit;cursor:pointer;width:clamp(230px,27vw,390px);max-width:100%;background:var(--ctl-bg);border-radius:13px;padding:9px 18px;overflow:hidden;">
-        <div class="rwMqTrack" style="display:inline-flex;white-space:nowrap;">
-          <span style="display:inline-flex;gap:36px;padding-right:36px;font-weight:600;font-size:13px;color:var(--pg-ink);align-items:center;"><span>Ritwiz is an industrial designer ✏️</span><span>Ritwiz is a cat dad 🐈</span><span>Ritwiz fights distractions 🤳</span><span>Ritwiz needs coffee every morning ☕</span><span>Ritwiz collects hotwheels 🚗</span><span>Ritwiz watches a lot of movies 🎥</span><span>Ritwiz is an audiophile 🎧</span><span>Ritwiz visits photography forums 📷</span><span>Ritwiz is a cinestill 800T fan 🎞️</span><span>Ritwiz loses in video games 🎮</span></span>
-          <span style="display:inline-flex;gap:36px;padding-right:36px;font-weight:600;font-size:13px;color:var(--pg-ink);align-items:center;"><span>Ritwiz is an industrial designer ✏️</span><span>Ritwiz is a cat dad 🐈</span><span>Ritwiz fights distractions 🤳</span><span>Ritwiz needs coffee every morning ☕</span><span>Ritwiz collects hotwheels 🚗</span><span>Ritwiz watches a lot of movies 🎥</span><span>Ritwiz is an audiophile 🎧</span><span>Ritwiz visits photography forums 📷</span><span>Ritwiz is a cinestill 800T fan 🎞️</span><span>Ritwiz loses in video games 🎮</span></span>
-        </div>
-      </a>
+<div style="--red:#FF4438;--blue:#2E6BFF;background:#F4F2EE;color:var(--pg-ink);font-family:'Overused Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Helvetica,Arial,sans-serif;min-height:calc(100vh - clamp(0px,6.8vh,80px));box-sizing:border-box;">
+  <header class="v7nav" style="position:sticky;top:0;z-index:30;background:#F4F2EE;">
+    <div style="display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:20px;font-size:12.5px;font-weight:500;letter-spacing:-.005em;padding:clamp(14px,1.8vw,22px) clamp(20px,2.6vw,40px);">
+      <a href="index.html" style="font-weight:600;color:var(--pg-ink);">Ritwiz Sharma</a>
+      <span class="v7navmid" style="display:flex;gap:clamp(14px,1.6vw,24px);">
+        <a href="index.html" style="color:rgba(11,11,11,.55);">Index</a>
+        <a href="shenanigans.html" style="color:rgba(11,11,11,.55);">Shenanigans</a>
+        <a href="about.html" style="color:#0B0B0B;font-weight:600;">About</a>
+      </span>
+      <span style="justify-self:end;display:flex;gap:clamp(12px,1.4vw,20px);align-items:center;">
+        <span style="color:rgba(11,11,11,.62);">Guwahati, IN</span>
+        <a href="mailto:ritwizsharma1@gmail.com?subject=Ritwiz%2C%20work%20with%20me!" style="color:var(--pg-ink);">Contact</a>
+      </span>
     </div>
-    <nav style="display:flex;align-items:flex-end;gap:clamp(8px,1.1vw,14px);pointer-events:auto;">
-      <div class="rwGrp">
-        <span class="rwLab">More</span>
-        <div style="display:flex;align-items:center;gap:clamp(6px,.8vw,10px);">
-          <div class="rwTrack"><a href="index.html" class="rwSeg btn">Work</a></div>
-          <a href="shenanigans.html" class="rwSeg btn rwAccentPill" style="height:36px;padding:0 16px;">Shenanigans</a>
-        </div>
-      </div>
-    </nav>
+    <div style="height:1px;background:var(--pg-hair);position:relative;"><div id="rwProg" style="position:absolute;inset:0 auto 0 0;width:0;background:#0B0B0B;"></div></div>
   </header>
 
-  <section style="max-width:1200px;margin:0 auto;padding:clamp(40px,8vw,100px) clamp(16px,3vw,40px) clamp(40px,6vw,80px);display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,5vw,64px);align-items:center;">
-    <div>
-      <h1 style="font-family:'Overused Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Helvetica,Arial,sans-serif;font-weight:700;font-size:clamp(36px,5.4vw,72px);line-height:1.38;letter-spacing:-.025em;margin:0 0 28px;text-wrap:pretty;">Objects have <span style="background:var(--red);color:#fff;border-radius:.28em;padding:.04em .3em;margin:.07em 0;display:inline-block;">personalities.</span> I speak <span style="background:var(--blue);color:#fff;border-radius:.28em;padding:.04em .3em;margin:.07em 0;display:inline-block;">fluent</span> <span style="background:var(--yellow);color:#131313;border-radius:.28em;padding:.04em .3em;margin:.07em 0;display:inline-block;">object.</span></h1>
-      <a href="https://www.ritwizsharma.com/_files/ugd/5a2ab1_978cf67a406c4fb6b81123d04f5989c8.pdf" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;background:var(--pg-panel);color:var(--pg-panel-ink);text-decoration:none;font-weight:700;font-size:14px;text-transform:uppercase;letter-spacing:.06em;padding:14px 26px;border-radius:.66em;" style-hover="background:#FF4438;color:#fff;">Download CV <span aria-hidden="true">↓</span></a>
-    </div>
-    <div ref="{{ asciiWrap }}" onMouseEnter="{{ asciiOn }}" onMouseMove="{{ asciiMove }}" onMouseLeave="{{ asciiOff }}" style="width:100%;aspect-ratio:4/5;position:relative;border-radius:16px;overflow:hidden;cursor:crosshair;">
-      <img ref="{{ bgImg }}" src="uploads/Background.png" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
-      <img ref="{{ asciiImg }}" src="uploads/Ritwiz.png" alt="Ritwiz Sharma" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
-      <img ref="{{ ditherImg }}" src="uploads/Ritwiz_stipple.png" alt="" aria-hidden="true" style="position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;">
-      <canvas ref="{{ asciiOut }}" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;display:block;pointer-events:none;"></canvas>
-    </div>
-  </section>
+  <div class="rwMqWrap" style="padding:9px clamp(20px,2.6vw,40px);border-bottom:1px solid var(--pg-hair);overflow:hidden;">
+    <div class="rwMqTrack" style="display:inline-flex;white-space:nowrap;">
+          <span style="display:inline-flex;gap:36px;padding-right:36px;font-weight:500;font-size:12.5px;letter-spacing:-.005em;color:var(--pg-ink);align-items:center;"><span>Ritwiz is an industrial designer ✏️</span><span>Ritwiz is a cat dad 🐈</span><span>Ritwiz fights distractions 🤳</span><span>Ritwiz needs coffee every morning ☕</span><span>Ritwiz collects hotwheels 🚗</span><span>Ritwiz watches a lot of movies 🎥</span><span>Ritwiz is an audiophile 🎧</span><span>Ritwiz visits photography forums 📷</span><span>Ritwiz is a cinestill 800T fan 🎞️</span><span>Ritwiz loses in video games 🎮</span></span>
+          <span style="display:inline-flex;gap:36px;padding-right:36px;font-weight:500;font-size:12.5px;letter-spacing:-.005em;color:var(--pg-ink);align-items:center;"><span>Ritwiz is an industrial designer ✏️</span><span>Ritwiz is a cat dad 🐈</span><span>Ritwiz fights distractions 🤳</span><span>Ritwiz needs coffee every morning ☕</span><span>Ritwiz collects hotwheels 🚗</span><span>Ritwiz watches a lot of movies 🎥</span><span>Ritwiz is an audiophile 🎧</span><span>Ritwiz visits photography forums 📷</span><span>Ritwiz is a cinestill 800T fan 🎞️</span><span>Ritwiz loses in video games 🎮</span></span>
+        </div>
+  </div>
 
-  <section style="padding:0 clamp(16px,3vw,40px) clamp(40px,6vw,80px);max-width:1200px;margin:0 auto;">
-    <h2 style="font-family:'Overused Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Helvetica,Arial,sans-serif;font-weight:650;font-size:clamp(20px,2.2vw,26px);letter-spacing:-.015em;margin:0 0 20px;">Some awesome people I've worked with</h2>
-    <div style="display:flex;flex-wrap:wrap;gap:10px;">
-      <a href="https://www.coreexperience.com/" target="_blank" rel="noopener" style="background:var(--red);color:#fff;text-decoration:none;font-weight:700;font-size:14px;text-transform:uppercase;letter-spacing:.03em;padding:14px 22px;border-radius:.66em;" style-hover="opacity:.8;">Core Experience</a>
-      <a href="https://svasalife.com/" target="_blank" rel="noopener" style="background:var(--blue);color:#fff;text-decoration:none;font-weight:700;font-size:14px;text-transform:uppercase;letter-spacing:.03em;padding:14px 22px;border-radius:.66em;" style-hover="opacity:.8;">Svasa</a>
-      <a href="https://www.machanirobotics.com/" target="_blank" rel="noopener" style="background:var(--pg-card);border:1px solid var(--pg-hair);color:var(--pg-ink);text-decoration:none;font-weight:700;font-size:14px;text-transform:uppercase;letter-spacing:.03em;padding:14px 22px;border-radius:.66em;" style-hover="opacity:.8;">Machani Robotics</a>
-      <a href="https://getbrewtal.com/" target="_blank" rel="noopener" style="background:var(--green);color:#fff;text-decoration:none;font-weight:700;font-size:14px;text-transform:uppercase;letter-spacing:.03em;padding:14px 22px;border-radius:.66em;" style-hover="opacity:.8;">Brewtal</a>
-      <a href="https://www.boat-lifestyle.com/" target="_blank" rel="noopener" style="background:var(--purple);color:#fff;text-decoration:none;font-weight:700;font-size:14px;text-transform:uppercase;letter-spacing:.03em;padding:14px 22px;border-radius:.66em;" style-hover="opacity:.8;">boAt</a>
-      <a href="https://disliz.com/" target="_blank" rel="noopener" style="background:var(--orange);color:#fff;text-decoration:none;font-weight:700;font-size:14px;text-transform:uppercase;letter-spacing:.03em;padding:14px 22px;border-radius:.66em;" style-hover="opacity:.8;">Disliz</a>
-      <a href="http://snapin.in" target="_blank" rel="noopener" style="background:var(--pink);color:#fff;text-decoration:none;font-weight:700;font-size:14px;text-transform:uppercase;letter-spacing:.03em;padding:14px 22px;border-radius:.66em;" style-hover="opacity:.8;">Snapin</a>
-      <a href="https://upliance.ai/" target="_blank" rel="noopener" style="background:var(--teal);color:#fff;text-decoration:none;font-weight:700;font-size:14px;text-transform:uppercase;letter-spacing:.03em;padding:14px 22px;border-radius:.66em;" style-hover="opacity:.8;">upliance.ai</a>
-    </div>
-  </section>
+  <main style="max-width:1440px;margin:0 auto;padding:0 clamp(20px,2.6vw,40px) clamp(40px,6vw,90px);">
 
-  <footer style="padding:24px clamp(16px,3vw,40px) 40px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;border-top:1px solid var(--pg-hair);">
-    <span style="font-size:13px;opacity:.6;font-weight:600;text-transform:uppercase;letter-spacing:.06em;">Ritwiz Sharma — Industrial Designer</span>
-    <div style="display:flex;gap:18px;flex-wrap:wrap;">
-      <a href="mailto:ritwizsharma1@gmail.com?subject=Ritwiz%2C%20work%20with%20me!" style="color:var(--pg-ink);font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.06em;text-decoration:none;" style-hover="opacity:.55">Email</a>
-      <a href="https://www.behance.net/ritwizsharma" target="_blank" rel="noopener" style="color:var(--pg-ink);font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.06em;text-decoration:none;" style-hover="opacity:.55">Behance</a>
-      <a href="https://www.linkedin.com/in/ritwizsharma/" target="_blank" rel="noopener" style="color:var(--pg-ink);font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.06em;text-decoration:none;" style-hover="opacity:.55">LinkedIn</a>
+    <section class="v7g2 v7rev" style="display:grid;grid-template-columns:minmax(0,120px) minmax(0,1fr);gap:clamp(14px,3vw,48px);padding:clamp(34px,7vh,86px) 0 clamp(22px,3.4vh,40px);">
+      <span class="v7num" style="font-size:12.5px;font-weight:500;letter-spacing:-.005em;color:rgba(11,11,11,.62);font-variant-numeric:tabular-nums;padding-top:.5em;">About</span>
+      <div class="v7split" style="display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(24px,4vw,56px);align-items:start;">
+        <div style="display:flex;flex-direction:column;gap:clamp(16px,2vw,26px);">
+          <h1 style="font-weight:600;font-size:clamp(32px,4.6vw,62px);line-height:1.24;letter-spacing:-.03em;margin:0;text-wrap:balance;">Objects have <span style="background:#0B0B0B;color:#FFFFFF;padding:.02em .26em;">personalities.</span> I speak <span style="background:#0B0B0B;color:#FFFFFF;padding:.02em .26em;">fluent object.</span></h1>
+          <p style="margin:0;font-size:12.5px;font-weight:500;letter-spacing:-.005em;line-height:1.7;color:rgba(11,11,11,.62);max-width:46ch;text-wrap:pretty;">Industrial designer working across consumer products, robotics and retail environments — from first blockout to a manufacturing package a fabricator can quote against.</p>
+          <div style="display:flex;flex-direction:column;border-top:1px solid var(--pg-hair);">
+            <a class="v7row" href="https://www.ritwizsharma.com/_files/ugd/5a2ab1_978cf67a406c4fb6b81123d04f5989c8.pdf" target="_blank" rel="noopener" style="display:grid;grid-template-columns:minmax(0,1fr) 24px;gap:16px;align-items:center;padding:clamp(9px,.9vw,13px) clamp(8px,1vw,14px);border-bottom:1px solid var(--pg-hair);color:var(--pg-ink);">
+              <span class="v7c" style="font-size:12.5px;font-weight:500;letter-spacing:-.005em;">Curriculum vitae, PDF</span>
+              <span class="v7c v7ar" style="justify-self:end;font-size:12.5px;line-height:1;opacity:.45;">&#8595;</span>
+            </a>
+            <a class="v7row" href="mailto:ritwizsharma1@gmail.com?subject=Ritwiz%2C%20work%20with%20me!" style="display:grid;grid-template-columns:minmax(0,1fr) 24px;gap:16px;align-items:center;padding:clamp(9px,.9vw,13px) clamp(8px,1vw,14px);border-bottom:1px solid var(--pg-hair);color:var(--pg-ink);">
+              <span class="v7c" style="font-size:12.5px;font-weight:500;letter-spacing:-.005em;">ritwizsharma1@gmail.com</span>
+              <span class="v7c v7ar" style="justify-self:end;font-size:12.5px;line-height:1;opacity:.45;">&#8599;</span>
+            </a>
+          </div>
+        </div>
+
+        <figure style="margin:0;display:flex;flex-direction:column;gap:9px;">
+          <div ref="{{ asciiWrap }}" onMouseEnter="{{ asciiOn }}" onMouseMove="{{ asciiMove }}" onMouseLeave="{{ asciiOff }}" style="width:100%;aspect-ratio:4/5;position:relative;overflow:hidden;cursor:crosshair;box-shadow:inset 0 0 0 1px var(--pg-hair);">
+            <img width="921" height="1152" decoding="async" fetchpriority="high" ref="{{ bgImg }}" src="uploads/Background.png" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
+            <img width="921" height="1152" decoding="async" fetchpriority="high" ref="{{ asciiImg }}" src="uploads/Ritwiz.png" alt="Ritwiz Sharma" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
+            <img width="921" height="1152" loading="lazy" decoding="async" ref="{{ ditherImg }}" src="uploads/Ritwiz_stipple.png" alt="" aria-hidden="true" style="position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;">
+            <canvas ref="{{ asciiOut }}" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;display:block;pointer-events:none;"></canvas>
+          </div>
+          <figcaption style="font-size:12.5px;font-weight:500;letter-spacing:-.005em;color:rgba(11,11,11,.62);">Move the cursor across the plate</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="v7g2 v7rev" style="display:grid;grid-template-columns:minmax(0,120px) minmax(0,1fr);gap:clamp(14px,3vw,48px);align-items:start;margin:clamp(46px,8vh,104px) 0 0;padding-top:clamp(13px,1.7vh,20px);border-top:1px solid var(--pg-hair);">
+      <span class="v7num" style="font-size:12.5px;font-weight:500;letter-spacing:-.005em;color:rgba(11,11,11,.62);">Clients</span>
+      <div style="display:flex;flex-direction:column;max-width:820px;">
+        <a class="v7row" href="https://www.coreexperience.com/" target="_blank" rel="noopener" style="display:grid;grid-template-columns:64px minmax(0,1fr) 24px;gap:clamp(12px,2vw,32px);align-items:center;padding:clamp(7px,.7vw,10px) clamp(8px,1vw,14px);color:var(--pg-ink);">
+          <span class="v7c" style="font-size:12.5px;font-weight:500;letter-spacing:-.005em;color:rgba(11,11,11,.62);font-variant-numeric:tabular-nums;">01</span>
+          <span class="v7c" style="font-size:12.5px;font-weight:500;letter-spacing:-.005em;">Core Experience</span>
+          <span class="v7c v7ar" style="justify-self:end;font-size:12.5px;line-height:1;opacity:.45;">&#8599;</span>
+        </a>
+        <a class="v7row" href="https://svasalife.com/" target="_blank" rel="noopener" style="display:grid;grid-template-columns:64px minmax(0,1fr) 24px;gap:clamp(12px,2vw,32px);align-items:center;padding:clamp(7px,.7vw,10px) clamp(8px,1vw,14px);color:var(--pg-ink);">
+          <span class="v7c" style="font-size:12.5px;font-weight:500;letter-spacing:-.005em;color:rgba(11,11,11,.62);font-variant-numeric:tabular-nums;">02</span>
+          <span class="v7c" style="font-size:12.5px;font-weight:500;letter-spacing:-.005em;">Svasa</span>
+          <span class="v7c v7ar" style="justify-self:end;font-size:12.5px;line-height:1;opacity:.45;">&#8599;</span>
+        </a>
+        <a class="v7row" href="https://www.machanirobotics.com/" target="_blank" rel="noopener" style="display:grid;grid-template-columns:64px minmax(0,1fr) 24px;gap:clamp(12px,2vw,32px);align-items:center;padding:clamp(7px,.7vw,10px) clamp(8px,1vw,14px);color:var(--pg-ink);">
+          <span class="v7c" style="font-size:12.5px;font-weight:500;letter-spacing:-.005em;color:rgba(11,11,11,.62);font-variant-numeric:tabular-nums;">03</span>
+          <span class="v7c" style="font-size:12.5px;font-weight:500;letter-spacing:-.005em;">Machani Robotics</span>
+          <span class="v7c v7ar" style="justify-self:end;font-size:12.5px;line-height:1;opacity:.45;">&#8599;</span>
+        </a>
+        <a class="v7row" href="https://getbrewtal.com/" target="_blank" rel="noopener" style="display:grid;grid-template-columns:64px minmax(0,1fr) 24px;gap:clamp(12px,2vw,32px);align-items:center;padding:clamp(7px,.7vw,10px) clamp(8px,1vw,14px);color:var(--pg-ink);">
+          <span class="v7c" style="font-size:12.5px;font-weight:500;letter-spacing:-.005em;color:rgba(11,11,11,.62);font-variant-numeric:tabular-nums;">04</span>
+          <span class="v7c" style="font-size:12.5px;font-weight:500;letter-spacing:-.005em;">Brewtal</span>
+          <span class="v7c v7ar" style="justify-self:end;font-size:12.5px;line-height:1;opacity:.45;">&#8599;</span>
+        </a>
+        <a class="v7row" href="https://www.boat-lifestyle.com/" target="_blank" rel="noopener" style="display:grid;grid-template-columns:64px minmax(0,1fr) 24px;gap:clamp(12px,2vw,32px);align-items:center;padding:clamp(7px,.7vw,10px) clamp(8px,1vw,14px);color:var(--pg-ink);">
+          <span class="v7c" style="font-size:12.5px;font-weight:500;letter-spacing:-.005em;color:rgba(11,11,11,.62);font-variant-numeric:tabular-nums;">05</span>
+          <span class="v7c" style="font-size:12.5px;font-weight:500;letter-spacing:-.005em;">boAt</span>
+          <span class="v7c v7ar" style="justify-self:end;font-size:12.5px;line-height:1;opacity:.45;">&#8599;</span>
+        </a>
+        <a class="v7row" href="https://disliz.com/" target="_blank" rel="noopener" style="display:grid;grid-template-columns:64px minmax(0,1fr) 24px;gap:clamp(12px,2vw,32px);align-items:center;padding:clamp(7px,.7vw,10px) clamp(8px,1vw,14px);color:var(--pg-ink);">
+          <span class="v7c" style="font-size:12.5px;font-weight:500;letter-spacing:-.005em;color:rgba(11,11,11,.62);font-variant-numeric:tabular-nums;">06</span>
+          <span class="v7c" style="font-size:12.5px;font-weight:500;letter-spacing:-.005em;">Disliz</span>
+          <span class="v7c v7ar" style="justify-self:end;font-size:12.5px;line-height:1;opacity:.45;">&#8599;</span>
+        </a>
+        <a class="v7row" href="http://snapin.in" target="_blank" rel="noopener" style="display:grid;grid-template-columns:64px minmax(0,1fr) 24px;gap:clamp(12px,2vw,32px);align-items:center;padding:clamp(7px,.7vw,10px) clamp(8px,1vw,14px);color:var(--pg-ink);">
+          <span class="v7c" style="font-size:12.5px;font-weight:500;letter-spacing:-.005em;color:rgba(11,11,11,.62);font-variant-numeric:tabular-nums;">07</span>
+          <span class="v7c" style="font-size:12.5px;font-weight:500;letter-spacing:-.005em;">Snapin</span>
+          <span class="v7c v7ar" style="justify-self:end;font-size:12.5px;line-height:1;opacity:.45;">&#8599;</span>
+        </a>
+        <a class="v7row" href="https://upliance.ai/" target="_blank" rel="noopener" style="display:grid;grid-template-columns:64px minmax(0,1fr) 24px;gap:clamp(12px,2vw,32px);align-items:center;padding:clamp(7px,.7vw,10px) clamp(8px,1vw,14px);color:var(--pg-ink);">
+          <span class="v7c" style="font-size:12.5px;font-weight:500;letter-spacing:-.005em;color:rgba(11,11,11,.62);font-variant-numeric:tabular-nums;">08</span>
+          <span class="v7c" style="font-size:12.5px;font-weight:500;letter-spacing:-.005em;">upliance.ai</span>
+          <span class="v7c v7ar" style="justify-self:end;font-size:12.5px;line-height:1;opacity:.45;">&#8599;</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="v7g2 v7rev" style="display:grid;grid-template-columns:minmax(0,120px) minmax(0,1fr);gap:clamp(14px,3vw,48px);align-items:start;margin:clamp(46px,8vh,104px) 0 0;padding-top:clamp(13px,1.7vh,20px);border-top:1px solid var(--pg-hair);">
+      <span class="v7num" style="font-size:12.5px;font-weight:500;letter-spacing:-.005em;color:rgba(11,11,11,.62);">Elsewhere</span>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:clamp(20px,2.6vw,40px);font-size:12.5px;font-weight:500;letter-spacing:-.005em;line-height:1.6;">
+        <div style="display:flex;flex-direction:column;gap:6px;"><span style="color:rgba(11,11,11,.62);">Portfolio</span><a href="https://www.behance.net/ritwizsharma" target="_blank" rel="noopener">Behance</a></div>
+        <div style="display:flex;flex-direction:column;gap:6px;"><span style="color:rgba(11,11,11,.62);">Network</span><a href="https://www.linkedin.com/in/ritwizsharma/" target="_blank" rel="noopener">LinkedIn</a></div>
+        <div style="display:flex;flex-direction:column;gap:6px;"><span style="color:rgba(11,11,11,.62);">Off hours</span><a href="shenanigans.html">Shenanigans</a></div>
+        <div style="display:flex;flex-direction:column;gap:6px;"><span style="color:rgba(11,11,11,.62);">Based in</span><span>Guwahati, Assam, India</span></div>
+      </div>
+    </section>
+
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-top:clamp(34px,5vh,64px);padding-top:clamp(13px,1.7vh,20px);border-top:1px solid var(--pg-hair);font-size:12.5px;font-weight:500;letter-spacing:-.005em;">
+      <a href="index.html" style="color:var(--pg-ink);">Index</a>
+      <span style="color:rgba(11,11,11,.62);">Ritwiz Sharma — Industrial Designer</span>
     </div>
-  </footer>
+  </main>
 </div>
 
 </x-dc>
@@ -147,8 +185,36 @@ class Component extends DCLogic {
     });
     this.build();
     this._scramble();
+    if(!matchMedia('(prefers-reduced-motion:reduce)').matches){
+      const shown = new Set();
+      // key by content, not node identity: the runtime can replace nodes mid-scroll
+      const keyOf = (el, i) => (el.getAttribute('src') || el.getAttribute('data-screen-label') || el.tagName) + '#' + i;
+      const sweep = () => {
+        [...document.querySelectorAll('main section.v7g2')].forEach((el, i) => {
+          const k = keyOf(el, i);
+          if(shown.has(k)){ el.classList.remove('v7rev','v7in'); return; }   // done: natural opacity, nothing left to restart
+          el.classList.add('v7rev');
+          const r = el.getBoundingClientRect();
+          if(r.top < innerHeight * 0.94 && r.bottom > -80){
+            requestAnimationFrame(() => el.classList.add('v7in'));
+            setTimeout(() => { shown.add(k); el.classList.remove('v7rev','v7in'); }, 700);
+          }
+        });
+      };
+      sweep();
+      this._tick = setInterval(sweep, 200);
+    }
+    const prog = document.getElementById('rwProg');
+    this._prog = () => {
+      if(!prog) return;
+      const h = document.documentElement.scrollHeight - innerHeight;
+      prog.style.width = (h > 0 ? Math.min(1, scrollY / h) * 100 : 0) + '%';
+    };
+    this._ptick = setInterval(this._prog, 120);
   }
   componentWillUnmount(){
+    clearInterval(this._tick);
+    clearInterval(this._ptick);
     if (this._ro) this._ro.disconnect();
     if (this._raf) cancelAnimationFrame(this._raf);
     if (this._sraf) cancelAnimationFrame(this._sraf);
