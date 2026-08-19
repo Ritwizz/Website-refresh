@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#131313"/><text x="50" y="58" font-family="sans-serif" font-size="30" font-weight="700" fill="#ffffff" text-anchor="middle">RS</text></svg></template>
 <script src="./support.js"></script>
 </head>
 <body>
@@ -65,7 +66,7 @@ a:hover{color:#F4F2EE}
       <a ref="{{ caseRef }}" class="v8up" href="{{ heroHref }}" style="display:flex;flex-direction:column;gap:clamp(10px,1.4vh,16px);max-width:900px;animation-delay:90ms;">
         <span ref="{{ metaRef }}" style="font-size:12.5px;font-weight:500;letter-spacing:-.005em;opacity:.7;font-variant-numeric:tabular-nums;"></span>
         <h1 ref="{{ titleRef }}" style="margin:0;font-weight:600;font-size:clamp(34px,5.2vw,76px);line-height:.98;letter-spacing:-.036em;text-wrap:balance;"></h1>
-        <p ref="{{ blurbRef }}" style="margin:0;font-size:16px;font-weight:450;line-height:1.5;letter-spacing:-.008em;opacity:.74;max-width:54ch;text-wrap:pretty;"></p>
+        <p ref="{{ blurbRef }}" style="margin:0;font-size:16px;font-weight:450;line-height:1.5;letter-spacing:-.008em;opacity:.74;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%;"></p>
       </a>
 
       <div class="v8up" style="display:flex;flex-direction:column;gap:clamp(6px,.8vh,9px);animation-delay:170ms;">
@@ -104,16 +105,16 @@ a:hover{color:#F4F2EE}
 const ITEMS = [
   {t:"Snapin' Street", short:"Snapin' Street", sector:"Retail", year:"2025", href:"snapin.html", img:"snapin/final-render-1.png",
    blurb:"Street-food sampling kiosk for a spice brand. Manufactured."},
-  {t:"Aakaar, a chess set", short:"Aakaar", sector:"Consumer", year:"2025", href:"aakaar.html", img:"web/aakaar/full-board_fix_2.webp",
+  {t:"Aakaar", short:"Aakaar", sector:"Consumer", year:"2025", href:"aakaar.html", img:"web/aakaar/full-board_fix_2.webp",
    blurb:"A chess set for modern India, in terracotta and bronze."},
-  {t:"Ergoplay, a mouse that changes shape", short:"Ergoplay", sector:"Peripherals", year:"2024", href:"ergoplay.html", img:"ergoplay/opt/maker-set.jpg",
-   blurb:"One mouse, two shapes — gaming grip to ergonomic, charging as it switches."},
-  {t:"Vita, a grand touring scooter", short:"Vita", sector:"Transport", year:"2023", href:"vita.html", img:"vita/vita-scooter-concrete-side-view.jpg",
-   blurb:"Grand touring, applied to a scooter for riders in their early twenties."},
-  {t:"Altr, a modular desk system", short:"Altr", sector:"Furniture", year:"2023", href:"altr.html", img:"altr/altr-desks-all-together.jpg",
-   blurb:"Modular office furniture for premium co-working spaces in Bengaluru."},
+  {t:"Ergoplay", short:"Ergoplay", sector:"Peripherals", year:"2024", href:"ergoplay.html", img:"ergoplay/opt/maker-set.jpg",
+   blurb:"One mouse, two shapes — gaming grip to ergonomic."},
+  {t:"Vita", short:"Vita", sector:"Transport", year:"2023", href:"vita.html", img:"vita/vita-scooter-concrete-side-view.jpg",
+   blurb:"Grand touring, applied to a scooter for young riders."},
+  {t:"Altr", short:"Altr", sector:"Furniture", year:"2023", href:"altr.html", img:"altr/altr-desks-all-together.jpg",
+   blurb:"Modular office furniture for premium co-working spaces."},
   {t:"The art of concealing", short:"Concealing", sector:"Appliances", year:"2022", href:"art-of-concealing.html", img:"aoc/all-products-staged.jpg",
-   blurb:"Six home appliances and furniture pieces for luxury interiors."}
+   blurb:"Home appliances and furniture for luxury interiors."}
 ];
 
 // Under agreement: hovering one takes over the hero like any case study.
@@ -132,8 +133,8 @@ const NDA = [
 ];
 
 // One timeline, newest (2026) left → oldest (2022) right.
-const ORDER = ["Innate","Posha","Sonic Lamb","Tangible Robots","Brewtal","Snapin' Street","Aakaar, a chess set",
-  "Ergoplay, a mouse that changes shape","Vita, a grand touring scooter","Altr, a modular desk system","The art of concealing"];
+const ORDER = ["Innate","Posha","Sonic Lamb","Tangible Robots","Brewtal","Snapin' Street","Aakaar",
+  "Ergoplay","Vita","Altr","The art of concealing"];
 const POOL = ITEMS.concat(NDA);
 const ALL = ORDER.map(n => POOL.find(it => it.t === n)).filter(Boolean);
 
