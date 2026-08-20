@@ -3,7 +3,6 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#131313"/><text x="50" y="58" font-family="sans-serif" font-size="30" font-weight="700" fill="#ffffff" text-anchor="middle">RS</text></svg></template>
 <script src="./support.js"></script>
 </head>
 <body>
@@ -25,6 +24,16 @@ a:hover{color:#F4F2EE}
 @keyframes shPulse{0%,100%{opacity:.34}50%{opacity:1}}
 @keyframes shSettle{from{transform:translate(0,20vh) scale(1.3)}to{transform:none}}
 @keyframes shRuleGrow{from{transform:scaleX(.14)}to{transform:scaleX(1)}}
+@media (max-width:1100px){[data-desc]{white-space:normal !important;max-width:46ch;text-wrap:pretty}}
+@keyframes shFadeIn{from{opacity:0;transform:translateY(14px)}to{opacity:.86;transform:none}}
+@media (max-width:700px){
+  [data-bandmeta]{flex-direction:column;align-items:flex-start !important;gap:6px !important}
+  [data-desc]{text-align:left !important;white-space:normal !important}
+  [data-track]{display:grid !important;grid-template-columns:1fr;overflow:visible !important;gap:10px !important;padding:0 18px !important;cursor:default !important}
+  [data-cell]{height:auto !important;width:100%}
+  [data-cell][data-dup]{display:none}
+  [data-track] img{width:100% !important;height:auto !important}
+}
 @keyframes shAssemble{from{transform:translate(var(--tx),var(--ty)) scale(.44);opacity:.5}to{transform:none;opacity:.86}}
 </style>
 </helmet>
@@ -69,11 +78,11 @@ a:hover{color:#F4F2EE}
             <span style="opacity:.62;font-variant-numeric:tabular-nums;">{{ b.num }}</span>
             <span style="font-weight:600;font-size:clamp(18px,2.2vw,30px);letter-spacing:-.024em;">{{ b.name }}</span>
           </span>
-          <span style="opacity:.62;max-width:46ch;text-align:right;text-wrap:pretty;">{{ b.desc }}</span>
+          <span data-desc style="opacity:.62;text-align:right;white-space:nowrap;">{{ b.desc }}</span>
         </div>
         <div data-track ref="{{ b.ref }}" style="display:flex;gap:clamp(6px,.8vw,12px);overflow-x:auto;padding:0 clamp(18px,2.8vw,40px);cursor:grab;">
           <sc-for list="{{ b.imgs }}" as="im" hint-placeholder-count="8">
-            <div style="flex:none;height:clamp(220px,42vh,460px);background:#131313;overflow:hidden;">
+            <div data-cell data-dup="{{ im.dup }}" style="flex:none;height:clamp(220px,42vh,460px);background:#131313;overflow:hidden;">
               <img src="{{ im.src }}" alt="{{ im.alt }}" loading="lazy" decoding="async" draggable="false" style="height:100%;width:auto;display:block;object-fit:cover;transition:transform 900ms cubic-bezier(.16,1,.3,1),opacity 300ms ease-out;opacity:.86;" style-hover="transform:scale(1.05);opacity:1" />
             </div>
           </sc-for>
@@ -177,6 +186,15 @@ class Component extends DCLogic {
       });
       setTimeout(()=>{ if(st) st.paused = false; }, 1100);
     }
+    const band2 = document.querySelectorAll('[data-band]')[1];
+    if(band2){
+      const meta2 = band2.querySelector('[data-bandmeta]');
+      if(meta2) meta2.style.animation = 'shRise 600ms 700ms ' + ease + ' both';
+      const t2 = this.trackRefs[1] && this.trackRefs[1].current;
+      if(t2) Array.prototype.slice.call(t2.children, 0, 8).forEach((cell, i)=>{
+        cell.style.animation = 'shFadeIn 800ms ' + (820 + i * 70) + 'ms ' + ease + ' both';
+      });
+    }
   }
   cycleOf(t){
     const kids = t.children;
@@ -226,6 +244,7 @@ class Component extends DCLogic {
           st.t = t;
           const cycle = this.cycleOf(t);
           if(cycle <= 1) return;
+          if(window.matchMedia('(max-width:700px)').matches) return;
           if(!st.seeded){ st.seeded = true; st.pos = st.dir > 0 ? 0 : cycle; t.scrollLeft = st.pos; return; }
           if(st.drag) return;
           if(st.paused || !st.visible) return;
@@ -252,7 +271,7 @@ class Component extends DCLogic {
         return {
           label: 'Set ' + s.num.split(' / ')[0], num: s.num, name: s.name, desc: s.desc,
           ref: this.trackRefs[i],
-          imgs: one.concat(one)
+          imgs: one.concat(one.map(o=>({ ...o, dup: "1" })))
         };
       });
   }
