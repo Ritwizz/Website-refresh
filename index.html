@@ -3,7 +3,6 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#131313"/><text x="50" y="58" font-family="sans-serif" font-size="30" font-weight="700" fill="#ffffff" text-anchor="middle">RS</text></svg></template>
 <script src="./support.js"></script>
 </head>
 <body>
@@ -53,11 +52,11 @@ a:hover{color:#F4F2EE}
   <div style="position:relative;min-height:calc(100vh - clamp(0px,2.8vh,32px));display:flex;flex-direction:column;justify-content:space-between;box-sizing:border-box;padding:clamp(18px,2.4vw,30px) clamp(18px,2.8vw,40px);">
 
     <header class="v8nav v8up" style="display:grid;grid-template-columns:1fr auto 1fr;align-items:baseline;gap:20px;font-size:12.5px;font-weight:500;letter-spacing:-.005em;">
-      <a href="index.html" style="font-weight:600;">Ritwiz Sharma — Industrial Designer</a>
+      <a href="/" style="font-weight:600;">Ritwiz Sharma — Industrial Designer</a>
       <span class="v8navmid" style="display:flex;gap:clamp(14px,1.6vw,24px);">
-        <a href="index.html" style="font-weight:600;">Index</a>
-        <a href="shenanigans.html" style="opacity:.62;">Shenanigans</a>
-        <a href="about.html" style="opacity:.62;">About</a>
+        <a href="/" style="font-weight:600;">Index</a>
+        <a href="/off-hours" style="opacity:.62;">Off Hours</a>
+        <a href="/about" style="opacity:.62;">About</a>
       </span>
       <span style="justify-self:end;display:flex;gap:clamp(12px,1.4vw,20px);">
         <span style="opacity:.62;">Guwahati, IN</span>
@@ -68,7 +67,10 @@ a:hover{color:#F4F2EE}
     <div style="display:flex;flex-direction:column;gap:clamp(16px,2.4vh,26px);">
       <a ref="{{ caseRef }}" class="v8up" href="{{ heroHref }}" style="display:flex;flex-direction:column;gap:clamp(10px,1.4vh,16px);max-width:900px;animation-delay:90ms;">
         <span ref="{{ metaRef }}" style="font-size:12.5px;font-weight:500;letter-spacing:-.005em;opacity:.7;font-variant-numeric:tabular-nums;"></span>
-        <h1 ref="{{ titleRef }}" style="margin:0;font-weight:600;font-size:clamp(34px,5.2vw,76px);line-height:.98;letter-spacing:-.036em;text-wrap:balance;"></h1>
+        <span style="display:flex;align-items:baseline;flex-wrap:wrap;gap:12px;">
+          <h1 ref="{{ titleRef }}" style="margin:0;font-weight:600;font-size:clamp(34px,5.2vw,76px);line-height:.98;letter-spacing:-.036em;text-wrap:balance;"></h1>
+          <span ref="{{ fuRef }}" style="display:none;align-items:center;flex:none;padding:3px 9px;border:1px solid rgba(244,242,238,.16);border-radius:.66em;font-size:11.5px;font-weight:500;letter-spacing:-.004em;line-height:1.35;opacity:.68;white-space:nowrap;">Future Unit</span>
+        </span>
         <p ref="{{ blurbRef }}" style="margin:0;font-size:16px;font-weight:450;line-height:1.5;letter-spacing:-.008em;opacity:.74;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%;"></p>
       </a>
 
@@ -97,12 +99,11 @@ a:hover{color:#F4F2EE}
 
 <section class="v8m" data-screen-label="Index (narrow)" data-narrow style="background:#0B0B0B;color:#F4F2EE;font-family:'Overused Grotesk',Helvetica,Arial,sans-serif;min-height:calc(100vh - clamp(0px,2.8vh,32px));box-sizing:border-box;flex-direction:column;">
   <header style="flex:none;display:grid;grid-template-columns:1fr auto;row-gap:10px;column-gap:16px;align-items:baseline;padding:clamp(16px,2.4vw,26px) clamp(18px,3vw,32px);font-size:13px;font-weight:500;letter-spacing:-.005em;">
-    <a href="index.html" style="font-weight:600;">Ritwiz Sharma — Industrial Designer</a>
+    <a href="/" style="font-weight:600;">Ritwiz Sharma — Industrial Designer</a>
     <a href="mailto:ritwizsharma1@gmail.com?subject=Ritwiz%2C%20work%20with%20me!" style="justify-self:end;">Contact</a>
     <span style="grid-column:1 / -1;display:flex;gap:18px;">
-      <a href="index.html" style="font-weight:600;">Index</a>
-      <a href="shenanigans.html" style="opacity:.62;">Shenanigans</a>
-      <a href="about.html" style="opacity:.62;">About</a>
+      <a href="/off-hours" style="opacity:.62;">Off Hours</a>
+      <a href="/about" style="opacity:.62;">About</a>
       <span style="margin-left:auto;opacity:.62;">Guwahati, IN</span>
     </span>
   </header>
@@ -118,7 +119,12 @@ a:hover{color:#F4F2EE}
         <div class="v8mrow" style="border-top:1px solid {{ r.rule }};opacity:{{ r.op }};">
           <div onClick="{{ r.tap }}" style="display:flex;align-items:baseline;gap:10px;padding:15px 0;cursor:pointer;">
             <span style="flex:none;width:34px;font-size:11.5px;font-weight:500;opacity:.5;font-variant-numeric:tabular-nums;">{{ r.year }}</span>
-            <span style="flex:1;min-width:0;font-size:clamp(23px,2.8vw,26px);font-weight:700;letter-spacing:-.026em;line-height:1.05;">{{ r.short }}</span>
+            <span style="flex:1;min-width:0;display:flex;align-items:baseline;gap:7px;">
+              <span style="font-size:clamp(23px,2.8vw,26px);font-weight:700;letter-spacing:-.026em;line-height:1.05;">{{ r.short }}</span>
+              <sc-if value="{{ r.fu }}" hint-placeholder-val="{{ false }}">
+                <span style="flex:none;padding:1.5px 6px;border:1px solid rgba(244,242,238,.16);border-radius:.66em;font-size:10px;font-weight:500;line-height:1.35;opacity:.6;white-space:nowrap;">Future Unit</span>
+              </sc-if>
+            </span>
             <span style="flex:none;font-size:11.5px;font-weight:500;opacity:.5;">{{ r.sector }}</span>
           </div>
           <div class="v8mpanel" style="{{ r.panel }}">
@@ -147,37 +153,37 @@ a:hover{color:#F4F2EE}
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:900}}">
 const ITEMS = [
-  {t:"Snapin' Street", short:"Snapin' Street", sector:"Retail", year:"2025", href:"snapin.html", img:"snapin/final-render-1.png",
+  {t:"Snapin' Street", short:"Snapin' Street", sector:"Retail", year:"2025", href:"/snapin", img:"snapin/final-render-1.webp",
    blurb:"Street-food sampling kiosk for a spice brand. Manufactured."},
-  {t:"Aakaar", short:"Aakaar", sector:"Consumer", year:"2025", href:"aakaar.html", img:"web/aakaar/full-board_fix_2.webp",
+  {t:"Aakaar", short:"Aakaar", sector:"Consumer", year:"2025", href:"/aakaar", img:"web/aakaar/full-board_fix_2.webp",
    blurb:"A chess set for modern India, in terracotta and bronze."},
-  {t:"Ergoplay", short:"Ergoplay", sector:"Peripherals", year:"2024", href:"ergoplay.html", img:"ergoplay/opt/maker-set.jpg",
+  {t:"Ergoplay", short:"Ergoplay", sector:"Peripherals", year:"2024", href:"/ergoplay", img:"ergoplay/opt/maker-set.webp",
    blurb:"One mouse, two shapes — gaming grip to ergonomic."},
-  {t:"Vita", short:"Vita", sector:"Transport", year:"2023", href:"vita.html", img:"vita/vita-scooter-concrete-side-view.jpg",
+  {t:"Vita", short:"Vita", sector:"Transport", year:"2023", href:"/vita", img:"vita/vita-scooter-concrete-side-view.webp",
    blurb:"Grand touring, applied to a scooter for young riders."},
-  {t:"Altr", short:"Altr", sector:"Furniture", year:"2023", href:"altr.html", img:"altr/altr-desks-all-together.jpg",
+  {t:"Altr", short:"Altr", sector:"Furniture", year:"2023", href:"/altr", img:"altr/altr-desks-all-together.webp",
    blurb:"Modular office furniture for premium co-working spaces."},
-  {t:"The art of concealing", short:"Concealing", sector:"Appliances", year:"2022", href:"art-of-concealing.html", img:"aoc/all-products-staged.jpg",
+  {t:"The art of concealing", short:"Concealing", sector:"Appliances", year:"2022", href:"/art-of-concealing", img:"aoc/all-products-staged.webp",
    blurb:"Home appliances and furniture for luxury interiors."}
 ];
 
 // Under agreement: hovering one takes over the hero like any case study.
 // img: drop a teaser file in nda/ and set its path here to replace the placeholder field.
 const NDA = [
-  {t:"Innate", short:"Innate", sector:"Robotics", year:"2026", href:"https://www.innate.bot/", img:"nda/innate-teaser.jpg", nda:true,
-   blurb:"Semi humanoid robot."},
-  {t:"Posha", short:"Posha", sector:"Appliances", year:"2026", href:"https://www.posha.com/", img:"nda/posha-teaser.jpg", nda:true,
-   blurb:"Countertop cooking robot."},
-  {t:"Sonic Lamb", short:"Sonic Lamb", sector:"Audio", year:"2026", href:"https://soniclamb.com/en-in", img:"nda/soniclamb-teaser.jpg", nda:true,
+  {t:"Innate", short:"Innate", sector:"Robotics", year:"2026", href:"https://www.innate.bot/", img:"nda/innate-teaser.webp", nda:true, fu:true,
+   blurb:"Robot."},
+  {t:"Posha", short:"Posha", sector:"Appliances", year:"2026", href:"https://www.posha.com/", img:"nda/posha-teaser.webp", nda:true, fu:true,
+   blurb:"Kitchen appliance."},
+  {t:"Sonic Lamb", short:"Sonic Lamb", sector:"Audio", year:"2026", href:"https://soniclamb.com/en-in", img:"nda/soniclamb-teaser.webp", nda:true,
    blurb:"Headphones, through a Kickstarter campaign."},
-  {t:"Tangible Robots", short:"Tangible", sector:"Robotics", year:"2025", href:"https://tangiblerobots.ai/", img:"nda/tangible-teaser.jpg", nda:true,
-   blurb:"Semi humanoid home robot."},
-  {t:"Brewtal", short:"Brewtal", sector:"Appliances", year:"2025", href:"https://www.getbrewtal.com/", img:"nda/brewtal-teaser.jpg", nda:true,
-   blurb:"Tea brewer."}
+  {t:"Tangible", short:"Tangible", sector:"Robotics", year:"2025", href:"https://tangiblerobots.ai/", img:"nda/tangible-teaser.webp", nda:true, fu:true,
+   blurb:"Robot."},
+  {t:"Brewtal", short:"Brewtal", sector:"Appliances", year:"2025", href:"https://www.getbrewtal.com/", img:"nda/brewtal-teaser.webp", nda:true,
+   blurb:"Kitchen appliance."}
 ];
 
 // One timeline, newest (2026) left → oldest (2022) right.
-const ORDER = ["Innate","Posha","Sonic Lamb","Tangible Robots","Brewtal","Snapin' Street","Aakaar",
+const ORDER = ["Innate","Posha","Sonic Lamb","Tangible","Brewtal","Snapin' Street","Aakaar",
   "Ergoplay","Vita","Altr","The art of concealing"];
 const POOL = ITEMS.concat(NDA);
 const ALL = ORDER.map(n => POOL.find(it => it.t === n)).filter(Boolean);
@@ -190,6 +196,7 @@ class Component extends DCLogic {
     this.metaRef_ = React.createRef();
     this.titleRef_ = React.createRef();
     this.blurbRef_ = React.createRef();
+    this.fuRef_ = React.createRef();
     this.caseRef_ = React.createRef();
     this.holdRef_ = React.createRef();
     this.pgRefs_ = ALL.map(() => React.createRef());
@@ -221,6 +228,8 @@ class Component extends DCLogic {
     if(m) m.textContent = it.sector + ' · ' + it.year + (it.nda ? ' · Confidential' : '');
     if(t) t.textContent = it.t;
     if(b) b.textContent = it.blurb;
+    const fu = this.fuRef_.current;
+    if(fu) fu.style.display = it.fu ? 'inline-flex' : 'none';
     if(c){
       c.setAttribute('href', it.href);
       if(it.nda){ c.setAttribute('target','_blank'); c.setAttribute('rel','noopener noreferrer'); }
@@ -257,9 +266,9 @@ class Component extends DCLogic {
     return {
       imgA: this.imgA_, imgB: this.imgB_, holdRef: this.holdRef_,
       metaRef: this.metaRef_, titleRef: this.titleRef_,
-      blurbRef: this.blurbRef_, caseRef: this.caseRef_, heroHref: ALL[0].href,
+      blurbRef: this.blurbRef_, fuRef: this.fuRef_, caseRef: this.caseRef_, heroHref: ALL[0].href,
       mrows: ALL.map((it, i) => ({
-        year: it.year, short: it.short, sector: it.sector, blurb: it.blurb,
+        year: it.year, short: it.short, sector: it.sector, blurb: it.blurb, fu: !!it.fu,
         href: it.href, img: it.img, nda: !!it.nda, mark: it.nda ? '\u2197 ' : '',
         target: it.nda ? '_blank' : undefined, rel: it.nda ? 'noopener noreferrer' : undefined,
         panel: this.state.open === i ? 'display:block' : 'display:none',
@@ -268,7 +277,7 @@ class Component extends DCLogic {
         tap: () => this.setState(s => ({ open: s.open === i ? -1 : i }))
       })),
       rows: ALL.map((it, i) => ({
-        href: it.href, short: it.short, sector: it.sector, year: it.year,
+        href: it.href, short: it.short, sector: it.sector, year: it.year, fu: !!it.fu,
         target: it.nda ? '_blank' : undefined, rel: it.nda ? 'noopener noreferrer' : undefined,
         mark: it.nda ? '\u2197' : '', nda: !!it.nda,
         ref: this.pgRefs_[i], hover: () => this.show(i)
