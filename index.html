@@ -191,6 +191,8 @@ const ALL = ORDER.map(n => POOL.find(it => it.t === n)).filter(Boolean);
 class Component extends DCLogic {
   constructor(props){
     super(props);
+    this.tok_ = 0;
+    this._holdT = null;
     this.imgA_ = React.createRef();
     this.imgB_ = React.createRef();
     this.metaRef_ = React.createRef();
@@ -212,7 +214,7 @@ class Component extends DCLogic {
     let i = 0;
     const next = () => {
       if(i >= q.length) return;
-      const batch = q.slice(i, i + 2); i += 2;
+      const batch = q.slice(i, i + 4); i += 4;
       let left = batch.length;
       batch.forEach(it => {
         const im = new Image();
@@ -220,7 +222,7 @@ class Component extends DCLogic {
         im.src = it.img;
       });
     };
-    setTimeout(next, 400);
+    setTimeout(next, 120);
   }
 
   paintText(it, i){
@@ -256,10 +258,21 @@ class Component extends DCLogic {
       return;
     }
     const incoming = this.top_ ? b : a, outgoing = this.top_ ? a : b;
-    const swap = () => { incoming.style.opacity = '1'; outgoing.style.opacity = '0'; this.top_ = !this.top_; };
-    if(incoming.getAttribute('src') === it.img){ swap(); return; }
+    const tok = ++this.tok_;
+    clearTimeout(this._holdT);
+    const swap = () => {
+      if(tok !== this.tok_) return;            // a later hover already took over
+      clearTimeout(this._holdT);
+      if(h) h.style.opacity = '0';
+      incoming.style.opacity = '1'; outgoing.style.opacity = '0'; this.top_ = !this.top_;
+    };
+    // already the right file AND decoded — swap now
+    if(incoming.getAttribute('src') === it.img && incoming.complete && incoming.naturalWidth){ swap(); return; }
     incoming.onload = swap;
-    incoming.src = it.img;
+    incoming.onerror = swap;                   // a bad file must never freeze the hero
+    if('fetchPriority' in incoming) incoming.fetchPriority = 'high';
+    if(incoming.getAttribute('src') !== it.img) incoming.src = it.img;
+    if(incoming.complete && incoming.naturalWidth) swap();   // cache hit, no load event
   }
 
   renderVals(){
