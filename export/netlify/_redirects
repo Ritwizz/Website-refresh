@@ -1,0 +1,12 @@
+/Home.dc.html            /                    301
+/About.dc.html           /about               301
+/Shenanigans.dc.html     /off-hours           301
+/OffHours.dc.html        /off-hours           301
+/shenanigans             /off-hours           301
+/Vita-minimal.dc.html    /vita                301
+/Altr-minimal.dc.html    /altr                301
+/Aakaar-minimal.dc.html  /aakaar              301
+/Snapin-minimal.dc.html  /snapin              301
+/Ergoplay-minimal.dc.html /ergoplay           301
+/ArtOfConcealing-minimal.dc.html /art-of-concealing 301
+/work/*                  /:splat              301

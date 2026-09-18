@@ -1,0 +1,665 @@
+[
+ {
+  "page": "ArtOfConcealing-minimal.dc.html",
+  "dir": "aoc",
+  "id": "5a2ab1_f5b35808e7cf4e70875de990b8919427~mv2.png",
+  "src": "https://static.wixstatic.com/media/5a2ab1_f5b35808e7cf4e70875de990b8919427~mv2.png/v1/fill/w_1920,h_1080,al_c,q_90,enc_avif,quality_auto/5a2ab1_f5b35808e7cf4e70875de990b8919427~mv2.png",
+  "alt": "All products staged",
+  "local": "aoc/all-products-staged.jpg",
+  "gif": false
+ },
+ {
+  "page": "ArtOfConcealing-minimal.dc.html",
+  "dir": "aoc",
+  "id": "5a2ab1_d928f371ebc8477caf10340348989bf6~mv2.jpg",
+  "src": "https://static.wixstatic.com/media/5a2ab1_d928f371ebc8477caf10340348989bf6~mv2.jpg/v1/fill/w_980,h_735,al_c,q_85,enc_avif,quality_auto/5a2ab1_d928f371ebc8477caf10340348989bf6~mv2.jpg",
+  "alt": "Run of the mill appliance",
+  "local": "aoc/run-of-the-mill-appliance.jpg",
+  "gif": false
+ },
+ {
+  "page": "ArtOfConcealing-minimal.dc.html",
+  "dir": "aoc",
+  "id": "5a2ab1_35b4cd69777e40f284ac7fde9bd17440~mv2.jpg",
+  "src": "https://static.wixstatic.com/media/5a2ab1_35b4cd69777e40f284ac7fde9bd17440~mv2.jpg/v1/fill/w_980,h_735,al_c,q_85,enc_avif,quality_auto/5a2ab1_35b4cd69777e40f284ac7fde9bd17440~mv2.jpg",
+  "alt": "Run of the mill appliance",
+  "local": "aoc/run-of-the-mill-appliance-2.jpg",
+  "gif": false
+ },
+ {
+  "page": "ArtOfConcealing-minimal.dc.html",
+  "dir": "aoc",
+  "id": "5a2ab1_6db54862587344f9b1d21e829296313b~mv2.jpg",
+  "src": "https://static.wixstatic.com/media/5a2ab1_6db54862587344f9b1d21e829296313b~mv2.jpg/v1/fill/w_980,h_735,al_c,q_90,enc_avif,quality_auto/5a2ab1_6db54862587344f9b1d21e829296313b~mv2.jpg",
+  "alt": "Mapping the home interior for intervention points",
+  "local": "aoc/mapping-the-home-interior-for-intervention.jpg",
+  "gif": false
+ },
+ {
+  "page": "ArtOfConcealing-minimal.dc.html",
+  "dir": "aoc",
+  "id": "5a2ab1_d62394bb5a834aa1bd960de3d81e5d07~mv2.png",
+  "src": "https://static.wixstatic.com/media/5a2ab1_d62394bb5a834aa1bd960de3d81e5d07~mv2.png/v1/fill/w_1920,h_1080,al_c,q_90,enc_avif,quality_auto/5a2ab1_d62394bb5a834aa1bd960de3d81e5d07~mv2.png",
+  "alt": "Inverter",
+  "local": "aoc/inverter.jpg",
+  "gif": false
+ },
+ {
+  "page": "ArtOfConcealing-minimal.dc.html",
+  "dir": "aoc",
+  "id": "5a2ab1_8df3659e9ba24a4daee8e76cec0d43c8~mv2.png",
+  "src": "https://static.wixstatic.com/media/5a2ab1_8df3659e9ba24a4daee8e76cec0d43c8~mv2.png/v1/fill/w_1920,h_1080,al_c,q_90,enc_avif,quality_auto/5a2ab1_8df3659e9ba24a4daee8e76cec0d43c8~mv2.png",
+  "alt": "Inverter detail",
+  "local": "aoc/inverter-detail.jpg",
+  "gif": false
+ },
+ {
+  "page": "ArtOfConcealing-minimal.dc.html",
+  "dir": "aoc",
+  "id": "5a2ab1_00a05a1b56e94d49959d1c8ae0163f2d~mv2.png",
+  "src": "https://static.wixstatic.com/media/5a2ab1_00a05a1b56e94d49959d1c8ae0163f2d~mv2.png/v1/fill/w_980,h_640,al_c,q_90,enc_avif,quality_auto/5a2ab1_00a05a1b56e94d49959d1c8ae0163f2d~mv2.png",
+  "alt": "Inverter in context",
+  "local": "aoc/inverter-in-context.jpg",
+  "gif": false
+ },
+ {
+  "page": "ArtOfConcealing-minimal.dc.html",
+  "dir": "aoc",
+  "id": "5a2ab1_dfca26cd095b446482c70351c90333ec~mv2.png",
+  "src": "https://static.wixstatic.com/media/5a2ab1_dfca26cd095b446482c70351c90333ec~mv2.png/v1/fill/w_980,h_640,al_c,q_90,enc_avif,quality_auto/5a2ab1_dfca26cd095b446482c70351c90333ec~mv2.png",
+  "alt": "UPS in context",
+  "local": "aoc/ups-in-context.jpg",
+  "gif": false
+ },
+ {
+  "page": "ArtOfConcealing-minimal.dc.html",
+  "dir": "aoc",
+  "id": "5a2ab1_5813a64f98f8458b95dbf94ab1641045f000.jpg",
+  "src": "https://static.wixstatic.com/media/5a2ab1_5813a64f98f8458b95dbf94ab1641045f000.jpg/v1/fill/w_1920,h_960,al_c,q_85,enc_avif,quality_auto/5a2ab1_5813a64f98f8458b95dbf94ab1641045f000.jpg",
+  "alt": "Inverter and UPS film still",
+  "local": "aoc/inverter-and-ups-film-still.jpg",
+  "gif": false
+ },
+ {
+  "page": "ArtOfConcealing-minimal.dc.html",
+  "dir": "aoc",
+  "id": "5a2ab1_591b07821bf9485cbbd8681f2d2cf9fa~mv2.png",
+  "src": "https://static.wixstatic.com/media/5a2ab1_591b07821bf9485cbbd8681f2d2cf9fa~mv2.png/v1/fill/w_1920,h_1080,al_c,q_90,enc_avif,quality_auto/5a2ab1_591b07821bf9485cbbd8681f2d2cf9fa~mv2.png",
+  "alt": "Geysers",
+  "local": "aoc/geysers.jpg",
+  "gif": false
+ },
+ {
+  "page": "ArtOfConcealing-minimal.dc.html",
+  "dir": "aoc",
+  "id": "5a2ab1_1911bb038a3949b19c6ef7586d28ea6e~mv2.png",
+  "src": "https://static.wixstatic.com/media/5a2ab1_1911bb038a3949b19c6ef7586d28ea6e~mv2.png/v1/fill/w_1920,h_1080,al_c,q_90,enc_avif,quality_auto/5a2ab1_1911bb038a3949b19c6ef7586d28ea6e~mv2.png",
+  "alt": "Geysers detail",
+  "local": "aoc/geysers-detail.jpg",
+  "gif": false
+ },
+ {
+  "page": "ArtOfConcealing-minimal.dc.html",
+  "dir": "aoc",
+  "id": "5a2ab1_1ce575cc3fd44312af8bbe92426a21b5~mv2.png",
+  "src": "https://static.wixstatic.com/media/5a2ab1_1ce575cc3fd44312af8bbe92426a21b5~mv2.png/v1/fill/w_980,h_640,al_c,q_90,enc_avif,quality_auto/5a2ab1_1ce575cc3fd44312af8bbe92426a21b5~mv2.png",
+  "alt": "Bathroom geyser in context",
+  "local": "aoc/bathroom-geyser-in-context.jpg",
+  "gif": false
+ },
+ {
+  "page": "ArtOfConcealing-minimal.dc.html",
+  "dir": "aoc",
+  "id": "5a2ab1_7e40dd10a39743ef8a075cd50f162a52~mv2.png",
+  "src": "https://static.wixstatic.com/media/5a2ab1_7e40dd10a39743ef8a075cd50f162a52~mv2.png/v1/fill/w_980,h_640,al_c,q_90,enc_avif,quality_auto/5a2ab1_7e40dd10a39743ef8a075cd50f162a52~mv2.png",
+  "alt": "Kitchen geyser in context",
+  "local": "aoc/kitchen-geyser-in-context.jpg",
+  "gif": false
+ },
+ {
+  "page": "ArtOfConcealing-minimal.dc.html",
+  "dir": "aoc",
+  "id": "5a2ab1_ac5cb62029c8470e96792ee1400d9af7f000.jpg",
+  "src": "https://static.wixstatic.com/media/5a2ab1_ac5cb62029c8470e96792ee1400d9af7f000.jpg/v1/fill/w_1920,h_960,al_c,q_85,enc_avif,quality_auto/5a2ab1_ac5cb62029c8470e96792ee1400d9af7f000.jpg",
+  "alt": "Water heaters film still",
+  "local": "aoc/water-heaters-film-still.jpg",
+  "gif": false
+ },
+ {
+  "page": "ArtOfConcealing-minimal.dc.html",
+  "dir": "aoc",
+  "id": "5a2ab1_2b3f049396a04a7690df57d50453b3d6~mv2.png",
+  "src": "https://static.wixstatic.com/media/5a2ab1_2b3f049396a04a7690df57d50453b3d6~mv2.png/v1/fill/w_1920,h_1080,al_c,q_90,enc_avif,quality_auto/5a2ab1_2b3f049396a04a7690df57d50453b3d6~mv2.png",
+  "alt": "Dustbins",
+  "local": "aoc/dustbins.jpg",
+  "gif": false
+ },
+ {
+  "page": "ArtOfConcealing-minimal.dc.html",
+  "dir": "aoc",
+  "id": "5a2ab1_b1689b93fc4c4947be05c115a098c617~mv2.png",
+  "src": "https://static.wixstatic.com/media/5a2ab1_b1689b93fc4c4947be05c115a098c617~mv2.png/v1/fill/w_1920,h_1080,al_c,q_90,enc_avif,quality_auto/5a2ab1_b1689b93fc4c4947be05c115a098c617~mv2.png",
+  "alt": "Dustbins detail",
+  "local": "aoc/dustbins-detail.jpg",
+  "gif": false
+ },
+ {
+  "page": "ArtOfConcealing-minimal.dc.html",
+  "dir": "aoc",
+  "id": "5a2ab1_714c46fc95a1407594160a566b8cac07~mv2.png",
+  "src": "https://static.wixstatic.com/media/5a2ab1_714c46fc95a1407594160a566b8cac07~mv2.png/v1/fill/w_980,h_640,al_c,q_90,enc_avif,quality_auto/5a2ab1_714c46fc95a1407594160a566b8cac07~mv2.png",
+  "alt": "Playroom dustbin in context",
+  "local": "aoc/playroom-dustbin-in-context.jpg",
+  "gif": false
+ },
+ {
+  "page": "ArtOfConcealing-minimal.dc.html",
+  "dir": "aoc",
+  "id": "5a2ab1_45497f7711314b1383e8041e6986718a~mv2.png",
+  "src": "https://static.wixstatic.com/media/5a2ab1_45497f7711314b1383e8041e6986718a~mv2.png/v1/fill/w_980,h_640,al_c,q_90,enc_avif,quality_auto/5a2ab1_45497f7711314b1383e8041e6986718a~mv2.png",
+  "alt": "Sphere dustbin in context",
+  "local": "aoc/sphere-dustbin-in-context.jpg",
+  "gif": false
+ },
+ {
+  "page": "ArtOfConcealing-minimal.dc.html",
+  "dir": "aoc",
+  "id": "5a2ab1_d8e63615e9c04780addd1fbdd88cc23df000.jpg",
+  "src": "https://static.wixstatic.com/media/5a2ab1_d8e63615e9c04780addd1fbdd88cc23df000.jpg/v1/fill/w_1920,h_960,al_c,q_85,enc_avif,quality_auto/5a2ab1_d8e63615e9c04780addd1fbdd88cc23df000.jpg",
+  "alt": "Dustbins film still",
+  "local": "aoc/dustbins-film-still.jpg",
+  "gif": false
+ },
+ {
+  "page": "ArtOfConcealing-minimal.dc.html",
+  "dir": "aoc",
+  "id": "5a2ab1_c4dda2e64c5a4060a2c2a5a14cc528e0~mv2.jpg",
+  "src": "https://static.wixstatic.com/media/5a2ab1_c4dda2e64c5a4060a2c2a5a14cc528e0~mv2.jpg/v1/fill/w_980,h_735,al_c,q_90,enc_avif,quality_auto/5a2ab1_c4dda2e64c5a4060a2c2a5a14cc528e0~mv2.jpg",
+  "alt": "Workshop photo",
+  "local": "aoc/workshop-photo.jpg",
+  "gif": false
+ },
+ {
+  "page": "ArtOfConcealing-minimal.dc.html",
+  "dir": "aoc",
+  "id": "5a2ab1_3b123d04e4704d4abaadcdbbeb441b66~mv2.jpg",
+  "src": "https://static.wixstatic.com/media/5a2ab1_3b123d04e4704d4abaadcdbbeb441b66~mv2.jpg/v1/fill/w_980,h_735,al_c,q_90,enc_avif,quality_auto/5a2ab1_3b123d04e4704d4abaadcdbbeb441b66~mv2.jpg",
+  "alt": "Workshop photo",
+  "local": "aoc/workshop-photo-2.jpg",
+  "gif": false
+ },
+ {
+  "page": "ArtOfConcealing-minimal.dc.html",
+  "dir": "aoc",
+  "id": "5a2ab1_16eca8c08c8b4483b21bc77ce48d09b3~mv2.jpg",
+  "src": "https://static.wixstatic.com/media/5a2ab1_16eca8c08c8b4483b21bc77ce48d09b3~mv2.jpg/v1/fill/w_980,h_735,al_c,q_90,enc_avif,quality_auto/5a2ab1_16eca8c08c8b4483b21bc77ce48d09b3~mv2.jpg",
+  "alt": "Workshop photo",
+  "local": "aoc/workshop-photo-3.jpg",
+  "gif": false
+ },
+ {
+  "page": "ArtOfConcealing-minimal.dc.html",
+  "dir": "aoc",
+  "id": "5a2ab1_83c6c6789ab840fb9bd6ab4c203bd08f~mv2.png",
+  "src": "https://static.wixstatic.com/media/5a2ab1_83c6c6789ab840fb9bd6ab4c203bd08f~mv2.png/v1/fill/w_980,h_735,al_c,q_90,enc_avif,quality_auto/5a2ab1_83c6c6789ab840fb9bd6ab4c203bd08f~mv2.png",
+  "alt": "Workshop photo",
+  "local": "aoc/workshop-photo-4.jpg",
+  "gif": false
+ },
+ {
+  "page": "ArtOfConcealing-minimal.dc.html",
+  "dir": "aoc",
+  "id": "5a2ab1_f60abfc7b09f41cab619b933f208b1e7~mv2.jpg",
+  "src": "https://static.wixstatic.com/media/5a2ab1_f60abfc7b09f41cab619b933f208b1e7~mv2.jpg/v1/fill/w_980,h_735,al_c,q_90,enc_avif,quality_auto/5a2ab1_f60abfc7b09f41cab619b933f208b1e7~mv2.jpg",
+  "alt": "Prototype photo",
+  "local": "aoc/prototype-photo.jpg",
+  "gif": false
+ },
+ {
+  "page": "ArtOfConcealing-minimal.dc.html",
+  "dir": "aoc",
+  "id": "5a2ab1_e495943fd7074c56932e9a398dc26fc2~mv2.jpeg",
+  "src": "https://static.wixstatic.com/media/5a2ab1_e495943fd7074c56932e9a398dc26fc2~mv2.jpeg/v1/fill/w_1280,h_1280,al_c,q_90,enc_avif,quality_auto/5a2ab1_e495943fd7074c56932e9a398dc26fc2~mv2.jpeg",
+  "alt": "Inverter console, finished prototype",
+  "local": "aoc/inverter-console-finished-prototype.jpg",
+  "gif": false
+ },
+ {
+  "page": "ArtOfConcealing-minimal.dc.html",
+  "dir": "aoc",
+  "id": "5a2ab1_10298b66df274edeb14230cd0087765b~mv2.webp",
+  "src": "https://static.wixstatic.com/media/5a2ab1_10298b66df274edeb14230cd0087765b~mv2.webp/v1/fill/w_980,h_735,al_c,q_90,enc_avif,quality_auto/5a2ab1_10298b66df274edeb14230cd0087765b~mv2.webp",
+  "alt": "Inverter perforated panel",
+  "local": "aoc/inverter-perforated-panel.jpg",
+  "gif": false
+ },
+ {
+  "page": "ArtOfConcealing-minimal.dc.html",
+  "dir": "aoc",
+  "id": "5a2ab1_babf701e9e664c83be8d89b56ce393dc~mv2.jpeg",
+  "src": "https://static.wixstatic.com/media/5a2ab1_babf701e9e664c83be8d89b56ce393dc~mv2.jpeg/v1/fill/w_980,h_735,al_c,q_90,enc_avif,quality_auto/5a2ab1_babf701e9e664c83be8d89b56ce393dc~mv2.jpeg",
+  "alt": "Inverter metal enclosure",
+  "local": "aoc/inverter-metal-enclosure.jpg",
+  "gif": false
+ },
+ {
+  "page": "ArtOfConcealing-minimal.dc.html",
+  "dir": "aoc",
+  "id": "5a2ab1_2f0b6647cc2b42229de48ed83aa83668~mv2.jpeg",
+  "src": "https://static.wixstatic.com/media/5a2ab1_2f0b6647cc2b42229de48ed83aa83668~mv2.jpeg/v1/fill/w_980,h_735,al_c,q_90,enc_avif,quality_auto/5a2ab1_2f0b6647cc2b42229de48ed83aa83668~mv2.jpeg",
+  "alt": "Inverter console top detail",
+  "local": "aoc/inverter-console-top-detail.jpg",
+  "gif": false
+ },
+ {
+  "page": "ArtOfConcealing-minimal.dc.html",
+  "dir": "aoc",
+  "id": "5a2ab1_149d49dd190a4b1088306451ca6f3904~mv2.jpeg",
+  "src": "https://static.wixstatic.com/media/5a2ab1_149d49dd190a4b1088306451ca6f3904~mv2.jpeg/v1/fill/w_980,h_735,al_c,q_90,enc_avif,quality_auto/5a2ab1_149d49dd190a4b1088306451ca6f3904~mv2.jpeg",
+  "alt": "Inverter console in use",
+  "local": "aoc/inverter-console-in-use.jpg",
+  "gif": false
+ },
+ {
+  "page": "ArtOfConcealing-minimal.dc.html",
+  "dir": "aoc",
+  "id": "5a2ab1_a7da51b4e771475985446a8a4f134401~mv2.jpeg",
+  "src": "https://static.wixstatic.com/media/5a2ab1_a7da51b4e771475985446a8a4f134401~mv2.jpeg/v1/fill/w_1280,h_1280,al_c,q_90,enc_avif,quality_auto/5a2ab1_a7da51b4e771475985446a8a4f134401~mv2.jpeg",
+  "alt": "Play dustbin, finished prototype",
+  "local": "aoc/play-dustbin-finished-prototype.jpg",
+  "gif": false
+ },
+ {
+  "page": "ArtOfConcealing-minimal.dc.html",
+  "dir": "aoc",
+  "id": "5a2ab1_2093c659b248400c8af1eb5f5a5d1d06~mv2.gif",
+  "src": "https://static.wixstatic.com/media/5a2ab1_2093c659b248400c8af1eb5f5a5d1d06~mv2.gif",
+  "alt": "Play dustbin in motion",
+  "local": "aoc/play-dustbin-in-motion.gif",
+  "gif": true
+ },
+ {
+  "page": "ArtOfConcealing-minimal.dc.html",
+  "dir": "aoc",
+  "id": "5a2ab1_99184cf8e81f4df399a2eb76933797ae~mv2.jpeg",
+  "src": "https://static.wixstatic.com/media/5a2ab1_99184cf8e81f4df399a2eb76933797ae~mv2.jpeg/v1/fill/w_980,h_735,al_c,q_90,enc_avif,quality_auto/5a2ab1_99184cf8e81f4df399a2eb76933797ae~mv2.jpeg",
+  "alt": "Dustbin shell in progress",
+  "local": "aoc/dustbin-shell-in-progress.jpg",
+  "gif": false
+ },
+ {
+  "page": "ArtOfConcealing-minimal.dc.html",
+  "dir": "aoc",
+  "id": "5a2ab1_2110661b67494d73b6560c5512a2ecf4~mv2.jpeg",
+  "src": "https://static.wixstatic.com/media/5a2ab1_2110661b67494d73b6560c5512a2ecf4~mv2.jpeg/v1/fill/w_980,h_735,al_c,q_90,enc_avif,quality_auto/5a2ab1_2110661b67494d73b6560c5512a2ecf4~mv2.jpeg",
+  "alt": "Dustbin plywood structure",
+  "local": "aoc/dustbin-plywood-structure.jpg",
+  "gif": false
+ },
+ {
+  "page": "ArtOfConcealing-minimal.dc.html",
+  "dir": "aoc",
+  "id": "5a2ab1_d7f4dc12d9cd4004a0ce380d4a7916d2~mv2.jpeg",
+  "src": "https://static.wixstatic.com/media/5a2ab1_d7f4dc12d9cd4004a0ce380d4a7916d2~mv2.jpeg/v1/fill/w_980,h_735,al_c,q_90,enc_avif,quality_auto/5a2ab1_d7f4dc12d9cd4004a0ce380d4a7916d2~mv2.jpeg",
+  "alt": "Dustbin frame construction",
+  "local": "aoc/dustbin-frame-construction.jpg",
+  "gif": false
+ },
+ {
+  "page": "Vita-minimal.dc.html",
+  "dir": "vita",
+  "id": "5a2ab1_108d1bde5a5e4441947eccbbcfb3d7dc~mv2.jpg",
+  "src": "https://static.wixstatic.com/media/5a2ab1_108d1bde5a5e4441947eccbbcfb3d7dc~mv2.jpg/v1/fit/w_1920,h_1056,al_c,q_90,enc_avif,quality_auto/5a2ab1_108d1bde5a5e4441947eccbbcfb3d7dc~mv2.jpg",
+  "alt": "Vita scooter concrete side view",
+  "local": "vita/vita-scooter-concrete-side-view.jpg",
+  "gif": false
+ },
+ {
+  "page": "Vita-minimal.dc.html",
+  "dir": "vita",
+  "id": "5a2ab1_09a0fde8235b452499a28fd4423cd40f~mv2.png",
+  "src": "https://static.wixstatic.com/media/5a2ab1_09a0fde8235b452499a28fd4423cd40f~mv2.png/v1/fit/w_1000,h_560,al_c,q_90,enc_avif,quality_auto/5a2ab1_09a0fde8235b452499a28fd4423cd40f~mv2.png",
+  "alt": "Rider reference",
+  "local": "vita/rider-reference.jpg",
+  "gif": false
+ },
+ {
+  "page": "Vita-minimal.dc.html",
+  "dir": "vita",
+  "id": "5a2ab1_1d33b154137a4b82914e75faca7b3c42~mv2.png",
+  "src": "https://static.wixstatic.com/media/5a2ab1_1d33b154137a4b82914e75faca7b3c42~mv2.png/v1/fit/w_1000,h_560,al_c,q_90,enc_avif,quality_auto/5a2ab1_1d33b154137a4b82914e75faca7b3c42~mv2.png",
+  "alt": "Rider reference",
+  "local": "vita/rider-reference-2.jpg",
+  "gif": false
+ },
+ {
+  "page": "Vita-minimal.dc.html",
+  "dir": "vita",
+  "id": "5a2ab1_5ebdf53697774ca0b1a481723f5ba79a~mv2.jpg",
+  "src": "https://static.wixstatic.com/media/5a2ab1_5ebdf53697774ca0b1a481723f5ba79a~mv2.jpg/v1/fit/w_1000,h_560,al_c,q_90,enc_avif,quality_auto/5a2ab1_5ebdf53697774ca0b1a481723f5ba79a~mv2.jpg",
+  "alt": "Rider persona",
+  "local": "vita/rider-persona.jpg",
+  "gif": false
+ },
+ {
+  "page": "Vita-minimal.dc.html",
+  "dir": "vita",
+  "id": "5a2ab1_e5596843636a4401ae7c34c15cb1bf03~mv2.png",
+  "src": "https://static.wixstatic.com/media/5a2ab1_e5596843636a4401ae7c34c15cb1bf03~mv2.png/v1/fit/w_1963,h_494,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/Spread.png",
+  "alt": "Refinement sketches",
+  "local": "vita/refinement-sketches.jpg",
+  "gif": false
+ },
+ {
+  "page": "Vita-minimal.dc.html",
+  "dir": "vita",
+  "id": "5a2ab1_7d6ed144cd404f56b326a2ee3e8f52c5~mv2.png",
+  "src": "https://static.wixstatic.com/media/5a2ab1_7d6ed144cd404f56b326a2ee3e8f52c5~mv2.png/v1/fit/w_1967,h_4043,al_c,q_95,usm_0.66_1.00_0.01,enc_avif,quality_auto/Vizcom.png",
+  "alt": "Vizcom iterations",
+  "local": "vita/vizcom-iterations.jpg",
+  "gif": false
+ },
+ {
+  "page": "Vita-minimal.dc.html",
+  "dir": "vita",
+  "id": "5a2ab1_466e11284bd54520ab62d0760aabee06~mv2.jpg",
+  "src": "https://static.wixstatic.com/media/5a2ab1_466e11284bd54520ab62d0760aabee06~mv2.jpg/v1/fit/w_900,h_490,al_c,q_90,enc_avif,quality_auto/5a2ab1_466e11284bd54520ab62d0760aabee06~mv2.jpg",
+  "alt": "render 2",
+  "local": "vita/render-2.jpg",
+  "gif": false
+ },
+ {
+  "page": "Vita-minimal.dc.html",
+  "dir": "vita",
+  "id": "5a2ab1_97a7cfa412a34fd48bfed124658e982a~mv2.jpg",
+  "src": "https://static.wixstatic.com/media/5a2ab1_97a7cfa412a34fd48bfed124658e982a~mv2.jpg/v1/fit/w_900,h_560,al_c,q_90,enc_avif,quality_auto/5a2ab1_97a7cfa412a34fd48bfed124658e982a~mv2.jpg",
+  "alt": "render 1",
+  "local": "vita/render-1.jpg",
+  "gif": false
+ },
+ {
+  "page": "Vita-minimal.dc.html",
+  "dir": "vita",
+  "id": "5a2ab1_7834cac3b65044a9b59392f1bad2215c~mv2.jpg",
+  "src": "https://static.wixstatic.com/media/5a2ab1_7834cac3b65044a9b59392f1bad2215c~mv2.jpg/v1/fit/w_900,h_490,al_c,q_90,enc_avif,quality_auto/5a2ab1_7834cac3b65044a9b59392f1bad2215c~mv2.jpg",
+  "alt": "Detail taillight area",
+  "local": "vita/detail-taillight-area.jpg",
+  "gif": false
+ },
+ {
+  "page": "Vita-minimal.dc.html",
+  "dir": "vita",
+  "id": "5a2ab1_cd2b5e14f4d14fc4950c73b7d8d9d34b~mv2.jpg",
+  "src": "https://static.wixstatic.com/media/5a2ab1_cd2b5e14f4d14fc4950c73b7d8d9d34b~mv2.jpg/v1/fit/w_900,h_490,al_c,q_90,enc_avif,quality_auto/5a2ab1_cd2b5e14f4d14fc4950c73b7d8d9d34b~mv2.jpg",
+  "alt": "Detail rear area",
+  "local": "vita/detail-rear-area.jpg",
+  "gif": false
+ },
+ {
+  "page": "Vita-minimal.dc.html",
+  "dir": "vita",
+  "id": "5a2ab1_0453be1a4c9f466b99d98aee44304f61~mv2.jpg",
+  "src": "https://static.wixstatic.com/media/5a2ab1_0453be1a4c9f466b99d98aee44304f61~mv2.jpg/v1/fit/w_900,h_490,al_c,q_90,enc_avif,quality_auto/5a2ab1_0453be1a4c9f466b99d98aee44304f61~mv2.jpg",
+  "alt": "Detail headlight area",
+  "local": "vita/detail-headlight-area.jpg",
+  "gif": false
+ },
+ {
+  "page": "Vita-minimal.dc.html",
+  "dir": "vita",
+  "id": "5a2ab1_a2776fc8eba84a759e60deb2cac5d788~mv2.jpg",
+  "src": "https://static.wixstatic.com/media/5a2ab1_a2776fc8eba84a759e60deb2cac5d788~mv2.jpg/v1/fit/w_900,h_490,al_c,q_90,enc_avif,quality_auto/5a2ab1_a2776fc8eba84a759e60deb2cac5d788~mv2.jpg",
+  "alt": "Detail apron area",
+  "local": "vita/detail-apron-area.jpg",
+  "gif": false
+ },
+ {
+  "page": "Vita-minimal.dc.html",
+  "dir": "vita",
+  "id": "5a2ab1_e7c65db486b64c5c9de7d045f845d4eb~mv2.png",
+  "src": "https://static.wixstatic.com/media/5a2ab1_e7c65db486b64c5c9de7d045f845d4eb~mv2.png/v1/fit/w_1920,h_1440,al_c,q_90,enc_avif,quality_auto/5a2ab1_e7c65db486b64c5c9de7d045f845d4eb~mv2.png",
+  "alt": "Final Blender model",
+  "local": "vita/final-blender-model.jpg",
+  "gif": false
+ },
+ {
+  "page": "Vita-minimal.dc.html",
+  "dir": "vita",
+  "id": "5a2ab1_e94597d781594db5b12fe7213c353849~mv2.png",
+  "src": "https://static.wixstatic.com/media/5a2ab1_e94597d781594db5b12fe7213c353849~mv2.png/v1/fit/w_1920,h_1440,al_c,q_90,enc_avif,quality_auto/5a2ab1_e94597d781594db5b12fe7213c353849~mv2.png",
+  "alt": "Model iteration",
+  "local": "vita/model-iteration.jpg",
+  "gif": false
+ },
+ {
+  "page": "Vita-minimal.dc.html",
+  "dir": "vita",
+  "id": "5a2ab1_99d0bf7bef7e4accbffbb0f6bc6c7fa6~mv2.png",
+  "src": "https://static.wixstatic.com/media/5a2ab1_99d0bf7bef7e4accbffbb0f6bc6c7fa6~mv2.png/v1/fit/w_1920,h_1440,al_c,q_90,enc_avif,quality_auto/5a2ab1_99d0bf7bef7e4accbffbb0f6bc6c7fa6~mv2.png",
+  "alt": "Model iteration",
+  "local": "vita/model-iteration-2.jpg",
+  "gif": false
+ },
+ {
+  "page": "Vita-minimal.dc.html",
+  "dir": "vita",
+  "id": "5a2ab1_77927345cf4c4c598e4fdaff3b8ebd23~mv2.png",
+  "src": "https://static.wixstatic.com/media/5a2ab1_77927345cf4c4c598e4fdaff3b8ebd23~mv2.png/v1/fit/w_1920,h_1440,al_c,q_90,enc_avif,quality_auto/5a2ab1_77927345cf4c4c598e4fdaff3b8ebd23~mv2.png",
+  "alt": "Model iteration",
+  "local": "vita/model-iteration-3.jpg",
+  "gif": false
+ },
+ {
+  "page": "Vita-minimal.dc.html",
+  "dir": "vita",
+  "id": "5a2ab1_573513e768de4eb5a47d9674e1d2b1c0~mv2.png",
+  "src": "https://static.wixstatic.com/media/5a2ab1_573513e768de4eb5a47d9674e1d2b1c0~mv2.png/v1/fit/w_1920,h_1440,al_c,q_90,enc_avif,quality_auto/5a2ab1_573513e768de4eb5a47d9674e1d2b1c0~mv2.png",
+  "alt": "Early draft",
+  "local": "vita/early-draft.jpg",
+  "gif": false
+ },
+ {
+  "page": "Vita-minimal.dc.html",
+  "dir": "vita",
+  "id": "5a2ab1_65bc979d84554fabab1310f387b51ddb~mv2.png",
+  "src": "https://static.wixstatic.com/media/5a2ab1_65bc979d84554fabab1310f387b51ddb~mv2.png/v1/fit/w_1920,h_1440,al_c,q_90,enc_avif,quality_auto/5a2ab1_65bc979d84554fabab1310f387b51ddb~mv2.png",
+  "alt": "Early draft",
+  "local": "vita/early-draft-2.jpg",
+  "gif": false
+ },
+ {
+  "page": "Vita-minimal.dc.html",
+  "dir": "vita",
+  "id": "5a2ab1_cd614746219949f4b72b719df280e6dd~mv2.png",
+  "src": "https://static.wixstatic.com/media/5a2ab1_cd614746219949f4b72b719df280e6dd~mv2.png/v1/fit/w_1920,h_1440,al_c,q_90,enc_avif,quality_auto/5a2ab1_cd614746219949f4b72b719df280e6dd~mv2.png",
+  "alt": "Draft iteration",
+  "local": "vita/draft-iteration.jpg",
+  "gif": false
+ },
+ {
+  "page": "Vita-minimal.dc.html",
+  "dir": "vita",
+  "id": "5a2ab1_466e79b4ebb04f739e20fbe7eb1234c8~mv2.gif",
+  "src": "https://static.wixstatic.com/media/5a2ab1_466e79b4ebb04f739e20fbe7eb1234c8~mv2.gif",
+  "alt": "Luggage animation 1",
+  "local": "vita/luggage-animation-1.gif",
+  "gif": true
+ },
+ {
+  "page": "Vita-minimal.dc.html",
+  "dir": "vita",
+  "id": "5a2ab1_3c671eb619e240c79810133ef36c4047~mv2.gif",
+  "src": "https://static.wixstatic.com/media/5a2ab1_3c671eb619e240c79810133ef36c4047~mv2.gif",
+  "alt": "Luggage animation 2",
+  "local": "vita/luggage-animation-2.gif",
+  "gif": true
+ },
+ {
+  "page": "Vita-minimal.dc.html",
+  "dir": "vita",
+  "id": "5a2ab1_8d6e6865db144eb89ec4aabde8b89458~mv2.gif",
+  "src": "https://static.wixstatic.com/media/5a2ab1_8d6e6865db144eb89ec4aabde8b89458~mv2.gif",
+  "alt": "Luggage animation 3",
+  "local": "vita/luggage-animation-3.gif",
+  "gif": true
+ },
+ {
+  "page": "Vita-minimal.dc.html",
+  "dir": "vita",
+  "id": "5a2ab1_cbb61716c089435884617c5c06d9b852~mv2.gif",
+  "src": "https://static.wixstatic.com/media/5a2ab1_cbb61716c089435884617c5c06d9b852~mv2.gif",
+  "alt": "Luggage animation 4",
+  "local": "vita/luggage-animation-4.gif",
+  "gif": true
+ },
+ {
+  "page": "Vita-minimal.dc.html",
+  "dir": "vita",
+  "id": "5a2ab1_2609b96afb864d51999c5cced9191c3c~mv2.png",
+  "src": "https://static.wixstatic.com/media/5a2ab1_2609b96afb864d51999c5cced9191c3c~mv2.png/v1/fit/w_1920,h_1440,al_c,q_90,enc_avif,quality_auto/5a2ab1_2609b96afb864d51999c5cced9191c3c~mv2.png",
+  "alt": "Vita with luggage",
+  "local": "vita/vita-with-luggage.jpg",
+  "gif": false
+ },
+ {
+  "page": "Vita-minimal.dc.html",
+  "dir": "vita",
+  "id": "5a2ab1_12c2ef44179a4c2dbe425c711e77572d~mv2.png",
+  "src": "https://static.wixstatic.com/media/5a2ab1_12c2ef44179a4c2dbe425c711e77572d~mv2.png/v1/fit/w_1920,h_1440,al_c,q_90,enc_avif,quality_auto/5a2ab1_12c2ef44179a4c2dbe425c711e77572d~mv2.png",
+  "alt": "Vita without luggage",
+  "local": "vita/vita-without-luggage.jpg",
+  "gif": false
+ },
+ {
+  "page": "Vita-minimal.dc.html",
+  "dir": "vita",
+  "id": "5a2ab1_da09ba51ea014971abbef5f508f8446f~mv2.png",
+  "src": "https://static.wixstatic.com/media/5a2ab1_da09ba51ea014971abbef5f508f8446f~mv2.png/v1/fit/w_1000,h_560,al_c,q_90,enc_avif,quality_auto/5a2ab1_da09ba51ea014971abbef5f508f8446f~mv2.png",
+  "alt": "Scooter in university parking lot",
+  "local": "vita/scooter-in-university-parking-lot.jpg",
+  "gif": false
+ },
+ {
+  "page": "Vita-minimal.dc.html",
+  "dir": "vita",
+  "id": "5a2ab1_44cbb2ee9895454f93f4187cd2c86180~mv2.png",
+  "src": "https://static.wixstatic.com/media/5a2ab1_44cbb2ee9895454f93f4187cd2c86180~mv2.png/v1/fit/w_1000,h_560,al_c,q_90,enc_avif,quality_auto/5a2ab1_44cbb2ee9895454f93f4187cd2c86180~mv2.png",
+  "alt": "Rider with tea",
+  "local": "vita/rider-with-tea.jpg",
+  "gif": false
+ },
+ {
+  "page": "Vita-minimal.dc.html",
+  "dir": "vita",
+  "id": "5a2ab1_eb72f49cdf6840438ba1cd2701bad4f4~mv2.png",
+  "src": "https://static.wixstatic.com/media/5a2ab1_eb72f49cdf6840438ba1cd2701bad4f4~mv2.png/v1/fit/w_1000,h_560,al_c,q_90,enc_avif,quality_auto/5a2ab1_eb72f49cdf6840438ba1cd2701bad4f4~mv2.png",
+  "alt": "Busy indian street",
+  "local": "vita/busy-indian-street.jpg",
+  "gif": false
+ },
+ {
+  "page": "Altr-minimal.dc.html",
+  "dir": "altr",
+  "id": "5a2ab1_0e68df8bb29c4736bfdbb39ded6c9f9d~mv2.png",
+  "src": "https://static.wixstatic.com/media/5a2ab1_0e68df8bb29c4736bfdbb39ded6c9f9d~mv2.png/v1/fill/w_2560,h_1396,al_c,q_95,usm_0.66_1.00_0.01,enc_avif,quality_auto/5a2ab1_0e68df8bb29c4736bfdbb39ded6c9f9d~mv2.png",
+  "alt": "ALTR desks, all together",
+  "local": "altr/altr-desks-all-together.jpg",
+  "gif": false
+ },
+ {
+  "page": "Altr-minimal.dc.html",
+  "dir": "altr",
+  "id": "5a2ab1_17dbb149cdaf4cc8b8b645dd17cd27ad~mv2.jpg",
+  "src": "https://static.wixstatic.com/media/5a2ab1_17dbb149cdaf4cc8b8b645dd17cd27ad~mv2.jpg",
+  "alt": "A messy desk — the problem ALTR addresses",
+  "local": "altr/a-messy-desk-the-problem-altr-addresses.jpg",
+  "gif": false
+ },
+ {
+  "page": "Altr-minimal.dc.html",
+  "dir": "altr",
+  "id": "5a2ab1_080bca1993674e999ced0e77ea819a49~mv2.jpg",
+  "src": "https://static.wixstatic.com/media/5a2ab1_080bca1993674e999ced0e77ea819a49~mv2.jpg",
+  "alt": "Sketch sheet exploring desk configurations",
+  "local": "altr/sketch-sheet-exploring-desk-configurations.jpg",
+  "gif": false
+ },
+ {
+  "page": "Altr-minimal.dc.html",
+  "dir": "altr",
+  "id": "5a2ab1_935c75d2dc3d4b92a14cfaddd2e5c90b~mv2.jpg",
+  "src": "https://static.wixstatic.com/media/5a2ab1_935c75d2dc3d4b92a14cfaddd2e5c90b~mv2.jpg",
+  "alt": "Research session mapping pain points",
+  "local": "altr/research-session-mapping-pain-points.jpg",
+  "gif": false
+ },
+ {
+  "page": "Altr-minimal.dc.html",
+  "dir": "altr",
+  "id": "5a2ab1_768c6fa40a1b418e85309a6528b4d97d~mv2.png",
+  "src": "https://static.wixstatic.com/media/5a2ab1_768c6fa40a1b418e85309a6528b4d97d~mv2.png",
+  "alt": "The ALTR desk system",
+  "local": "altr/the-altr-desk-system.jpg",
+  "gif": false
+ },
+ {
+  "page": "Home.dc.html",
+  "dir": "home",
+  "id": "5a2ab1_f5b35808e7cf4e70875de990b8919427~mv2.png",
+  "src": "https://static.wixstatic.com/media/5a2ab1_f5b35808e7cf4e70875de990b8919427~mv2.png",
+  "alt": "Art of Concealing",
+  "local": "home/thumb-art-of-concealing.jpg",
+  "gif": false,
+  "thumb": true
+ },
+ {
+  "page": "Home.dc.html",
+  "dir": "home",
+  "id": "5a2ab1_fce573014a264c4885035d645fa5e0b6~mv2.png",
+  "src": "https://static.wixstatic.com/media/5a2ab1_fce573014a264c4885035d645fa5e0b6~mv2.png",
+  "alt": "Aakaar",
+  "local": "home/thumb-aakaar.jpg",
+  "gif": false,
+  "thumb": true
+ },
+ {
+  "page": "Home.dc.html",
+  "dir": "home",
+  "id": "5a2ab1_d52dd2fc936f4333b4c0ba99cb4f6375~mv2.png",
+  "src": "https://static.wixstatic.com/media/5a2ab1_d52dd2fc936f4333b4c0ba99cb4f6375~mv2.png",
+  "alt": "Ergoplay",
+  "local": "home/thumb-ergoplay.jpg",
+  "gif": false,
+  "thumb": true
+ },
+ {
+  "page": "Home.dc.html",
+  "dir": "home",
+  "id": "5a2ab1_108d1bde5a5e4441947eccbbcfb3d7dc~mv2.jpg",
+  "src": "https://static.wixstatic.com/media/5a2ab1_108d1bde5a5e4441947eccbbcfb3d7dc~mv2.jpg",
+  "alt": "Vita",
+  "local": "home/thumb-vita.jpg",
+  "gif": false,
+  "thumb": true
+ },
+ {
+  "page": "Home.dc.html",
+  "dir": "home",
+  "id": "5a2ab1_0e68df8bb29c4736bfdbb39ded6c9f9d~mv2.png",
+  "src": "https://static.wixstatic.com/media/5a2ab1_0e68df8bb29c4736bfdbb39ded6c9f9d~mv2.png",
+  "alt": "Altr",
+  "local": "home/thumb-altr.jpg",
+  "gif": false,
+  "thumb": true
+ },
+ {
+  "page": "Home.dc.html",
+  "dir": "home",
+  "id": "5a2ab1_5f17ecd1f2f14432a4167a32c422888c~mv2.png",
+  "src": "https://static.wixstatic.com/media/5a2ab1_5f17ecd1f2f14432a4167a32c422888c~mv2.png",
+  "alt": "Snapin' Street Kiosk",
+  "local": "home/thumb-snapin-street-kiosk.jpg",
+  "gif": false,
+  "thumb": true
+ }
+]
