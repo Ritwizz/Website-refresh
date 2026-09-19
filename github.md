@@ -1,31 +1,35 @@
 repo: Ritwizz/Website-refresh
 branch: main
-path: (repo root — deployable site is this project's `export/netlify/`)
+path: (repo root — no build in this project right now; sources are the `.dc.html` files)
 
 ## Last sync
-date: 2026-09-13T00:00:00Z
+date: 2026-09-19T00:00:00Z
 
 ### Updated in this project
-- Shenanigans renamed Off Hours: `OffHours.dc.html`, deploy slug `/off-hours`, 301s from `/shenanigans` and the old `.dc.html` URLs. Loader count now derives from the set data.
-- All nine GIFs replaced with WebM video; all 248 stills converted to WebP. Off Hours gained the Robb's Coffee set (now 7 sets) and per-image aspect ratios so lazy-loading can't deadlock.
-- Six project pages flipped to dark; footer "Index", the header year and the duplicate "Off hours" label dropped site-wide; Instagram promoted to a large link under the Off Hours title.
-- Dead code pruned (unused keyframes/classes/vars, a broken `shRise` animation, duplicate font preconnects); asset folders pruned 1,240 → 334 files.
-- Push is still manual: I can read repos but not commit, so `export/netlify/` has to be pushed or dropped into Netlify by hand.
+- Site-wide consistency pass: one shell on all nine pages (sticky header, 1440px measure, `clamp(20px,3vw,48px)` padding, scroll-progress hairline, active-nav marker), one breakpoint set (1024/760/480), one loading plate, one five-step type scale, and a .62 contrast floor.
+- Home rebuilt: mosaic alternates viewable and confidential work newest-first, Future Unit credits on the three collaborations, bottom index removed, hover veil no longer repeats the caption.
+- Project pages: title/credits span the full content column, images wait for decode before revealing and fetch ~2.5 screens ahead, the `warm()` prefetch and the 120ms progress poll are gone.
+- Off Hours back on-token (.16 hairlines, single #0B0B0B ground, full-opacity frames), keyboard-scrubbable filmstrips that run edge to edge and repeat to fill short sets.
+- All CV artifacts deleted (`CV.dc.html`, `.tex`, `doc-page.js`, the PDF); `export/` was removed in the Sep 18 cleanup, so there is no deploy build to push — regenerate one when a deploy is wanted.
+- Push is still manual: I can read repos but not commit.
 
 ## Screen map
-| Project screen | Deploy file |
+No build exists at the moment — these are the deploy slugs to rebuild against.
+
+| Project screen | Deploy slug |
 | --- | --- |
-| Home.dc.html | export/netlify/index.html |
-| About.dc.html | export/netlify/about.html (+ about-plate.js) |
-| OffHours.dc.html | export/netlify/off-hours.html (+ shenanigans-sets.js) |
-| Aakaar-minimal.dc.html | export/netlify/aakaar.html |
-| Ergoplay-minimal.dc.html | export/netlify/ergoplay.html |
-| Vita-minimal.dc.html | export/netlify/vita.html |
-| Altr-minimal.dc.html | export/netlify/altr.html |
-| ArtOfConcealing-minimal.dc.html | export/netlify/art-of-concealing.html |
-| Snapin-minimal.dc.html | export/netlify/snapin.html |
+| Home.dc.html | / |
+| About.dc.html | /about (+ about-plate.js) |
+| OffHours.dc.html | /off-hours (+ shenanigans-sets.js; 301 from /shenanigans) |
+| Aakaar-minimal.dc.html | /aakaar |
+| Ergoplay-minimal.dc.html | /ergoplay |
+| Vita-minimal.dc.html | /vita |
+| Altr-minimal.dc.html | /altr |
+| ArtOfConcealing-minimal.dc.html | /art-of-concealing |
+| Snapin-minimal.dc.html | /snapin |
 
 ## Sync history
+- 2026-09-13T00:00:00Z — Shenanigans renamed Off Hours; GIFs → WebM and stills → WebP; six project pages flipped dark; asset folders pruned 1,240 → 334 files.
 - 2026-08-20T00:00:00Z — About rebuilt as a CV table; Shenanigans responsive pass; about-plate.js + CV PDF added to the build.
 - 2026-08-19T00:00:00Z — Home narrow layout 1d, project-page nav wrap, Shenanigans reel rebuild, all 9 pages re-exported.
 - 2026-08-04T16:40:00Z — Home list-view fit pass; all 9 pages re-exported; 16 media files still absent on remote.

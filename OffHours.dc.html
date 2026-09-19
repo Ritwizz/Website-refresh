@@ -9,6 +9,11 @@
 <x-dc>
 <helmet>
 <title>Off Hours — Ritwiz Sharma</title>
+<meta name="description" content="Photography, film and other things Ritwiz Sharma makes outside client work.">
+<meta property="og:title" content="Off Hours — Ritwiz Sharma">
+<meta property="og:description" content="Photography, film and other things made outside client work.">
+<meta property="og:image" content="uploads/opt/about-ritwiz.webp">
+<meta property="og:type" content="website">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="crossorigin">
 <link rel="preload" as="font" type="font/woff2" href="https://cdn.jsdelivr.net/gh/RandomMaerks/Overused-Grotesk@main/fonts/variable/OverusedGrotesk-VF.woff2" crossorigin="crossorigin">
 <style>
@@ -17,6 +22,8 @@ html{background:#0B0B0B}
 body{margin:0;padding:0;background:#0B0B0B}
 a{color:#F4F2EE;text-decoration:none}
 a:hover{color:#F4F2EE}
+.rwNav a{transition:color 130ms ease-out,opacity 130ms ease-out}
+.rwNav a:hover{color:#F4F2EE !important;opacity:1 !important}
 [data-track]{scrollbar-width:none}
 [data-track]::-webkit-scrollbar{display:none}
 @keyframes shUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
@@ -24,9 +31,11 @@ a:hover{color:#F4F2EE}
 @keyframes shPulse{0%,100%{opacity:.34}50%{opacity:1}}
 @keyframes shSettle{from{transform:translate(0,20vh) scale(1.3)}to{transform:none}}
 @keyframes shRuleGrow{from{transform:scaleX(.14)}to{transform:scaleX(1)}}
-@media (max-width:1100px){[data-desc]{white-space:normal !important;max-width:46ch;text-wrap:pretty}}
-@keyframes shFadeIn{from{opacity:0;transform:translateY(14px)}to{opacity:.86;transform:none}}
-@media (max-width:700px){
+@media (max-width:1024px){[data-desc]{white-space:normal !important;max-width:46ch;text-wrap:pretty}}
+@keyframes shFadeIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@media (max-width:760px){
+  .shHead{grid-template-columns:1fr auto !important;row-gap:10px !important;align-items:baseline !important}
+  .shNavMid{grid-column:1 / -1;order:3;gap:18px !important}
   [data-bandmeta]{flex-direction:column;align-items:flex-start !important;gap:6px !important}
   [data-desc]{text-align:left !important;white-space:normal !important}
   [data-track]{display:grid !important;grid-template-columns:1fr;overflow:visible !important;gap:10px !important;padding:0 18px !important;cursor:default !important}
@@ -34,50 +43,54 @@ a:hover{color:#F4F2EE}
   [data-cell][data-dup]{display:none}
   [data-track] img{width:100% !important;height:auto !important}
 }
-@keyframes shAssemble{from{transform:translate(var(--tx),var(--ty)) scale(.44);opacity:.5}to{transform:none;opacity:.86}}
+@keyframes shAssemble{from{transform:translate(var(--tx),var(--ty)) scale(.44);opacity:.5}to{transform:none;opacity:1}}
 .igBig:hover .igBigRule{transform:scaleX(1)}
 .igBig:hover .igBigArrow{transform:translateX(8px)}
 .igBig:hover .igBigAt{color:#2E6BFF}
 </style>
 </helmet>
 
-<div ref="{{ loaderRef }}" style="position:fixed;inset:0;z-index:60;background:#0B0B0B;color:#F4F2EE;font-family:'Overused Grotesk',Helvetica,Arial,sans-serif;display:flex;flex-direction:column;justify-content:flex-end;gap:clamp(14px,2.2vh,24px);padding:clamp(18px,2.8vw,40px);transition:opacity 720ms cubic-bezier(.16,1,.3,1);">
-  <span style="font-size:12.5px;font-weight:500;letter-spacing:-.005em;opacity:.62;animation:shPulse 1.6s ease-in-out infinite;">Loading the off hours</span>
-  <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;">
-    <span style="font-size:12.5px;font-weight:500;letter-spacing:-.005em;opacity:.62;" ref="{{ countRef }}">Frames loading</span>
-    <span style="font-size:12.5px;font-weight:500;letter-spacing:-.005em;font-variant-numeric:tabular-nums;opacity:.62;" ref="{{ pctRef }}">0%</span>
+<div ref="{{ loaderRef }}" style="position:fixed;inset:0;z-index:60;background:#0B0B0B;color:#F4F2EE;font-family:'Overused Grotesk',Helvetica,Arial,sans-serif;display:flex;flex-direction:column;justify-content:flex-end;box-sizing:border-box;padding:clamp(20px,3vw,48px);transition:opacity 720ms cubic-bezier(.16,1,.3,1);font-variant-numeric:tabular-nums;">
+  <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;font-size:12.5px;font-weight:500;letter-spacing:-.005em;">
+    <span>Off Hours</span>
+    <span ref="{{ pctRef }}">00%</span>
   </div>
-  <div style="height:1px;background:rgba(244,242,238,.26);position:relative;overflow:hidden;">
-    <div ref="{{ barRef }}" style="position:absolute;left:0;top:0;bottom:0;width:0%;background:#F4F2EE;transition:width 260ms linear;"></div>
+  <div style="height:1px;background:rgba(244,242,238,.16);position:relative;margin-top:11px;overflow:hidden;">
+    <div ref="{{ barRef }}" style="position:absolute;left:0;top:0;bottom:0;width:0%;background:#F4F2EE;transition:width 200ms linear;"></div>
   </div>
 </div>
 
-<div style="background:#0B0B0B;padding:clamp(0px,1.4vh,16px);box-sizing:border-box;font-family:'Overused Grotesk',Helvetica,Arial,sans-serif;color:#F4F2EE;">
+<div style="background:#0B0B0B;box-sizing:border-box;font-family:'Overused Grotesk',Helvetica,Arial,sans-serif;color:#F4F2EE;">
 
-  <header class="shUp" style="display:grid;grid-template-columns:1fr auto 1fr;align-items:baseline;gap:20px;font-size:12.5px;font-weight:500;letter-spacing:-.005em;padding:clamp(18px,2.4vw,30px) clamp(18px,2.8vw,40px);">
-    <a href="Home.dc.html" style="font-weight:600;">Ritwiz Sharma — Industrial Designer</a>
-    <span style="display:flex;gap:clamp(14px,1.6vw,24px);">
-      <a href="Home.dc.html" style="opacity:.62;">Index</a>
-      <a href="OffHours.dc.html" style="font-weight:600;">Off Hours</a>
-      <a href="About.dc.html" style="opacity:.62;">About</a>
-    </span>
-    <span style="justify-self:end;display:flex;align-items:center;gap:clamp(12px,1.4vw,20px);">
-      <a href="mailto:ritwizsharma1@gmail.com?subject=Ritwiz%2C%20work%20with%20me!">Contact</a>
-    </span>
+  <header class="shUp rwNav" style="position:sticky;top:0;z-index:30;background:#0B0B0B;">
+    <div class="shHead" style="display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:20px;font-size:12.5px;font-weight:500;letter-spacing:-.005em;max-width:1440px;margin:0 auto;padding:clamp(14px,1.8vw,22px) clamp(20px,3vw,48px);box-sizing:border-box;">
+      <a href="Home.dc.html" style="font-weight:600;">Ritwiz Sharma</a>
+      <span class="shNavMid" style="display:flex;gap:clamp(14px,1.6vw,24px);">
+        <a href="Home.dc.html" style="color:rgba(244,242,238,.55);">Index</a>
+        <a href="OffHours.dc.html" style="font-weight:600;">Off Hours</a>
+        <a href="About.dc.html" style="color:rgba(244,242,238,.55);">About</a>
+      </span>
+      <span style="justify-self:end;display:flex;align-items:center;gap:clamp(12px,1.4vw,20px);">
+        <a href="mailto:ritwizsharma1@gmail.com">Contact</a>
+      </span>
+    </div>
+    <div style="height:1px;background:rgba(244,242,238,.16);position:relative;">
+      <div ref="{{ progRef }}" style="position:absolute;inset:0 auto 0 0;width:0;background:#F4F2EE;"></div>
+    </div>
   </header>
 
-  <section data-screen-label="Title" class="shUp" style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;padding:clamp(24px,7vh,90px) clamp(18px,2.8vw,40px) clamp(18px,3vh,34px);animation-delay:90ms;">
-    <h1 ref="{{ titleRef }}" style="margin:0;font-weight:600;font-size:clamp(44px,10vw,150px);line-height:.92;letter-spacing:-.042em;transform-origin:left bottom;">Off Hours</h1>
+  <section data-screen-label="Title" class="shUp" style="max-width:1440px;margin:0 auto;box-sizing:border-box;display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;padding:clamp(24px,7vh,90px) clamp(20px,3vw,48px) clamp(18px,3vh,34px);animation-delay:90ms;">
+    <h1 ref="{{ titleRef }}" style="margin:0;font-weight:600;font-size:clamp(34px,5.6vw,76px);line-height:.98;letter-spacing:-.035em;transform-origin:left bottom;">Off Hours</h1>
   </section>
 
-  <section class="shUp" style="padding:0 clamp(18px,2.8vw,40px) clamp(18px,3vh,34px);animation-delay:180ms;">
+  <section class="shUp" style="max-width:1440px;margin:0 auto;box-sizing:border-box;padding:0 clamp(20px,3vw,48px) clamp(18px,3vh,34px);animation-delay:180ms;">
       <a class="igBig" href="https://www.instagram.com/ritwiz.sharma/" target="_blank" rel="noopener" style="display:inline-flex;flex-direction:column;gap:8px;">
-        <span style="display:flex;align-items:baseline;gap:clamp(10px,1.2vw,18px);font-weight:600;font-size:clamp(22px,3.4vw,46px);letter-spacing:-.032em;">
+        <span style="display:flex;align-items:baseline;gap:clamp(10px,1.2vw,18px);font-weight:600;font-size:clamp(26px,3.6vw,48px);letter-spacing:-.03em;">
           <span class="igBigArrow" style="display:block;transition:transform 520ms cubic-bezier(.16,1,.3,1);">→</span>
           <span>More of it on</span>
           <span class="igBigAt" style="transition:color 320ms ease-out;">@ritwiz.sharma</span>
         </span>
-        <span style="height:1px;background:rgba(244,242,238,.26);position:relative;overflow:hidden;">
+        <span style="height:1px;background:rgba(244,242,238,.16);position:relative;overflow:hidden;">
           <span class="igBigRule" style="position:absolute;inset:0;background:#2E6BFF;transform:scaleX(0);transform-origin:left center;transition:transform 620ms cubic-bezier(.16,1,.3,1);"></span>
         </span>
       </a>
@@ -85,12 +98,12 @@ a:hover{color:#F4F2EE}
 
   <main>
     <sc-for list="{{ bands }}" as="b" hint-placeholder-count="6">
-      <section data-screen-label="{{ b.label }}" data-band style="position:relative;border-top:1px solid rgba(244,242,238,.26);padding:clamp(12px,1.8vh,22px) 0 clamp(20px,4vh,46px);">
-        <div data-rule style="position:absolute;top:-1px;left:0;right:0;height:1px;background:rgba(244,242,238,.26);transform-origin:left center;opacity:0;"></div>
-        <div data-bandmeta style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:0 clamp(18px,2.8vw,40px) clamp(12px,1.8vh,20px);font-size:12.5px;font-weight:500;letter-spacing:-.005em;">
+      <section data-screen-label="{{ b.label }}" data-band style="position:relative;border-top:1px solid rgba(244,242,238,.16);padding:clamp(12px,1.8vh,22px) 0 clamp(20px,4vh,46px);">
+        <div data-rule style="position:absolute;top:-1px;left:0;right:0;height:1px;background:rgba(244,242,238,.16);transform-origin:left center;opacity:0;"></div>
+        <div data-bandmeta style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;max-width:1440px;margin:0 auto;box-sizing:border-box;padding:0 clamp(20px,3vw,48px) clamp(12px,1.8vh,20px);font-size:12.5px;font-weight:500;letter-spacing:-.005em;">
           <span style="display:flex;gap:clamp(10px,1.4vw,20px);align-items:baseline;">
             <span style="opacity:.62;font-variant-numeric:tabular-nums;">{{ b.num }}</span>
-            <span style="font-weight:600;font-size:clamp(18px,2.2vw,30px);letter-spacing:-.024em;">{{ b.name }}</span>
+            <span style="font-weight:600;font-size:clamp(20px,2.3vw,32px);letter-spacing:-.022em;">{{ b.name }}</span>
             <span style="opacity:.62;font-variant-numeric:tabular-nums;">{{ b.year }}</span>
           </span>
           <span data-desc style="display:flex;flex-direction:column;align-items:flex-end;gap:4px;text-align:right;">
@@ -99,22 +112,22 @@ a:hover{color:#F4F2EE}
               <span style="display:flex;gap:clamp(10px,1.2vw,18px);flex-wrap:wrap;justify-content:flex-end;">
                 <sc-for list="{{ b.credits }}" as="c" hint-placeholder-count="2">
                   <span style="display:flex;gap:5px;white-space:nowrap;">
-                    <span style="opacity:.45;">{{ c.role }}</span>
-                    <a href="{{ c.href }}" target="_blank" rel="noopener" style="color:#F4F2EE;text-decoration:underline;text-underline-offset:2px;text-decoration-color:rgba(244,242,238,.35);" style-hover="text-decoration-color:#F4F2EE">{{ c.name }}</a>
+                    <span style="opacity:.62;">{{ c.role }}</span>
+                    <a href="{{ c.href }}" target="_blank" rel="noopener" style="color:#F4F2EE;text-decoration:underline;text-underline-offset:2px;text-decoration-color:rgba(244,242,238,.16);" style-hover="text-decoration-color:#F4F2EE">{{ c.name }}</a>
                   </span>
                 </sc-for>
               </span>
             </sc-if>
           </span>
         </div>
-        <div data-track ref="{{ b.ref }}" style="display:flex;gap:clamp(6px,.8vw,12px);overflow-x:auto;padding:0 clamp(18px,2.8vw,40px);cursor:grab;">
+        <div data-track ref="{{ b.ref }}" tabindex="0" role="group" aria-label="{{ b.name }}" style="display:flex;gap:clamp(6px,.8vw,12px);overflow-x:auto;padding:0;cursor:grab;">
           <sc-for list="{{ b.imgs }}" as="im" hint-placeholder-count="8">
-            <div data-cell data-dup="{{ im.dup }}" style="flex:none;height:clamp(220px,42vh,460px);aspect-ratio:{{ im.ratio }};background:#131313;overflow:hidden;">
+            <div data-cell data-dup="{{ im.dup }}" aria-hidden="{{ im.hidden }}" style="flex:none;height:clamp(220px,42vh,460px);aspect-ratio:{{ im.ratio }};background:#0B0B0B;overflow:hidden;">
               <sc-if value="{{ im.isVid }}" hint-placeholder-val="{{ false }}">
-                <video src="{{ im.src }}" aria-label="{{ im.alt }}" autoplay loop="{{ true }}" muted="{{ true }}" playsinline preload="metadata" draggable="false" style="height:100%;width:100%;display:block;object-fit:cover;transition:transform 900ms cubic-bezier(.16,1,.3,1),opacity 300ms ease-out;opacity:.86;" style-hover="transform:scale(1.05);opacity:1"></video>
+                <video src="{{ im.src }}" aria-label="{{ im.alt }}" autoplay loop="{{ true }}" muted="{{ true }}" playsinline preload="metadata" draggable="false" style="height:100%;width:100%;display:block;object-fit:cover;transition:transform 900ms cubic-bezier(.16,1,.3,1);" style-hover="transform:scale(1.05)"></video>
               </sc-if>
               <sc-if value="{{ im.isImg }}" hint-placeholder-val="{{ true }}">
-                <img src="{{ im.src }}" alt="{{ im.alt }}" loading="lazy" decoding="async" draggable="false" style="height:100%;width:100%;display:block;object-fit:cover;transition:transform 900ms cubic-bezier(.16,1,.3,1),opacity 300ms ease-out;opacity:.86;" style-hover="transform:scale(1.05);opacity:1" />
+                <img src="{{ im.src }}" alt="{{ im.alt }}" loading="lazy" decoding="async" draggable="false" style="height:100%;width:100%;display:block;object-fit:cover;transition:transform 900ms cubic-bezier(.16,1,.3,1);" style-hover="transform:scale(1.05)" />
               </sc-if>
             </div>
           </sc-for>
@@ -123,12 +136,12 @@ a:hover{color:#F4F2EE}
     </sc-for>
   </main>
 
-  <section data-screen-label="Footer" style="padding:clamp(20px,3vh,34px) clamp(18px,2.8vw,40px);border-top:1px solid rgba(244,242,238,.26);">
-    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;font-size:12.5px;font-weight:500;letter-spacing:-.005em;opacity:.55;font-variant-numeric:tabular-nums;">
-      <span>Ritwiz Sharma — Industrial Designer</span>
-      <a href="https://www.instagram.com/ritwiz.sharma/" target="_blank" rel="noopener">Instagram</a>
+  <footer class="rwNav" style="border-top:1px solid rgba(244,242,238,.16);">
+    <div style="max-width:1440px;margin:0 auto;box-sizing:border-box;padding:clamp(20px,3vh,34px) clamp(20px,3vw,48px);display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;font-size:12.5px;font-weight:500;letter-spacing:-.005em;color:rgba(244,242,238,.62);">
+      <span>Ritwiz Sharma</span>
+      <a href="mailto:ritwizsharma1@gmail.com" style="color:rgba(244,242,238,.62);">ritwizsharma1@gmail.com</a>
     </div>
-  </section>
+  </footer>
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:900},&quot;driftSpeed&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:0.22,&quot;min&quot;:0,&quot;max&quot;:1,&quot;step&quot;:0.02,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Motion&quot;}}">
@@ -143,6 +156,7 @@ class Component extends DCLogic {
     this.pctRef = React.createRef();
     this.countRef = React.createRef();
     this.titleRef = React.createRef();
+    this.progRef = React.createRef();
     this._bands = null;
   }
   componentDidMount(){
@@ -151,10 +165,28 @@ class Component extends DCLogic {
       this.setState({ sets: m.SETS }, ()=>{ this.wire(); this.preload(m.SETS); this.stampCount(m.SETS); });
     });
     this._bail = setTimeout(()=>this.hideLoader(), 8000);
+    this._prog = () => {
+      const el = this.progRef.current;
+      if(!el) return;
+      const h = document.documentElement.scrollHeight - innerHeight;
+      el.style.width = (h > 0 ? Math.min(1, scrollY / h) * 100 : 0) + '%';
+    };
+    this._prog();
+    // scroll events don't reach us in every host — rAF is the reliable driver
+    let last = -1;
+    const tick = () => {
+      if(scrollY !== last){ last = scrollY; this._prog(); }
+      this._praf = requestAnimationFrame(tick);
+    };
+    this._praf = requestAnimationFrame(tick);
+    addEventListener('scroll', this._prog, {passive:true});
+    addEventListener('resize', this._prog, {passive:true});
   }
   componentWillUnmount(){
     this._off && this._off.forEach(f=>f());
     clearInterval(this._timer); clearTimeout(this._bail); clearTimeout(this._fade);
+    cancelAnimationFrame(this._praf);
+    removeEventListener('scroll', this._prog); removeEventListener('resize', this._prog);
   }
   preload(sets){
     const srcs = [];
@@ -166,7 +198,7 @@ class Component extends DCLogic {
       done++;
       const f = done / total;
       if(this.barRef.current) this.barRef.current.style.width = Math.round(f * 100) + '%';
-      if(this.pctRef.current) this.pctRef.current.textContent = Math.round(f * 100) + '%';
+      if(this.pctRef.current) this.pctRef.current.textContent = String(Math.round(f * 100)).padStart(2,'0') + '%';
       if(done >= total) setTimeout(()=>this.hideLoader(), Math.max(0, 620 - (Date.now() - t0)));
     };
     srcs.forEach(src=>{
@@ -194,6 +226,7 @@ class Component extends DCLogic {
     this.reveal();
   }
   reveal(){
+    if(matchMedia('(prefers-reduced-motion:reduce)').matches) return;
     const ease = 'cubic-bezier(.16,1,.3,1)';
     const t = this.titleRef.current;
     if(t) t.style.animation = 'shSettle 950ms ' + ease + ' both';
@@ -203,7 +236,7 @@ class Component extends DCLogic {
       band.style.borderTopColor = 'transparent';
       rule.style.opacity = '1';
       rule.style.animation = 'shRuleGrow 950ms cubic-bezier(.76,0,.24,1) both';
-      setTimeout(()=>{ band.style.borderTopColor = 'rgba(244,242,238,.26)'; rule.style.opacity = '0'; }, 1000);
+      setTimeout(()=>{ band.style.borderTopColor = 'rgba(244,242,238,.16)'; rule.style.opacity = '0'; }, 1000);
     }
     const meta = document.querySelector('[data-bandmeta]');
     if(meta) meta.style.animation = 'shUp 600ms 400ms ' + ease + ' both';
@@ -262,10 +295,21 @@ class Component extends DCLogic {
         t.scrollLeft = sl; st.pos = sl;
       };
       const up = e => { st.drag = false; st.paused = false; st.pos = t.scrollLeft; t.style.cursor = 'grab'; try { t.releasePointerCapture(e.pointerId); } catch(err){} };
+      const key = e => {
+        if(e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+        e.preventDefault();
+        const step = (t.firstElementChild ? t.firstElementChild.getBoundingClientRect().width : 240) + 12;
+        st.paused = true;
+        t.scrollBy({ left: e.key === 'ArrowRight' ? step : -step, behavior: 'smooth' });
+        clearTimeout(st.kt);
+        st.kt = setTimeout(()=>{ st.pos = t.scrollLeft; st.paused = false; }, 600);
+      };
+      t.addEventListener('keydown', key);
+      t.addEventListener('focus', enter); t.addEventListener('blur', leave);
       t.addEventListener('pointerenter', enter); t.addEventListener('pointerleave', leave);
       t.addEventListener('pointerdown', down); t.addEventListener('pointermove', move);
       t.addEventListener('pointerup', up); t.addEventListener('pointercancel', up);
-      this._off.push(()=>{ t.removeEventListener('pointerenter', enter); t.removeEventListener('pointerleave', leave); t.removeEventListener('pointerdown', down); t.removeEventListener('pointermove', move); t.removeEventListener('pointerup', up); t.removeEventListener('pointercancel', up); });
+      this._off.push(()=>{ t.removeEventListener('keydown', key); t.removeEventListener('focus', enter); t.removeEventListener('blur', leave); t.removeEventListener('pointerenter', enter); t.removeEventListener('pointerleave', leave); t.removeEventListener('pointerdown', down); t.removeEventListener('pointermove', move); t.removeEventListener('pointerup', up); t.removeEventListener('pointercancel', up); });
     });
     const io = new IntersectionObserver(es=>es.forEach(e=>{
       const st = this._drift.find(s=>s.t === e.target);
@@ -293,14 +337,14 @@ class Component extends DCLogic {
       } catch(err){ console.error('drift', err); }
     };
     if(this._timer) clearInterval(this._timer);
-    this._timer = setInterval(loop, 16);
+    if(!matchMedia('(prefers-reduced-motion:reduce)').matches) this._timer = setInterval(loop, 16);
   }
   renderVals(){
     if(!this._bands || this._bandsFor !== this.state.sets){
       this._bandsFor = this.state.sets;
       this._bands = this.buildBands();
     }
-    return { loaderRef: this.loaderRef, barRef: this.barRef, pctRef: this.pctRef, countRef: this.countRef, titleRef: this.titleRef, bands: this._bands };
+    return { loaderRef: this.loaderRef, barRef: this.barRef, pctRef: this.pctRef, countRef: this.countRef, titleRef: this.titleRef, progRef: this.progRef, bands: this._bands };
   }
   buildBands(){
     return this.state.sets.map((s, i)=>{
@@ -312,7 +356,18 @@ class Component extends DCLogic {
           label: 'Set ' + s.num.split(' / ')[0], num: s.num, name: s.name, year: s.year || '', desc: s.desc,
           credits: s.credits || [], hasCredits: !!(s.credits && s.credits.length),
           ref: this.trackRefs[i],
-          imgs: one.concat(one.map(o=>({ ...o, dup: "1" })))
+          imgs: (() => {
+            const h = Math.min(460, Math.max(220, innerHeight * 0.42));
+            const gap = Math.min(12, Math.max(6, innerWidth * 0.008));
+            const wide = one.reduce((w, o) => {
+              const [rw, rh] = o.ratio.split(' / ').map(Number);
+              return w + h * (rw / rh) + gap;
+            }, 0);
+            const reps = Math.max(1, Math.ceil((innerWidth * 1.15) / Math.max(1, wide)));
+            let run = [];
+            for(let r = 0; r < reps; r++) run = run.concat(one);
+            return run.concat(run.map(o => ({ ...o, dup: "1", hidden: "true" })));
+          })()
         };
       });
   }
