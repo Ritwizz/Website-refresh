@@ -1,6 +1,6 @@
 repo: Ritwizz/Website-refresh
 branch: main
-path: (repo root — no build in this project right now; sources are the `.dc.html` files)
+path: (repo root — Netlify publishes the root; generated `*.html` slugs sit beside the `.dc.html` sources)
 
 ## Last sync
 date: 2026-09-19T00:00:00Z
@@ -11,22 +11,23 @@ date: 2026-09-19T00:00:00Z
 - Project pages: title/credits span the full content column, images wait for decode before revealing and fetch ~2.5 screens ahead, the `warm()` prefetch and the 120ms progress poll are gone.
 - Off Hours back on-token (.16 hairlines, single #0B0B0B ground, full-opacity frames), keyboard-scrubbable filmstrips that run edge to edge and repeat to fill short sets.
 - All CV artifacts deleted (`CV.dc.html`, `.tex`, `doc-page.js`, the PDF); `export/` was removed in the Sep 18 cleanup, so there is no deploy build to push — regenerate one when a deploy is wanted.
+- Deploy pages regenerated at the repo root (nine slugged `.html` files + `_redirects`) after Netlify 404'd on a root with no `index.html`. They reuse the existing asset folders in place, so no media is duplicated.
 - Push is still manual: I can read repos but not commit.
 
 ## Screen map
-No build exists at the moment — these are the deploy slugs to rebuild against.
+Generated from the sources; regenerate after any source edit.
 
-| Project screen | Deploy slug |
+| Project screen | Deploy file → slug |
 | --- | --- |
-| Home.dc.html | / |
-| About.dc.html | /about (+ about-plate.js) |
-| OffHours.dc.html | /off-hours (+ shenanigans-sets.js; 301 from /shenanigans) |
-| Aakaar-minimal.dc.html | /aakaar |
-| Ergoplay-minimal.dc.html | /ergoplay |
-| Vita-minimal.dc.html | /vita |
-| Altr-minimal.dc.html | /altr |
-| ArtOfConcealing-minimal.dc.html | /art-of-concealing |
-| Snapin-minimal.dc.html | /snapin |
+| Home.dc.html | index.html → / |
+| About.dc.html | about.html → /about (+ about-plate.js) |
+| OffHours.dc.html | off-hours.html → /off-hours (+ shenanigans-sets.js; 301 from /shenanigans) |
+| Aakaar-minimal.dc.html | aakaar.html → /aakaar |
+| Ergoplay-minimal.dc.html | ergoplay.html → /ergoplay |
+| Vita-minimal.dc.html | vita.html → /vita |
+| Altr-minimal.dc.html | altr.html → /altr |
+| ArtOfConcealing-minimal.dc.html | art-of-concealing.html → /art-of-concealing |
+| Snapin-minimal.dc.html | snapin.html → /snapin |
 
 ## Sync history
 - 2026-09-13T00:00:00Z — Shenanigans renamed Off Hours; GIFs → WebM and stills → WebP; six project pages flipped dark; asset folders pruned 1,240 → 334 files.

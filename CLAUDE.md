@@ -1,7 +1,7 @@
 # Project notes — Ritwiz Sharma portfolio
 
 - Always keep photos/imagery full-color — never grayscale or tint them. Monochrome/B&W directions apply to UI (text, blocks, borders) only.
-- Only edit the `.dc.html` sources. There is no deploy build in the project right now (see Sep 18 cleanup); regenerate one only when asked.
+- Only edit the `.dc.html` sources. The slugged deploy pages at the project root (`index.html`, `about.html`, `off-hours.html`, `aakaar.html`, `ergoplay.html`, `vita.html`, `altr.html`, `art-of-concealing.html`, `snapin.html`) are GENERATED copies of those sources with internal links rewritten to clean slugs — never hand-edit them; regenerate after any source change. They sit at the root so they share the existing asset folders (no duplicated media). `_redirects` 301s the old `/shenanigans` and `.dc.html` URLs. Netlify: publish directory = repo root, no build command; `support.js`, `about-plate.js` and `shenanigans-sets.js` must be committed alongside.
 
 ## Live page set (Sep 18)
 `Home.dc.html`, `About.dc.html`, `OffHours.dc.html`, six `*-minimal.dc.html` project pages (Snapin, Aakaar, Ergoplay, Vita, Altr, ArtOfConcealing). No CV in the project — `CV.dc.html`, `Ritwiz_Sharma_CV.tex`, `doc-page.js` and the PDF were deleted Sep 18; the About page no longer offers a CV download. Revisit when a CV is wanted again.
