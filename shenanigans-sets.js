@@ -1,3 +1,6 @@
+/* Filenames with spaces are %20-encoded here. Never scan this file for asset
+   use without decoding %20 first — a plain filename match reports them as
+   orphans (which is how ten of them got deleted once). */
 export const SETS = [
   {num:'01 / 07', name:'Robb\u2019s Coffee', year:'2026', desc:'Coffee brand with french press concept.', credits:[
     {role:'Branding', name:'Abhinav Yadav', href:'https://www.instagram.com/mr.brobama/'},

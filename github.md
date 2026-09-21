@@ -3,7 +3,13 @@ branch: main
 path: (repo root — Netlify publishes the root; the nine `.dc.html` pages are served at clean slugs via `_redirects`)
 
 ## Last sync
-date: 2026-09-21T00:00:00Z
+date: 2026-09-21T12:54:47Z
+commit: 872bda7500c7 (tree at `main` when read; the ten restored images came from `main~1` = 9d302c2101c1)
+
+### Updated in this project (Sep 21, later)
+- Restored ten `uploads/opt/` images from `main~1` after a cleanup pass deleted them: a filename scan missed them because `shenanigans-sets.js` writes space-containing names `%20`-encoded. XOOX is back to 8 images, Artime 8, Praan HIVE 4, Snapin' Select 6. A comment at the top of that file now warns against scanning it without decoding.
+- Off Hours a11y: only the first pass through a band's unique images is exposed — repeat-to-fill copies now carry `aria-hidden` like the drift duplicates.
+- Live: ritwizsharma.com now resolves to Netlify (A `@` → 75.2.60.5, CNAME `www` → imaginative-jalebi-2ab705.netlify.app, DNS still hosted at Wix); HTTPS provisioned for apex + www.
 
 ### Updated in this project (Sep 21)
 - Source/deploy duplication removed: the nine generated slug pages (`index.html`, `about.html`, …) are deleted and the `.dc.html` pages are now served directly at clean URLs by `_redirects` 200-rewrites.

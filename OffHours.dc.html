@@ -368,9 +368,12 @@ class Component extends DCLogic {
               return w + h * (rw / rh) + gap;
             }, 0);
             const reps = Math.max(1, Math.ceil((innerWidth * 1.15) / Math.max(1, wide)));
-            let run = [];
-            for(let r = 0; r < reps; r++) run = run.concat(one);
-            return run.concat(run.map(o => ({ ...o, dup: "1", hidden: "true" })));
+            // only the first pass through the unique list is exposed; every
+            // repeat-to-fill copy and every drift duplicate is hidden from AT
+            const fill = o => ({ ...o, dup: "1", hidden: "true" });
+            let run = one.slice();
+            for(let r = 1; r < reps; r++) run = run.concat(one.map(fill));
+            return run.concat(run.map(fill));
           })()
         };
       });
