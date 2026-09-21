@@ -1,10 +1,12 @@
 # Project notes — Ritwiz Sharma portfolio
 
+- **Exports are the whole project (Sep 21).** Ritwiz empties the repo folder and unzips a full export into it, so hand over EVERY file the site needs — all nine `.dc.html` pages, `support.js`, `nav-slugs.js`, `about-plate.js`, `shenanigans-sets.js`, `_redirects`, `robots.txt`, `sitemap.xml`, and all media folders. Never a delta zip. Before exporting, delete scratch files/folders from the project so they don't land in the repo.
+
 - Always keep photos/imagery full-color — never grayscale or tint them. Monochrome/B&W directions apply to UI (text, blocks, borders) only.
-- Only edit the `.dc.html` sources. The slugged deploy pages at the project root (`index.html`, `about.html`, `off-hours.html`, `aakaar.html`, `ergoplay.html`, `vita.html`, `altr.html`, `art-of-concealing.html`, `snapin.html`) are GENERATED copies of those sources with internal links rewritten to clean slugs — never hand-edit them; regenerate after any source change. They sit at the root so they share the existing asset folders (no duplicated media). `_redirects` 301s the old `/shenanigans` and `.dc.html` URLs. Netlify: publish directory = repo root, no build command; `support.js`, `about-plate.js` and `shenanigans-sets.js` must be committed alongside.
+- **One file per page (Sep 21).** The nine `.dc.html` files at the root ARE the site — the generated slug copies (`index.html`, `about.html`, …) are gone, and the `-minimal` suffixes were dropped (`Aakaar.dc.html`, `Ergoplay.dc.html`, `Vita.dc.html`, `Altr.dc.html`, `ArtOfConcealing.dc.html`, `Snapin.dc.html`). Internal links are written as clean slugs (`/`, `/about`, `/off-hours`, `/aakaar`, …); `_redirects` 200-rewrites each slug to its file, so live URLs stay clean. `nav-slugs.js` (loaded in every helmet) makes those slug links work in the editor preview by routing them to the sibling `.dc.html` whenever the page is opened as a file — never remove it or nav dies in preview. No regeneration step: edit the page, done. Netlify: publish directory = repo root, no build command; `support.js`, `nav-slugs.js`, `about-plate.js` and `shenanigans-sets.js` must be committed alongside.
 
 ## Live page set (Sep 18)
-`Home.dc.html`, `About.dc.html`, `OffHours.dc.html`, six `*-minimal.dc.html` project pages (Snapin, Aakaar, Ergoplay, Vita, Altr, ArtOfConcealing). No CV in the project — `CV.dc.html`, `Ritwiz_Sharma_CV.tex`, `doc-page.js` and the PDF were deleted Sep 18; the About page no longer offers a CV download. Revisit when a CV is wanted again.
+`Home.dc.html`, `About.dc.html`, `OffHours.dc.html`, and six project pages (`Snapin`, `Aakaar`, `Ergoplay`, `Vita`, `Altr`, `ArtOfConcealing`). No CV in the project — `CV.dc.html`, `Ritwiz_Sharma_CV.tex`, `doc-page.js` and the PDF were deleted Sep 18; the About page no longer offers a CV download. Revisit when a CV is wanted again.
 
 ## Design system
 - Dark-only: ground #0B0B0B (the ONLY background — no second dark), ink #F4F2EE, hairlines `rgba(244,242,238,.16)` everywhere. Muted ink has a **hard floor of .62** — nothing below it renders text, ever (.55 survives only on inactive nav links, which are 12.5px/600 on a sticky bar). .62–.74 secondary, .82–.86 body. Site accent #2E6BFF. Per-project accents are gone: they only ever existed in bundler thumbnails, never on a page.
@@ -20,6 +22,14 @@
 - Confidential (under-agreement) work on Home: company-name links + year + generic descriptor only; hovering those tiles fades in a dark veil reading "Under agreement — work not shown" + domain. On touch (`hover:none`) the veil is hidden, so every caption carries a visible "Under agreement" line as the real signal. The six case-study tiles instead cross-fade to a second render (the Home image fade-in script must keep skipping `img.alt` overlays, or the overlays get pinned visible by an inline opacity).
 - Home mosaic alternates viewable and confidential work, newest first, so no two dead-end tiles sit together: Innate (NDA) · Aakaar · Posha (NDA) · Snapin' · Sonic Lamb (NDA) · Ergoplay · Brewtal (NDA) · Vita · Tangible (NDA) · Altr · The art of concealing. Innate, Posha and Tangible are Future Unit collaborations — their captions must credit "with Future Unit ↗" (futureunit.design). Tangible's descriptor says "Home robot" because the firm isn't well known and the imagery alone doesn't read as robotics.
 - The Home bottom index was removed Sep 18 — the mosaic captions are the index. Don't re-add it.
+
+## SEO / answer-engine layer (Sep 21)
+- Every page carries `<link rel="canonical">` + `og:url` on `https://ritwizsharma.com<slug>`, plus JSON-LD: one shared `Person` node (`#ritwiz`, with `sameAs` to LinkedIn/Behance/Instagram and a `knowsAbout` list) referenced by a `CollectionPage` (Home), `ProfilePage` (About), or `CreativeWork` + `WebPage` (each project). Keep the `@id` values stable — they're what tie the graph together.
+- `robots.txt` (allows all major search + answer-engine crawlers, points at the sitemap) and `sitemap.xml` live at the root. Update `sitemap.xml` `lastmod` when a page changes materially.
+
+## Sep 21 cleanup
+- `scraps/` deleted (working screenshots + two scratch pages; nothing referenced it).
+- Source/deploy duplication removed — see the one-file-per-page note at the top.
 
 ## Sep 18 cleanup
 - Dead cursor-tag layer removed from all six project pages: `#rwCursorTag` element + media-query rule, the `data-cap` caption-wrapper/`syncCaps` machinery, and the mousemove/scroll/resize handlers with their unmount cleanup. `justifyRows`, the boot screen and the progress bar remain live.
