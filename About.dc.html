@@ -9,14 +9,16 @@
 <x-dc>
 <helmet>
 <script src="./nav-slugs.js"></script>
+<script>if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('rvOn');</script>
 <title>About — Ritwiz Sharma</title>
 <meta name="description" content="Industrial designer with six years across consumer electronics, home appliances and robotics. Based in India.">
 <link rel="canonical" href="https://ritwizsharma.com/about">
 <meta property="og:url" content="https://ritwizsharma.com/about">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://ritwizsharma.com/#ritwiz","name":"Ritwiz Sharma","jobTitle":"Industrial Designer","url":"https://ritwizsharma.com","description":"Independent industrial designer working across consumer electronics, home appliances and robotics.","address":{"@type":"PostalAddress","addressCountry":"IN"},"knowsAbout":["Industrial design","Product design","Consumer electronics design","Home appliance design","Robotics product design","Design for manufacturing","CMF design","Concept sketching","CAD surfacing"],"sameAs":["https://www.linkedin.com/in/ritwizsharma/","https://www.behance.net/ritwizsharma","https://www.instagram.com/ritwiz.sharma/"]},{"@type":"ProfilePage","@id":"https://ritwizsharma.com/about#page","url":"https://ritwizsharma.com/about","name":"About — Ritwiz Sharma","description":"Industrial designer with six years across consumer electronics, home appliances and robotics. Based in India.","isPartOf":{"@id":"https://ritwizsharma.com/#site"},"mainEntity":{"@id":"https://ritwizsharma.com/#ritwiz"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://ritwizsharma.com/#ritwiz","name":"Ritwiz Sharma","alternateName":["Ritwiz","Ritwiz Sharma Industrial Designer"],"givenName":"Ritwiz","familyName":"Sharma","jobTitle":"Industrial Designer","image":"https://ritwizsharma.com/uploads/opt/about-ritwiz.webp","url":"https://ritwizsharma.com","description":"Independent industrial designer working across consumer electronics, home appliances and robotics.","address":{"@type":"PostalAddress","addressCountry":"IN"},"knowsAbout":["Industrial design","Product design","Consumer electronics design","Home appliance design","Robotics product design","Design for manufacturing","CMF design","Concept sketching","CAD surfacing"],"sameAs":["https://www.linkedin.com/in/ritwizsharma/","https://www.behance.net/ritwizsharma","https://www.instagram.com/ritwiz.sharma/"]},{"@type":"ProfilePage","@id":"https://ritwizsharma.com/about#page","url":"https://ritwizsharma.com/about","name":"About — Ritwiz Sharma","description":"Industrial designer with six years across consumer electronics, home appliances and robotics. Based in India.","isPartOf":{"@id":"https://ritwizsharma.com/#site"},"mainEntity":{"@id":"https://ritwizsharma.com/#ritwiz"}}]}</script>
 <meta property="og:title" content="About — Ritwiz Sharma">
 <meta property="og:description" content="Industrial designer with six years across consumer electronics, home appliances and robotics.">
-<meta property="og:image" content="uploads/opt/about-ritwiz.webp">
+<meta property="og:image" content="https://ritwizsharma.com/uploads/opt/about-ritwiz.webp">
+<meta name="twitter:card" content="summary_large_image">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="crossorigin">
 <link rel="preload" as="font" type="font/woff2" href="https://cdn.jsdelivr.net/gh/RandomMaerks/Overused-Grotesk@main/fonts/variable/OverusedGrotesk-VF.woff2" crossorigin="crossorigin">
@@ -26,8 +28,9 @@ html{background:#0B0B0B}
 body{margin:0;padding:0;background:#0B0B0B}
 a{color:#F4F2EE;text-decoration:none}
 a:hover{color:#F4F2EE}
-.rwNav a{transition:color 130ms ease-out,opacity 130ms ease-out}
+.rwNav a{transition:color 150ms ease-out,opacity 150ms ease-out}
 .rwNav a:hover{color:#F4F2EE !important;opacity:1 !important}
+.rvOn [data-rv]{opacity:0}
 :focus-visible{outline:1.5px solid #F4F2EE;outline-offset:3px}
 @keyframes rwMq{to{transform:translateX(-50%)}}
 @media (prefers-reduced-motion:reduce){[data-mq]{animation:none !important}}
@@ -76,6 +79,7 @@ a:hover{color:#F4F2EE}
       <span data-navmid style="display:flex;gap:clamp(14px,1.6vw,24px);">
         <a href="/" style="opacity:.62;">Index</a>
         <a href="/off-hours" style="opacity:.62;">Off Hours</a>
+        <a href="/labs" style="opacity:.62;">Labs</a>
         <a href="/about" style="font-weight:600;">About</a>
       </span>
       <span style="justify-self:end;display:flex;gap:clamp(12px,1.4vw,20px);">
@@ -89,7 +93,7 @@ a:hover{color:#F4F2EE}
       <div ref="{{ progRef }}" style="position:absolute;inset:0 auto 0 0;width:0;background:#F4F2EE;"></div>
     </div>
   </header>
-  <div data-mqwrap style="flex:none;width:100%;box-sizing:border-box;padding:8px 0;border-bottom:1px solid rgba(244,242,238,.16);overflow:hidden;">
+  <div data-rv data-mqwrap style="flex:none;width:100%;box-sizing:border-box;padding:8px 0;border-bottom:1px solid rgba(244,242,238,.16);overflow:hidden;">
     <div data-mq style="display:inline-flex;white-space:nowrap;animation:rwMq 30s linear infinite;">
       <span style="display:inline-flex;gap:36px;padding-right:36px;font-size:12.5px;font-weight:500;letter-spacing:-.005em;align-items:center;"><span>Ritwiz is an industrial designer ✏️</span><span>Ritwiz is a cat dad 🐈</span><span>Ritwiz fights distractions 🤳</span><span>Ritwiz needs coffee every morning ☕</span><span>Ritwiz collects hotwheels 🚗</span><span>Ritwiz watches a lot of movies 🎥</span><span>Ritwiz is an audiophile 🎧</span><span>Ritwiz visits photography forums 📷</span><span>Ritwiz is a cinestill 800T fan 🎞️</span><span>Ritwiz loses in video games 🎮</span></span>
       <span style="display:inline-flex;gap:36px;padding-right:36px;font-size:12.5px;font-weight:500;letter-spacing:-.005em;align-items:center;" aria-hidden="true"><span>Ritwiz is an industrial designer ✏️</span><span>Ritwiz is a cat dad 🐈</span><span>Ritwiz fights distractions 🤳</span><span>Ritwiz needs coffee every morning ☕</span><span>Ritwiz collects hotwheels 🚗</span><span>Ritwiz watches a lot of movies 🎥</span><span>Ritwiz is an audiophile 🎧</span><span>Ritwiz visits photography forums 📷</span><span>Ritwiz is a cinestill 800T fan 🎞️</span><span>Ritwiz loses in video games 🎮</span></span>
@@ -98,7 +102,7 @@ a:hover{color:#F4F2EE}
 
   <main style="flex:1;width:100%;max-width:1440px;margin:0 auto;box-sizing:border-box;padding:0 clamp(20px,3vw,48px) clamp(28px,4vh,48px);">
 
-    <section data-row style="display:grid;grid-template-columns:minmax(140px,170px) minmax(0,1fr) 92px;gap:0 clamp(20px,3vw,44px);align-items:start;padding:clamp(18px,2.4vh,26px) 0;border-bottom:1px solid rgba(244,242,238,.16);">
+    <section data-rv data-row style="display:grid;grid-template-columns:minmax(140px,170px) minmax(0,1fr) 92px;gap:0 clamp(20px,3vw,44px);align-items:start;padding:clamp(18px,2.4vh,26px) 0;border-bottom:1px solid rgba(244,242,238,.16);">
       <div data-rail style="font-size:12.5px;font-weight:600;letter-spacing:-.005em;position:sticky;top:76px;">Contact</div>
       <div style="display:flex;flex-direction:column;gap:12px;">
         <a href="mailto:ritwizsharma1@gmail.com" style="font-size:clamp(20px,2.3vw,32px);font-weight:700;letter-spacing:-.028em;width:fit-content;border-bottom:1.5px solid rgba(244,242,238,.4);padding-bottom:2px;" style-hover="border-bottom-color:#F4F2EE">ritwizsharma1@gmail.com</a>
@@ -107,16 +111,17 @@ a:hover{color:#F4F2EE}
           <a href="https://www.behance.net/ritwizsharma" target="_blank" rel="noopener" style="opacity:.62;" style-hover="opacity:1">Behance ↗</a>
           <span style="opacity:.62;">+91 84738 72137</span>
         </div>
+        <a href="/Ritwiz_Sharma_CV.pdf" download="Ritwiz_Sharma_CV.pdf" style="display:inline-flex;align-items:center;gap:8px;width:fit-content;margin-top:6px;padding:8px 14px;border:1px solid rgba(244,242,238,.16);border-radius:.66em;font-size:12.5px;font-weight:600;letter-spacing:-.005em;color:#F4F2EE;text-decoration:none;" style-hover="border-color:#F4F2EE">Download CV ↓</a>
       </div>
       <div data-year style="font-size:12.5px;font-weight:500;opacity:.62;text-align:right;font-variant-numeric:tabular-nums;">2026</div>
     </section>
 
-    <section data-row style="display:grid;grid-template-columns:minmax(140px,170px) minmax(0,1fr) 92px;gap:0 clamp(20px,3vw,44px);align-items:start;padding:clamp(18px,2.4vh,26px) 0;border-bottom:1px solid rgba(244,242,238,.16);">
+    <section data-rv data-row style="display:grid;grid-template-columns:minmax(140px,170px) minmax(0,1fr) 92px;gap:0 clamp(20px,3vw,44px);align-items:start;padding:clamp(18px,2.4vh,26px) 0;border-bottom:1px solid rgba(244,242,238,.16);">
       <div data-rail style="font-size:12.5px;font-weight:600;letter-spacing:-.005em;position:sticky;top:76px;">About</div>
       <div data-aboutgrid style="display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:clamp(20px,3vw,40px);align-items:start;">
         <div style="display:flex;flex-direction:column;gap:14px;max-width:56ch;">
-          <p style="margin:0;font-size:clamp(17px,1.7vw,24px);font-weight:400;line-height:1.32;letter-spacing:-.015em;text-wrap:pretty;">Industrial designer with six years of experience in consumer electronics, home appliances and robotics. I lead narrative development and experience design. My ambition is to create objects that invent culture and transcend trends.</p>
-          <p style="margin:0;font-size:15.5px;font-weight:450;line-height:1.6;letter-spacing:-.008em;text-wrap:pretty;"><span style="opacity:.74;">I work from concept through CAD, CMF and factory-ready handoff — most recently on home robots with teams in India and the United States, a chai brewer taken from sketch to manufacture, and a line of six home appliances.</span> <span style="background:#F4F2EE;color:#0B0B0B;padding:.04em .26em;font-weight:600;">Objects have personalities; I speak fluent object.</span></p>
+          <p style="margin:0;font-size:clamp(17px,1.7vw,24px);font-weight:400;line-height:1.32;letter-spacing:-.015em;text-wrap:pretty;">Industrial designer, six years into consumer electronics, home appliances and robotics. I shape the story a product tells and what it's like to live with — aiming for objects that start culture rather than chase trends.</p>
+          <p style="margin:0;font-size:15.5px;font-weight:450;line-height:1.6;letter-spacing:-.008em;text-wrap:pretty;"><span style="opacity:.74;">I take work from first concept through CAD, CMF and factory-ready handoff. Most recently: home robots with teams in India and the US, a chai brewer from sketch to manufacture, and a line of six home appliances.</span> <span style="background:#F4F2EE;color:#0B0B0B;padding:.04em .26em;font-weight:600;">Objects have personalities; I speak fluent object.</span></p>
         </div>
         <div ref="{{ wrapRef }}" onMouseEnter="{{ onEnter }}" onMouseMove="{{ onMove }}" onMouseLeave="{{ onLeave }}" style="position:relative;width:100%;aspect-ratio:921/1152;overflow:hidden;cursor:crosshair;box-shadow:inset 0 0 0 1px rgba(244,242,238,.16);">
           <img ref="{{ bgRef }}" src="uploads/opt/about-bg.webp" alt="" aria-hidden="true" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%;display:block;" />
@@ -132,7 +137,7 @@ a:hover{color:#F4F2EE}
       </div>
     </section>
 
-    <section data-row style="display:grid;grid-template-columns:minmax(140px,170px) minmax(0,1fr) 92px;gap:0 clamp(20px,3vw,44px);align-items:start;padding:clamp(18px,2.4vh,26px) 0;border-bottom:1px solid rgba(244,242,238,.16);">
+    <section data-rv data-row style="display:grid;grid-template-columns:minmax(140px,170px) minmax(0,1fr) 92px;gap:0 clamp(20px,3vw,44px);align-items:start;padding:clamp(18px,2.4vh,26px) 0;border-bottom:1px solid rgba(244,242,238,.16);">
       <div data-rail style="font-size:12.5px;font-weight:600;letter-spacing:-.005em;position:sticky;top:76px;">Experience</div>
       <div style="display:flex;flex-direction:column;">
         <sc-for list="{{ jobs }}" as="j" hint-placeholder-count="4">
@@ -259,6 +264,7 @@ class Component extends DCLogic {
     this.progRef = React.createRef();
   }
   componentDidMount(){
+    this._reveal();
     import('./about-plate.js').then(m => {
       this.plate = m.createPlate({
         wrap: this.wrapRef_.current, bg: this.bgRef_.current,
@@ -281,6 +287,16 @@ class Component extends DCLogic {
     this._praf = requestAnimationFrame(tick);
     addEventListener('scroll', this._prog, {passive:true});
     addEventListener('resize', this._prog, {passive:true});
+  }
+  _reveal(){
+    const root=document.documentElement; if(!root.classList.contains('rvOn')) return;
+    const ease='cubic-bezier(.16,1,.3,1)'; const els=[...document.querySelectorAll('[data-rv]')];
+    const line=document.querySelector('[data-rvline]');
+    if(line) line.animate([{transform:'scaleX(0)'},{transform:'scaleX(1)'}],{duration:900,delay:160,easing:ease,fill:'both'});
+    let last;
+    els.forEach((el,i)=>{ last=el.animate([{opacity:0,transform:'translateY(12px)'},{opacity:1,transform:'none'}],{duration:700,delay:i*80,easing:ease,fill:'both'}); });
+    const done=()=>{ root.classList.remove('rvOn'); els.forEach(el=>el.getAnimations().forEach(a=>a.cancel())); };
+    if(last) last.finished.then(done,done); else done();
   }
   componentWillUnmount(){
     if(this.plate) this.plate.destroy();
