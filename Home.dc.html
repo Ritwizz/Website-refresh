@@ -43,10 +43,12 @@ a:hover{color:#F4F2EE}
 .rv{animation:rv 700ms ease-out both}
 @media (prefers-reduced-motion:reduce){.rv{animation:none}}
 @media (max-width:1024px){
+.ndaStrip{grid-template-columns:repeat(3,minmax(0,1fr)) !important}
   .mosaic{grid-template-columns:repeat(6,1fr) !important;row-gap:clamp(40px,7vh,72px) !important}
   .mosaic > .tile{grid-column:1 / -1 !important;grid-row:auto !important;margin-top:0 !important}
 }
 @media (max-width:760px){
+.ndaStrip{grid-template-columns:minmax(0,1fr) !important}
   .rwHead{grid-template-columns:1fr auto !important;row-gap:10px !important;align-items:baseline !important}
   .rwNavMid{grid-column:1 / -1;order:3;gap:18px !important}
   .rwFoot{flex-direction:column !important;align-items:flex-start !important;gap:10px !important}
@@ -93,7 +95,6 @@ a:hover{color:#F4F2EE}
       <span class="rwNavMid" style="display:flex;gap:clamp(14px,1.6vw,24px);">
         <a href="/" style="font-weight:600;">Index</a>
         <a href="/off-hours" style="color:rgba(244,242,238,.55);">Off Hours</a>
-        <a href="/labs" style="color:rgba(244,242,238,.55);">Labs</a>
         <a href="/about" style="color:rgba(244,242,238,.55);">About</a>
       </span>
       <span style="justify-self:end;display:flex;gap:clamp(12px,1.4vw,20px);">
@@ -107,30 +108,49 @@ a:hover{color:#F4F2EE}
 
   <main style="max-width:1440px;margin:0 auto;padding:0 clamp(20px,3vw,48px) clamp(40px,6vw,90px);box-sizing:border-box;">
 
-    <section class="introNotes" data-screen-label="Masthead" style="display:flex;flex-direction:column;gap:clamp(14px,1.6vw,20px);max-width:72ch;padding:clamp(30px,6vh,80px) 0 clamp(26px,5vh,64px);">
+    <section class="introNotes" data-screen-label="Masthead" style="display:flex;flex-direction:column;gap:clamp(14px,1.6vw,20px);padding:clamp(40px,8vh,96px) 0 clamp(26px,5vh,64px);">
       <p style="margin:0;font-size:12.5px;font-weight:500;letter-spacing:-.005em;color:rgba(244,242,238,.62);">Ritwiz Sharma ©—2026</p>
-      <p style="margin:0;font-size:clamp(17px,1.7vw,24px);line-height:1.32;letter-spacing:-.015em;font-weight:400;text-wrap:pretty;">Independent industrial designer, working globally. Recently with Innate Robotics, Tangible Robotics and Brewtal. Previously CORE Experience and boAt.</p>
+      <p style="margin:0;max-width:30em;font-size:clamp(17px,1.7vw,24px);line-height:1.32;letter-spacing:-.015em;font-weight:400;text-wrap:pretty;">Independent industrial designer, working globally. Recently with Innate Robotics, Tangible Robotics and Brewtal. Previously CORE Experience and boAt.</p>
+      <aside aria-label="Work under agreement" style="display:flex;flex-direction:column;gap:12px;margin-top:clamp(18px,3vh,36px);padding:clamp(12px,1.4vw,16px) 0 clamp(18px,2vw,24px);border-top:1px solid rgba(244,242,238,.16);border-bottom:1px solid rgba(244,242,238,.16);font-size:12.5px;font-weight:500;letter-spacing:-.005em;">
+        <p style="margin:0;color:rgba(244,242,238,.62);">Under agreement (5) — links go to the client</p>
+        <ul class="ndaStrip" style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:18px clamp(14px,2vw,34px);">
+          <li style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:5px 14px;align-content:start;">
+            <span style="color:rgba(244,242,238,.62);">2026</span>
+            <a href="https://www.innate.bot/" target="_blank" rel="noopener noreferrer" style="font-weight:600;color:#F4F2EE;" style-hover="color:rgba(244,242,238,.74)">Innate Robotics ↗</a>
+            <span aria-hidden="true"></span>
+            <span style="color:rgba(244,242,238,.62);">Home robot · <a href="https://futureunit.design/" target="_blank" rel="noopener noreferrer" style="color:rgba(244,242,238,.62);" style-hover="color:#F4F2EE">Future Unit ↗</a></span>
+          </li>
+          <li style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:5px 14px;align-content:start;">
+            <span style="color:rgba(244,242,238,.62);">2026</span>
+            <a href="https://www.posha.com/" target="_blank" rel="noopener noreferrer" style="font-weight:600;color:#F4F2EE;" style-hover="color:rgba(244,242,238,.74)">Posha ↗</a>
+            <span aria-hidden="true"></span>
+            <span style="color:rgba(244,242,238,.62);">Kitchen appliance · <a href="https://futureunit.design/" target="_blank" rel="noopener noreferrer" style="color:rgba(244,242,238,.62);" style-hover="color:#F4F2EE">Future Unit ↗</a></span>
+          </li>
+          <li style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:5px 14px;align-content:start;">
+            <span style="color:rgba(244,242,238,.62);">2026</span>
+            <a href="https://soniclamb.com/en-in" target="_blank" rel="noopener noreferrer" style="font-weight:600;color:#F4F2EE;" style-hover="color:rgba(244,242,238,.74)">Sonic Lamb ↗</a>
+            <span aria-hidden="true"></span>
+            <span style="color:rgba(244,242,238,.62);">Kickstarter campaign</span>
+          </li>
+          <li style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:5px 14px;align-content:start;">
+            <span style="color:rgba(244,242,238,.62);">2025</span>
+            <a href="https://www.getbrewtal.com/" target="_blank" rel="noopener noreferrer" style="font-weight:600;color:#F4F2EE;" style-hover="color:rgba(244,242,238,.74)">Brewtal ↗</a>
+            <span aria-hidden="true"></span>
+            <span style="color:rgba(244,242,238,.62);">Chai brewer</span>
+          </li>
+          <li style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:5px 14px;align-content:start;">
+            <span style="color:rgba(244,242,238,.62);">2025</span>
+            <a href="https://tangiblerobots.ai/" target="_blank" rel="noopener noreferrer" style="font-weight:600;color:#F4F2EE;" style-hover="color:rgba(244,242,238,.74)">Tangible Robotics ↗</a>
+            <span aria-hidden="true"></span>
+            <span style="color:rgba(244,242,238,.62);">Home robot · <a href="https://futureunit.design/" target="_blank" rel="noopener noreferrer" style="color:rgba(244,242,238,.62);" style-hover="color:#F4F2EE">Future Unit ↗</a></span>
+          </li>
+        </ul>
+      </aside>
     </section>
 
     <section class="mosaic" data-screen-label="Work mosaic" style="display:grid;grid-template-columns:repeat(12,1fr);column-gap:clamp(14px,2vw,34px);row-gap:clamp(48px,9vh,124px);align-items:start;padding-bottom:clamp(28px,5vh,60px);">
 
       <div class="tile rv" style="grid-column:1 / span 6;grid-row:1;display:flex;flex-direction:column;gap:11px;">
-        <a href="https://www.innate.bot/" target="_blank" rel="noopener noreferrer" style="display:block;" style-hover="opacity:.92">
-          <span style="display:block;position:relative;width:100%;aspect-ratio:4/3;overflow:hidden;background:#0B0B0B;">
-            <img src="nda/innate-teaser.webp" alt="Innate Robotics home robot" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;" />
-            <span class="veil" style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;align-items:flex-start;padding:clamp(14px,1.4vw,20px);background:rgba(11,11,11,.74);">
-              <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="#F4F2EE" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:block;flex:none;"><rect x="3.1" y="6.9" width="9.8" height="6.6" rx="1.1"></rect><path d="M5.7 6.9V4.9a2.3 2.3 0 0 1 4.6 0v2"></path></svg>
-              <span style="font-size:12.5px;font-weight:600;letter-spacing:-.005em;color:#F4F2EE;">Client site — innate.bot ↗</span>
-            </span>
-          </span>
-        </a>
-        <span class="cap" style="display:flex;flex-direction:column;gap:4px;font-size:12.5px;font-weight:500;letter-spacing:-.005em;">
-          <a href="https://www.innate.bot/" target="_blank" rel="noopener noreferrer" style="color:rgba(244,242,238,.62);" style-hover="color:#F4F2EE">Innate Robotics, Home robot — 2026 ↗</a>
-          <span style="color:rgba(244,242,238,.62);">Under agreement · with <a href="https://futureunit.design/" target="_blank" rel="noopener noreferrer" style="color:rgba(244,242,238,.62);border-bottom:1px solid rgba(244,242,238,.3);" style-hover="color:#F4F2EE;border-bottom-color:#F4F2EE">Future Unit ↗</a></span>
-        </span>
-      </div>
-
-      <div class="tile rv" style="grid-column:8 / span 5;grid-row:1;margin-top:clamp(30px,13vh,180px);display:flex;flex-direction:column;gap:11px;">
         <a href="/aakaar" style="display:block;">
           <span style="display:block;position:relative;width:100%;aspect-ratio:4/3;overflow:hidden;background:#0B0B0B;">
             <img src="web/aakaar/full-board_fix_2.webp" alt="Aakaar chess set" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;" />
@@ -142,25 +162,9 @@ a:hover{color:#F4F2EE}
         </span>
       </div>
 
-      <div class="tile rv" style="grid-column:2 / span 4;grid-row:2;display:flex;flex-direction:column;gap:11px;">
-        <a href="https://www.posha.com/" target="_blank" rel="noopener noreferrer" style="display:block;" style-hover="opacity:.92">
-          <span style="display:block;position:relative;width:100%;aspect-ratio:3/4;overflow:hidden;background:#0B0B0B;">
-            <img src="nda/posha-teaser.webp" alt="Posha countertop cooking appliance" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;" />
-            <span class="veil" style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;align-items:flex-start;padding:clamp(14px,1.4vw,20px);background:rgba(11,11,11,.74);">
-              <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="#F4F2EE" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:block;flex:none;"><rect x="3.1" y="6.9" width="9.8" height="6.6" rx="1.1"></rect><path d="M5.7 6.9V4.9a2.3 2.3 0 0 1 4.6 0v2"></path></svg>
-              <span style="font-size:12.5px;font-weight:600;letter-spacing:-.005em;color:#F4F2EE;">Client site — posha.com ↗</span>
-            </span>
-          </span>
-        </a>
-        <span class="cap" style="display:flex;flex-direction:column;gap:4px;font-size:12.5px;font-weight:500;letter-spacing:-.005em;">
-          <a href="https://www.posha.com/" target="_blank" rel="noopener noreferrer" style="color:rgba(244,242,238,.62);" style-hover="color:#F4F2EE">Posha, Kitchen appliance — 2026 ↗</a>
-          <span style="color:rgba(244,242,238,.62);">Under agreement · with <a href="https://futureunit.design/" target="_blank" rel="noopener noreferrer" style="color:rgba(244,242,238,.62);border-bottom:1px solid rgba(244,242,238,.3);" style-hover="color:#F4F2EE;border-bottom-color:#F4F2EE">Future Unit ↗</a></span>
-        </span>
-      </div>
-
-      <div class="tile rv" style="grid-column:7 / span 5;grid-row:2;margin-top:clamp(20px,8vh,110px);display:flex;flex-direction:column;gap:11px;">
+      <div class="tile rv" style="grid-column:7 / span 6;grid-row:1;margin-top:clamp(30px,13vh,180px);display:flex;flex-direction:column;gap:11px;">
         <a href="/snapin" style="display:block;">
-          <span style="display:block;position:relative;width:100%;aspect-ratio:1/1;overflow:hidden;background:#0B0B0B;">
+          <span style="display:block;position:relative;width:100%;aspect-ratio:4/3;overflow:hidden;background:#0B0B0B;">
             <img src="snapin/final-render-1.webp" alt="Snapin' Street sampling kiosk" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;" />
             <img class="alt" src="snapin/mfg-04-frame-ply.webp" alt="" aria-hidden="true" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;" />
           </span>
@@ -170,23 +174,7 @@ a:hover{color:#F4F2EE}
         </span>
       </div>
 
-      <div class="tile rv" style="grid-column:1 / span 4;grid-row:3;display:flex;flex-direction:column;gap:11px;">
-        <a href="https://soniclamb.com/en-in" target="_blank" rel="noopener noreferrer" style="display:block;" style-hover="opacity:.92">
-          <span style="display:block;position:relative;width:100%;aspect-ratio:3/4;overflow:hidden;background:#0B0B0B;">
-            <img src="nda/soniclamb-teaser.webp" alt="Sonic Lamb headphones" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;" />
-            <span class="veil" style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;align-items:flex-start;padding:clamp(14px,1.4vw,20px);background:rgba(11,11,11,.74);">
-              <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="#F4F2EE" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:block;flex:none;"><rect x="3.1" y="6.9" width="9.8" height="6.6" rx="1.1"></rect><path d="M5.7 6.9V4.9a2.3 2.3 0 0 1 4.6 0v2"></path></svg>
-              <span style="font-size:12.5px;font-weight:600;letter-spacing:-.005em;color:#F4F2EE;">Client site — soniclamb.com ↗</span>
-            </span>
-          </span>
-        </a>
-        <span class="cap" style="display:flex;flex-direction:column;gap:4px;font-size:12.5px;font-weight:500;letter-spacing:-.005em;">
-          <a href="https://soniclamb.com/en-in" target="_blank" rel="noopener noreferrer" style="color:rgba(244,242,238,.62);" style-hover="color:#F4F2EE">Sonic Lamb, Kickstarter campaign — 2026 ↗</a>
-          <span style="color:rgba(244,242,238,.62);">Under agreement</span>
-        </span>
-      </div>
-
-      <div class="tile rv" style="grid-column:6 / span 6;grid-row:3;margin-top:clamp(26px,11vh,150px);display:flex;flex-direction:column;gap:11px;">
+      <div class="tile rv" style="grid-column:1 / span 6;grid-row:2;display:flex;flex-direction:column;gap:11px;">
         <a href="/ergoplay" style="display:block;">
           <span style="display:block;position:relative;width:100%;aspect-ratio:4/3;overflow:hidden;background:#0B0B0B;">
             <img src="ergoplay/opt/maker-set.webp" alt="Ergoplay shape-changing mouse" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;" />
@@ -198,25 +186,9 @@ a:hover{color:#F4F2EE}
         </span>
       </div>
 
-      <div class="tile rv" style="grid-column:2 / span 4;grid-row:4;display:flex;flex-direction:column;gap:11px;">
-        <a href="https://www.getbrewtal.com/" target="_blank" rel="noopener noreferrer" style="display:block;" style-hover="opacity:.92">
-          <span style="display:block;position:relative;width:100%;aspect-ratio:1/1;overflow:hidden;background:#0B0B0B;">
-            <img src="nda/brewtal-teaser.webp" alt="Brewtal chai brewer" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;" />
-            <span class="veil" style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;align-items:flex-start;padding:clamp(14px,1.4vw,20px);background:rgba(11,11,11,.74);">
-              <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="#F4F2EE" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:block;flex:none;"><rect x="3.1" y="6.9" width="9.8" height="6.6" rx="1.1"></rect><path d="M5.7 6.9V4.9a2.3 2.3 0 0 1 4.6 0v2"></path></svg>
-              <span style="font-size:12.5px;font-weight:600;letter-spacing:-.005em;color:#F4F2EE;">Client site — getbrewtal.com ↗</span>
-            </span>
-          </span>
-        </a>
-        <span class="cap" style="display:flex;flex-direction:column;gap:4px;font-size:12.5px;font-weight:500;letter-spacing:-.005em;">
-          <a href="https://www.getbrewtal.com/" target="_blank" rel="noopener noreferrer" style="color:rgba(244,242,238,.62);" style-hover="color:#F4F2EE">Brewtal, Chai brewer — 2025 ↗</a>
-          <span style="color:rgba(244,242,238,.62);">Under agreement</span>
-        </span>
-      </div>
-
-      <div class="tile rv" style="grid-column:7 / span 6;grid-row:4;margin-top:clamp(24px,9vh,120px);display:flex;flex-direction:column;gap:11px;">
+      <div class="tile rv" style="grid-column:7 / span 6;grid-row:2;margin-top:clamp(30px,13vh,180px);display:flex;flex-direction:column;gap:11px;">
         <a href="/vita" style="display:block;">
-          <span style="display:block;position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;background:#0B0B0B;">
+          <span style="display:block;position:relative;width:100%;aspect-ratio:4/3;overflow:hidden;background:#0B0B0B;">
             <img src="vita/vita-scooter-concrete-side-view.webp" alt="Vita grand touring scooter" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;" />
             <img class="alt" src="vita/vita-with-luggage.webp" alt="" aria-hidden="true" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;" />
           </span>
@@ -226,25 +198,9 @@ a:hover{color:#F4F2EE}
         </span>
       </div>
 
-      <div class="tile rv" style="grid-column:1 / span 6;grid-row:5;display:flex;flex-direction:column;gap:11px;">
-        <a href="https://tangiblerobots.ai/" target="_blank" rel="noopener noreferrer" style="display:block;" style-hover="opacity:.92">
-          <span style="display:block;position:relative;width:100%;aspect-ratio:16/10;overflow:hidden;background:#0B0B0B;">
-            <img src="nda/tangible-teaser.webp" alt="Tangible Robotics home robot" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;" />
-            <span class="veil" style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;align-items:flex-start;padding:clamp(14px,1.4vw,20px);background:rgba(11,11,11,.74);">
-              <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="#F4F2EE" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:block;flex:none;"><rect x="3.1" y="6.9" width="9.8" height="6.6" rx="1.1"></rect><path d="M5.7 6.9V4.9a2.3 2.3 0 0 1 4.6 0v2"></path></svg>
-              <span style="font-size:12.5px;font-weight:600;letter-spacing:-.005em;color:#F4F2EE;">Client site — tangiblerobots.ai ↗</span>
-            </span>
-          </span>
-        </a>
-        <span class="cap" style="display:flex;flex-direction:column;gap:4px;font-size:12.5px;font-weight:500;letter-spacing:-.005em;">
-          <a href="https://tangiblerobots.ai/" target="_blank" rel="noopener noreferrer" style="color:rgba(244,242,238,.62);" style-hover="color:#F4F2EE">Tangible Robotics, Home robot — 2025 ↗</a>
-          <span style="color:rgba(244,242,238,.62);">Under agreement · with <a href="https://futureunit.design/" target="_blank" rel="noopener noreferrer" style="color:rgba(244,242,238,.62);border-bottom:1px solid rgba(244,242,238,.3);" style-hover="color:#F4F2EE;border-bottom-color:#F4F2EE">Future Unit ↗</a></span>
-        </span>
-      </div>
-
-      <div class="tile rv" style="grid-column:9 / span 4;grid-row:5;margin-top:clamp(20px,7vh,100px);display:flex;flex-direction:column;gap:11px;">
+      <div class="tile rv" style="grid-column:1 / span 6;grid-row:3;display:flex;flex-direction:column;gap:11px;">
         <a href="/altr" style="display:block;">
-          <span style="display:block;position:relative;width:100%;aspect-ratio:3/4;overflow:hidden;background:#0B0B0B;">
+          <span style="display:block;position:relative;width:100%;aspect-ratio:4/3;overflow:hidden;background:#0B0B0B;">
             <img src="altr/altr-desks-all-together.webp" alt="Altr modular desk system" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;" />
             <img class="alt" src="altr/creative-right-landing.webp" alt="" aria-hidden="true" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;" />
           </span>
@@ -254,7 +210,7 @@ a:hover{color:#F4F2EE}
         </span>
       </div>
 
-      <div class="tile rv" style="grid-column:4 / span 6;grid-row:6;display:flex;flex-direction:column;gap:11px;">
+      <div class="tile rv" style="grid-column:7 / span 6;grid-row:3;margin-top:clamp(30px,13vh,180px);display:flex;flex-direction:column;gap:11px;">
         <a href="/art-of-concealing" style="display:block;">
           <span style="display:block;position:relative;width:100%;aspect-ratio:4/3;overflow:hidden;background:#0B0B0B;">
             <img src="aoc/all-products-staged.webp" alt="The art of concealing home appliances" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;" />
@@ -265,9 +221,8 @@ a:hover{color:#F4F2EE}
           <a href="/art-of-concealing" style="color:rgba(244,242,238,.62);" style-hover="color:#F4F2EE">The art of concealing, Home appliances — Case study, 2022 →</a>
         </span>
       </div>
-    </section>
 
-    <p style="margin:0;max-width:56ch;font-size:12.5px;font-weight:450;line-height:1.55;letter-spacing:-.005em;color:rgba(244,242,238,.62);">Work under agreement links to the client. I can walk through it in a call.</p>
+    </section>
   </main>
 
   <footer style="padding:clamp(20px,3vh,34px) clamp(20px,3vw,48px);border-top:1px solid rgba(244,242,238,.16);">

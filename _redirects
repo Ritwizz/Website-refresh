@@ -8,12 +8,6 @@
 /altr                              /Altr.dc.html               200
 /art-of-concealing                 /ArtOfConcealing.dc.html    200
 /snapin                            /Snapin.dc.html             200
-/labs                              /Labs.dc.html                200
-/labs/pattern                      /Pattern.dc.html             200
-/labs/pattern/                     /labs/pattern                301
-/labs/booth                        /Booth.dc.html               200
-/labs/booth/                       /labs/booth                  301
-/labs/                             /labs                        301
 
 # Trailing slash
 /about/                            /about                      301
@@ -45,5 +39,3 @@
 /ArtOfConcealing-minimal.dc.html  /art-of-concealing          301
 /Snapin-minimal.dc.html           /snapin                     301
 
-# Keep LAST: pages under /labs/ resolve ./support.js etc. relative to /labs/ — serve root files
-/labs/*                            /:splat                      200
